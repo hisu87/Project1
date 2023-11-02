@@ -1,0 +1,23 @@
+Xin chào mọi ngươi trong group
+Đây là phần bắt buộc phải đọc
+
+DAO, Data Access Object là nơi chứa các file DAO của các entity
+Các file DAO này sẽ được sử dụng để truy xuất dữ liệu từ database
+Các file DAO này sẽ được sử dụng bởi các file Service
+Các file DAO sẽ được đặt trong package DAO
+
+entity là nơi chứa các file entity bao gồm nhân viên, chủ, quản lý, công thức, menu, sản phẩm
+Các file entity này sẽ được sử dụng để tạo các bảng trong database
+Các file entity này sẽ được sử dụng bởi các file DAO
+Các file entity sẽ được đặt trong package entity
+
+UI là nơi chứa các Giao Diện tương tác với người dùng bao gồm giao diện đăng nhập, giao diện chủ, giao diện quản lý, giao diện nhân viên, .....
+Các file UI này sẽ được sử dụng để tương tác với người dùng
+Các file UI này sẽ được sử dụng bởi các file Service
+Các file UI sẽ được đặt trong package UI
+
+Ultils là nơi chứa các file hỗ trợ bao gồm các file kết nối database, các file hỗ trợ khác.
+Các file Utils này sẽ được sử dụng để hỗ trợ các file khác
+Các file Utils này sẽ được sử dụng bởi các file DAO, Service, UI
+Các file Utils sẽ được đặt trong package Utils
+
