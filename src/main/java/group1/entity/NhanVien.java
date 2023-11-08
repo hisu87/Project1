@@ -21,6 +21,9 @@ public class NhanVien {
         this.Vaitro = Vaitro;
     }
 
+    public NhanVien() {
+    }
+
     public String getMaNV() {
         return MaNV;
     }
