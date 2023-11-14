@@ -8,6 +8,9 @@ public class SanPham {
     private double gia;
     private String maCT;
 
+    public SanPham() {
+    }
+
     public SanPham(String maSP, String tenSP, String anh, double gia, String maCT) {
         this.maSP = maSP;
         this.tenSP = tenSP;
