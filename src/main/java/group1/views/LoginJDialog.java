@@ -21,6 +21,8 @@ public class LoginJDialog extends javax.swing.JDialog {
     public LoginJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
+        setTitle("Login");
+        setIconImage(xImage.getAppIcon());
     }
 
     /**
@@ -55,6 +57,7 @@ public class LoginJDialog extends javax.swing.JDialog {
 
         jLabel2.setBackground(new java.awt.Color(255, 153, 153));
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/logo1.png"))); // NOI18N
+        jLabel2.setToolTipText("Merry Christmas");
 
         jPanel3.setBackground(new java.awt.Color(0, 98, 65));
 
@@ -75,7 +78,7 @@ public class LoginJDialog extends javax.swing.JDialog {
         txtUser.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         txtUser.setForeground(new java.awt.Color(242, 242, 235));
         txtUser.setText("Hisu");
-        txtUser.setToolTipText("");
+        txtUser.setToolTipText("Merrychristmas");
         txtUser.setBorder(null);
         txtUser.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +102,7 @@ public class LoginJDialog extends javax.swing.JDialog {
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 56)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(242, 240, 235));
         jLabel1.setText("Login");
+        jLabel1.setToolTipText("Merry Christmas");
 
         chkShowhide.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chkShowhide.setForeground(new java.awt.Color(242, 240, 235));
@@ -179,14 +183,10 @@ public class LoginJDialog extends javax.swing.JDialog {
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblPwdIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                             .addComponent(lblUserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtUser, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(txtPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                            .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(115, 115, 115))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(138, 138, 138)

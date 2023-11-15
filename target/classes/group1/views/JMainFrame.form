@@ -59,6 +59,7 @@
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Hello main page n&#xe8; :))"/>
+            <Property name="toolTipText" type="java.lang.String" value="Merry Christmas"/>
           </Properties>
         </Component>
       </SubComponents>
