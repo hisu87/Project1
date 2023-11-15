@@ -4,6 +4,7 @@
  */
 package group1.views;
 
+import group1.utils.xImage;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -21,6 +22,8 @@ public class LoadingJDialog extends javax.swing.JDialog {
         runLoadingBar();
         setLocationRelativeTo(parent);
         initComponents();
+        setTitle("Loading Screen");
+        setIconImage(xImage.getAppIcon());
     }
     
     private void runLoadingBar() {
@@ -82,6 +85,7 @@ public class LoadingJDialog extends javax.swing.JDialog {
         lblGreeting.setForeground(new java.awt.Color(242, 240, 235));
         lblGreeting.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblGreeting.setText("WELCOME");
+        lblGreeting.setToolTipText("Merry Christmas");
 
         lblLoading.setFont(new java.awt.Font("Segoe UI", 2, 16)); // NOI18N
         lblLoading.setForeground(new java.awt.Color(0, 112, 74));
