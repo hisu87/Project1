@@ -48,13 +48,15 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jToolBar = new javax.swing.JToolBar();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         jToggleButton7 = new javax.swing.JToggleButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         pnl_center = new javax.swing.JPanel();
         lbl_centerlogo = new javax.swing.JLabel();
         pnl_statusbar = new javax.swing.JPanel();
@@ -82,57 +84,74 @@ public class JMainFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar.setBackground(new java.awt.Color(242, 240, 235));
+        jPanel1.setBackground(new java.awt.Color(30, 57, 50));
+
+        jToolBar.setBackground(new java.awt.Color(30, 57, 50));
+        jToolBar.setBorder(null);
         jToolBar.setRollover(true);
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton1.setText("Đăng Xuất");
-        jToggleButton1.setFocusable(false);
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton1);
-
-        jToggleButton2.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton2.setText("Thoát");
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton2);
-
-        jToggleButton3.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton3.setText("Tạo Hóa Đon");
+        jToggleButton3.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton3.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton3.setText("Tạo Hóa Đơn");
         jToggleButton3.setFocusable(false);
         jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jToggleButton3);
 
-        jToggleButton4.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton4.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton4.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton4.setText("Nhập Nguyên Liệu");
         jToggleButton4.setFocusable(false);
         jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton4);
 
-        jToggleButton5.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton5.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton5.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton5.setText("Nhập công thức");
         jToggleButton5.setFocusable(false);
         jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton5);
 
-        jToggleButton6.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton6.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton6.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton6.setText("Nhập Sản phẩm");
         jToggleButton6.setFocusable(false);
         jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton6);
+        jToolBar.add(jSeparator5);
 
-        jToggleButton7.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton7.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton7.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton7.setText("Hướng dẫn");
         jToggleButton7.setFocusable(false);
         jToggleButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton7);
+        jToolBar.add(jSeparator4);
+
+        jToggleButton1.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton1.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton1.setText("Đăng Xuất");
+        jToggleButton1.setFocusable(false);
+        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jToggleButton1);
+
+        jToggleButton2.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton2.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton2.setText("Thoát");
+        jToggleButton2.setFocusable(false);
+        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jToggleButton2);
 
         pnl_center.setBackground(new java.awt.Color(242, 240, 235));
 
@@ -190,9 +209,11 @@ public class JMainFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -289,6 +310,10 @@ public class JMainFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
+
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_jButton1ActionPerformed
@@ -357,6 +382,8 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
