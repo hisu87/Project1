@@ -153,7 +153,7 @@ public class JMainFrame extends javax.swing.JFrame {
         jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton2);
 
-        pnl_center.setBackground(new java.awt.Color(242, 240, 235));
+        pnl_center.setBackground(new java.awt.Color(249, 249, 249));
 
         lbl_centerlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/longlogo.png"))); // NOI18N
 
@@ -174,14 +174,14 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addGap(64, 64, 64))
         );
 
-        pnl_statusbar.setBackground(new java.awt.Color(182, 203, 213));
+        pnl_statusbar.setBackground(new java.awt.Color(30, 57, 50));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_user.setForeground(new java.awt.Color(0, 117, 74));
+        lbl_user.setForeground(new java.awt.Color(242, 240, 235));
         lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_username_25px.png"))); // NOI18N
 
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_clock.setForeground(new java.awt.Color(0, 117, 74));
+        lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
         lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_statusbarLayout = new javax.swing.GroupLayout(pnl_statusbar);
@@ -225,7 +225,7 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(242, 240, 235));
+        jMenuBar1.setBackground(new java.awt.Color(30, 57, 50));
 
         jMenu1.setText("Hệ Thống");
         jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
