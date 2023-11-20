@@ -34,21 +34,22 @@ public class LoginJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
-        lblPwdIcon = new javax.swing.JLabel();
         lblUserIcon = new javax.swing.JLabel();
         txtUser = new javax.swing.JTextField();
         txtPassword = new javax.swing.JPasswordField();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_title = new javax.swing.JLabel();
         chkShowhide = new javax.swing.JCheckBox();
         btnSignIn = new javax.swing.JButton();
         btnExit = new javax.swing.JButton();
         lblPwdIcon1 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 204));
@@ -60,13 +61,6 @@ public class LoginJDialog extends javax.swing.JDialog {
         jLabel2.setToolTipText("Merry Christmas");
 
         jPanel3.setBackground(new java.awt.Color(0, 98, 65));
-
-        lblPwdIcon.setBackground(new java.awt.Color(0, 0, 0));
-        lblPwdIcon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lblPwdIcon.setForeground(new java.awt.Color(242, 240, 235));
-        lblPwdIcon.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblPwdIcon.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_reset_20px.png"))); // NOI18N
-        lblPwdIcon.setText("Reset password");
 
         lblUserIcon.setBackground(new java.awt.Color(0, 0, 0));
         lblUserIcon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -98,11 +92,11 @@ public class LoginJDialog extends javax.swing.JDialog {
             }
         });
 
-        jLabel1.setBackground(new java.awt.Color(255, 204, 204));
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 56)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(242, 240, 235));
-        jLabel1.setText("Login");
-        jLabel1.setToolTipText("Merry Christmas");
+        lbl_title.setBackground(new java.awt.Color(255, 204, 204));
+        lbl_title.setFont(new java.awt.Font("Baskerville Old Face", 0, 56)); // NOI18N
+        lbl_title.setForeground(new java.awt.Color(242, 240, 235));
+        lbl_title.setText("Login");
+        lbl_title.setToolTipText("Merry Christmas");
 
         chkShowhide.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         chkShowhide.setForeground(new java.awt.Color(242, 240, 235));
@@ -160,6 +154,19 @@ public class LoginJDialog extends javax.swing.JDialog {
         lblPwdIcon1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         lblPwdIcon1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_20px.png"))); // NOI18N
 
+        jButton1.setBackground(new java.awt.Color(0, 98, 65));
+        jButton1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_reset_20px.png"))); // NOI18N
+        jButton1.setText("Reset password");
+        jButton1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED, new java.awt.Color(242, 240, 235), java.awt.Color.white, null, null));
+        jButton1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -175,29 +182,29 @@ public class LoginJDialog extends javax.swing.JDialog {
                         .addGroup(jPanel3Layout.createSequentialGroup()
                             .addGap(50, 50, 50)
                             .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(chkShowhide)
-                                .addComponent(lblPwdIcon))
+                                .addComponent(jButton1)
+                                .addComponent(chkShowhide, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGap(80, 80, 80)))
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addGap(2, 2, 2)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(lblPwdIcon1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
                             .addComponent(lblUserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 24, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(txtPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtUser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(115, 115, 115))
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addGap(138, 138, 138)
-                .addComponent(jLabel1)
+                .addComponent(lbl_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
+                .addComponent(lbl_title)
                 .addGap(34, 34, 34)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(lblUserIcon, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -209,8 +216,8 @@ public class LoginJDialog extends javax.swing.JDialog {
                 .addGap(28, 28, 28)
                 .addComponent(chkShowhide)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(lblPwdIcon, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(jButton1)
+                .addGap(25, 25, 25)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnSignIn, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnExit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -248,6 +255,10 @@ public class LoginJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     private void txtPasswordActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txtPasswordActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_txtPasswordActionPerformed
@@ -256,7 +267,7 @@ public class LoginJDialog extends javax.swing.JDialog {
         // TODO add your handling code here:
     }// GEN-LAST:event_chkShowhideActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+    private void jButton1ActionPerformed() {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
     }// GEN-LAST:event_jButton1ActionPerformed
 
@@ -338,13 +349,13 @@ public class LoginJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnExit;
     private javax.swing.JButton btnSignIn;
     private javax.swing.JCheckBox chkShowhide;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JLabel lblPwdIcon;
     private javax.swing.JLabel lblPwdIcon1;
     private javax.swing.JLabel lblUserIcon;
+    private javax.swing.JLabel lbl_title;
     private javax.swing.JPasswordField txtPassword;
     private javax.swing.JTextField txtUser;
     // End of variables declaration//GEN-END:variables
