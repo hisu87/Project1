@@ -63,24 +63,23 @@ public class JMainFrame extends javax.swing.JFrame {
         lbl_user = new javax.swing.JLabel();
         lbl_clock = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menu_system = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        changepass = new javax.swing.JMenuItem();
+        ressetpass = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        logout = new javax.swing.JMenuItem();
+        exit = new javax.swing.JMenuItem();
+        menu_managing = new javax.swing.JMenu();
+        products = new javax.swing.JMenuItem();
+        recipe = new javax.swing.JMenuItem();
+        ingridients = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        invoice = new javax.swing.JMenuItem();
+        employees = new javax.swing.JMenuItem();
+        menu_statitics = new javax.swing.JMenu();
+        revenue = new javax.swing.JMenuItem();
+        menu_about = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -227,72 +226,69 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jMenuBar1.setBackground(new java.awt.Color(30, 57, 50));
 
-        jMenu1.setText("Hệ Thống");
-        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu1.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_system.setText("Hệ Thống");
+        menu_system.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_system.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_system.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_system.add(jSeparator1);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Log out");
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator1);
+        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass.setText("Đổi mật khẩu");
+        menu_system.add(changepass);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Đổi mật khẩu");
-        jMenu1.add(jMenuItem3);
+        ressetpass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ressetpass.setText("Đặt lại mật khẩu");
+        menu_system.add(ressetpass);
+        menu_system.add(jSeparator2);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setText("Đặt lại mật khẩu");
-        jMenu1.add(jMenuItem5);
-        jMenu1.add(jSeparator2);
+        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setText("Đăng Xuất");
+        menu_system.add(logout);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem6.setText("Thoát");
-        jMenu1.add(jMenuItem6);
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setText("Thoát");
+        menu_system.add(exit);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menu_system);
 
-        jMenu2.setText("Quản Lý");
-        jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu2.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_managing.setText("Quản Lý");
+        menu_managing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_managing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_managing.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        jMenuItem1.setText("Sản Phảm");
-        jMenu2.add(jMenuItem1);
+        products.setText("Sản Phảm");
+        menu_managing.add(products);
 
-        jMenuItem2.setText("Công Thức");
-        jMenu2.add(jMenuItem2);
+        recipe.setText("Công Thức");
+        menu_managing.add(recipe);
 
-        jMenuItem7.setText("Nguyên Liệu");
-        jMenu2.add(jMenuItem7);
-        jMenu2.add(jSeparator3);
+        ingridients.setText("Nguyên Liệu");
+        menu_managing.add(ingridients);
+        menu_managing.add(jSeparator3);
 
-        jMenuItem8.setText("Hóa Đơn");
-        jMenu2.add(jMenuItem8);
+        invoice.setText("Hóa Đơn");
+        menu_managing.add(invoice);
 
-        jMenuItem9.setText("Nhân Viên");
-        jMenu2.add(jMenuItem9);
+        employees.setText("Nhân Viên");
+        menu_managing.add(employees);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menu_managing);
 
-        jMenu3.setText("Thống Kê");
-        jMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu3.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_statitics.setText("Thống Kê");
+        menu_statitics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_statitics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_statitics.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        jMenuItem12.setText("Doanh Thu");
-        jMenu3.add(jMenuItem12);
+        revenue.setText("Doanh Thu");
+        menu_statitics.add(revenue);
 
-        jMenuItem10.setText("Nguyên Liệu Đã Dùng");
-        jMenu3.add(jMenuItem10);
+        jMenuBar1.add(menu_statitics);
 
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("...");
-        jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu4.setPreferredSize(new java.awt.Dimension(70, 22));
-        jMenuBar1.add(jMenu4);
+        menu_about.setText("...");
+        menu_about.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_about.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_about.setPreferredSize(new java.awt.Dimension(70, 22));
+        jMenuBar1.add(menu_about);
 
         setJMenuBar(jMenuBar1);
 
@@ -362,22 +358,12 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem changepass;
+    private javax.swing.JMenuItem employees;
+    private javax.swing.JMenuItem exit;
+    private javax.swing.JMenuItem ingridients;
+    private javax.swing.JMenuItem invoice;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
@@ -395,7 +381,16 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_centerlogo;
     private javax.swing.JLabel lbl_clock;
     private javax.swing.JLabel lbl_user;
+    private javax.swing.JMenuItem logout;
+    private javax.swing.JMenu menu_about;
+    private javax.swing.JMenu menu_managing;
+    private javax.swing.JMenu menu_statitics;
+    private javax.swing.JMenu menu_system;
     private javax.swing.JPanel pnl_center;
     private javax.swing.JPanel pnl_statusbar;
+    private javax.swing.JMenuItem products;
+    private javax.swing.JMenuItem recipe;
+    private javax.swing.JMenuItem ressetpass;
+    private javax.swing.JMenuItem revenue;
     // End of variables declaration//GEN-END:variables
 }
