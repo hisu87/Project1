@@ -1,25 +1,3 @@
-<<<<<<< HEAD
-group1\views\AddSP$2$1.class
-group1\views\SanPhamJDialog$2.class
-group1\views\AddSP$2.class
-group1\views\AddSP.class
-group1\views\AddSP$1.class
-group1\views\SanPhamJDialog$2$1.class
-=======
-group1\utils\msgBox.class
-group1\entity\HoaDon.class
-group1\utils\xJDBC.class
-group1\utils\xDate.class
-group1\dao\NguyenLieuDAO.class
-group1\dao\CafeDAO.class
-group1\utils\xImage.class
-group1\views\JMainFrame$1.class
-group1\views\JMainFrame.class
 group1\entity\CongThuc.class
 group1\views\LoginJDialog.class
-group1\entity\NhanVien.class
-group1\utils\Auth.class
-group1\dao\NhanVienDAO.class
 group1\views\LoginJDialog$1.class
-group1\entity\NguyenLieu.class
->>>>>>> main
