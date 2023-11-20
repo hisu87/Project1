@@ -50,11 +50,12 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     private int[] soLanMua;
     List<SanPham> listbest = new ArrayList<>();
     JScrollPane scrollPane;
- JLabel lbltongtien;
+    JLabel lbltongtien;
+
     public SanPhamJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-       
+
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
         SanPham sp1 = new SanPham("SP01", "IPhone", "D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\200.png", 5000000, "Apple");
@@ -144,6 +145,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
 
@@ -321,6 +323,17 @@ public class SanPhamJDialog extends javax.swing.JDialog {
             .addGap(0, 0, Short.MAX_VALUE)
         );
 
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -330,14 +343,21 @@ public class SanPhamJDialog extends javax.swing.JDialog {
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 381, Short.MAX_VALUE))
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(280, 280, 280)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(280, 280, 280)
+                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(450, 450, 450)
+                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(287, 287, 287)
+                .addGap(77, 77, 77)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(110, 110, 110)
                 .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(979, 979, 979)
                 .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -533,22 +553,21 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         // Thêm giá
         JLabel textLabel4 = new JLabel(String.format("%f", gia));
 
-        
-        for (int i = 0; i <= listbest.size(); i++) {
-       
-            btnmua = new JButton("Mua Ngay ");
-          
+        int i;
+        for (i = 0; i < listbest.size(); i++) {
+
+            btnmua = new JButton("Mua Ngay");
         }
-               
-   pn1.add(textLabel1);
+        pn1.add(textLabel1);
         pn1.add(textLabel4);
         pn1.add(btnmua);
         pn1.setBackground(Color.white);
+
         jPanel4.add(panel);
-              btnmua.addActionListener(new ActionListener() {
+        btnmua.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-          index++;
+                index++;
                 // Lấy thông tin sản phẩm khi click vào nút "Mua Ngay"
                 String clickedProductName = TenSP; // Tên sản phẩm
                 double clickedProductPrice = gia; // Giá sản phẩm
@@ -557,21 +576,18 @@ public class SanPhamJDialog extends javax.swing.JDialog {
                 createCart(clickedProductName, clickedProductPrice, clickedProductImage);
                 int clickindex = index;
                 SanPham clickproduct = listbest.get(index);
+               
                 createHoaDon(clickedProductName, clickedProductPrice);
                 System.out.println(clickproduct.getTenSP());
-                   
+
             }
         });
-          
-        
 
-
-        
-      
     }
-    double tongtiengiohang=0.0;
+    double tongtiengiohang = 0.0;
+
     void createCart(String tenSP, double Gia, String anh) {
-tongtiengiohang+=Gia;
+        tongtiengiohang += Gia;
 
         JPanel pnnn = new JPanel();
 
@@ -593,7 +609,7 @@ tongtiengiohang+=Gia;
         pnnn.add(textLabel11);
 
         jPanel3.setLayout(new GridLayout());
-jPanel5.setPreferredSize(new Dimension(400,700));
+        jPanel5.setPreferredSize(new Dimension(400, 700));
         jPanel5.setLayout(new FlowLayout());
         Border emptyBorder1 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
         jPanel5.setBorder(emptyBorder1);
@@ -605,7 +621,7 @@ jPanel5.setPreferredSize(new Dimension(400,700));
     }
 
     void createthanhtoan(String Tensp, double Gia) {
-        
+
         JPanel pnx = new JPanel();
         textar = new TextArea();
         textar.setSize(100, 400);
@@ -615,48 +631,47 @@ jPanel5.setPreferredSize(new Dimension(400,700));
         jPanel7.setBorder(emptyBorder1);
         jPanel7.add(textar);
         JPanel panelthanhtoan = new JPanel();
-        textar.setText( "Tên đơn hàng:" + Tensp + "\n"
+        textar.setText("Tên đơn hàng:" + Tensp + "\n"
                 + "                                            Số lượng: xxx" + "\n"
                 + "                                           Thành tiền: " + Gia
         );
-     
+
         JButton btnthanhtoan = new JButton("Thanh toán");
-        JPanel pnthanhtoan=new JPanel();
-        pnthanhtoan.setLayout(new GridLayout(1,2));
+        JPanel pnthanhtoan = new JPanel();
+        pnthanhtoan.setLayout(new GridLayout(1, 2));
         pnthanhtoan.add(new JLabel("Tổng Tiền: "));
-        lbltongtien=new JLabel();
+        lbltongtien = new JLabel();
         lbltongtien.setBackground(Color.red);
         panelthanhtoan.add(lbltongtien);
-     
+
         panelthanhtoan.add(btnthanhtoan);
-        
+
         panelthanhtoan.add(pnthanhtoan);
         jPanel7.add(panelthanhtoan);
         jPanel3.add(jPanel7);
 
     }
 
- // Khai báo một biến để lưu trữ thông tin sản phẩm đã mua
-StringBuilder hoaDonBuilder = new StringBuilder();
+    // Khai báo một biến để lưu trữ thông tin sản phẩm đã mua
+    StringBuilder hoaDonBuilder = new StringBuilder();
 
-void createHoaDon(String tenSP, double gia) {
-    // Thêm thông tin sản phẩm mới vào hóa đơn
-    String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
-            + "                                            Số lượng: " + index + "      "+"Gia: "+gia+"      "
-            + "        Thành tiền: " + tongtiengiohang + "\n";
+    void createHoaDon(String tenSP, double gia) {
+        // Thêm thông tin sản phẩm mới vào hóa đơn
+        String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
+                + "                                            Số lượng: " + index + "      " + "Gia: " + gia + "      "
+                + "        Thành tiền: " + tongtiengiohang + "\n";
 
-    // Thêm thông tin mới vào StringBuilder
-    hoaDonBuilder.append(newProductInfo);
+        // Thêm thông tin mới vào StringBuilder
+        hoaDonBuilder.append(newProductInfo);
 
-    // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
-    textar.setText("                              Tên Công Ty: ABC Company\n\n                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
+        // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
+        textar.setText("                              Tên Công Ty: ABC Company\n\n                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
 
-}
+    }
 
-public double tinhTongTien(double gia) {
-    return gia ;
-}
-
+    public double tinhTongTien(double gia) {
+        return gia;
+    }
 
     /**
      * @param args the command line arguments
@@ -702,19 +717,12 @@ public double tinhTongTien(double gia) {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
-<<<<<<< HEAD
-=======
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
->>>>>>> main
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
-<<<<<<< HEAD
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
@@ -725,23 +733,6 @@ public double tinhTongTien(double gia) {
     private javax.swing.JLabel jLabel42;
     private javax.swing.JLabel jLabel43;
     private javax.swing.JLabel jLabel44;
-=======
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel27;
-    private javax.swing.JLabel jLabel28;
-    private javax.swing.JLabel jLabel29;
-    private javax.swing.JLabel jLabel30;
-    private javax.swing.JLabel jLabel31;
-    private javax.swing.JLabel jLabel32;
-    private javax.swing.JLabel jLabel33;
-    private javax.swing.JLabel jLabel34;
->>>>>>> main
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
@@ -749,7 +740,10 @@ public double tinhTongTien(double gia) {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
+    private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
