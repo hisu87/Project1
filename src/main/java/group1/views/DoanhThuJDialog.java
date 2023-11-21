@@ -27,32 +27,48 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jInternalFrame1 = new javax.swing.JInternalFrame();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        lbl_title = new javax.swing.JLabel();
         jTabbedPane2 = new javax.swing.JTabbedPane();
         Day = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable2 = new javax.swing.JTable();
+        tbl_day = new javax.swing.JTable();
         Month = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        tbl_month = new javax.swing.JTable();
         Year = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
+        tbl_year = new javax.swing.JTable();
+        lbl_sum = new javax.swing.JLabel();
+        lbl_clock = new javax.swing.JLabel();
+
+        jInternalFrame1.setVisible(true);
+
+        javax.swing.GroupLayout jInternalFrame1Layout = new javax.swing.GroupLayout(jInternalFrame1.getContentPane());
+        jInternalFrame1.getContentPane().setLayout(jInternalFrame1Layout);
+        jInternalFrame1Layout.setHorizontalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jInternalFrame1Layout.setVerticalGroup(
+            jInternalFrame1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBackground(new java.awt.Color(132, 35, 60));
 
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 36)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(235, 202, 188));
-        jLabel1.setText("DOANH THU");
+        lbl_title.setFont(new java.awt.Font("Baskerville Old Face", 0, 36)); // NOI18N
+        lbl_title.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_title.setText("DOANH THU");
 
         jTabbedPane2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        jTabbedPane2.setForeground(new java.awt.Color(242, 240, 235));
 
-        jTable2.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_day.setBackground(new java.awt.Color(0, 98, 65));
+        tbl_day.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -63,7 +79,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 "STT", "Mã HD", "Ngày Tạo", "Tổng Tiền", "Người Tạo"
             }
         ));
-        jScrollPane1.setViewportView(jTable2);
+        jScrollPane1.setViewportView(tbl_day);
 
         javax.swing.GroupLayout DayLayout = new javax.swing.GroupLayout(Day);
         Day.setLayout(DayLayout);
@@ -78,7 +94,9 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Ngày", Day);
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_month.setBackground(new java.awt.Color(0, 98, 65));
+        tbl_month.setForeground(new java.awt.Color(242, 240, 235));
+        tbl_month.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -89,7 +107,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 "STT", "Mã HD", "Ngày Tạo", "Tổng Tiền", "Người Tạo"
             }
         ));
-        jScrollPane4.setViewportView(jTable5);
+        jScrollPane4.setViewportView(tbl_month);
 
         javax.swing.GroupLayout MonthLayout = new javax.swing.GroupLayout(Month);
         Month.setLayout(MonthLayout);
@@ -104,7 +122,9 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Tháng", Month);
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        tbl_year.setBackground(new java.awt.Color(0, 98, 65));
+        tbl_year.setForeground(new java.awt.Color(242, 240, 235));
+        tbl_year.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null},
                 {null, null, null, null, null},
@@ -115,7 +135,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 "STT", "Mã HD", "Ngày Tạo", "Tổng Tiền", "Người Tạo"
             }
         ));
-        jScrollPane5.setViewportView(jTable6);
+        jScrollPane5.setViewportView(tbl_year);
 
         javax.swing.GroupLayout YearLayout = new javax.swing.GroupLayout(Year);
         Year.setLayout(YearLayout);
@@ -130,40 +150,40 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Năm", Year);
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_us_dollar_20px.png"))); // NOI18N
-        jLabel2.setText("Tổng Tiền:");
+        lbl_sum.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_sum.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_us_dollar_20px.png"))); // NOI18N
+        lbl_sum.setText("Tổng Tiền:");
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
+        lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 1007, Short.MAX_VALUE)
+            .addComponent(jTabbedPane2)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel3)
+                .addComponent(lbl_clock)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel2)
+                .addComponent(lbl_sum)
                 .addGap(200, 200, 200))
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(384, 384, 384)
-                .addComponent(jLabel1)
+                .addComponent(lbl_title)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addGap(20, 20, 20)
-                .addComponent(jLabel1)
+                .addComponent(lbl_title)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 631, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel3))
+                    .addComponent(lbl_sum)
+                    .addComponent(lbl_clock))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -227,16 +247,17 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     private javax.swing.JPanel Day;
     private javax.swing.JPanel Month;
     private javax.swing.JPanel Year;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JInternalFrame jInternalFrame1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable2;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
+    private javax.swing.JLabel lbl_clock;
+    private javax.swing.JLabel lbl_sum;
+    private javax.swing.JLabel lbl_title;
+    private javax.swing.JTable tbl_day;
+    private javax.swing.JTable tbl_month;
+    private javax.swing.JTable tbl_year;
     // End of variables declaration//GEN-END:variables
 }
