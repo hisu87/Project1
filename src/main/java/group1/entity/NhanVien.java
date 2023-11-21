@@ -10,18 +10,25 @@ package group1.entity;
  */
 public class NhanVien {
     private String MaNV;
-    private String MaHoTen;
-    private String MaMatKhau;
-    private Boolean Vaitro;
-
-    public NhanVien(String MaNV, String MaHoTen, String MaMatKhau, Boolean Vaitro) {
-        this.MaNV = MaNV;
-        this.MaHoTen = MaHoTen;
-        this.MaMatKhau = MaMatKhau;
-        this.Vaitro = Vaitro;
-    }
+    private String HoTen;
+    private String MatKhau;
+    private boolean Vaitro = false;
+    private int tuoi;
+    private String gioiTinh;
+    private String sdt;
+    private String diaChi;
 
     public NhanVien() {
+    }
+
+    public NhanVien(String MaNV, String HoTen, String MatKhau, int tuoi, String gioiTinh, String sdt, String diaChi) {
+        this.MaNV = MaNV;
+        this.HoTen = HoTen;
+        this.MatKhau = MatKhau;
+        this.tuoi = tuoi;
+        this.gioiTinh = gioiTinh;
+        this.sdt = sdt;
+        this.diaChi = diaChi;
     }
 
     public String getMaNV() {
@@ -32,29 +39,62 @@ public class NhanVien {
         this.MaNV = MaNV;
     }
 
-    public String getMaHoTen() {
-        return MaHoTen;
+    public String getHoTen() {
+        return HoTen;
     }
 
-    public void setMaHoTen(String MaHoTen) {
-        this.MaHoTen = MaHoTen;
+    public void setHoTen(String HoTen) {
+        this.HoTen = HoTen;
     }
 
-    public String getMaMatKhau() {
-        return MaMatKhau;
+    public String getMatKhau() {
+        return MatKhau;
     }
 
-    public void setMaMatKhau(String MaMatKhau) {
-        this.MaMatKhau = MaMatKhau;
+    public void setMatKhau(String MatKhau) {
+        this.MatKhau = MatKhau;
     }
 
-    public Boolean getVaitro() {
+    public boolean isVaitro() {
         return Vaitro;
     }
 
-    public void setVaitro(Boolean Vaitro) {
+    public void setVaitro(boolean Vaitro) {
         this.Vaitro = Vaitro;
     }
+
+    public int getTuoi() {
+        return tuoi;
+    }
+
+    public void setTuoi(int tuoi) {
+        this.tuoi = tuoi;
+    }
+
+    public String getGioiTinh() {
+        return gioiTinh;
+    }
+
+    public void setGioiTinh(String gioiTinh) {
+        this.gioiTinh = gioiTinh;
+    }
+
+    public String getSdt() {
+        return sdt;
+    }
+
+    public void setSdt(String sdt) {
+        this.sdt = sdt;
+    }
+
+    public String getDiaChi() {
+        return diaChi;
+    }
+
+    public void setDiaChi(String diaChi) {
+        this.diaChi = diaChi;
+    }
+
     
     
     
