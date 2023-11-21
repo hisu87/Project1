@@ -9,6 +9,6 @@ package group1.entity;
  * @author numpa
  */
 public class HoaDon {
-    //yujtyhtryutrtyrtrt
+    
     
 }
