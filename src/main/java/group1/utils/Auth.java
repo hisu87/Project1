@@ -4,6 +4,8 @@
  */
 package group1.utils;
 
+import group1.entity.NhanVien;
+
 /**
  *
  * @author numpa
@@ -11,5 +13,17 @@ package group1.utils;
 
 /* Đây là file để xác thực người dùng */
 public class Auth {
+    public static NhanVien user = null;
 
+    public static void clear() {
+        Auth.user = null;
+    }
+
+    public static boolean isLogin() {
+        return Auth.user != null;
+    }
+
+    public static boolean isManager() {
+        return Auth.isLogin() && Auth.user.isVaitro();
+    }
 }
