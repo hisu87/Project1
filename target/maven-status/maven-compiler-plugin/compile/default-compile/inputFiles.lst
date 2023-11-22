@@ -1,3 +1,26 @@
+<<<<<<< HEAD
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\QLNguyenLieuJDialog.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\JMainFrame.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\LoadingJDialog.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\entity\CongThuc.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\entity\HoaDon.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\entity\NguyenLieu.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\entity\NhanVien.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\entity\SanPham.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\dao\SanPhamDao.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\utils\xImage.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\LoginJDialog.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\dao\CafeDAO.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\dao\NguyenLieuDAO.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\QuanLySanPham.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\AddSP.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\views\SanPhamJDialog.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\utils\msgBox.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\dao\NhanVienDAO.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\utils\xJDBC.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\utils\xDate.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\utils\Auth.java
+=======
 H:\FPTPolytechnic\Project1\src\main\java\group1\entity\HoaDon.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\entity\NhanVien.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\utils\msgBox.java
@@ -20,3 +43,4 @@ H:\FPTPolytechnic\Project1\src\main\java\group1\utils\Auth.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\AddSP.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\utils\xDate.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\LoginJDialog.java
+>>>>>>> main
