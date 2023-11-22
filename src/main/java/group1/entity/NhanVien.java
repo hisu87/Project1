@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package group1.entity;
 
 /**
@@ -12,7 +8,7 @@ public class NhanVien {
     private String MaNV;
     private String HoTen;
     private String MatKhau;
-    private boolean Vaitro = false;
+    private String Vaitro ;
     private int tuoi;
     private String gioiTinh;
     private String sdt;
@@ -55,11 +51,11 @@ public class NhanVien {
         this.MatKhau = MatKhau;
     }
 
-    public boolean isVaitro() {
+    public String getVaitro() {
         return Vaitro;
     }
 
-    public void setVaitro(boolean Vaitro) {
+    public void setVaitro(String Vaitro) {
         this.Vaitro = Vaitro;
     }
 

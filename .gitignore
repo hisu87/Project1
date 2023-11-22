@@ -6,3 +6,6 @@ settings.json
 .vscode
 SD18301-Group1-PS33100-PhamVanHieu-DuAn1
 SD18301-Group1-PS33100-PhamVanHieu-DuAn1.rar
+target/classes/group1/dao/NhanVienDAO.class
+target/classes/group1/entity/NhanVien.class
+target/
