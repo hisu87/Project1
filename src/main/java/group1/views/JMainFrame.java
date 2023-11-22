@@ -32,12 +32,9 @@ public class JMainFrame extends javax.swing.JFrame {
         setIconImage(xImage.getAppIcon());
         setTitle("Coffee Shop Management");
         setLocationRelativeTo(null);
-<<<<<<< HEAD
-    
-=======
+
 //        new SanPhamJDialog(this,true).setVisible(true);
->>>>>>> main
-        
+
 
     }
 
