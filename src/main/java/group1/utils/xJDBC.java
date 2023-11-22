@@ -10,10 +10,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author numpa
- */
+
 public class xJDBC {
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
