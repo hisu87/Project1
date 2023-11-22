@@ -10,4 +10,5 @@ package group1.entity;
  */
 public class HoaDon {
     
+    
 }

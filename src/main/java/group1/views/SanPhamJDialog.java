@@ -183,38 +183,12 @@ SanPhamDao dao=new SanPhamDao();
         lblten.setForeground(new java.awt.Color(255, 255, 255));
         lblten.setText("Quang Huy");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
-
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
-
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\mu.png")); // NOI18N
         jLabel16.setText("jLabel16");
 
         jLabel13.setFont(new java.awt.Font("VNI-Bazooka", 1, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\noel.png")); // NOI18N
         jLabel13.setText("Merry Christmas!");
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xekeo.png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xekeo.png")); // NOI18N
-
-        jLabel18.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel34.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel35.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel36.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel41.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel42.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel44.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 102, 0));
         jTabbedPane1.setForeground(new java.awt.Color(0, 102, 102));
@@ -233,13 +207,13 @@ SanPhamDao dao=new SanPhamDao();
         jButton1.setBackground(new java.awt.Color(24, 122, 74));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xmag_search_find_export_locate_5984.png")); // NOI18N
         jButton1.setText("Tìm Kiếm");
 
         jTextField1.setBackground(new java.awt.Color(51, 255, 182));
         jTextField1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jTextField1.setText("Search");
 
+<<<<<<< HEAD
         jLabel43.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
 
         jLabel33.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
@@ -251,6 +225,8 @@ SanPhamDao dao=new SanPhamDao();
             }
         });
 
+=======
+>>>>>>> main
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -516,8 +492,6 @@ SanPhamDao dao=new SanPhamDao();
         jTabbedPane1.addTab("Quản lý sản phẩm", jPanel9);
 
         jScrollPane2.setViewportView(jTabbedPane1);
-
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\gau.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -887,11 +861,14 @@ sp.setVisible(true);
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnAddSP;
     private javax.swing.JButton jButton1;
+<<<<<<< HEAD
     private javax.swing.JButton jButton5;
     private javax.swing.JButton jButton6;
     private javax.swing.JButton jButton7;
     private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel11;
+=======
+>>>>>>> main
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;

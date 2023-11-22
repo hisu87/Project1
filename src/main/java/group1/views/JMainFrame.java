@@ -32,7 +32,11 @@ public class JMainFrame extends javax.swing.JFrame {
         setIconImage(xImage.getAppIcon());
         setTitle("Coffee Shop Management");
         setLocationRelativeTo(null);
+<<<<<<< HEAD
     
+=======
+//        new SanPhamJDialog(this,true).setVisible(true);
+>>>>>>> main
         
 
     }
@@ -51,93 +55,111 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jToolBar = new javax.swing.JToolBar();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
         jToggleButton3 = new javax.swing.JToggleButton();
         jToggleButton4 = new javax.swing.JToggleButton();
         jToggleButton5 = new javax.swing.JToggleButton();
         jToggleButton6 = new javax.swing.JToggleButton();
+        jSeparator5 = new javax.swing.JToolBar.Separator();
         jToggleButton7 = new javax.swing.JToggleButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
+        jToggleButton1 = new javax.swing.JToggleButton();
+        jToggleButton2 = new javax.swing.JToggleButton();
         pnl_center = new javax.swing.JPanel();
         lbl_centerlogo = new javax.swing.JLabel();
         pnl_statusbar = new javax.swing.JPanel();
         lbl_user = new javax.swing.JLabel();
         lbl_clock = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenuItem4 = new javax.swing.JMenuItem();
+        menu_system = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem3 = new javax.swing.JMenuItem();
-        jMenuItem5 = new javax.swing.JMenuItem();
+        changepass = new javax.swing.JMenuItem();
+        ressetpass = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem6 = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
-        jMenuItem7 = new javax.swing.JMenuItem();
+        logout = new javax.swing.JMenuItem();
+        exit = new javax.swing.JMenuItem();
+        menu_managing = new javax.swing.JMenu();
+        products = new javax.swing.JMenuItem();
+        recipe = new javax.swing.JMenuItem();
+        ingridients = new javax.swing.JMenuItem();
         jSeparator3 = new javax.swing.JPopupMenu.Separator();
-        jMenuItem8 = new javax.swing.JMenuItem();
-        jMenuItem9 = new javax.swing.JMenuItem();
-        jMenu3 = new javax.swing.JMenu();
-        jMenuItem12 = new javax.swing.JMenuItem();
-        jMenuItem10 = new javax.swing.JMenuItem();
-        jMenu4 = new javax.swing.JMenu();
+        invoice = new javax.swing.JMenuItem();
+        employees = new javax.swing.JMenuItem();
+        menu_statitics = new javax.swing.JMenu();
+        revenue = new javax.swing.JMenuItem();
+        menu_about = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jToolBar.setBackground(new java.awt.Color(242, 240, 235));
+        jPanel1.setBackground(new java.awt.Color(30, 57, 50));
+
+        jToolBar.setBackground(new java.awt.Color(30, 57, 50));
+        jToolBar.setBorder(null);
         jToolBar.setRollover(true);
 
-        jToggleButton1.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton1.setText("Đăng Xuất");
-        jToggleButton1.setFocusable(false);
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton1);
-
-        jToggleButton2.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton2.setText("Thoát");
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton2);
-
-        jToggleButton3.setBackground(new java.awt.Color(0, 98, 65));
-        jToggleButton3.setText("Tạo Hóa Đon");
+        jToggleButton3.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton3.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton3.setText("Tạo Hóa Đơn");
         jToggleButton3.setFocusable(false);
         jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jToggleButton3ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jToggleButton3);
 
-        jToggleButton4.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton4.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton4.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton4.setText("Nhập Nguyên Liệu");
         jToggleButton4.setFocusable(false);
         jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton4);
 
-        jToggleButton5.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton5.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton5.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton5.setText("Nhập công thức");
         jToggleButton5.setFocusable(false);
         jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton5);
 
-        jToggleButton6.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton6.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton6.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton6.setText("Nhập Sản phẩm");
         jToggleButton6.setFocusable(false);
         jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton6);
+        jToolBar.add(jSeparator5);
 
-        jToggleButton7.setBackground(new java.awt.Color(0, 98, 65));
+        jToggleButton7.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton7.setForeground(new java.awt.Color(242, 240, 235));
         jToggleButton7.setText("Hướng dẫn");
         jToggleButton7.setFocusable(false);
         jToggleButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jToggleButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
         jToolBar.add(jToggleButton7);
+        jToolBar.add(jSeparator4);
 
-        pnl_center.setBackground(new java.awt.Color(242, 240, 235));
+        jToggleButton1.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton1.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton1.setText("Đăng Xuất");
+        jToggleButton1.setFocusable(false);
+        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jToggleButton1);
+
+        jToggleButton2.setBackground(new java.awt.Color(30, 30, 30));
+        jToggleButton2.setForeground(new java.awt.Color(242, 240, 235));
+        jToggleButton2.setText("Thoát");
+        jToggleButton2.setFocusable(false);
+        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jToolBar.add(jToggleButton2);
+
+        pnl_center.setBackground(new java.awt.Color(249, 249, 249));
 
         lbl_centerlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/longlogo.png"))); // NOI18N
 
@@ -158,14 +180,14 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addGap(64, 64, 64))
         );
 
-        pnl_statusbar.setBackground(new java.awt.Color(182, 203, 213));
+        pnl_statusbar.setBackground(new java.awt.Color(30, 57, 50));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_user.setForeground(new java.awt.Color(0, 117, 74));
+        lbl_user.setForeground(new java.awt.Color(242, 240, 235));
         lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_username_25px.png"))); // NOI18N
 
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_clock.setForeground(new java.awt.Color(0, 117, 74));
+        lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
         lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_statusbarLayout = new javax.swing.GroupLayout(pnl_statusbar);
@@ -193,9 +215,11 @@ public class JMainFrame extends javax.swing.JFrame {
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -207,74 +231,71 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jMenuBar1.setBackground(new java.awt.Color(242, 240, 235));
+        jMenuBar1.setBackground(new java.awt.Color(30, 57, 50));
 
-        jMenu1.setText("Hệ Thống");
-        jMenu1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu1.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_system.setText("Hệ Thống");
+        menu_system.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_system.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_system.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_system.add(jSeparator1);
 
-        jMenuItem4.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem4.setText("Log out");
-        jMenu1.add(jMenuItem4);
-        jMenu1.add(jSeparator1);
+        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass.setText("Đổi mật khẩu");
+        menu_system.add(changepass);
 
-        jMenuItem3.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem3.setText("Đổi mật khẩu");
-        jMenu1.add(jMenuItem3);
+        ressetpass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        ressetpass.setText("Đặt lại mật khẩu");
+        menu_system.add(ressetpass);
+        menu_system.add(jSeparator2);
 
-        jMenuItem5.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        jMenuItem5.setText("Đặt lại mật khẩu");
-        jMenu1.add(jMenuItem5);
-        jMenu1.add(jSeparator2);
+        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setText("Đăng Xuất");
+        menu_system.add(logout);
 
-        jMenuItem6.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        jMenuItem6.setText("Thoát");
-        jMenu1.add(jMenuItem6);
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setText("Thoát");
+        menu_system.add(exit);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menu_system);
 
-        jMenu2.setText("Quản Lý");
-        jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu2.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_managing.setText("Quản Lý");
+        menu_managing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_managing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_managing.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        jMenuItem1.setText("Sản Phảm");
-        jMenu2.add(jMenuItem1);
+        products.setText("Sản Phảm");
+        menu_managing.add(products);
 
-        jMenuItem2.setText("Công Thức");
-        jMenu2.add(jMenuItem2);
+        recipe.setText("Công Thức");
+        menu_managing.add(recipe);
 
-        jMenuItem7.setText("Nguyên Liệu");
-        jMenu2.add(jMenuItem7);
-        jMenu2.add(jSeparator3);
+        ingridients.setText("Nguyên Liệu");
+        menu_managing.add(ingridients);
+        menu_managing.add(jSeparator3);
 
-        jMenuItem8.setText("Hóa Đơn");
-        jMenu2.add(jMenuItem8);
+        invoice.setText("Hóa Đơn");
+        menu_managing.add(invoice);
 
-        jMenuItem9.setText("Nhân Viên");
-        jMenu2.add(jMenuItem9);
+        employees.setText("Nhân Viên");
+        menu_managing.add(employees);
 
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(menu_managing);
 
-        jMenu3.setText("Thống Kê");
-        jMenu3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu3.setPreferredSize(new java.awt.Dimension(70, 22));
+        menu_statitics.setText("Thống Kê");
+        menu_statitics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_statitics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_statitics.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        jMenuItem12.setText("Doanh Thu");
-        jMenu3.add(jMenuItem12);
+        revenue.setText("Doanh Thu");
+        menu_statitics.add(revenue);
 
-        jMenuItem10.setText("Nguyên Liệu Đã Dùng");
-        jMenu3.add(jMenuItem10);
+        jMenuBar1.add(menu_statitics);
 
-        jMenuBar1.add(jMenu3);
-
-        jMenu4.setText("...");
-        jMenu4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jMenu4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jMenu4.setPreferredSize(new java.awt.Dimension(70, 22));
-        jMenuBar1.add(jMenu4);
+        menu_about.setText("...");
+        menu_about.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        menu_about.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        menu_about.setPreferredSize(new java.awt.Dimension(70, 22));
+        jMenuBar1.add(menu_about);
 
         setJMenuBar(jMenuBar1);
 
@@ -291,6 +312,10 @@ public class JMainFrame extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jToggleButton3ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -340,26 +365,18 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
-    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenuItem changepass;
+    private javax.swing.JMenuItem employees;
+    private javax.swing.JMenuItem exit;
+    private javax.swing.JMenuItem ingridients;
+    private javax.swing.JMenuItem invoice;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem10;
-    private javax.swing.JMenuItem jMenuItem12;
-    private javax.swing.JMenuItem jMenuItem2;
-    private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JMenuItem jMenuItem6;
-    private javax.swing.JMenuItem jMenuItem7;
-    private javax.swing.JMenuItem jMenuItem8;
-    private javax.swing.JMenuItem jMenuItem9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
+    private javax.swing.JToolBar.Separator jSeparator4;
+    private javax.swing.JToolBar.Separator jSeparator5;
     private javax.swing.JToggleButton jToggleButton1;
     private javax.swing.JToggleButton jToggleButton2;
     private javax.swing.JToggleButton jToggleButton3;
@@ -371,7 +388,16 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JLabel lbl_centerlogo;
     private javax.swing.JLabel lbl_clock;
     private javax.swing.JLabel lbl_user;
+    private javax.swing.JMenuItem logout;
+    private javax.swing.JMenu menu_about;
+    private javax.swing.JMenu menu_managing;
+    private javax.swing.JMenu menu_statitics;
+    private javax.swing.JMenu menu_system;
     private javax.swing.JPanel pnl_center;
     private javax.swing.JPanel pnl_statusbar;
+    private javax.swing.JMenuItem products;
+    private javax.swing.JMenuItem recipe;
+    private javax.swing.JMenuItem ressetpass;
+    private javax.swing.JMenuItem revenue;
     // End of variables declaration//GEN-END:variables
 }
