@@ -855,7 +855,7 @@ sp.setVisible(true);
                 });
                 dialog.setVisible(true);
             }
-        });
+        });//
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
