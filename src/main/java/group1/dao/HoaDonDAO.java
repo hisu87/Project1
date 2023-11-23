@@ -5,14 +5,15 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
+import java.util.List;
 
 /**
  *
  * @author Admin
  */
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
-    
-       public String INSERT_SQL = "INSERT_INTO HoaDon(MaHD, MaNV, MaSP, SoLuong, NgayTao, TrangThai) VALUES(?,?,?,?,?,?)";
+
+    public String INSERT_SQL = "INSERT_INTO HoaDon(MaHD, MaNV, MaSP, SoLuong, NgayTao, TrangThai) VALUES(?,?,?,?,?,?)";
     public String UPDATE_SQL = "UPDATE HoaDon SET MaNV=?, MaSP=?, SoLuong =?, NgayTao=?, TrangThai=? WHERE MaHD";
     public String DELETE_SQL = "DELETE FROM HoaDon WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
