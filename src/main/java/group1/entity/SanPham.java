@@ -5,13 +5,13 @@ public class SanPham {
     private String maSP;
     private String tenSP;
     private String anh;
-    private double gia;
+    private float gia;
     private String maCT;
 
     public SanPham() {
     }//////
 
-    public SanPham(String maSP, String tenSP, String anh, double gia, String maCT) {
+    public SanPham(String maSP, String tenSP, String anh, float gia, String maCT) {
         this.maSP = maSP;
         this.tenSP = tenSP;
         this.anh = anh;
@@ -49,7 +49,7 @@ public class SanPham {
         return gia;
     }
 
-    public void setGia(double gia) {
+    public void setGia(float gia) {
         this.gia = gia;
     }
 

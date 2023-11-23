@@ -11,7 +11,17 @@
             <artifactId>AbsoluteLayout</artifactId>
             <version>RELEASE190</version>
         </dependency>
-        
+     
+    <!-- Các dependencies khác -->
+
+    <!-- Dependency cho SQL Server JDBC -->
+    <dependency>
+        <groupId>com.microsoft.sqlserver</groupId>
+        <artifactId>mssql-jdbc</artifactId>
+        <version>9.4.0.jre11</version> <!-- Hoặc sử dụng phiên bản mới nhất -->
+    </dependency>
+
+
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

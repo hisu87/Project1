@@ -10,15 +10,14 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-/**
- *
- * @author numpa
- */
+
 public class xJDBC {
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-    public static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=QLStarbucks";
+
+    public static String dburl = "jdbc:sqlserver://localhost:1433;databaseName=duan1";
     public static String username = "sa";
-    public static String password = "0807";
+    public static String password = "songlong";
+
 
     static {
         try {
