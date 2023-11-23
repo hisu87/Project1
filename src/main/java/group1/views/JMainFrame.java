@@ -70,7 +70,6 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         changepass = new javax.swing.JMenuItem();
-        ressetpass = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         logout = new javax.swing.JMenuItem();
         exit = new javax.swing.JMenuItem();
@@ -239,10 +238,6 @@ public class JMainFrame extends javax.swing.JFrame {
         changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
         changepass.setText("Đổi mật khẩu");
         menu_system.add(changepass);
-
-        ressetpass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        ressetpass.setText("Đặt lại mật khẩu");
-        menu_system.add(ressetpass);
         menu_system.add(jSeparator2);
 
         logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
@@ -394,7 +389,6 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_statusbar;
     private javax.swing.JMenuItem products;
     private javax.swing.JMenuItem recipe;
-    private javax.swing.JMenuItem ressetpass;
     private javax.swing.JMenuItem revenue;
     // End of variables declaration//GEN-END:variables
 }
