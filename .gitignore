@@ -8,5 +8,9 @@ SD18301-Group1-PS33100-PhamVanHieu-DuAn1
 SD18301-Group1-PS33100-PhamVanHieu-DuAn1.rar
 *.class
 xJDBC.java
-target/
 SD18301-Group1-PS33100-PhamVanHieu-DuAn1.rar
+target/classes/group1/dao/NhanVienDAO.class
+target/classes/group1/entity/NhanVien.class
+target/classes/group1/views/LoginJDialog$9.class
+target/classes/group1/views/QLNguyenLieuJDialog.class
+target/classes/group1/views/LoginJDialog$9$1.class
