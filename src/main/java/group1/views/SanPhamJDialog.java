@@ -593,7 +593,7 @@ tongtiengiohang+=Gia;
         pnnn.add(textLabel11);
 
         jPanel3.setLayout(new GridLayout());
-jPanel5.setPreferredSize(new Dimension(400,700));
+        jPanel5.setPreferredSize(new Dimension(400,700));
         jPanel5.setLayout(new FlowLayout());
         Border emptyBorder1 = BorderFactory.createEmptyBorder(10, 10, 0, 10);
         jPanel5.setBorder(emptyBorder1);
