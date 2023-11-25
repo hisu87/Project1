@@ -4,13 +4,26 @@
  */
 package group1.views;
 
+import javax.swing.table.DefaultTableModel;
+
+import group1.dao.NguyenLieuDAO;
+import group1.entity.NguyenLieu;
+import group1.utils.Auth;
+import group1.utils.msgBox;
 import group1.utils.xImage;
+import java.util.List;
+import java.util.Set;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author numpa
  */
 public class QLNguyenLieuJDialog extends javax.swing.JDialog {
+
+    NguyenLieuDAO dao = new NguyenLieuDAO();
+    int row = -1;
 
     /**
      * Creates new form QLNhanVienJDialog
@@ -19,16 +32,157 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         setTitle("Quản Lý Nguyên Liệu");
+        setLocationRelativeTo(null);
         setIconImage(xImage.getAppIcon());
     }
 
-// Feteares 
+
+    NguyenLieu getForm() {
+        NguyenLieu nl = new NguyenLieu();
+        nl.setMaNL(txt_MaNL.getText());
+        nl.setTenNL(txt_TenNL.getText());
+        nl.setSoLuongCon(Float.parseFloat(txt_SoLuong.getText()));
+        nl.setGiaNL(Float.parseFloat(txt_Gia.getText()));
+        nl.setDonViDoLuong(txt_DonVi.getText());
+
+        return nl;
+    }
+
+    void insert() {
+        // TODO
+        NguyenLieu nl = getForm();
+        try {
+            dao.insert(nl);
+            this.fillTable();
+            clearForm();
+            msgBox.alert(this, "Thêm mới thành công!");
+        } catch (Exception e) {
+            msgBox.alert(this, "Thêm mới thất bại!");
+        }
+    }
+
+    void update() {
+        //
+        NguyenLieu nl = getForm();
+        try {
+            dao.update(nl);
+            this.fillTable();
+            msgBox.alert(this, "Cập nhật thành công!");
+        } catch (Exception e) {
+            msgBox.alert(this, "Cập nhật thất bại!");
+        }
+    }
+
+    void delete() {
+        // TODO
+        if (!Auth.isManager()) {
+            msgBox.alert(this, "Bạn không có quyền xóa nguyên liệu!");
+        } else {
+            String manl = txt_MaNL.getText();
+            if (msgBox.confirm(this, "Bạn thực sự muốn xóa nguyên liệu này?")) {
+                try {
+                    dao.delete(manl);
+                    this.fillTable();
+                    this.clearForm();
+                    msgBox.alert(this, "Xóa thành công!");
+                } catch (Exception e) {
+                    msgBox.alert(this, "Xóa thất bại!");
+                }
+            }
+        }
+    }
+
+    // ...
+
+    void fillTable() {
+        DefaultTableModel model = (DefaultTableModel) tbl_nguyenlieu.getModel();
+        model.setRowCount(0);
+        try {
+            List<NguyenLieu> list = dao.selectAll(); // Assuming dao.getAll() returns a list of NguyenLieu objects
+            for (NguyenLieu nl : list) {
+                Object[] rows = { nl.getMaNL(), nl.getTenNL(), nl.getSoLuongCon(),
+                        nl.getDonViDoLuong(), nl.getGiaNL() };
+                model.addRow(rows);
+            }
+        } catch (Exception e) {
+            Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(Level.SEVERE, null, e);
+            msgBox.alert(this, "Lỗi truy vấn dữ liệu!");
+        }
+    }
+
+    void setForm() {
+        // TODO
+        txt_MaNL.setText((String) tbl_nguyenlieu.getValueAt(row, 0));
+        txt_TenNL.setText((String) tbl_nguyenlieu.getValueAt(row, 1));
+        txt_SoLuong.setText(String.valueOf(tbl_nguyenlieu.getValueAt(row, 2)));
+        txt_Gia.setText(String.valueOf(tbl_nguyenlieu.getValueAt(row, 4)));
+        txt_DonVi.setText((String) tbl_nguyenlieu.getValueAt(row, 3));
+    }
+
+    void clearForm() {
+        // TODO
+        txt_MaNL.setText("");
+        txt_TenNL.setText("");
+        txt_SoLuong.setText("");
+        txt_Gia.setText("");
+        txt_DonVi.setText("");
+    }
+
+    void edit() {
+        // TODO
+        String manl = (String) tbl_nguyenlieu.getValueAt(this.row, 0);
+        NguyenLieu nl = dao.selectById(manl);
+        this.setForm();
+        this.updateStatus();
+    }
+
+    void updateStatus() {
+        // TODO
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tbl_nguyenlieu.getRowCount() - 1);
+        // Trạng thái form
+        txt_MaNL.setEditable(!edit);
+        btnAdd.setEnabled(!edit);
+        btnEdit.setEnabled(edit);
+        btnDelete.setEnabled(edit);
+        // Trạng thái điều hướng
+        btnFirst.setEnabled(edit && !first);
+        btnPrev.setEnabled(edit && !first);
+        btnNext.setEnabled(edit && !last);
+        btnLast.setEnabled(edit && !last);
+    }
+
+    void search() {
+        // TODO
+    }
+
+    void first() {
+        // TODO
+    }
+
+    void prev() {
+        // TODO
+    }
+
+    void next() {
+        // TODO
+    }
+
+    void last() {
+        // TODO
+    }
+
+    // Feteares
+>>>>>>> d5b56281028394ae61682b5605ddaf4677555cbe
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
      */
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -68,7 +222,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         lbl_title.setToolTipText("Merry Christmas");
 
         tbl_nguyenlieu.setAutoCreateRowSorter(true);
-        tbl_nguyenlieu.setBackground(new java.awt.Color(0, 98, 65));
+        tbl_nguyenlieu.setBackground(new java.awt.Color(0, 117, 74));
         tbl_nguyenlieu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_nguyenlieu.setForeground(new java.awt.Color(235, 202, 188));
         tbl_nguyenlieu.setModel(new javax.swing.table.DefaultTableModel(
@@ -83,6 +237,11 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
             }
         ));
         tbl_nguyenlieu.setToolTipText("Merry Christmas");
+        tbl_nguyenlieu.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tbl_nguyenlieuMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(tbl_nguyenlieu);
         if (tbl_nguyenlieu.getColumnModel().getColumnCount() > 0) {
             tbl_nguyenlieu.getColumnModel().getColumn(0).setPreferredWidth(35);
@@ -187,7 +346,9 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnNew.setBackground(new java.awt.Color(30, 57, 50));
         btnNew.setForeground(new java.awt.Color(235, 202, 188));
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-delete-20.png"))); // NOI18N
         btnNew.setText("New");
+        btnNew.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -196,7 +357,9 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnDelete.setBackground(new java.awt.Color(30, 57, 50));
         btnDelete.setForeground(new java.awt.Color(235, 202, 188));
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-delete-20.png"))); // NOI18N
         btnDelete.setText("Delete");
+        btnDelete.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -205,7 +368,9 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnEdit.setBackground(new java.awt.Color(30, 57, 50));
         btnEdit.setForeground(new java.awt.Color(235, 202, 188));
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-edit-20.png"))); // NOI18N
         btnEdit.setText("Edit");
+        btnEdit.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
@@ -214,7 +379,9 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnAdd.setBackground(new java.awt.Color(30, 57, 50));
         btnAdd.setForeground(new java.awt.Color(235, 202, 188));
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
         btnAdd.setText("Add");
+        btnAdd.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -234,54 +401,53 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                         .addContainerGap())
                     .addGroup(pnlMainPanelLayout.createSequentialGroup()
                         .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(lbl_MaNL)
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainPanelLayout.createSequentialGroup()
-                                    .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(lbl_SoLuong)
-                                        .addComponent(lbl_Gia)
-                                        .addComponent(txt_SoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGap(209, 209, 209))
-                                .addComponent(txt_MaNL, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGroup(pnlMainPanelLayout.createSequentialGroup()
-                                    .addComponent(txt_Gia)
-                                    .addGap(93, 93, 93)))
                             .addGroup(pnlMainPanelLayout.createSequentialGroup()
                                 .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(lbl_MaNL)
+                                    .addComponent(txt_MaNL, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(txt_DonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(lbl_TenNL)
                                     .addComponent(txt_TenNL, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(lbl_DonVi))
-                                .addGap(40, 40, 40)))
+                                    .addComponent(lbl_DonVi)
+                                    .addComponent(lbl_SoLuong)
+                                    .addComponent(txt_SoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 128, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(lbl_Gia))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainPanelLayout.createSequentialGroup()
+                                .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addGroup(pnlMainPanelLayout.createSequentialGroup()
+                                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnlMainPanelLayout.createSequentialGroup()
+                                                .addComponent(btnAdd)
+                                                .addGap(37, 37, 37))
+                                            .addGroup(pnlMainPanelLayout.createSequentialGroup()
+                                                .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(42, 42, 42)))
+                                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnEdit))
+                                        .addGap(51, 51, 51)
+                                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(btnDelete))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(btnNew, javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(btnLast, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txt_Gia))
+                                .addGap(93, 93, 93)))
                         .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(pnlMainPanelLayout.createSequentialGroup()
                                 .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(btn_search)
-                                .addGap(0, 208, Short.MAX_VALUE))
-                            .addComponent(jScrollPane1)))
-                    .addGroup(pnlMainPanelLayout.createSequentialGroup()
-                        .addComponent(btnAdd)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(14, 14, 14)
-                        .addComponent(btnDelete)
-                        .addGap(18, 18, 18)
-                        .addComponent(btnNew)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(4, 4, 4)
-                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(193, 193, 193))))
+                                .addGap(0, 32, Short.MAX_VALUE))
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))))
         );
         pnlMainPanelLayout.setVerticalGroup(
             pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(pnlMainPanelLayout.createSequentialGroup()
-                .addComponent(lbl_title, javax.swing.GroupLayout.DEFAULT_SIZE, 61, Short.MAX_VALUE)
+                .addComponent(lbl_title, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -292,36 +458,36 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                         .addComponent(lbl_MaNL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_MaNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lbl_TenNL)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_TenNL, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(18, 18, 18)
                         .addComponent(lbl_SoLuong)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_SoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(18, 18, 18)
                         .addComponent(lbl_DonVi)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txt_DonVi, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(45, 45, 45)
+                        .addGap(18, 18, 18)
                         .addComponent(lbl_Gia)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txt_Gia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 496, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnAdd)
-                        .addComponent(btnEdit)
-                        .addComponent(btnDelete)
-                        .addComponent(btnNew))
-                    .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(39, 39, 39))
+                        .addComponent(txt_Gia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnAdd)
+                            .addComponent(btnEdit)
+                            .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNew))
+                        .addGap(16, 16, 16)
+                        .addGroup(pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(btnLast, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnFirst, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnPrev, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnNext, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 442, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(14, 14, 14))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -338,9 +504,59 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_searchActionPerformed
+    private void tbl_nguyenlieuMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_tbl_nguyenlieuMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_btn_searchActionPerformed
+        if (evt.getClickCount() == 2) {
+            this.row = tbl_nguyenlieu.getSelectedRow();
+            if (this.row >= 0) {
+                this.edit();
+            }
+        }
+    }// GEN-LAST:event_tbl_nguyenlieuMouseClicked
+
+    private void btn_searchActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_searchActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_btn_searchActionPerformed
+
+    private void txt_MaNLActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txt_MaNLActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_txt_MaNLActionPerformed
+
+    private void txt_SoLuongActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_txt_SoLuongActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_txt_SoLuongActionPerformed
+
+    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLastActionPerformed
+        // last();
+    }// GEN-LAST:event_btnLastActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNextActionPerformed
+        // next();
+    }// GEN-LAST:event_btnNextActionPerformed
+
+    private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrevActionPerformed
+        // prev();
+    }// GEN-LAST:event_btnPrevActionPerformed
+
+    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFirstActionPerformed
+        // first();
+    }// GEN-LAST:event_btnFirstActionPerformed
+
+    private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNewActionPerformed
+        // clearForm();
+    }// GEN-LAST:event_btnNewActionPerformed
+
+    private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed
+        // delete();
+    }// GEN-LAST:event_btnDeleteActionPerformed
+
+    private void btnEditActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnEditActionPerformed
+        // update();
+    }// GEN-LAST:event_btnEditActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnAddActionPerformed
+        // insert();
+    }// GEN-LAST:event_btnAddActionPerformed
 
     private void txt_MaNLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txt_MaNLActionPerformed
         // TODO add your handling code here:
@@ -387,9 +603,13 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -399,16 +619,20 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {

@@ -46,7 +46,6 @@ CREATE TABLE [Nhân Viên] (
   [GioiTinh] varchar(15),
   [SDT] int,
   [DiaChi] nvarchar(50),
-  [anh] nvarchar(50)
 );
 
 go
@@ -72,7 +71,7 @@ go
 
 insert into [Nguyên Liệu]
 values 
-('Wsugar','Đường Trắng',100,25000,'KG'),
+('Wsugar','Đường Trắngb',100,25000,'KG'),
 ('SiroDD','Siro đường đen Eurodeli can 2.5 kg',10,275000,'CAN'),
 ('RobustaMR','Robusta Medium Roast',200,85000,'KG'),
 ('HongTra','Hồng Trà Thượng Hạng',100,117000,'KG'),

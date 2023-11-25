@@ -56,30 +56,51 @@
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="lbl_MaNL" min="-2" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="1" attributes="0">
-                                      <Group type="103" groupAlignment="0" attributes="0">
-                                          <Component id="lbl_SoLuong" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="lbl_Gia" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="txt_SoLuong" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
-                                      </Group>
-                                      <EmptySpace min="-2" pref="209" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Component id="txt_MaNL" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="txt_Gia" max="32767" attributes="0"/>
-                                      <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
                               <Group type="102" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
+                                      <Component id="lbl_MaNL" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_MaNL" alignment="0" min="-2" pref="163" max="-2" attributes="0"/>
                                       <Component id="txt_DonVi" min="-2" pref="147" max="-2" attributes="0"/>
                                       <Component id="lbl_TenNL" alignment="0" min="-2" max="-2" attributes="0"/>
                                       <Component id="txt_TenNL" alignment="0" min="-2" pref="297" max="-2" attributes="0"/>
                                       <Component id="lbl_DonVi" min="-2" max="-2" attributes="0"/>
+                                      <Component id="lbl_SoLuong" alignment="0" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txt_SoLuong" alignment="0" min="-2" pref="128" max="-2" attributes="0"/>
+                                      <Component id="lbl_Gia" min="-2" max="-2" attributes="0"/>
                                   </Group>
-                                  <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="1" attributes="0">
+                                  <Group type="103" groupAlignment="1" attributes="0">
+                                      <Group type="102" attributes="0">
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Group type="102" alignment="1" attributes="0">
+                                                  <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="btnFirst" min="-2" pref="47" max="-2" attributes="0"/>
+                                                  <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                                              </Group>
+                                          </Group>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="btnPrev" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="btnEdit" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
+                                          <Group type="103" groupAlignment="1" attributes="0">
+                                              <Component id="btnNext" min="-2" pref="47" max="-2" attributes="0"/>
+                                              <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
+                                          </Group>
+                                          <EmptySpace pref="29" max="32767" attributes="0"/>
+                                          <Group type="103" groupAlignment="0" attributes="0">
+                                              <Component id="btnNew" alignment="1" min="-2" max="-2" attributes="0"/>
+                                              <Component id="btnLast" alignment="1" min="-2" pref="47" max="-2" attributes="0"/>
+                                          </Group>
+                                      </Group>
+                                      <Component id="txt_Gia" max="32767" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace min="-2" pref="93" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -87,28 +108,10 @@
                                   <Component id="txt_search" min="-2" pref="370" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="btn_search" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="0" pref="208" max="32767" attributes="0"/>
+                                  <EmptySpace min="0" pref="32" max="32767" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
                           </Group>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="btnAdd" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnEdit" min="-2" pref="60" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
-                          <Component id="btnDelete" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="btnNew" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="btnFirst" min="-2" pref="47" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnPrev" min="-2" pref="47" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="btnNext" min="-2" pref="47" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
-                          <Component id="btnLast" min="-2" pref="47" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="193" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -117,7 +120,7 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="lbl_title" pref="61" max="32767" attributes="0"/>
+                  <Component id="lbl_title" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="txt_search" alignment="3" min="-2" pref="35" max="-2" attributes="0"/>
@@ -129,41 +132,40 @@
                           <Component id="lbl_MaNL" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_MaNL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="lbl_TenNL" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_TenNL" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lbl_SoLuong" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_SoLuong" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lbl_DonVi" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_DonVi" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="lbl_Gia" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="txt_Gia" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnDelete" alignment="3" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="btnNew" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="16" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="btnLast" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnFirst" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnPrev" min="-2" pref="22" max="-2" attributes="0"/>
+                              <Component id="btnNext" min="-2" pref="22" max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <Component id="jScrollPane1" min="-2" pref="496" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="442" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" attributes="0">
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnAdd" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnEdit" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnDelete" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="btnNew" alignment="3" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btnLast" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="btnPrev" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="btnNext" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                          <Component id="btnFirst" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="39" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -192,7 +194,7 @@
               <Properties>
                 <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="41" green="62" red="0" type="rgb"/>
+                  <Color blue="4a" green="75" red="0" type="rgb"/>
                 </Property>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Segoe UI" size="14" style="0"/>
@@ -268,6 +270,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tbl_nguyenlieuMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -466,7 +471,15 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bc" green="ca" red="eb" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/group1/images/icons8-delete-20.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="New"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnNewActionPerformed"/>
@@ -480,7 +493,15 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bc" green="ca" red="eb" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/group1/images/icons8-delete-20.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Delete"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnDeleteActionPerformed"/>
@@ -494,7 +515,15 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bc" green="ca" red="eb" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/group1/images/icons8-edit-20.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Edit"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnEditActionPerformed"/>
@@ -508,7 +537,15 @@
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="bc" green="ca" red="eb" type="rgb"/>
             </Property>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+            </Property>
             <Property name="text" type="java.lang.String" value="Add"/>
+            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
+              <Border info="org.netbeans.modules.form.compat2.border.SoftBevelBorderInfo">
+                <BevelBorder/>
+              </Border>
+            </Property>
           </Properties>
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddActionPerformed"/>
