@@ -11,6 +11,14 @@ import java.util.Date;
  * @author Admin
  */
 public class HoaDon {
+
+    public static void setMaHoaDon(String hD001) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public static void setTongTien(int i) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private String MaHD;
     private String MaNV;
     private String MaSP;
@@ -18,7 +26,6 @@ public class HoaDon {
     private Date NgayTao;
     private boolean TrangThai;
     
-
     public HoaDon() {
     }
 

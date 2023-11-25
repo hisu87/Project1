@@ -5,7 +5,6 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
-import group1.entity.NguyenLieu;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -71,8 +70,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getDouble("SoLuong"));
-                entity.setNgayTao(rs.getString("NgayTao"));
+                entity.setSoLuong(rs.getDouble("SoLuong"));                
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
