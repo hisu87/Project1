@@ -761,27 +761,16 @@ public class SanPhamJDialog extends javax.swing.JDialog {
 
     void createHoaDon(String tenSP, double gia) {
         // Thêm thông tin sản phẩm mới vào hóa đơn
-                String newProductInfoo = "--------------------------------------------------------"+
-                        "Tên đơn hàng: " + tenSP + "\n"
-                + "                                            Số lượng: " + index + "      " + "Gia: " + gia + "      "
-                + "        Thành tiền: " + tongtiengiohang + "\n";
         String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
                 + "                                            Số lượng: " + index + "      " + "Gia: " + gia + "      "
-                + "        Thành tiền: " + tongtiengiohang + "\n"
-                +"--------------------------------------------------------"
-                ;
+                + "        Thành tiền: " + tongtiengiohang + "\n";
 
         // Thêm thông tin mới vào StringBuilder
-        hoaDonBuilder.append(newProductInfoo);
+        hoaDonBuilder.append(newProductInfo);
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
-        textar.setText("                                                   MANAGER STARTBUCK\n\n                                   "
-                +      "                                                               HÓA ĐƠN TẠM TÍNH\n"
-                +"         Mã Hóa đơn \n"
-                +"         Ngày:\n"
-                +"         Giờ:\n"
-                +"         Thu Ngân:\n"
-                + hoaDonBuilder.toString());
+        textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
+                +      "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
 
     }
     void thanhtoan(String textar){
