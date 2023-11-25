@@ -81,6 +81,9 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Nguy&#xea;n Li&#x1ec7;u"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseEntered" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="ingridientsMouseEntered"/>
+              </Events>
             </MenuItem>
             <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator3">
             </MenuItem>
