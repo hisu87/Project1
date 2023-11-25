@@ -251,8 +251,6 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
-<<<<<<< Updated upstream
-=======
 <<<<<<< HEAD
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
@@ -264,7 +262,6 @@
               </Events>
 =======
 >>>>>>> main
->>>>>>> Stashed changes
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
             </Component>
@@ -481,17 +478,6 @@
                                     <Component class="javax.swing.JLabel" name="jLabel43">
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="jLabel33">
-<<<<<<< Updated upstream
-                                    </Component>
-                                    <Component class="javax.swing.JButton" name="btnAddSP">
-                                      <Properties>
-                                        <Property name="text" type="java.lang.String" value="jButton2"/>
-                                      </Properties>
-                                      <Events>
-                                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnAddSPActionPerformed"/>
-                                      </Events>
-=======
->>>>>>> Stashed changes
                                     </Component>
                                   </SubComponents>
                                 </Container>
