@@ -8,10 +8,14 @@ public class NhanVien {
     private String MaNV;
     private String HoTen;
     private String MatKhau;
-    private String Vaitro ;
+    private boolean Vaitro ;
     private int tuoi;
     private String gioiTinh;
     private String sdt;
+
+    public boolean isVaitro() {
+        return Vaitro;
+    }
     private String diaChi;
 
     public NhanVien() {
@@ -51,11 +55,11 @@ public class NhanVien {
         this.MatKhau = MatKhau;
     }
 
-    public String getVaitro() {
+    public boolean getVaitro() {
         return Vaitro;
     }
 
-    public void setVaitro(String Vaitro) {
+    public void setVaitro(boolean Vaitro) {
         this.Vaitro = Vaitro;
     }
 
