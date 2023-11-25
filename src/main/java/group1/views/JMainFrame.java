@@ -267,6 +267,11 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_managing.add(recipe);
 
         ingridients.setText("Nguyên Liệu");
+        ingridients.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ingridientsMouseEntered(evt);
+            }
+        });
         menu_managing.add(ingridients);
         menu_managing.add(jSeparator3);
 
@@ -313,6 +318,10 @@ public class JMainFrame extends javax.swing.JFrame {
     private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void ingridientsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingridientsMouseEntered
+      ingridients.setVisible(false);
+    }//GEN-LAST:event_ingridientsMouseEntered
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:

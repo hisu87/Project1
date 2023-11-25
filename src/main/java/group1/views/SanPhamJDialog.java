@@ -73,9 +73,7 @@ SanPhamDao dao=new SanPhamDao();
    settime();
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
-       
-  
-
+      
         System.out.println(listbest);
 
         fillSanPham();
