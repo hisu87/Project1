@@ -18,30 +18,27 @@ import java.util.List;
  */
 public class NguyenLieuDAO extends CafeDAO<NguyenLieu, String> {
 
-    public String INSERT_SQL = "INSERT INTO NguyenLieu(MaNL, TenNL, SoLuong, DonViTinh, DonGia) VALUES(?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE NguyenLieu SET TenNL=?, SoLuong=?, DonViTinh=?, DonGia=? WHERE MaNL=?";
-    public String DELETE_SQL = "DELETE FROM NguyenLieu WHERE MaNV=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM NguyenLieu";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM NguyenLieu WHERE MaNL=?";
+    public String INSERT_SQL = "INSERT INTO [Nguyên Liệu](MaNL, TenNL, SoLuongCon, GiaNL, DonViDoLuong) VALUES(?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE [Nguyên Liệu] SET TenNL=?, SoLuongCon=? , GiaNL=?, DonViDoLuong=? WHERE MaNL=?";
+    public String DELETE_SQL = "DELETE FROM [Nguyên Liệu] WHERE MaNL=?";
+    public String SELECT_ALL_SQL = "SELECT * FROM [Nguyên Liệu]";
+    public String SELECT_BY_ID_SQL = "SELECT * FROM [Nguyên Liệu] WHERE MaNL=?";
+
+    public List<NguyenLieu> selectByKeyword(String keyword) {
+        String sql = "SELECT * FROM [Nguyên Liệu] WHERE TenNL LIKE ?";
+        return this.selectBySQL(sql, "%" + keyword + "%");
+    }
 
     @Override
     public void insert(NguyenLieu entity) {
-        xJDBC.executeUpdate(INSERT_SQL,
-                entity.getMaNL(),
-                entity.getTenNL(),
-                entity.getSoLuong(),
-                entity.getDonViTinh(),
-                entity.getDonGia());
+        xJDBC.executeUpdate(INSERT_SQL, entity.getMaNL(), entity.getTenNL(), entity.getSoLuongCon(), entity.getGiaNL(),
+                entity.getDonViDoLuong());
     }
 
     @Override
     public void update(NguyenLieu entity) {
-        xJDBC.executeUpdate(UPDATE_SQL,
-                entity.getTenNL(),
-                entity.getSoLuong(),
-                entity.getDonViTinh(),
-                entity.getDonGia(),
-                entity.getMaNL());
+        xJDBC.executeUpdate(UPDATE_SQL, entity.getTenNL(), entity.getSoLuongCon(), entity.getGiaNL(),
+                entity.getDonViDoLuong(), entity.getMaNL());
     }
 
     @Override
@@ -51,7 +48,7 @@ public class NguyenLieuDAO extends CafeDAO<NguyenLieu, String> {
 
     @Override
     public NguyenLieu selectById(String id) {
-        List<NguyenLieu> list = selectBySQL(SELECT_BY_ID_SQL, id);
+        List<NguyenLieu> list = this.selectBySQL(SELECT_BY_ID_SQL, id);
         if (list.isEmpty()) {
             return null;
         }
@@ -72,14 +69,15 @@ public class NguyenLieuDAO extends CafeDAO<NguyenLieu, String> {
                 NguyenLieu entity = new NguyenLieu();
                 entity.setMaNL(rs.getString("MaNL"));
                 entity.setTenNL(rs.getString("TenNL"));
-                entity.setSoLuong(rs.getDouble("SoLuong"));
-                entity.setDonViTinh(rs.getString("DonViTinh"));
-                entity.setDonGia(rs.getDouble("DonGia"));
+                entity.setSoLuongCon(rs.getFloat("SoLuongCon"));
+                entity.setGiaNL(rs.getFloat("GiaNL"));
+                entity.setDonViDoLuong(rs.getString("DonViDoLuong"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
             return list;
-        } catch (SQLException e) {
+        } catch (Exception e) {
+            // TODO: handle exception
             throw new RuntimeException(e);
         }
     }
