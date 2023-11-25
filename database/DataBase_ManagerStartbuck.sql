@@ -82,6 +82,7 @@ CREATE TABLE HD_SP (
 );
 
 
+<<<<<<< HEAD
 CREATE TABLE [Nguyên Liệu] (
   [MaNL] nvarchar(15) PRIMARY KEY,
   [TenNL] nvarchar(50),
@@ -97,6 +98,7 @@ VALUES ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
 -- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
 INSERT INTO [Nguyên Liệu] ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
 VALUES ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+=======
 go
 
 INSERT INTO [Nguyên Liệu]
