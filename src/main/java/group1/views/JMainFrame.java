@@ -81,8 +81,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
     
     void openProducts() {
-        SanPhamJDialog sp=new SanP
-        new SanPhamJDialog(null, true).setVisible(true);
+     
     }
 
     void openRecipe() {
