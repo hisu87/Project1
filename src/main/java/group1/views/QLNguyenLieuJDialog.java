@@ -11,6 +11,8 @@ import group1.entity.NguyenLieu;
 import group1.utils.Auth;
 import group1.utils.msgBox;
 import group1.utils.xImage;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
@@ -34,6 +36,28 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         setTitle("Quản Lý Nguyên Liệu");
         setLocationRelativeTo(null);
         setIconImage(xImage.getAppIcon());
+        startClock();
+        displayUserInfo();
+    }
+    
+    void startClock() {
+        class TimeClock extends Thread {
+
+            @Override
+            public void run() {
+                while (true) {
+                    lbl_clock.setText(new SimpleDateFormat("hh:mm:ss a").format(Calendar.getInstance().getTime()));
+                }
+            }
+        }
+        TimeClock timeClock = new TimeClock();
+        timeClock.start();
+    }
+
+    void displayUserInfo() {
+        String userID = Auth.user.getMaNV();
+        String role = Auth.user.getVaitro();
+        lbl_user.setText("UserID: " + userID + " |  Role: " + role);
     }
 
     NguyenLieu getForm() {
