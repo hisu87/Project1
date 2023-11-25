@@ -94,24 +94,24 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel4.setBackground(new java.awt.Color(133, 35, 60));
+        jPanel4.setBackground(new java.awt.Color(174, 22, 67));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 186, 27));
+        jLabel2.setForeground(new java.awt.Color(242, 240, 235));
         jLabel2.setText("Quản Lý Nhân Viên");
 
-        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel10.setForeground(new java.awt.Color(242, 240, 235));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
         jLabel10.setText("00:00:00 SA");
 
         jTabbedPane1.setBackground(new java.awt.Color(133, 35, 60));
 
-        jPanel3.setBackground(new java.awt.Color(129, 34, 58));
+        jPanel3.setBackground(new java.awt.Color(174, 22, 67));
 
         tbl_nhanvien.setAutoCreateRowSorter(true);
         tbl_nhanvien.setBackground(new java.awt.Color(0, 98, 65));
         tbl_nhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tbl_nhanvien.setForeground(new java.awt.Color(235, 202, 188));
+        tbl_nhanvien.setForeground(new java.awt.Color(242, 240, 235));
         tbl_nhanvien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"NV01", "Trần Dần", "112", "dantm@gmail.com", "Nam", "Nhân Viên", "22/1/11997"},
@@ -146,6 +146,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
 
         btn_last.setText("Last");
 
+        btn_delete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-delete-20.png"))); // NOI18N
         btn_delete.setText("Delete");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -167,7 +168,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                 .addComponent(btn_previous)
                 .addGap(18, 18, 18)
                 .addComponent(btn_last)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 316, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 280, Short.MAX_VALUE)
                 .addComponent(btn_delete)
                 .addGap(63, 63, 63))
             .addComponent(jScrollPane1)
@@ -180,7 +181,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                     .addComponent(btn_search, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 362, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
                 .addGap(18, 18, 18)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_first)
@@ -270,9 +271,8 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                         .addGap(84, 84, 84)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(txtNgaysinh, javax.swing.GroupLayout.PREFERRED_SIZE, 97, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 69, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(txtGioitinh)
                                 .addGap(11, 11, 11))))
