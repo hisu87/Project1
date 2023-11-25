@@ -60,6 +60,7 @@ CREATE TABLE [Nhân Viên] (
   [GioiTinh] varchar(15),
   [SDT] int,
   [DiaChi] nvarchar(50),
+  [Anh] nvarchar(50)
 );
 
 go
@@ -224,11 +225,11 @@ go
 
 insert into [Nhân Viên]
 values
-('Hisu','0807','Quản Lý','Phạm Văn Hiếu','19','Nam','0999999999','TPHCM'),
-('SonSoi','0807','Quản Lý','Ngô Vũ Sơn','19','Nam','0999999999','TPHCM'),
-('HuyLight','0807','Nhân Viên','Quang Huy','19','Nam','0999999999','TPHCM'),
-('Poem','0807','Nhân Viên','Minh Thơ','19','Nam','0999999999','TPHCM'),
-('Hung','0807','Nhân Viên','Sĩ Hùng','19','Nam','0999999999','TPHCM');
+('Hisu','0807','Quản Lý','Phạm Văn Hiếu','19','Nam','0999999999','TPHCM','x'),
+('SonSoi','0807','Quản Lý','Ngô Vũ Sơn','19','Nam','0999999999','TPHCM','x'),
+('HuyLight','0807','Nhân Viên','Quang Huy','19','Nam','0999999999','TPHCM','x'),
+('Poem','0807','Nhân Viên','Minh Thơ','19','Nam','0999999999','TPHCM','x'),
+('Hung','0807','Nhân Viên','Sĩ Hùng','19','Nam','0999999999','TPHCM','x');
 
 go
 
