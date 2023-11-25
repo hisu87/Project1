@@ -20,6 +20,8 @@ CREATE TABLE [Công thức] (
 
 go
 
+
+
 CREATE TABLE CT_NL (
   MaCT nvarchar(50) FOREIGN KEY REFERENCES [Công Thức](MaCT),
   MaNL nvarchar(50) FOREIGN KEY REFERENCES [Nguyên Liệu](MaNL),
@@ -28,6 +30,18 @@ CREATE TABLE CT_NL (
 )
 
 go
+
+select * from CT_NL
+select * from [Nguyên Liệu]
+select * from [Công thức]
+
+SELECT  CT_NL.MaCT, [Công thức].TenCongThuc, CT_NL.MaNL, [Nguyên Liệu].TenNL, CT_NL.SoLuong, CT_NL.DonViDoLuong
+FROM CT_NL
+JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT
+JOIN [Nguyên Liệu]ON CT_NL.MaNL =[Nguyên Liệu].MaNL
+where [Công thức].MaCT = 2;
+
+
 
 CREATE TABLE [Sản Phẩm] (
   [MaSP] nvarchar(50) PRIMARY KEY,
@@ -46,6 +60,7 @@ CREATE TABLE [Nhân Viên] (
   [GioiTinh] varchar(15),
   [SDT] int,
   [DiaChi] nvarchar(50),
+  [Anh] nvarchar(50)
 );
 
 go
@@ -76,6 +91,7 @@ CREATE TABLE [Nguyên Liệu] (
   [DonViDoLuong] nvarchar(20)
 );
 select *from [Sản Phẩm]
+select * from [Công thức]
 -- Thêm công thức mẫu vào bảng "Công thức"
 INSERT INTO [Công thức] ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
 VALUES ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
@@ -209,11 +225,11 @@ go
 
 insert into [Nhân Viên]
 values
-('Hisu','0807','Quản Lý','Phạm Văn Hiếu','19','Nam','0999999999','TPHCM'),
-('SonSoi','0807','Quản Lý','Ngô Vũ Sơn','19','Nam','0999999999','TPHCM'),
-('HuyLight','0807','Nhân Viên','Quang Huy','19','Nam','0999999999','TPHCM'),
-('Poem','0807','Nhân Viên','Minh Thơ','19','Nam','0999999999','TPHCM'),
-('Hung','0807','Nhân Viên','Sĩ Hùng','19','Nam','0999999999','TPHCM');
+('Hisu','0807','Quản Lý','Phạm Văn Hiếu','19','Nam','0999999999','TPHCM','x'),
+('SonSoi','0807','Quản Lý','Ngô Vũ Sơn','19','Nam','0999999999','TPHCM','x'),
+('HuyLight','0807','Nhân Viên','Quang Huy','19','Nam','0999999999','TPHCM','x'),
+('Poem','0807','Nhân Viên','Minh Thơ','19','Nam','0999999999','TPHCM','x'),
+('Hung','0807','Nhân Viên','Sĩ Hùng','19','Nam','0999999999','TPHCM','x');
 
 go
 
@@ -269,4 +285,11 @@ go
 select HD.MaHD, sp.MaSP, sp.TenSP, sp.Gia, HD_SP.soluong from [Hóa Đơn] hd
 join HD_SP on hd.MaHD = HD_SP.MaHD join [Sản Phẩm] sp on sp.MaSP = HD_SP.MaSP
 where hd.MaHD = 'HD12372';
->>>>>>> main
+
+select *from [Sản Phẩm]
+-- Thêm công thức mẫu vào bảng "Công thức"
+INSERT INTO [Công thức] ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+VALUES ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+-- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+INSERT INTO [Nguyên Liệu] ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+VALUES ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');

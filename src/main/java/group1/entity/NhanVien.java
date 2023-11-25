@@ -6,9 +6,13 @@ package group1.entity;
  */
 public class NhanVien {
     private String MaNV;
-    private String HoTen;
     private String MatKhau;
+<<<<<<< HEAD
     private boolean Vaitro ;
+=======
+    private String Vaitro;
+    private String HoTen;
+>>>>>>> main
     private int tuoi;
     private String gioiTinh;
     private String sdt;
@@ -17,19 +21,7 @@ public class NhanVien {
         return Vaitro;
     }
     private String diaChi;
-
-    public NhanVien() {
-    }
-
-    public NhanVien(String MaNV, String HoTen, String MatKhau, int tuoi, String gioiTinh, String sdt, String diaChi) {
-        this.MaNV = MaNV;
-        this.HoTen = HoTen;
-        this.MatKhau = MatKhau;
-        this.tuoi = tuoi;
-        this.gioiTinh = gioiTinh;
-        this.sdt = sdt;
-        this.diaChi = diaChi;
-    }
+    private String Anh;
 
     public String getMaNV() {
         return MaNV;
@@ -95,7 +87,11 @@ public class NhanVien {
         this.diaChi = diaChi;
     }
 
-    
-    
-    
+    public String getAnh() {
+        return Anh;
+    }
+
+    public void setAnh(String Anh) {
+        this.Anh = Anh;
+    }
 }
