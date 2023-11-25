@@ -1,5 +1,6 @@
 package group1.views;
 import group1.dao.SanPhamDao;
+import group1.entity.CongThuc;
 import group1.entity.SanPham;
 import group1.utils.msgBox;
 import java.sql.Date;
@@ -19,7 +20,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
     filltable();
-        
+        loadcbx();
     }
     void filltable(){
         tblmodel=(DefaultTableModel) tblsanPham.getModel();
@@ -27,14 +28,21 @@ public class QuanLySanPham extends javax.swing.JDialog {
         List<SanPham> sp=daosp.selectAll();
         for (SanPham SP : sp) {
             Object[] row={SP.getTenSP(),SP.getMaSP(),SP.getMaCT(),SP.getGia(),SP.getAnh()};
+            cbxct.setSelectedItem(0);
            cbxct.setSelectedItem("f");
             tblmodel.addRow(row);
             tblsanPham.setModel(tblmodel);
         }
     }
-    void loadcbx( SanPham sp){
+    void loadcbx(){
         try {
-            cbxct.setSelectedItem(sp.getMaCT());
+           DefaultComboBoxModel cbxmodel=new DefaultComboBoxModel();
+           cbxmodel.removeAllElements();
+           List<CongThuc> listct=new ArrayList<>();
+            for (CongThuc ct : listct) {
+                cbxmodel.addElement(ct);
+            }
+           
         } catch (Exception e) {
             e.printStackTrace();
             msgBox.alert(this, "Lỗi khi load cbx");
