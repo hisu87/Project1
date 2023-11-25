@@ -122,6 +122,7 @@
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
             <Property name="text" type="java.lang.String" value="WELCOME"/>
+            <Property name="toolTipText" type="java.lang.String" value="Merry Christmas"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="lblLoading">

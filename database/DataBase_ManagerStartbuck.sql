@@ -48,3 +48,10 @@ CREATE TABLE [Nguyên Liệu] (
   [GiaNL] float,
   [DonViDoLuong] nvarchar(20)
 );
+select *from [Sản Phẩm]
+-- Thêm công thức mẫu vào bảng "Công thức"
+INSERT INTO [Công thức] ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+VALUES ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+-- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+INSERT INTO [Nguyên Liệu] ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+VALUES ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
