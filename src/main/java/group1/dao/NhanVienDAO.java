@@ -71,12 +71,8 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 NhanVien entity = new NhanVien();
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setMatKhau(rs.getString("MatKhau"));
-<<<<<<< HEAD
-                entity.setVaitro(rs.getBoolean("VaiTro"));
-=======
                 entity.setVaitro(rs.getString("VaiTro"));
                 entity.setHoTen(rs.getString("TenNV"));
->>>>>>> main
                 entity.setTuoi(rs.getInt("Tuoi"));
                 entity.setGioiTinh(rs.getString("GioiTinh"));
                 entity.setSdt(rs.getString("SDT"));

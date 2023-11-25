@@ -7,24 +7,24 @@ package group1.entity;
 public class NhanVien {
     private String MaNV;
     private String MatKhau;
-<<<<<<< HEAD
-    private boolean Vaitro ;
-=======
     private String Vaitro;
     private String HoTen;
->>>>>>> main
     private int tuoi;
     private String gioiTinh;
     private String sdt;
-
-    public boolean isVaitro() {
-        return Vaitro;
-    }
     private String diaChi;
     private String Anh;
 
     public String getMaNV() {
         return MaNV;
+    }
+
+    public String getVaitro() {
+        return Vaitro;
+    }
+
+    public void setVaitro(String Vaitro) {
+        this.Vaitro = Vaitro;
     }
 
     public void setMaNV(String MaNV) {
@@ -46,15 +46,6 @@ public class NhanVien {
     public void setMatKhau(String MatKhau) {
         this.MatKhau = MatKhau;
     }
-
-    public boolean getVaitro() {
-        return Vaitro;
-    }
-
-    public void setVaitro(boolean Vaitro) {
-        this.Vaitro = Vaitro;
-    }
-
     public int getTuoi() {
         return tuoi;
     }
