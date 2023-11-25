@@ -67,22 +67,6 @@ CREATE TABLE HD_SP (
 );
 
 
-<<<<<<< HEAD
-CREATE TABLE [Nguyên Liệu] (
-  [MaNL] nvarchar(15) PRIMARY KEY,
-  [TenNL] nvarchar(50),
-  [SoLuongCon] float,
-  [GiaNL] float,
-  [DonViDoLuong] nvarchar(20)
-);
-select *from [Sản Phẩm]
--- Thêm công thức mẫu vào bảng "Công thức"
-INSERT INTO [Công thức] ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
-VALUES ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
--- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
-INSERT INTO [Nguyên Liệu] ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
-VALUES ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
-=======
 go
 
 insert into [Nguyên Liệu]
@@ -247,4 +231,3 @@ go
 select HD.MaHD, sp.MaSP, sp.TenSP, sp.Gia, HD_SP.soluong from [Hóa Đơn] hd
 join HD_SP on hd.MaHD = HD_SP.MaHD join [Sản Phẩm] sp on sp.MaSP = HD_SP.MaSP
 where hd.MaHD = 'HD12372';
->>>>>>> main
