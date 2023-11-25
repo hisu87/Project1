@@ -6,6 +6,8 @@ package group1.utils;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -55,5 +57,16 @@ public class xDate {
     public static Date addDays(Date date, long days) {
         date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000);
         return date;
+    }
+       // Hàm để lấy ngày tháng năm hiện tại
+    public static String getCurrentDate() {
+        // Lấy ngày tháng năm hiện tại
+        LocalDate currentDate = LocalDate.now();
+
+        // Định dạng ngày tháng năm
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
+        // Chuyển đối LocalDate thành chuỗi theo định dạng
+        return currentDate.format(formatter);
     }
 }
