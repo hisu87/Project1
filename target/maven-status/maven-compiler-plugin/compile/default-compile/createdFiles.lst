@@ -1,3 +1,43 @@
+<<<<<<< HEAD
+group1\views\QuanLySanPham$5.class
+group1\views\SanPhamJDialog$4.class
+group1\views\QuanLySanPham$11.class
+group1\views\QuanLySanPham$8.class
+group1\utils\msgBox.class
+group1\views\QuanLySanPham$2.class
+group1\entity\HoaDon.class
+group1\views\SanPhamJDialog$2.class
+group1\utils\xJDBC.class
+group1\utils\xDate.class
+group1\views\SanPhamJDialog$6.class
+group1\views\QuanLySanPham$7.class
+group1\views\QuanLySanPham.class
+group1\dao\NguyenLieuDAO.class
+group1\dao\CafeDAO.class
+group1\views\QuanLySanPham$1.class
+group1\views\SanPhamJDialog$7.class
+group1\utils\xImage.class
+group1\views\JMainFrame$1.class
+group1\views\JMainFrame.class
+group1\views\QuanLySanPham$10.class
+group1\views\SanPhamJDialog$8$1.class
+group1\views\SanPhamJDialog$8.class
+group1\views\SanPhamJDialog$3.class
+group1\entity\CongThuc.class
+group1\views\LoginJDialog.class
+group1\entity\NhanVien.class
+group1\utils\Auth.class
+group1\views\QuanLySanPham$9.class
+group1\views\SanPhamJDialog$5.class
+group1\views\QuanLySanPham$6.class
+group1\views\QuanLySanPham$11$1.class
+group1\dao\NhanVienDAO.class
+group1\views\QuanLySanPham$3.class
+group1\views\JMainFrame$3.class
+group1\views\LoginJDialog$1.class
+group1\views\QuanLySanPham$4.class
+group1\entity\NguyenLieu.class
+=======
 group1\views\QLNguyenLieuJDialog$10.class
 group1\views\QLNguyenLieuJDialog$2.class
 group1\views\QuanLySanPham$8.class
@@ -48,6 +88,9 @@ group1\views\QLNguyenLieuJDialog$11.class
 group1\views\QuanLySanPham$4.class
 group1\views\SanPhamJDialog.class
 group1\views\AddSP$1.class
+<<<<<<< HEAD
+>>>>>>> main
+=======
 group1\views\QuanLySanPham$5.class
 group1\views\QLNguyenLieuJDialog$5.class
 group1\views\QuanLySanPham$11.class
@@ -81,3 +124,4 @@ group1\views\LoginJDialog$8$1.class
 group1\views\HoaDonJDialog.class
 group1\entity\NguyenLieu.class
 group1\views\LoginJDialog$2.class
+>>>>>>> main

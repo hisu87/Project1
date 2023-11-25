@@ -236,6 +236,18 @@ go
 
 insert into [Sản Phẩm]
 values
+<<<<<<< HEAD
+(1,'Cà Phê Sữa','xxxxx',35000,1),
+(2,'Cà Phê Đen','xxxxx',30000,2),
+(3,'Citrus peach tea','xxxxx',45000,4),
+(4,'Bạc Xĩu','xxxxx',40000,5),
+(5,'Capuchino','xxxxx',55000,3),
+(6,'Strawberry Mojito','xxxxx',55000,1),
+(7,'Blueberry Mocktail','xxxxx',35000,1);
+UPDATE [Sản Phẩm]
+SET [Anh] = 'cfsua.png', [TenSP]=N'Cà Phê Sữa'
+WHERE [MaSP] = 1;
+=======
 (1,N'Cà Phê Sữa','xxxxx',35000,1),
 (2,N'Cà Phê Đen','xxxxx',30000,2),
 (3,N'Citrus peach tea','xxxxx',45000,4),
@@ -243,7 +255,27 @@ values
 (5,N'Capuchino','xxxxx',55000,3),
 (6,N'Strawberry Mojito','xxxxx',55000,1),
 (7,N'Blueberry Mocktail','xxxxx',35000,1);
+>>>>>>> main
 
+UPDATE [Sản Phẩm]
+SET [Anh] = 'matcha.png' , [TenSP]=N'Matcha Đá Xay'
+WHERE [MaSP] = 2;
+UPDATE [Sản Phẩm]
+SET [Anh] = 'hongdao.png' , [TenSP]=N'Hồng đào'
+WHERE [MaSP] = 3;
+delete [Sản Phẩm] where [MaSP]=3
+UPDATE [Sản Phẩm]
+SET [Anh] = 'traolongdua.png' , [TenSP]=N'Trà Ô Long Dừa'
+WHERE [MaSP] = 4;
+UPDATE [Sản Phẩm]
+SET [Anh] = 'oreocf.png' , [TenSP]=N'Oreo Cà Phê Sữa'
+WHERE [MaSP] = 5;
+UPDATE [Sản Phẩm]
+SET [Anh] = 'phindenda.png' , [TenSP]=N'Phin Đen Đá'
+WHERE [MaSP] = 6;
+UPDATE [Sản Phẩm]
+SET [Anh] = 'traolongdau.png' , [TenSP]=N'Trà Ô Long Dâu'
+WHERE [MaSP] = 7;
 go
 
 insert into [Hóa Đơn]
