@@ -97,7 +97,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel5.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel5.setBackground(new java.awt.Color(51, 102, 0));
 
         txt_search1.setForeground(new java.awt.Color(235, 202, 188));
         txt_search1.setText("Search");
@@ -121,6 +121,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         btn_delete1.setText("Delete");
 
+        jTable1.setBackground(new java.awt.Color(0, 102, 0));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -200,7 +201,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Quản lý hóa đơn", jPanel4);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(51, 102, 0));
 
         btnSua.setText("Next");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -227,6 +228,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jButton2.setText("In lại");
 
+        jTable2.setBackground(new java.awt.Color(0, 102, 0));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
@@ -313,7 +315,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
                 .addGap(24, 24, 24))
         );
 
-        jTabbedPane2.addTab("Chỉnh Sửa Nhân Viên", jPanel1);
+        jTabbedPane2.addTab("Chỉnh sửa hóa đơn", jPanel1);
 
         jTabbedPane3.setBackground(new java.awt.Color(133, 35, 60));
 
@@ -601,25 +603,11 @@ public class HoaDonJDialog extends javax.swing.JDialog {
     }//GEN-LAST:event_btnSua1ActionPerformed
 
     public void Them() throws ParseException {
-        HoaDon hd = new HoaDon();
         
-        //Nhập thông tin hóa don tu nguoi dung
-        HoaDon.setMaHoaDon("HD001");
-        SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy");
-        Date ngayTao = dateFormat.parse("01/01/2022");       
-        HoaDon.setTongTien(1000000);
     }
     
-    public boolean checkValidateForm(){
-        if (txtMaHD.getText().isEmpty()||
-                txtNgayBan.getText().isEmpty()              
-    }
-    public void Sua(){
-        
-    }
-    public void Xoa(){
-        
-    }
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -675,22 +663,16 @@ public class HoaDonJDialog extends javax.swing.JDialog {
     private javax.swing.JRadioButton btnVaitro1;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton btnXoa1;
-    private javax.swing.JButton btn_delete;
     private javax.swing.JButton btn_delete1;
     private javax.swing.JButton btn_delete2;
-    private javax.swing.JButton btn_first;
     private javax.swing.JButton btn_first1;
     private javax.swing.JButton btn_first2;
-    private javax.swing.JButton btn_last;
     private javax.swing.JButton btn_last1;
     private javax.swing.JButton btn_last2;
-    private javax.swing.JButton btn_next;
     private javax.swing.JButton btn_next1;
     private javax.swing.JButton btn_next2;
-    private javax.swing.JButton btn_previous;
     private javax.swing.JButton btn_previous1;
     private javax.swing.JButton btn_previous2;
-    private javax.swing.JButton btn_search;
     private javax.swing.JButton btn_search1;
     private javax.swing.JButton btn_search2;
     private javax.swing.JButton jButton1;
@@ -707,30 +689,24 @@ public class HoaDonJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
-    private javax.swing.JTable tbl_nhanvien;
     private javax.swing.JTable tbl_nhanvien2;
     private javax.swing.JTextField txtEmail1;
     private javax.swing.JTextField txtGioitinh1;
     private javax.swing.JTextField txtHoten1;
     private javax.swing.JTextField txtMaNV1;
     private javax.swing.JTextField txtNgaysinh1;
-    private javax.swing.JTextField txt_search;
     private javax.swing.JTextField txt_search1;
     private javax.swing.JTextField txt_search2;
     private javax.swing.JTextField txt_search3;
