@@ -70,6 +70,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setTrangThai(rs.getBoolean("TrangThai"));
                 entity.setTongCong(rs.getFloat("TongCong"));               
                 list.add(entity);
             }
