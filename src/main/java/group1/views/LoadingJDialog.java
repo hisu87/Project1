@@ -20,9 +20,9 @@ public class LoadingJDialog extends javax.swing.JDialog {
     public LoadingJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         runLoadingBar();
-        setLocationRelativeTo(parent);
+        setLocationRelativeTo(null);
         initComponents();
-        setTitle("Loading Screen");
+        setTitle("Loading");
         setIconImage(xImage.getAppIcon());
     }
     

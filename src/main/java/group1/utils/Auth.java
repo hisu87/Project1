@@ -24,6 +24,6 @@ public class Auth {
     }
 
     public static boolean isManager() {
-        return Auth.isLogin() && Auth.user.isVaitro();
+        return Auth.isLogin() && Auth.user.getVaitro().equals("Quản Lý");
     }
 }

@@ -8,7 +8,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class NhanVienDAO extends CafeDAO<NhanVien, String> {
 
     public String INSERT_SQL = "INSERT INTO NhanVien(MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi, Anh) VALUES(?,?,?,?,?,?,?,?)";
@@ -34,9 +33,9 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
     @Override
     public void update(NhanVien entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
-                entity.getHoTen(),
                 entity.getMatKhau(),
                 entity.getVaitro(),
+                entity.getHoTen(),
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
@@ -72,9 +71,9 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
             while (rs.next()) {
                 NhanVien entity = new NhanVien();
                 entity.setMaNV(rs.getString("MaNV"));
-                entity.setHoTen(rs.getString("TenNV"));
                 entity.setMatKhau(rs.getString("MatKhau"));
                 entity.setVaitro(rs.getString("VaiTro"));
+                entity.setHoTen(rs.getString("TenNV"));
                 entity.setTuoi(rs.getInt("Tuoi"));
                 entity.setGioiTinh(rs.getString("GioiTinh"));
                 entity.setSdt(rs.getString("SDT"));

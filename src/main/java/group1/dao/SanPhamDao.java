@@ -8,11 +8,11 @@ import java.util.List;
 
 public class SanPhamDao extends CafeDAO<SanPham, String> {
 
-    public String INSERT_SQL = "INSERT INTO SanPham(MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
+    public String INSERT_SQL = "INSERT INTO (MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
     public String UPDATE_SQL = "UPDATE SanPham SET TenSP=?, Anh=?, Gia=?, MaCT=? WHERE MaSP=?";
     public String DELETE_SQL = "DELETE FROM SanPham WHERE MaSP=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM SanPham";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM SanPham WHERE MaSP=?";
+    public String SELECT_ALL_SQL = "SELECT * FROM [Sản Phẩm]";
+    public String SELECT_BY_ID_SQL = "SELECT * FROM [Sản Phẩm] WHERE [MaSP]=?";
 
     @Override
     public void insert(SanPham entity) {
@@ -41,7 +41,7 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
 
     @Override
     public SanPham selectById(String id) {
-        List<SanPham> list=selectBySQL(SELECT_ALL_SQL, id);
+        List<SanPham> list=selectBySQL(SELECT_BY_ID_SQL, id);
         if(list.isEmpty()){
             return null;
         }
@@ -63,7 +63,7 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
                 sp.setMaSP(rs.getString("MaSP"));
                 sp.setTenSP(rs.getString("TenSP"));
                 sp.setAnh(rs.getString("Anh"));
-                sp.setGia(rs.getDouble("Gia"));
+                sp.setGia(rs.getFloat("Gia"));
                 sp.setMaCT(rs.getString("MaCT"));
                 list.add(sp);
             }

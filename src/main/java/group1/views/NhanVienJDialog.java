@@ -97,10 +97,10 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         jPanel4.setBackground(new java.awt.Color(131, 35, 60));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(255, 186, 27));
+        jLabel2.setForeground(new java.awt.Color(242, 240, 235));
         jLabel2.setText("Quản Lý Nhân Viên");
 
-        jLabel10.setForeground(new java.awt.Color(255, 255, 0));
+        jLabel10.setForeground(new java.awt.Color(242, 240, 235));
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
         jLabel10.setText("00:00:00 SA");
 

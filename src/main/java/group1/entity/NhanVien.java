@@ -6,9 +6,9 @@ package group1.entity;
  */
 public class NhanVien {
     private String MaNV;
-    private String HoTen;
     private String MatKhau;
-    private String Vaitro ;
+    private String Vaitro;
+    private String HoTen;
     private int tuoi;
     private String gioiTinh;
     private String sdt;
@@ -33,6 +33,14 @@ public class NhanVien {
         return MaNV;
     }
 
+    public String getVaitro() {
+        return Vaitro;
+    }
+
+    public void setVaitro(String Vaitro) {
+        this.Vaitro = Vaitro;
+    }
+
     public void setMaNV(String MaNV) {
         this.MaNV = MaNV;
     }
@@ -52,15 +60,6 @@ public class NhanVien {
     public void setMatKhau(String MatKhau) {
         this.MatKhau = MatKhau;
     }
-
-    public String getVaitro() {
-        return Vaitro;
-    }
-
-    public void setVaitro(String Vaitro) {
-        this.Vaitro = Vaitro;
-    }
-
     public int getTuoi() {
         return tuoi;
     }
@@ -103,7 +102,4 @@ public class NhanVien {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
-    
-    
-    
 }
