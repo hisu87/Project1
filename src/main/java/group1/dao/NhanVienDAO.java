@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package group1.dao;
 
 import group1.entity.NhanVien;
@@ -15,8 +11,8 @@ import java.util.List;
 
 public class NhanVienDAO extends CafeDAO<NhanVien, String> {
 
-    public String INSERT_SQL = "INSERT INTO NhanVien(MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, SDT, DiaChi) VALUES(?,?,?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE NhanVien SET TenNV=?, MatKhau=?, VaiTro=?, Tuoi=?, GioiTinh=?, SDT=?, DiaChi=? WHERE MaNV=?";
+    public String INSERT_SQL = "INSERT INTO NhanVien(MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi, Anh) VALUES(?,?,?,?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE NhanVien SET HoTen=?, MatKhau=?, Vaitro=?, Tuoi=?, GioiTinh=?, Sdt=?, DiaChi=?, Anh=? WHERE MaNV=?";
     public String DELETE_SQL = "DELETE FROM NhanVien WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM NhanVien";
     public String SELECT_BY_ID_SQL = "SELECT * FROM NhanVien WHERE MaNV=?";
@@ -27,11 +23,12 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.getMaNV(),
                 entity.getHoTen(),
                 entity.getMatKhau(),
-                entity.isVaitro(),
+                entity.getVaitro(),
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
-                entity.getDiaChi());
+                entity.getDiaChi(),
+                entity.getAnh());
     }
 
     @Override
@@ -39,12 +36,13 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
         xJDBC.executeUpdate(UPDATE_SQL,
                 entity.getHoTen(),
                 entity.getMatKhau(),
-                entity.isVaitro(),
+                entity.getVaitro(),
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
                 entity.getDiaChi(),
-                entity.getMaNV());
+                entity.getMaNV(),
+                entity.getAnh());
     }
 
     @Override
@@ -76,11 +74,12 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setHoTen(rs.getString("TenNV"));
                 entity.setMatKhau(rs.getString("MatKhau"));
-                entity.setVaitro(rs.getBoolean("VaiTro"));
+                entity.setVaitro(rs.getString("VaiTro"));
                 entity.setTuoi(rs.getInt("Tuoi"));
                 entity.setGioiTinh(rs.getString("GioiTinh"));
                 entity.setSdt(rs.getString("SDT"));
                 entity.setDiaChi(rs.getString("DiaChi"));
+                entity.setAnh(rs.getString("Anh"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
