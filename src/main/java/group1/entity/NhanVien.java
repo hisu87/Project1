@@ -13,11 +13,12 @@ public class NhanVien {
     private String gioiTinh;
     private String sdt;
     private String diaChi;
+    private String Anh;
 
     public NhanVien() {
     }
 
-    public NhanVien(String MaNV, String HoTen, String MatKhau, int tuoi, String gioiTinh, String sdt, String diaChi) {
+    public NhanVien(String MaNV, String HoTen, String MatKhau, int tuoi, String gioiTinh, String sdt, String diaChi, String Anh) {
         this.MaNV = MaNV;
         this.HoTen = HoTen;
         this.MatKhau = MatKhau;
@@ -25,6 +26,7 @@ public class NhanVien {
         this.gioiTinh = gioiTinh;
         this.sdt = sdt;
         this.diaChi = diaChi;
+        this.Anh = Anh;
     }
 
     public String getMaNV() {
@@ -89,6 +91,16 @@ public class NhanVien {
 
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
+    }
+    public String getAnh(){
+        return Anh;
+    }
+    public void setAnh(String Anh){
+        this.Anh = Anh;
+    }
+
+    public boolean isVaitro() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     

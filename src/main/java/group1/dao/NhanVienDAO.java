@@ -11,8 +11,8 @@ import java.util.List;
 
 public class NhanVienDAO extends CafeDAO<NhanVien, String> {
 
-    public String INSERT_SQL = "INSERT INTO NhanVien(MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi) VALUES(?,?,?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE NhanVien SET HoTen=?, MatKhau=?, Vaitro=?, Tuoi=?, GioiTinh=?, Sdt=?, DiaChi=? WHERE MaNV=?";
+    public String INSERT_SQL = "INSERT INTO NhanVien(MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi, Anh) VALUES(?,?,?,?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE NhanVien SET HoTen=?, MatKhau=?, Vaitro=?, Tuoi=?, GioiTinh=?, Sdt=?, DiaChi=?, Anh=? WHERE MaNV=?";
     public String DELETE_SQL = "DELETE FROM NhanVien WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM NhanVien";
     public String SELECT_BY_ID_SQL = "SELECT * FROM NhanVien WHERE MaNV=?";
@@ -27,7 +27,8 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
-                entity.getDiaChi());
+                entity.getDiaChi(),
+                entity.getAnh());
     }
 
     @Override
@@ -40,7 +41,8 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.getGioiTinh(),
                 entity.getSdt(),
                 entity.getDiaChi(),
-                entity.getMaNV());
+                entity.getMaNV(),
+                entity.getAnh());
     }
 
     @Override
@@ -77,6 +79,7 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.setGioiTinh(rs.getString("GioiTinh"));
                 entity.setSdt(rs.getString("SDT"));
                 entity.setDiaChi(rs.getString("DiaChi"));
+                entity.setAnh(rs.getString("Anh"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
