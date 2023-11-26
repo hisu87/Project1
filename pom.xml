@@ -20,15 +20,6 @@
         <artifactId>mssql-jdbc</artifactId>
         <version>9.4.0.jre11</version> <!-- Hoặc sử dụng phiên bản mới nhất -->
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.toedter/jcalendar -->
-<dependency>
-    <groupId>com.toedter</groupId>
-    <artifactId>jcalendar</artifactId>
-    <version>1.4</version>
-</dependency>
-
-    
-    
 
 <!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
 <dependency>
@@ -36,10 +27,6 @@
     <artifactId>itextpdf</artifactId>
     <version>5.5.13</version>
 </dependency>
-
-<!-- https://mvnrepository.com/artifact/com.github.javatlacati.jcalendar/jcalendar -->
-
-
 
 
 
