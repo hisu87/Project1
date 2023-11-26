@@ -33,6 +33,7 @@ group1\views\CongThucNguyenLieuJDialog$1.class
 group1\views\QLNguyenLieuJDialog$7.class
 group1\views\SanPhamJDialog$2.class
 group1\utils\xJDBC.class
+group1\views\SanPhamJDialog$11.class
 group1\utils\xDate.class
 group1\views\NewJDialog$2.class
 group1\views\NhanVienJDialog$3.class
@@ -60,6 +61,8 @@ group1\views\QLNguyenLieuJDialog$8.class
 group1\views\CongThucNguyenLieuJDialog$11.class
 group1\views\SanPhamJDialog$7.class
 group1\views\NewJDialog.class
+group1\views\SanPhamJDialog$11$1.class
+group1\views\SanPhamJDialog$TransferInfo.class
 group1\utils\xImage.class
 group1\views\CongThucNguyenLieuJDialog$3.class
 group1\views\JMainFrame$1.class
@@ -72,7 +75,7 @@ group1\views\LoadingJDialog.class
 group1\dao\CongThucDAO.class
 group1\views\JMainFrame$1TimeClock.class
 group1\views\QuanLySanPham$10.class
-group1\views\SanPhamJDialog$8$1.class
+group1\views\SanPhamJDialog$10.class
 group1\views\SanPhamJDialog$8.class
 group1\views\CongThucNguyenLieuJDialog$9.class
 group1\views\JMainFrame$4.class
@@ -87,7 +90,6 @@ group1\entity\NhanVien.class
 group1\views\NewJDialog$1.class
 group1\utils\Auth.class
 group1\views\CongThucNguyenLieuJDialog.class
-group1\views\QuanLySanPham$9.class
 group1\views\LoadingJDialog$1$1.class
 group1\views\SanPhamJDialog$5.class
 group1\views\NhanVienJDialog.class
@@ -98,6 +100,7 @@ group1\entity\CongThuc_NguyenLieu.class
 group1\views\QuanLySanPham$6.class
 group1\views\QuanLySanPham$11$1.class
 group1\dao\NhanVienDAO.class
+group1\views\SanPhamJDialog$9.class
 group1\views\LoadingJDialog$1.class
 group1\views\QuanLySanPham$3.class
 group1\views\JMainFrame$3.class
