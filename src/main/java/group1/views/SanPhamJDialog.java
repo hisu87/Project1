@@ -4,6 +4,13 @@
  */
 package group1.views;
 
+import com.google.gson.Gson;
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.EncodeHintType;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
+import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
 import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
@@ -21,14 +28,17 @@ import java.awt.FlowLayout;
 import java.awt.Font;
 import java.awt.GridLayout;
 import java.awt.Image;
+import java.awt.PopupMenu;
 import java.awt.TextArea;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.sql.Date;
@@ -36,7 +46,10 @@ import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -45,11 +58,16 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
+import javax.swing.SpinnerModel;
+import javax.swing.SpinnerNumberModel;
 import javax.swing.Timer;
 import javax.swing.border.Border;
 import javax.swing.border.SoftBevelBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 public class SanPhamJDialog extends javax.swing.JDialog {
     List<SanPham> listcart = new ArrayList<>();
@@ -57,14 +75,19 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     JPanel pn;
     JPanel pnx;
     int index = 0;
-    int soluong;
+    Object soluong;
     TextArea textar;
     JButton btnmua;
-    int soLanMua;
+    int soLanMua = 0;
     List<SanPham> listbest = new ArrayList<>();
     JScrollPane scrollPane;
     JLabel lbltongtien;
     JTextField txtsoluong;
+    JSpinner spinner;
+    int selectedValue;
+    float tongtiensp;
+    int indexbutton = 0;
+    float tongtien;
 
     private long currentmilis;
 
@@ -72,6 +95,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         settime();
+
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
 
@@ -119,6 +143,9 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         jPanel10 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        jPanel9 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
 
@@ -302,57 +329,91 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
                 jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 1126, Short.MAX_VALUE)
+                        .addGap(0, 1048, Short.MAX_VALUE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGap(288, 288, 288)
                                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(834, Short.MAX_VALUE)))
+                                        .addContainerGap(756, Short.MAX_VALUE)))
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGap(479, 479, 479)
                                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(647, Short.MAX_VALUE))));
+                                        .addContainerGap(569, Short.MAX_VALUE))));
         jPanel10Layout.setVerticalGroup(
                 jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGap(0, 656, Short.MAX_VALUE)
+                        .addGap(0, 633, Short.MAX_VALUE)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGap(128, 128, 128)
                                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(524, Short.MAX_VALUE)))
+                                        .addContainerGap(501, Short.MAX_VALUE)))
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                 .addGroup(jPanel10Layout.createSequentialGroup()
                                         .addGap(311, 311, 311)
                                         .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addContainerGap(345, Short.MAX_VALUE))));
+                                        .addContainerGap(322, Short.MAX_VALUE))));
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jPanel10, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+                        .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGap(51, 51, 51)
+                                .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(39, Short.MAX_VALUE)));
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addContainerGap()
+                                .addGap(29, 29, 29)
                                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE,
                                         javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addContainerGap(1365, Short.MAX_VALUE)));
 
         jTabbedPane1.addTab("Thanh toán", jPanel3);
+
+        jLabel1.setText("jLabel1");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+                jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
+                                .addContainerGap()));
+        jPanel9Layout.setVerticalGroup(
+                jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel9Layout.createSequentialGroup()
+                                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
+                                .addContainerGap()));
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+                jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(385, 385, 385)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(491, Short.MAX_VALUE)));
+        jPanel8Layout.setVerticalGroup(
+                jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel8Layout.createSequentialGroup()
+                                .addGap(104, 104, 104)
+                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(1712, Short.MAX_VALUE)));
+
+        jTabbedPane1.addTab("tab3", jPanel8);
 
         jScrollPane2.setViewportView(jTabbedPane1);
 
@@ -568,42 +629,57 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     void fillSanPham() {
 
         listbest = dao.selectAll();
-        for (SanPham sp : listbest) {
-            String tensp = sp.getTenSP();
-            double gia = sp.getGia();
-            String anh = sp.getAnh();
+        String tensp = null;
+        double gia = 0;
+        String anh = null;
 
-            createPanels(tensp, gia, anh);
+        for (SanPham sp : listbest) {
+
+            System.out.println(indexbutton);
+            tensp = sp.getTenSP();
+            gia = sp.getGia();
+            anh = sp.getAnh();
+            String masp = sp.getMaSP();
+            fix(tensp, gia, anh, indexbutton);
+            indexbutton++;
+
         }
+
     }
 
-    void createPanels(String TenSP, double gia, String anh) {
+    private static JSpinner createSpinner() {
+        SpinnerModel model = new SpinnerNumberModel(0, 0, 100, 1); // Default value, min value, max value, step
+        JSpinner spinner = new JSpinner(model);
+        return spinner;
+    }
 
+    void fix(String TenSP, double gia, String anh, int indexbutton) {
         jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
         // Tạo JPanel
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(250, 350));
+        panel.setBackground(Color.white);
+
         // Thêm hình ảnh vào JPanel
         ImageIcon icon = xImage.readimage(anh);
-
         JLabel imageLabel = new JLabel(icon);
-
         panel.add(imageLabel);
 
         panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 20));
 
         // Set the layout of the panel
-        jPanel4.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
-        panel.setBackground(Color.white);
         JPanel pn1 = new JPanel();
         pn1.setLayout(new GridLayout(3, 1));
-        panel.add(pn1);
+        pn1.setBackground(Color.white);
 
         // Thêm văn bản vào JPanel
         JLabel textLabel1 = new JLabel(TenSP);
         textLabel1.setFont(new Font("Arial", Font.BOLD, 20));
+
         // Thêm giá
+        DecimalFormat decimalfom = new DecimalFormat("#,###");
+        String giaformat = decimalfom.format(gia);
         DecimalFormat decimalfom = new DecimalFormat("#,###");
         String giaformat = decimalfom.format(gia);
         JLabel textLabel4 = new JLabel(giaformat);
@@ -612,29 +688,142 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         panelgia.add(textLabel4);
         textLabel4.setFont(new Font("Arial", Font.BOLD, 15));
         textLabel4.setForeground(new Color(12, 113, 61));
+
+        // Thêm JSpinner và JButton vào JPanel
+        JPanel panelgia = new JPanel();
+
+        panelgia.add(textLabel4);
+
+        JPanel jpanelbutton = new JPanel();
+        textLabel4.setForeground(new Color(12, 113, 61));
         JPanel jpanelbutton = new JPanel();
         jpanelbutton.setSize(150, 50);
         jpanelbutton.setBackground(Color.white);
-        int i;
-        for (i = 0; i < listbest.size(); i++) {
 
-            btnmua = new JButton("Mua Ngay");
-            // txtsoluong=new JTextField();
-            // txtsoluong.setSize(60,10);
-            // txtsoluong.setBackground(new Color(12,113,61));
-            btnmua.setSize(50, 90);
-            btnmua.setBackground(new Color(12, 113, 61));
-            btnmua.setForeground(Color.white);
-        }
+        btnmua = new JButton("Mua Ngay" + (indexbutton + 1));
+        JSpinner spinner = createSpinner();
+        panelgia.add(spinner);
+        final int buttonIndex = indexbutton; // Final variable for use in the inner class
+        // Sự kiện khi nhấn nút "Mua Ngay"
+        btnmua.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                index++;
+                // SanPham clickproduct = listbest.get(index);
+                // listcart.add(clickproduct);
+                //
+                //
+                // soLanMua = (int) spinner.getValue();
+                // System.out.println("Số lượng mua: " + soluong);
+
+                // Lấy thông tin sản phẩm khi click vào nút "Mua Ngay"
+                String clickedProductName = TenSP; // Tên sản phẩm
+                double clickedProductPrice = gia; // Giá sản phẩm
+                String clickedProductImage = anh; // Ảnh sản phẩm
+
+                createCart(clickedProductName, clickedProductPrice, clickedProductImage);
+                createHoaDon(TenSP, gia);
+                // spinner.addChangeListener(new ChangeListener() {
+                // @Override
+                // public void stateChanged(ChangeEvent e) {
+                // // Lấy giá trị mới của spinner
+                // soLanMua = (int) spinner.getValue();
+                // }
+                // });
+
+            }
+        });
+        btnmua.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedValue = (int) spinner.getValue();
+                tongtiensp = (float) (gia * selectedValue);
+                System.out.println("Button " + (buttonIndex + 1) + " clicked, Spinner value: " + selectedValue);
+
+            }
+        });
+        btnmua.setSize(50, 90);
+        btnmua.setBackground(new Color(12, 113, 61));
+        btnmua.setForeground(Color.white);
+
         jpanelbutton.add(btnmua);
-        // jpanelbutton.add(txtsoluong);
+
+        // Thêm các thành phần vào pn1
         pn1.add(textLabel1);
         pn1.add(panelgia);
         pn1.add(jpanelbutton);
 
+        // Thêm pn1 vào panel
+        panel.add(pn1);
+
+        jPanel4.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
+        jPanel4.add(panel);
+
+    }
+
+    void createPanels(String TenSP, double gia, String anh, String masp) {
+        jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
+
+        // Tạo JPanel
+        JPanel panel = new JPanel();
+        panel.setPreferredSize(new Dimension(250, 350));
+        panel.setBackground(Color.white);
+
+        // Thêm hình ảnh vào JPanel
+        ImageIcon icon = xImage.readimage(anh);
+        JLabel imageLabel = new JLabel(icon);
+        panel.add(imageLabel);
+
+        panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 20));
+
+        // Set the layout of the panel
+        JPanel pn1 = new JPanel();
+        pn1.setLayout(new GridLayout(3, 1));
         pn1.setBackground(Color.white);
 
+        // Thêm văn bản vào JPanel
+        JLabel textLabel1 = new JLabel(TenSP);
+        textLabel1.setFont(new Font("Arial", Font.BOLD, 20));
+
+        // Thêm giá
+        DecimalFormat decimalfom = new DecimalFormat("#,###");
+        String giaformat = decimalfom.format(gia);
+        JLabel textLabel4 = new JLabel(giaformat);
+        textLabel4.setFont(new Font("Arial", Font.BOLD, 15));
+        textLabel4.setForeground(new Color(12, 113, 61));
+
+        // Thêm JSpinner và JButton vào JPanel
+        JPanel panelgia = new JPanel();
+        spinner = new JSpinner();
+        spinner.setSize(70, 10);
+        spinner.setBackground(new Color(12, 113, 61));
+
+        panelgia.add(textLabel4);
+        panelgia.add(spinner);
+
+        JPanel jpanelbutton = new JPanel();
+        jpanelbutton.setSize(150, 50);
+        jpanelbutton.setBackground(Color.white);
+
+        btnmua = new JButton("Mua Ngay");
+        btnmua.setSize(50, 90);
+        btnmua.setBackground(new Color(12, 113, 61));
+        btnmua.setForeground(Color.white);
+
+        jpanelbutton.add(btnmua);
+
+        // Thêm các thành phần vào pn1
+        pn1.add(textLabel1);
+        pn1.add(panelgia);
+        pn1.add(jpanelbutton);
+
+        // Thêm pn1 vào panel
+        panel.add(pn1);
+
+        jPanel4.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
         jPanel4.add(panel);
+
+        // Sự kiện khi nhấn nút "Mua Ngay"
         btnmua.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseEntered(MouseEvent e) {
@@ -670,7 +859,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
                 String clickedProductName = TenSP; // Tên sản phẩm
                 double clickedProductPrice = gia; // Giá sản phẩm
                 String clickedProductImage = anh; // Ảnh sản phẩm
-
+                index++;
                 createCart(clickedProductName, clickedProductPrice, clickedProductImage);
 
                 createHoaDon(TenSP, gia);
@@ -678,7 +867,6 @@ public class SanPhamJDialog extends javax.swing.JDialog {
 
             }
         });
-
     }
 
     double tongtiengiohang = 0.0;
@@ -706,7 +894,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         panelcart.add(imageLabel);
         DecimalFormat decimalfom = new DecimalFormat("#,###");
         String giaformat = decimalfom.format(Gia);
-        JLabel textLabel11 = new JLabel(tenSP + "       " + giaformat + "       " + soluong);
+        JLabel textLabel11 = new JLabel(tenSP + "       " + giaformat + "       " + selectedValue);
 
         panelcart.add(textLabel11);
         // ảnh tru
@@ -739,6 +927,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
 
         if (index <= 1) {
             createthanhtoan(tenSP, Gia);
+            createHoaDon(tenSP, Gia);
         }
     }
 
@@ -753,7 +942,12 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         Border emptyBorder1 = BorderFactory.createEmptyBorder(10, 10, 300, 10);
         jPanel7.setBorder(emptyBorder1);
         jPanel7.add(textar);
+
         JPanel panelthanhtoan = new JPanel();
+        ;
+        // Thêm giá
+        DecimalFormat decimalfom = new DecimalFormat("#,###");
+        String giaformat = decimalfom.format(tongtiensp);
         textar.setText("Tên đơn hàng:" + Tensp + "\n"
                 + "                                            Số lượng: xxx" + "\n"
                 + "                                           Thành tiền: " + Gia);
@@ -761,7 +955,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
         JButton btnthanhtoan = new JButton("Thanh toán");
         JPanel pnthanhtoan = new JPanel();
         pnthanhtoan.setLayout(new GridLayout(1, 2));
-        pnthanhtoan.add(new JLabel("Tổng Tiền: "));
+        pnthanhtoan.add(new JLabel("Tổng Tiền: " + tongtien));
         lbltongtien = new JLabel();
         lbltongtien.setBackground(Color.red);
         panelthanhtoan.add(lbltongtien);
@@ -771,6 +965,37 @@ public class SanPhamJDialog extends javax.swing.JDialog {
             @Override
             public void actionPerformed(ActionEvent e) {
                 thanhtoan(textar.getText());
+            }
+
+        });
+        btnthanhtoan.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                jTabbedPane1.setSelectedIndex(2);
+                String imageUrl = "https://api.vietqr.io/image/970423-00000626945-P2H9rvV.jpg?accountName=NGUYEN%20QUANG%20HUY&amount="
+                        + tongtien;
+
+                try {
+                    // Đọc hình ảnh từ URL
+                    BufferedImage image = ImageIO.read(new URL(imageUrl));
+
+                    if (image != null) {
+                        // Hiển thị hình ảnh và lưu hình ảnh vào tệp
+                        ImageIcon icon = new ImageIcon(image);
+                        int w = 500;
+                        int h = 500;
+                        Image img = image.getScaledInstance(w, h, image.SCALE_SMOOTH);
+                        jLabel1.setIcon(new ImageIcon(img));
+
+                        // JOptionPane.showMessageDialog(this, icon);
+                        // jTextArea1.setText("QR Code loaded and displayed.");
+                    } else {
+                        // jTextArea1.setText("Failed to load QR Code.");
+                    }
+                } catch (IOException ex) {
+                    ex.printStackTrace();
+                    // jTextArea1.setText("Error loading QR Code: " + ex.getMessage());
+                }
             }
 
         });
@@ -788,8 +1013,9 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     void createHoaDon(String tenSP, double gia) {
         // Thêm thông tin sản phẩm mới vào hóa đơn
         String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
-                + "                                            Số lượng: " + index + "      " + "Gia: " + gia + "      "
-                + "        Thành tiền: " + tongtiengiohang + "\n";
+                + "                                            Số lượng: " + selectedValue + "      " + "Gia: " + gia
+                + "      "
+                + "        Thành tiền: " + tongtiensp + "\n";
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
@@ -882,6 +1108,104 @@ public class SanPhamJDialog extends javax.swing.JDialog {
 
     }
 
+    private void placeComponents(JPanel panel) {
+        panel.setLayout(new BorderLayout());
+
+        JTextField textField = new JTextField();
+        panel.add(textField, BorderLayout.NORTH);
+
+        JButton generateButton = new JButton("Generate QR Code");
+        panel.add(generateButton, BorderLayout.CENTER);
+
+        JTextArea resultArea = new JTextArea();
+        panel.add(resultArea, BorderLayout.SOUTH);
+
+        generateButton.addActionListener(e -> {
+            String textToEncode = textField.getText();
+            BufferedImage image = generateQRCode(textToEncode);
+
+            if (image != null) {
+                // Hiển thị hình ảnh và lưu hình ảnh vào tệp
+                ImageIcon icon = new ImageIcon(image);
+                JOptionPane.showMessageDialog(this, icon);
+                saveQRCode(image, "qrcode.png");
+
+                resultArea.setText("QR Code generated and saved as 'qrcode.png'");
+            } else {
+                resultArea.setText("Failed to generate QR Code");
+            }
+        });
+    }
+
+    private BufferedImage generateQRCode(String text) {
+        int width = 200;
+        int height = 200;
+
+        try {
+            Map<EncodeHintType, Object> hintMap = new HashMap<>();
+            hintMap.put(EncodeHintType.ERROR_CORRECTION, ErrorCorrectionLevel.L);
+            QRCodeWriter qrCodeWriter = new QRCodeWriter();
+            return toBufferedImage(qrCodeWriter.encode(text, BarcodeFormat.QR_CODE, width, height, hintMap));
+        } catch (WriterException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    private BufferedImage toBufferedImage(BitMatrix matrix) {
+        int width = matrix.getWidth();
+        int height = matrix.getHeight();
+        BufferedImage image = new BufferedImage(width, height, BufferedImage.TYPE_INT_RGB);
+
+        for (int x = 0; x < width; x++) {
+            for (int y = 0; y < height; y++) {
+                image.setRGB(x, y, matrix.get(x, y) ? Color.BLACK.getRGB() : Color.WHITE.getRGB());
+            }
+        }
+
+        return image;
+    }
+
+    private void generateQRCodeWithAmount(double amount) {
+        // Tạo đối tượng chứa thông tin
+        TransferInfo transferInfo = new TransferInfo("00000626945", amount);
+        // Gọi phương thức với số tiền cần chuyển khoản
+        generateQRCodeWithAmount(1000.00);
+        // Chuyển đối tượng thành chuỗi JSON
+        String json = new Gson().toJson(transferInfo);
+
+        // Tạo mã QR với chuỗi JSON
+        BufferedImage image = generateQRCode(json);
+
+        // Hiển thị hình ảnh và lưu hình ảnh vào tệp
+        ImageIcon icon = new ImageIcon(image);
+        JOptionPane.showMessageDialog(this, icon);
+        saveQRCode(image, "qrcode.png");
+    }
+
+    private void saveQRCode(BufferedImage image, String filePath) {
+        try {
+            File file = new File(filePath);
+            ImageIO.write(image, "png", file);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    // Đối tượng chứa thông tin chuyển khoản
+    class TransferInfo {
+        private String accountNumber;
+        private double amount;
+
+        public TransferInfo(String accountNumber, double amount) {
+            this.accountNumber = accountNumber;
+            this.amount = amount;
+        }
+
+        // Getter và setter (có thể tạo tự động bằng IDE)
+
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -934,6 +1258,7 @@ public class SanPhamJDialog extends javax.swing.JDialog {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -961,6 +1286,8 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
