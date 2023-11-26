@@ -18,7 +18,7 @@ import java.util.List;
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
     public String INSERT_SQL = "INSERT_INTO HoaDon(MaHD, MaNV, MaSP, SoLuong, NgayTao, TrangThai) VALUES(?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE HoaDon SET MaNV=?, MaSP=?, SoLuong =?, NgayTao=?, TrangThai=? WHERE MaHD";
+    public String UPDATE_SQL = "UPDATE HoaDon SET MaNV=?, MaSP=?, NgayTao=?, TrangThai=?, TongCong=? WHERE MaHD=?";
     public String DELETE_SQL = "DELETE FROM HoaDon WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
     public String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon WHERE MaNV=?";
@@ -27,9 +27,9 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
     public void insert(HoaDon entity)  {
         xJDBC.executeUpdate(INSERT_SQL,
                     entity.getMaHD(),
-                    entity.getMaNV(),
-                    entity.getMaSP(),
-                    entity.getNgayTao());          
+                    entity.getMaNV(),                
+                    entity.getNgayTao(),
+                    entity.getTongCong());       
     }
     
     @Override
@@ -37,8 +37,8 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(UPDATE_SQL,
                         entity.getMaHD(),
                         entity.getMaNV(),
-                        entity.getMaSP(),
-                        entity.getNgayTao());  
+                        entity.getNgayTao(),
+                        entity.getTongCong());
     }
     
     @Override
@@ -69,8 +69,8 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 HoaDon entity = new HoaDon();
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getDouble("SoLuong"));                
+                entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setTongCong(rs.getFloat("TongCong"));               
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
