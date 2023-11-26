@@ -30,7 +30,7 @@
                   <KeyStroke key="Ctrl+Alt+P"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_password_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_password_reset_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x1ed5;i m&#x1ead;t kh&#x1ea9;u"/>
               </Properties>
@@ -43,7 +43,7 @@
                   <KeyStroke key="Ctrl+L"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_logout_rounded_up_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_logout_rounded_up_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng Xu&#x1ea5;t"/>
               </Properties>
@@ -56,7 +56,7 @@
                   <KeyStroke key="Alt+F4"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_exit_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_exit_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
               </Properties>
@@ -79,7 +79,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="products">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-poolside-bar-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-poolside-bar-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="S&#x1ea3;n Ph&#x1ea3;m"/>
               </Properties>
@@ -87,7 +87,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="recipe">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_book_20px_1.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_book_20px_1.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="C&#xf4;ng Th&#x1ee9;c"/>
               </Properties>
@@ -95,7 +95,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="ingridients">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-ingredient-24.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-ingredient-24.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nguy&#xea;n Li&#x1ec7;u"/>
               </Properties>
@@ -108,7 +108,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="invoice">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-invoice-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-invoice-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n"/>
               </Properties>
@@ -116,7 +116,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="employees">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_people_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_people_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#xe2;n Vi&#xea;n"/>
               </Properties>
@@ -139,7 +139,7 @@
             <MenuItem class="javax.swing.JMenuItem" name="revenue">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_report_card_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_report_card_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Doanh Thu"/>
               </Properties>
@@ -245,7 +245,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-invoice-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-invoice-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -268,7 +268,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-add-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p Nguy&#xea;n Li&#x1ec7;u"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -290,7 +290,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-add-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p c&#xf4;ng th&#x1ee9;c"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -312,7 +312,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8-add-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p S&#x1ea3;n ph&#x1ea9;m"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -334,7 +334,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_flag_2_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_flag_2_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng d&#x1eab;n"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -356,7 +356,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_logout_rounded_up_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_logout_rounded_up_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng Xu&#x1ea5;t"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -378,7 +378,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_exit_20px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_exit_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -422,7 +422,7 @@
             <Component class="javax.swing.JLabel" name="lbl_centerlogo">
               <Properties>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/longlogo.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\longlogo.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -470,7 +470,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_username_25px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_username_25px.png"/>
                 </Property>
               </Properties>
             </Component>
@@ -483,7 +483,7 @@
                   <Color blue="eb" green="f0" red="f2" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_alarm_clock_25px.png"/>
+                  <Image iconType="2" name="H:\FPTPolytechnic\Project1\src\main\java\group1\images\icons8_alarm_clock_25px.png"/>
                 </Property>
               </Properties>
             </Component>
