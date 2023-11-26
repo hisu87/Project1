@@ -17,7 +17,6 @@ public class HoaDon {
     private double SoLuong;
     private Date NgayTao;
     private boolean TrangThai;
-    
 
     public HoaDon() {
     }
@@ -77,7 +76,5 @@ public class HoaDon {
     public void setTrangThai(boolean TrangThai) {
         this.TrangThai = TrangThai;
     }
-    
-    
-}
 
+}
