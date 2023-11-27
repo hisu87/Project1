@@ -97,7 +97,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel5.setBackground(new java.awt.Color(51, 102, 0));
+        jPanel5.setBackground(new java.awt.Color(0, 255, 255));
 
         txt_search1.setForeground(new java.awt.Color(235, 202, 188));
         txt_search1.setText("Search");
@@ -121,7 +121,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         btn_delete1.setText("Delete");
 
-        jTable1.setBackground(new java.awt.Color(0, 102, 0));
+        jTable1.setBackground(new java.awt.Color(0, 255, 255));
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
@@ -149,7 +149,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
                                 .addGap(31, 31, 31)
                                 .addComponent(btn_search1))
                             .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 745, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(100, Short.MAX_VALUE))
+                        .addContainerGap(125, Short.MAX_VALUE))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addGap(56, 56, 56)
                         .addComponent(btn_first1)
@@ -188,8 +188,8 @@ public class HoaDonJDialog extends javax.swing.JDialog {
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(31, Short.MAX_VALUE))
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -201,7 +201,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jTabbedPane2.addTab("Quản lý hóa đơn", jPanel4);
 
-        jPanel1.setBackground(new java.awt.Color(51, 102, 0));
+        jPanel1.setBackground(new java.awt.Color(51, 255, 255));
 
         btnSua.setText("Next");
         btnSua.addActionListener(new java.awt.event.ActionListener() {
@@ -228,7 +228,7 @@ public class HoaDonJDialog extends javax.swing.JDialog {
 
         jButton2.setText("In lại");
 
-        jTable2.setBackground(new java.awt.Color(0, 102, 0));
+        jTable2.setBackground(new java.awt.Color(102, 255, 255));
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null},
