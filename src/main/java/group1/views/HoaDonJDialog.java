@@ -154,9 +154,8 @@ public class HoaDonJDialog extends javax.swing.JFrame {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btn_next)
                     .addComponent(btn_last)
-                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btn_first)
-                        .addComponent(btn_delete))
+                    .addComponent(btn_first)
+                    .addComponent(btn_delete)
                     .addComponent(btn_previous))
                 .addGap(49, 49, 49))
         );
