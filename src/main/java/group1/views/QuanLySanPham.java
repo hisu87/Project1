@@ -42,11 +42,12 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }
     void loadcbx(){
         try {
-           DefaultComboBoxModel cbxmodel=new DefaultComboBoxModel();
+           DefaultComboBoxModel cbxmodel=(DefaultComboBoxModel) cbxct.getModel();
            cbxmodel.removeAllElements();
            List<CongThuc> listct=ctdao.getCongThuc();
             for (CongThuc ct : listct) {
-                cbxmodel.addElement(ct);
+                cbxmodel.addElement(ct.getMaCT());
+               
             }
            
         } catch (Exception e) {
@@ -68,6 +69,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
             lblanh.setToolTipText(String.valueOf(image));
             System.out.println(image);
     }
+//    public SanPham getForm(){
+//       
+//    }
         void insert(){
             try {
                

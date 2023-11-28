@@ -105,14 +105,11 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         jLabel10.setText("00:00:00 SA");
 
         jTabbedPane1.setBackground(new java.awt.Color(51, 153, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel3.setBackground(new java.awt.Color(28, 97, 51));
 
         tbl_nhanvien.setAutoCreateRowSorter(true);
-        tbl_nhanvien.setBackground(new java.awt.Color(255, 255, 255));
         tbl_nhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tbl_nhanvien.setForeground(new java.awt.Color(0, 0, 0));
         tbl_nhanvien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"NV01", "Trần Dần", "112", "dantm@gmail.com", "Nam", "Nhân Viên", "22/1/11997"},
@@ -376,7 +373,10 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                 .addGap(175, 175, 175)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

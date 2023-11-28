@@ -20,36 +20,36 @@ public class LoadingJDialog extends javax.swing.JDialog {
     public LoadingJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-        runLoadingBar();
+//        runLoadingBar();
         setTitle("Loading");
         setIconImage(xImage.getAppIcon());
         setLocationRelativeTo(parent);
     }
 
-    private void runLoadingBar() {
-        class Loading extends Thread {
-
-            @Override
-            public void run() {
-
-                for (int i = 0; i <= 100; i++) {
-                    try {
-                        Thread.sleep(50);
-                        lblLoadingValue.setText(i + "%");
-                        progressBar.setValue(i);
-                        if (i == 100) {
-                            dispose();
-                            new JMainFrame().setVisible(true);
-                        }
-                    } catch (InterruptedException ex) {
-                        Logger.getLogger(JMainFrame.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                }
-            }
-        }
-        Loading l = new Loading();
-        l.start();
-    }
+//    private void runLoadingBar() {
+//        class Loading extends Thread {
+//
+//            @Override
+//            public void run() {
+//
+//                for (int i = 0; i <= 100; i++) {
+//                    try {
+//                        Thread.sleep(50);
+//                        lblLoadingValue.setText(i + "%");
+//                        progressBar.setValue(i);
+//                        if (i == 100) {
+//                            dispose();
+//                            new JMainFrame().setVisible(true);
+//                        }
+//                    } catch (InterruptedException ex) {
+//                        Logger.getLogger(JMainFrame.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
+//                }
+//            }
+//        }
+//        Loading l = new Loading();
+//        l.start();
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
