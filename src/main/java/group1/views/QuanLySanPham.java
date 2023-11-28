@@ -55,7 +55,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
             msgBox.alert(this, "Lỗi khi load cbx");
         }
     }
-    void setForm( SanPham sp){    
+    SanPham setForm( SanPham sp){    
      txtmaSanPham.setText(sp.getMaSP());
      txtTenSanPham.setText(sp.getTenSP());
      cbxct.setSelectedItem(sp.getMaCT());
@@ -68,15 +68,24 @@ public class QuanLySanPham extends javax.swing.JDialog {
             lblanh.setIcon(new ImageIcon(imagescal));
             lblanh.setToolTipText(String.valueOf(image));
             System.out.println(image);
+            return sp;
     }
-//    public SanPham getForm(){
-//       
-//    }
+    public SanPham getForm(){
+        SanPham sp=new SanPham();
+      sp.setMaSP(txtmaSanPham.getText());
+      sp.setTenSP(txtTenSanPham.getText());
+      sp.setMaCT((String) cbxct.getSelectedItem());
+      sp.setGia(Float.parseFloat(txtgia.getText()));
+      sp.setAnh(lblanh.getText());
+      return sp;
+    }
         void insert(){
             try {
-               
-                
+             SanPham sp=getForm();
+     
+                daosp.insert(sp);
             } catch (Exception e) {
+                e.printStackTrace();
             }
         }
     @SuppressWarnings("unchecked")
@@ -107,6 +116,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnMoi = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -189,6 +199,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
             }
         });
 
+        cbxct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Thêm", " ", " " }));
+        cbxct.setToolTipText("thêm");
+
         jLabel8.setText("Mã Công Thức:");
 
         lblanh.setText("jLabel9");
@@ -261,6 +274,13 @@ public class QuanLySanPham extends javax.swing.JDialog {
                 .addContainerGap(97, Short.MAX_VALUE))
         );
 
+        jButton1.setText("Thêm");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -281,7 +301,10 @@ public class QuanLySanPham extends javax.swing.JDialog {
                                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addComponent(txtmaSanPham, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbxct, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                                        .addComponent(cbxct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jButton1))
                                     .addComponent(txtgia, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 283, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(18, 18, 18))
@@ -320,8 +343,10 @@ public class QuanLySanPham extends javax.swing.JDialog {
                                 .addGap(32, 32, 32)
                                 .addComponent(jLabel8)
                                 .addGap(11, 11, 11)
-                                .addComponent(cbxct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(29, 29, 29)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(cbxct, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jButton1))
+                                .addGap(28, 28, 28)
                                 .addComponent(jLabel2)
                                 .addGap(18, 18, 18)
                                 .addComponent(txtgia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -407,6 +432,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
 
     }//GEN-LAST:event_btnlastActionPerformed
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+      CongThucNguyenLieuJDialog ct=new CongThucNguyenLieuJDialog();
+      ct.setVisible(true);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -460,6 +490,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
     private javax.swing.JButton btnlast;
     private javax.swing.JButton btnnext;
     private javax.swing.JComboBox<String> cbxct;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
