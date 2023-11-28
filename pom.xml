@@ -38,6 +38,16 @@
 </dependency>
 
 <!-- https://mvnrepository.com/artifact/com.github.javatlacati.jcalendar/jcalendar -->
+<<<<<<< HEAD
+
+<dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.8.8</version>
+        </dependency>
+
+        <!-- ZXing -->
+=======
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
@@ -50,12 +60,26 @@
             <version>1.42.1</version>
             <type>jar</type>
         </dependency>
+>>>>>>> main
         <dependency>
             <groupId>com.google.zxing</groupId>
             <artifactId>core</artifactId>
             <version>3.4.1</version>
+<<<<<<< HEAD
+        </dependency>
+        <dependency>
+            <groupId>com.google.zxing</groupId>
+            <artifactId>javase</artifactId>
+            <version>3.4.1</version>
+        </dependency>
+
+
+
+
+=======
             <type>jar</type>
         </dependency>
+>>>>>>> main
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

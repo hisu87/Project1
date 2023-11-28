@@ -17,9 +17,10 @@ public class CongThucDAO {
 
     public static Connection getConnection() {
         String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
-        String url = "jdbc:sqlserver://MSI\\SQLEXPRESS:1433;databaseName=QLStarbucks;encrypt=false";
+       String url = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
+
         String username = "sa";
-        String password = "123";
+        String password = "songlong";
         Connection connection = null;
 
         try {
