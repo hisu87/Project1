@@ -1,5 +1,6 @@
 package group1.dao;
 
+import group1.entity.CongThuc;
 import group1.entity.CongThuc_NguyenLieu;
 import group1.entity.HoaDon;
 import group1.utils.xJDBC;
@@ -37,7 +38,7 @@ public class CongThucDAO {
 //            "Join [Công thức] on CT_NL.MaCT = [Công thức].MaCT" +
 //            "Join [Nguyên Liệu] on CT_NL.MaNL = [Nguyên Liệu].MaNL";
 //    
-    public static List<CongThuc_NguyenLieu> getAll() {
+    public static List<CongThuc_NguyenLieu> getCongThucNguyenLieu() {
         List<CongThuc_NguyenLieu> list = new ArrayList<>();
         try {
             Connection conn = getConnection();
@@ -85,7 +86,7 @@ public class CongThucDAO {
 
     }
 
-    public static List<CongThuc_NguyenLieu> FindByid(String mact) throws SQLException {
+    public static List<CongThuc_NguyenLieu> FindByid(String mact, String tenct) throws SQLException {
 
         List<CongThuc_NguyenLieu> list = new ArrayList<>();
         Connection conn = getConnection();
@@ -93,15 +94,16 @@ public class CongThucDAO {
                 + "FROM CT_NL "
                 + "JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT "
                 + "JOIN [Nguyên Liệu] ON CT_NL.MaNL =[Nguyên Liệu].MaNL"
-                + " where  [Công thức].MaCT = ?";
-      
-        PreparedStatement stm = conn.prepareStatement(sql);
-        stm.setString(1, mact); // Chỉ số của tham số bắt đầu từ 1
-
-        ResultSet rs = stm.executeQuery();
+                + " where  [Công thức].MaCT = ? or [Công thức].TenCongThuc = ?";
+        PreparedStatement pstm = conn.prepareStatement(sql);
+        
+        pstm.setString(1, mact); // Chỉ số của tham số bắt đầu từ 1
+        pstm.setString(2, tenct);
+        
+        ResultSet rs = pstm.executeQuery();
         while (rs.next()) {
             int Mact = rs.getInt("mact");
-            String tenct = rs.getString("tenCongThuc");
+            String Tenct = rs.getString("tenCongThuc");
             String manl = rs.getString("manl");
             String tennl = rs.getString("tennl");
             int soluong = rs.getInt("soluong");
@@ -112,7 +114,7 @@ public class CongThucDAO {
         }
         // Đóng tài nguyên
         rs.close();
-        stm.close();
+        pstm.close();
         conn.close();
         return list;
     }
@@ -150,4 +152,27 @@ public class CongThucDAO {
         stm.close();
         conn.close();
     }
+    
+     public static List<CongThuc> getCongThuc() {
+        List<CongThuc> list = new ArrayList<>();
+        try {
+            Connection conn = getConnection();
+            String sql ="select * from [Công thức]";
+
+            Statement stm = conn.createStatement();
+            ResultSet rs = stm.executeQuery(sql);
+
+            while (rs.next()) {
+                CongThuc entity = new CongThuc();
+                entity.setMaCT(rs.getInt("MaCT"));
+                entity.setTenCT(rs.getString("TenCongThuc"));
+                list.add(entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    
 }

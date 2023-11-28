@@ -9,53 +9,31 @@ package group1.entity;
  * @author numpa
  */
 public class CongThuc {
-    private String MaSP;
-    private String MaNL;
-    private String TenNL;
-    private double SoLuong;
+   private int maCT;
+   private String tenCT;
+
+    public CongThuc(int maCT, String tenCT) {
+        this.maCT = maCT;
+        this.tenCT = tenCT;
+    }
 
     public CongThuc() {
     }
 
-    public CongThuc(String MaSP, String MaNL, String TenNL, double SoLuong) {
-        this.MaSP = MaSP;
-        this.MaNL = MaNL;
-        this.TenNL = TenNL;
-        this.SoLuong = SoLuong;
+    public int getMaCT() {
+        return maCT;
     }
 
-    
-    public String getMaSP() {
-        return MaSP;
+    public void setMaCT(int maCT) {
+        this.maCT = maCT;
     }
 
-    public void setMaSP(String MaSP) {
-        this.MaSP = MaSP;
+    public String getTenCT() {
+        return tenCT;
     }
 
-    public String getMaNL() {
-        return MaNL;
+    public void setTenCT(String tenCT) {
+        this.tenCT = tenCT;
     }
-
-    public void setMaNL(String MaNL) {
-        this.MaNL = MaNL;
-    }
-
-    public String getTenNL() {
-        return TenNL;
-    }
-
-    public void setTenNL(String TenNL) {
-        this.TenNL = TenNL;
-    }
-
-    public double getSoLuong() {
-        return SoLuong;
-    }
-
-    public void setSoLuong(double SoLuong) {
-        this.SoLuong = SoLuong;
-    }
-    
-    
+   
 }

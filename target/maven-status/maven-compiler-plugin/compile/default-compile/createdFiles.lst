@@ -13,16 +13,20 @@ group1\views\JMainFrame$2.class
 group1\views\CongThucNguyenLieuJDialog$5.class
 group1\views\DoanhThuJDialog.class
 group1\views\LoginJDialog$7.class
+group1\views\JMainFrame$8.class
 group1\views\QLNguyenLieuJDialog$7.class
 group1\views\NewJDialog$2.class
 group1\views\QuanLySanPham$7.class
 group1\views\QuanLySanPham.class
 group1\views\HoaDonJDialog$1.class
+group1\views\NhanVienJDialog$5$1.class
 group1\views\QLNguyenLieuJDialog.class
 group1\dao\NguyenLieuDAO.class
 group1\views\QLNguyenLieuJDialog$1.class
+group1\views\JMainFrame$7.class
 group1\dao\CafeDAO.class
 group1\views\ChangePasswordJDialog$3$1.class
+group1\views\NewJDialog$3.class
 group1\views\QuanLySanPham$1.class
 group1\views\NhanVienJDialog$2.class
 group1\views\QLNguyenLieuJDialog$8.class
@@ -67,6 +71,8 @@ group1\views\NhanVienJDialog$4.class
 group1\views\CongThucNguyenLieuJDialog$2.class
 group1\dao\SanPhamDao.class
 group1\views\LoginJDialog$4.class
+group1\views\QLNguyenLieuJDialog$13.class
+group1\views\JMainFrame$5.class
 group1\entity\HoaDon.class
 group1\views\LoginJDialog$5.class
 group1\views\CongThucNguyenLieuJDialog$8.class
@@ -86,7 +92,10 @@ group1\views\SanPhamJDialog$7.class
 group1\views\NewJDialog.class
 group1\views\SanPhamJDialog$TransferInfo.class
 group1\views\LoginJDialog$3.class
+group1\views\QLNguyenLieuJDialog$13$1.class
 group1\views\QLNguyenLieuJDialog$9.class
+group1\dao\CongThucDAO.class
+group1\views\JMainFrame$1TimeClock.class
 group1\views\SanPhamJDialog$8.class
 group1\views\CongThucNguyenLieuJDialog$9.class
 group1\entity\CongThuc.class
@@ -106,3 +115,4 @@ group1\views\JMainFrame$9.class
 group1\views\HoaDonJDialog.class
 group1\entity\NguyenLieu.class
 group1\views\LoginJDialog$2.class
+group1\views\NhanVienJDialog$5.class

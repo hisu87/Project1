@@ -44,8 +44,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
         try {
            DefaultComboBoxModel cbxmodel=new DefaultComboBoxModel();
            cbxmodel.removeAllElements();
-           List<CongThuc_NguyenLieu> listct=ctdao.getAll();
-            for (CongThuc_NguyenLieu ct : listct) {
+           List<CongThuc> listct=ctdao.getCongThuc();
+            for (CongThuc ct : listct) {
                 cbxmodel.addElement(ct);
             }
            

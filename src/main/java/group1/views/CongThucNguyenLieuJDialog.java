@@ -3,14 +3,23 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 package group1.views;
+// thư viện iText 
+import com.itextpdf.text.*;
+import com.itextpdf.text.pdf.PdfPTable;
+import com.itextpdf.text.pdf.PdfWriter;
 
 import group1.dao.CongThucDAO;
+import group1.entity.CongThuc;
 import group1.entity.CongThuc_NguyenLieu;
+import java.io.FileOutputStream;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.filechooser.FileNameExtensionFilter;
 import javax.swing.table.DefaultTableModel;
 // THơ
 
@@ -22,6 +31,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         initTable();
         setTitle("Thông tin công thức");
         setLocationRelativeTo(null);
+        loadCbo();
     }
 
    
@@ -32,7 +42,6 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblCongthuc = new javax.swing.JTable();
-        txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
         btnPrint = new javax.swing.JButton();
         btnFirst = new javax.swing.JButton();
@@ -54,6 +63,8 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         txtManl = new javax.swing.JTextField();
         txtSoluong = new javax.swing.JTextField();
         btnReset = new javax.swing.JButton();
+        cboMact = new javax.swing.JComboBox<>();
+        cboTenct = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -80,22 +91,20 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1000, 370));
 
-        txtSearch.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtSearchActionPerformed(evt);
-            }
-        });
-        jPanel1.add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 130, -1));
-
         btnSearch.setText("Tìm kiếm ");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
-        jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 110, -1, -1));
+        jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
         btnPrint.setText("Print");
+        btnPrint.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnPrintActionPerformed(evt);
+            }
+        });
         jPanel1.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 550, -1, -1));
 
         btnFirst.setText("First");
@@ -192,6 +201,12 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 550, -1, -1));
 
+        cboMact.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã công thức" }));
+        jPanel1.add(cboMact, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        cboTenct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tên công thức " }));
+        jPanel1.add(cboTenct, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -209,10 +224,6 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
         btnnext();
     }//GEN-LAST:event_btnNextActionPerformed
-
-    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
-        
-    }//GEN-LAST:event_txtSearchActionPerformed
 
     private void btnInsertActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInsertActionPerformed
         CongThuc_NguyenLieu ct = getForm();
@@ -256,9 +267,13 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     }//GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
-        String id =  txtSearch.getText();
+//        String id =  txtSearch.getText();
+// sử dụng cho text field
+        String mact = (String) cboMact.getSelectedItem();
+        String tenct = (String) cboTenct.getSelectedItem();
+        
         try {
-           List<CongThuc_NguyenLieu> list = CongThucDAO.FindByid(id);
+           List<CongThuc_NguyenLieu> list = CongThucDAO.FindByid(mact, tenct);
             if (list == null) {
                 JOptionPane.showMessageDialog(rootPane, "Không tìm thấy");
             } else {
@@ -289,6 +304,11 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         }
         initTable();
     }//GEN-LAST:event_btnUpdateActionPerformed
+
+    private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPrintActionPerformed
+
+        exportToPdf(tblModel);
+    }//GEN-LAST:event_btnPrintActionPerformed
 
     /**
      * @param args the command line arguments
@@ -338,6 +358,8 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JComboBox<String> cboMact;
+    private javax.swing.JComboBox<String> cboTenct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -350,7 +372,6 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private javax.swing.JTextField txtDonvido;
     private javax.swing.JTextField txtMact;
     private javax.swing.JTextField txtManl;
-    private javax.swing.JTextField txtSearch;
     private javax.swing.JTextField txtSoluong;
     // End of variables declaration//GEN-END:variables
 
@@ -360,7 +381,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
        tblModel.setColumnIdentifiers(columnsName);
        tblModel.setRowCount(0);
        
-       List<CongThuc_NguyenLieu> list = CongThucDAO.getAll();
+       List<CongThuc_NguyenLieu> list = CongThucDAO.getCongThucNguyenLieu();
        
        for (CongThuc_NguyenLieu ct : list) {
             tblModel.addRow(new Object[]{
@@ -459,6 +480,55 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         txtManl.setText("");
         txtSoluong.setText("");
         txtDonvido.setText("");
+    }
+    
+    public void loadCbo() {
+        
+        List<CongThuc> list = CongThucDAO.getCongThuc();
+        for (CongThuc ct: list) {
+            cboMact.addItem(Integer.toString(ct.getMaCT()));
+            cboTenct.addItem(ct.getTenCT());
+        }
+    }
+    
+    public void exportToPdf( DefaultTableModel table) {
+       JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Save PDF");
+        fileChooser.setFileFilter(new FileNameExtensionFilter("PDF Files", "pdf"));
+
+        int userSelection = fileChooser.showSaveDialog(null);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getAbsolutePath();
+
+            try {
+                Document document = new Document();
+                PdfWriter.getInstance(document, new FileOutputStream(filePath));
+                document.open();
+
+                // Tạo bảng PDF từ JTable
+                PdfPTable pdfTable = new PdfPTable(table.getColumnCount());
+
+                // Thêm cột vào bảng PDF
+                for (int i = 0; i < table.getColumnCount(); i++) {
+                    pdfTable.addCell(table.getColumnName(i));
+                }
+
+                // Thêm dữ liệu từ JTable vào bảng PDF
+                for (int i = 0; i < table.getRowCount(); i++) {
+                    for (int j = 0; j < table.getColumnCount(); j++) {
+                        pdfTable.addCell(table.getValueAt(i, j).toString());
+                    }
+                }
+
+                // Thêm bảng PDF vào tài liệu
+                document.add(pdfTable);
+
+                document.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 }
  
