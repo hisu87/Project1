@@ -1,4 +1,3 @@
-D:\FPTPolytechnic\duan1\src\main\java\group1\views\JMainFrame.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\entity\HoaDon.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\entity\NguyenLieu.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\entity\NhanVien.java
@@ -25,5 +24,6 @@ D:\FPTPolytechnic\duan1\src\main\java\group1\dao\NguyenLieuDAO.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\utils\msgBox.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\utils\xJDBC.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\dao\CongThucDAO.java
+D:\FPTPolytechnic\duan1\src\main\java\group1\dao\ThongKeDAO.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\utils\xDate.java
 D:\FPTPolytechnic\duan1\src\main\java\group1\entity\CongThuc_NguyenLieu.java

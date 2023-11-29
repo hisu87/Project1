@@ -297,7 +297,7 @@ int indextru=0;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(14, Short.MAX_VALUE))
+                .addContainerGap(277, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -347,31 +347,31 @@ int indextru=0;
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1048, Short.MAX_VALUE)
+            .addGap(0, 1093, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
                     .addGap(288, 288, 288)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(756, Short.MAX_VALUE)))
+                    .addContainerGap(801, Short.MAX_VALUE)))
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
                     .addGap(479, 479, 479)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(569, Short.MAX_VALUE)))
+                    .addContainerGap(614, Short.MAX_VALUE)))
         );
         jPanel10Layout.setVerticalGroup(
             jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 633, Short.MAX_VALUE)
+            .addGap(0, 656, Short.MAX_VALUE)
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
                     .addGap(128, 128, 128)
                     .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(501, Short.MAX_VALUE)))
+                    .addContainerGap(524, Short.MAX_VALUE)))
             .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel10Layout.createSequentialGroup()
                     .addGap(311, 311, 311)
                     .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(322, Short.MAX_VALUE)))
+                    .addContainerGap(345, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -379,14 +379,14 @@ int indextru=0;
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(51, 51, 51)
+                .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(39, Short.MAX_VALUE))
+                .addContainerGap(302, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(29, 29, 29)
+                .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(1365, Short.MAX_VALUE))
         );
@@ -415,9 +415,9 @@ int indextru=0;
         jPanel8Layout.setHorizontalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(385, 385, 385)
+                .addGap(628, 628, 628)
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(491, Short.MAX_VALUE))
+                .addContainerGap(511, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -438,11 +438,10 @@ int indextru=0;
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(28, 28, 28)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -495,8 +494,11 @@ int indextru=0;
                                     .addComponent(jLabel34)
                                     .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))))
                         .addGap(58, 58, 58)
-                        .addComponent(jLabel3)))
-                .addGap(3, 3, 3))
+                        .addComponent(jLabel3))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGap(15, 15, 15)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 1150, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -677,8 +679,9 @@ int indextru=0;
             @Override
             public void actionPerformed(ActionEvent e) {
                   index++;
-//                SanPham clickproduct = listbest.get(index);
-//                listcart.add(clickproduct);
+                SanPham clickproduct = listbest.get(index);
+                listcart.add(clickproduct);
+                System.out.println(listcart.toString());
 //
 //
 //                soLanMua = (int) spinner.getValue();
@@ -797,8 +800,9 @@ panelgia.setBackground(Color.white);
         btnmua.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                SanPham clickproduct = listbest.get(index);
-//                listcart.add(clickproduct);
+                SanPham clickproduct = listbest.get(index);
+                listcart.add(clickproduct);
+                System.out.println(listcart);
 //
 //
 //                soLanMua = (int) spinner.getValue();
@@ -818,7 +822,7 @@ index++;
 //                soLanMua = (int) spinner.getValue();
 //            }
 //        });
-                index++;
+               
             }
         });
          createHoaDon(TenSP, gia);
@@ -851,7 +855,8 @@ index++;
 
         panelcart.setPreferredSize(new Dimension(500, 100));
         panelcart.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
-
+       
+  panelcart.setBorder(new SoftBevelBorder(SoftBevelBorder.RAISED, Color.LIGHT_GRAY, Color.GRAY));
         panelcart.setBackground(Color.white);
         // Thêm hình ảnh vào JPanel
         ImageIcon icon = xImage.readimage(anh);
@@ -918,7 +923,10 @@ index++;
     }
 
     void createthanhtoan(String Tensp, double Gia) {
-
+        JPanel panelqr=new JPanel();
+        jLabel1.setSize(300,300);
+        panelqr.add(jLabel1);
+        panelqr.setSize(300, 300);
         JPanel pnx = new JPanel();
         pnx.setBackground(new Color(204,204,204));
         textar = new TextArea();
@@ -927,11 +935,12 @@ index++;
         jPanel7.setLayout(new GridLayout(2, 1));
         Border emptyBorder1 = BorderFactory.createEmptyBorder(10, 10, 300, 10);
         jPanel7.setBorder(emptyBorder1);
+       
         jPanel7.add(textar);
 
 
         JPanel panelthanhtoan = new JPanel();
-        ;
+        panelthanhtoan.setSize(300, 100);
 
 
         JButton btnprint = new JButton("Print PDF");
@@ -946,6 +955,7 @@ index++;
         panelthanhtoan.add(btnprint);
 
         jPanel7.add(panelthanhtoan);
+       
 
 btnprint.addActionListener(new ActionListener(){
             @Override
@@ -967,8 +977,8 @@ btnthanhtoan.addActionListener(new ActionListener(){
                 if (image != null) {
                     // Hiển thị hình ảnh và lưu hình ảnh vào tệp
                     ImageIcon icon = new ImageIcon(image);
-                    int w= 500;
-                    int h=500;
+                    int w= 300;
+                    int h=300;
                     Image img=image.getScaledInstance(w, h,image.SCALE_SMOOTH);
                     jLabel1.setIcon(new ImageIcon(img));
 
@@ -1014,8 +1024,8 @@ btnthanhtoan.addActionListener(new ActionListener(){
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
         textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
                 +      "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
-totalall=tongtien+=tongtiensp;
-          lbltongtien.setText(String.valueOf(totalall));
+totalall=tongtiensp+=tongtiensp;
+        
 
     }
 void printpdf(String textar){
@@ -1244,6 +1254,22 @@ for (SanPham sp : list) {
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(SanPhamJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
