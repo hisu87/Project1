@@ -724,6 +724,7 @@ int indextru=0;
         pn1.add(textLabel1);
         pn1.add(panelgia);
         pn1.add(jpanelbutton);
+        panelgia.setBackground(Color.white);
 
         // Thêm pn1 vào panel
         panel.add(pn1);
@@ -772,7 +773,7 @@ int indextru=0;
 
         panelgia.add(textLabel4);
         panelgia.add(spinner);
-
+panelgia.setBackground(Color.white);
         JPanel jpanelbutton = new JPanel();
         jpanelbutton.setSize(150, 50);
         jpanelbutton.setBackground(Color.white);
