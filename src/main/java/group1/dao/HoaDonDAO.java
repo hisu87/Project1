@@ -17,30 +17,36 @@ import java.util.List;
  */
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
-    public String INSERT_SQL = "INSERT_INTO HoaDon(MaHD, MaNV, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE HoaDon SET MaNV=?, MaSP=?, NgayTao=?, TrangThai=?, TongCong=? WHERE MaHD=?";
-    public String DELETE_SQL = "DELETE FROM HoaDon WHERE MaNV=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon WHERE MaNV=?";
-
+    public String INSERT_SQL = "INSERT_INTO [HoaDon](MaHD, MaNV, MaSP, NgayTao, SoLuong, TrangThai, TongCong) VALUES(?,?,?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE [HoaDon] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
+    public String DELETE_SQL = "DELETE FROM [HoaDon] WHERE MaNV=?";
+    public String SELECT_ALL_SQL = "SELECT * FROM [HoaDon]";
+    public String SELECT_BY_ID_SQL = "SELECT * FROM [HoaDon] WHERE MaNV=?";
+    
     @Override
-    public void insert(HoaDon entity) {
+    public void insert(HoaDon entity)  {
         xJDBC.executeUpdate(INSERT_SQL,
-                entity.getMaHD(),
-                entity.getMaNV(),
-                entity.getNgayTao(),
-                entity.getTongCong());
+                    entity.getMaHD(),
+                    entity.getMaNV(),
+                    entity.getMaSP(),
+                    entity.getNgayTao(),
+                    entity.getSoLuong(),
+                    entity.getTrangThai(),
+                    entity.getTongCong());       
     }
-
+    
     @Override
-    public void update(HoaDon entity) {
+    public void update(HoaDon entity)  {
         xJDBC.executeUpdate(UPDATE_SQL,
-                entity.getMaHD(),
-                entity.getMaNV(),
-                entity.getNgayTao(),
-                entity.getTongCong());
+                        entity.getMaHD(),
+                        entity.getMaNV(),
+                        entity.getMaSP(),
+                        entity.getNgayTao(),
+                        entity.getSoLuong(),
+                        entity.getTrangThai(),
+                        entity.getTongCong());
     }
-
+    
     @Override
     public void delete(String id) {
         xJDBC.executeUpdate(DELETE_SQL, id);
@@ -69,40 +75,12 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 HoaDon entity = new HoaDon();
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
+                entity.setMaSP(rs.getString("MaSP"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setSoLuong(rs.getDouble("Soluong"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
-                entity.setTongCong(rs.getFloat("TongCong"));
+                entity.setTongCong(rs.getFloat("TongCong"));               
                 list.add(entity);
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public List<Integer> selectYear() {
-        String sql = "SELECT DISTINCT YEAR(NgayTao) FROM [Hóa Đơn] order by year(NgayTao) desc";
-        List<Integer> list = new ArrayList<>();
-        try {
-            ResultSet rs = xJDBC.executeQuery(sql);
-            while (rs.next()) {
-                list.add(rs.getInt(1));
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public List<Integer> selectMonth() {
-        String sql = "SELECT DISTINCT Month(NgayTao) FROM [Hóa Đơn]";
-        List<Integer> list = new ArrayList<>();
-        try {
-            ResultSet rs = xJDBC.executeQuery(sql);
-            while (rs.next()) {
-                list.add(rs.getInt(1));
             }
             rs.getStatement().getConnection().close();
             return list;
