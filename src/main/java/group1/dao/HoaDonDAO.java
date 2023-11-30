@@ -22,25 +22,25 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
     public String DELETE_SQL = "DELETE FROM HoaDon WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM HoaDon";
     public String SELECT_BY_ID_SQL = "SELECT * FROM HoaDon WHERE MaNV=?";
-    
+
     @Override
-    public void insert(HoaDon entity)  {
+    public void insert(HoaDon entity) {
         xJDBC.executeUpdate(INSERT_SQL,
-                    entity.getMaHD(),
-                    entity.getMaNV(),                
-                    entity.getNgayTao(),
-                    entity.getTongCong());       
+                entity.getMaHD(),
+                entity.getMaNV(),
+                entity.getNgayTao(),
+                entity.getTongCong());
     }
-    
+
     @Override
-    public void update(HoaDon entity)  {
+    public void update(HoaDon entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
-                        entity.getMaHD(),
-                        entity.getMaNV(),
-                        entity.getNgayTao(),
-                        entity.getTongCong());
+                entity.getMaHD(),
+                entity.getMaNV(),
+                entity.getNgayTao(),
+                entity.getTongCong());
     }
-    
+
     @Override
     public void delete(String id) {
         xJDBC.executeUpdate(DELETE_SQL, id);
@@ -71,8 +71,38 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.setMaNV(rs.getString("MaNV"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
-                entity.setTongCong(rs.getFloat("TongCong"));               
+                entity.setTongCong(rs.getFloat("TongCong"));
                 list.add(entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Integer> selectYear() {
+        String sql = "SELECT DISTINCT YEAR(NgayTao) FROM [Hóa Đơn] order by year(NgayTao) desc";
+        List<Integer> list = new ArrayList<>();
+        try {
+            ResultSet rs = xJDBC.executeQuery(sql);
+            while (rs.next()) {
+                list.add(rs.getInt(1));
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<Integer> selectMonth() {
+        String sql = "SELECT DISTINCT Month(NgayTao) FROM [Hóa Đơn]";
+        List<Integer> list = new ArrayList<>();
+        try {
+            ResultSet rs = xJDBC.executeQuery(sql);
+            while (rs.next()) {
+                list.add(rs.getInt(1));
             }
             rs.getStatement().getConnection().close();
             return list;
