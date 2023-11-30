@@ -166,6 +166,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -174,16 +175,16 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
         jScrollPane1 = new javax.swing.JScrollPane();
         tlb_doanhthu = new javax.swing.JTable();
         jPanel4 = new javax.swing.JPanel();
-        datefrom = new com.toedter.calendar.JDateChooser();
-        dateto = new com.toedter.calendar.JDateChooser();
         rdo_byyear = new javax.swing.JRadioButton();
         rdo_bymonth = new javax.swing.JRadioButton();
         rdo_day = new javax.swing.JRadioButton();
         rdo_daytoday = new javax.swing.JRadioButton();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        date = new com.toedter.calendar.JDateChooser();
         cbo_year = new javax.swing.JComboBox<>();
+        date = new com.toedter.calendar.JDateChooser();
+        datefrom = new com.toedter.calendar.JDateChooser();
+        dateto = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         jToggleButton1 = new javax.swing.JToggleButton();
         jToggleButton2 = new javax.swing.JToggleButton();
@@ -246,26 +247,11 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 javax.swing.border.TitledBorder.LEFT, javax.swing.border.TitledBorder.DEFAULT_POSITION,
                 new java.awt.Font("Segoe UI", 0, 18), new java.awt.Color(242, 240, 235))); // NOI18N
 
-        datefrom.setBackground(new java.awt.Color(132, 35, 60));
-        datefrom.setBorder(javax.swing.BorderFactory.createCompoundBorder(
-                new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED),
-                javax.swing.BorderFactory.createEtchedBorder()));
-
-        dateto.setBackground(new java.awt.Color(132, 35, 60));
-        dateto.setBorder(javax.swing.BorderFactory.createCompoundBorder(
-                new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED),
-                javax.swing.BorderFactory.createEtchedBorder()));
-
         rdo_byyear.setForeground(new java.awt.Color(242, 240, 235));
         rdo_byyear.setText("Theo Năm");
         rdo_byyear.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 rdo_byyearItemStateChanged(evt);
-            }
-        });
-        rdo_byyear.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                rdo_byyearMouseClicked(evt);
             }
         });
 
@@ -319,12 +305,6 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
         jLabel8.setForeground(new java.awt.Color(242, 240, 235));
         jLabel8.setText("Đến ngày");
 
-        date.setBackground(new java.awt.Color(132, 35, 60));
-        date.setBorder(javax.swing.BorderFactory.createCompoundBorder(
-                new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED),
-                javax.swing.BorderFactory.createEtchedBorder()));
-        date.setForeground(new java.awt.Color(242, 240, 235));
-
         cbo_year.setForeground(new java.awt.Color(242, 240, 235));
         cbo_year.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "2023", "2022", "2021" }));
         cbo_year.addActionListener(new java.awt.event.ActionListener() {
@@ -340,10 +320,14 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                         .addGroup(jPanel4Layout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(dateto, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
                                                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                                 .addComponent(jLabel7))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout
-                                                .createSequentialGroup()
+                                        .addGroup(jPanel4Layout.createSequentialGroup()
                                                 .addGap(37, 37, 37)
                                                 .addComponent(rdo_byyear)
                                                 .addGap(112, 112, 112)
@@ -355,62 +339,53 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                                                 .addGap(89, 89, 89)
                                                 .addGroup(jPanel4Layout
                                                         .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(rdo_day, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                176, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                jPanel4Layout.createSequentialGroup()
-                                                                        .addGap(0, 31, Short.MAX_VALUE)
-                                                                        .addComponent(date,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                                176,
-                                                                                javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(jPanel4Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                false)
                                                         .addGroup(jPanel4Layout.createSequentialGroup()
-                                                                .addGap(198, 198, 198)
-                                                                .addComponent(datefrom,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 141,
-                                                                        javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                                                .addGap(58, 58, 58)
+                                                                .addComponent(rdo_day,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE, 176,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addPreferredGap(
+                                                                        javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                                                        89, Short.MAX_VALUE)
                                                                 .addComponent(rdo_daytoday)
+                                                                .addGap(108, 108, 108)
+                                                                .addComponent(jLabel8))
+                                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                                                .addComponent(date,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)
                                                                 .addPreferredGap(
                                                                         javax.swing.LayoutStyle.ComponentPlacement.RELATED,
                                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                         Short.MAX_VALUE)
-                                                                .addComponent(jLabel8))))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING,
-                                                jPanel4Layout.createSequentialGroup()
-                                                        .addGap(0, 0, Short.MAX_VALUE)
-                                                        .addComponent(dateto, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                                                140, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                                .addComponent(datefrom,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                                        javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                                        javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(31, 31, 31)));
         jPanel4Layout.setVerticalGroup(
                 jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                                 .addContainerGap()
                                 .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout
+                                                .createSequentialGroup()
                                                 .addComponent(datefrom, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                         javax.swing.GroupLayout.DEFAULT_SIZE,
                                                         javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                                 .addComponent(jLabel8))
-                                        .addGroup(jPanel4Layout.createSequentialGroup()
-                                                .addGap(0, 0, Short.MAX_VALUE)
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout
+                                                .createSequentialGroup()
                                                 .addGroup(jPanel4Layout
-                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                        .addComponent(date, javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                        .addComponent(cbo_year, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addComponent(cbo_year,
-                                                                javax.swing.GroupLayout.Alignment.TRAILING,
-                                                                javax.swing.GroupLayout.PREFERRED_SIZE,
+                                                        .addComponent(date, javax.swing.GroupLayout.PREFERRED_SIZE,
                                                                 javax.swing.GroupLayout.DEFAULT_SIZE,
                                                                 javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -420,23 +395,19 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                                                         .addComponent(rdo_bymonth)
                                                         .addComponent(rdo_byyear)
                                                         .addComponent(rdo_daytoday))))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGap(4, 4, 4)
                                 .addComponent(dateto, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap()));
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
 
         jPanel3.setBackground(new java.awt.Color(0, 117, 73));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
 
         jToggleButton1.setBackground(new java.awt.Color(132, 35, 60));
         jToggleButton1.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-excel-20.png"))); // NOI18N
         jToggleButton1.setText("Exel");
 
         jToggleButton2.setBackground(new java.awt.Color(132, 35, 60));
         jToggleButton2.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton2
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-positive-dynamic-20.png"))); // NOI18N
         jToggleButton2.setText("Biểu đồ");
         jToggleButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -446,12 +417,10 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
 
         lbl_min.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_min.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_min.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ascending-sorting-20.png"))); // NOI18N
         lbl_min.setText("Thấp nhất");
 
         lbl_max.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_max.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_max.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-descending-sorting-20.png"))); // NOI18N
         lbl_max.setText("Cao nhất");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
