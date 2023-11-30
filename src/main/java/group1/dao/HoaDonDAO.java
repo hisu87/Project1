@@ -17,11 +17,11 @@ import java.util.List;
  */
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
-    public String INSERT_SQL = "INSERT_INTO [HoaDon](MaHD, MaNV, MaSP, NgayTao, SoLuong, TrangThai, TongCong) VALUES(?,?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE [HoaDon] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
-    public String DELETE_SQL = "DELETE FROM [HoaDon] WHERE MaNV=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM [HoaDon]";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM [HoaDon] WHERE MaNV=?";
+    public String INSERT_SQL = "INSERT_INTO [Hóa Đơn](MaHD, MaNV, MaSP, NgayTao, SoLuong, TrangThai, TongCong) VALUES(?,?,?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
+    public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
+    public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
+    public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
     
     @Override
     public void insert(HoaDon entity)  {
