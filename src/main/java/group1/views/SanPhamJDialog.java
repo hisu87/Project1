@@ -71,10 +71,10 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class SanPhamJDialog extends javax.swing.JDialog {
- List<SanPham> listcart=new ArrayList<>();
-SanPhamDao dao=new SanPhamDao();
-JButton btndelete;
-int indextru=0;
+    List<SanPham> listcart = new ArrayList<>();
+    SanPhamDao dao = new SanPhamDao();
+    JButton btndelete;
+    int indextru = 0;
     JPanel pn;
     JPanel pnx;
     int index = 0;
@@ -85,24 +85,23 @@ int indextru=0;
     List<SanPham> listbest = new ArrayList<>();
     JScrollPane scrollPane;
     JLabel lbltongtien;
-     JTextField txtsoluong;
-     JSpinner spinner ;
-     int selectedValue;
-     float tongtiensp;
-     int indexbutton=0;
-     float tongtien=0;
-     float totalall;
+    JTextField txtsoluong;
+    JSpinner spinner;
+    int selectedValue;
+    float tongtiensp;
+    int indexbutton = 0;
+    float tongtien = 0;
+    float totalall;
 
- private long currentmilis;
+    private long currentmilis;
+
     public SanPhamJDialog(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
-   settime();
+        settime();
 
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
-
-
 
         System.out.println(listbest);
 
@@ -563,18 +562,18 @@ int indextru=0;
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel3MouseClicked
 
-    }//GEN-LAST:event_jLabel3MouseClicked
+    }// GEN-LAST:event_jLabel3MouseClicked
 
     }// GEN-LAST:event_jLabel3MouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         findSanPham();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }// GEN-LAST:event_jButton1ActionPerformed
 
-    void settime(){
-        //     this.setIconImage(XImage.GetAppIcon());
+    void settime() {
+        // this.setIconImage(XImage.GetAppIcon());
         Timer timer = new Timer(1000, new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -593,23 +592,22 @@ int indextru=0;
 
     void fillSanPham() {
 
-    listbest=dao.selectAll();
-    String tensp=null;
-    double gia=0;
-    String anh=null;
+        listbest = dao.selectAll();
+        String tensp = null;
+        double gia = 0;
+        String anh = null;
 
         for (SanPham sp : listbest) {
 
             System.out.println(indexbutton);
-             tensp = sp.getTenSP();
-             gia = sp.getGia();
-             anh = sp.getAnh();
-            String masp=sp.getMaSP();
-            fix(tensp, gia, anh,indexbutton,masp);
-             indexbutton++;
+            tensp = sp.getTenSP();
+            gia = sp.getGia();
+            anh = sp.getAnh();
+            String masp = sp.getMaSP();
+            fix(tensp, gia, anh, indexbutton, masp);
+            indexbutton++;
 
         }
-
 
     }
 
@@ -618,11 +616,11 @@ int indextru=0;
         JSpinner spinner = new JSpinner(model);
         return spinner;
     }
- void fix(String TenSP, double gia, String anh,int indexbutton,String masp){
-     jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
+    void fix(String TenSP, double gia, String anh, int indexbutton, String masp) {
+        jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
-            // Tạo JPanel
+        // Tạo JPanel
         JPanel panel = new JPanel();
         panel.setPreferredSize(new Dimension(250, 350));
         panel.setBackground(Color.white);
@@ -658,9 +656,7 @@ int indextru=0;
         // Thêm JSpinner và JButton vào JPanel
         JPanel panelgia = new JPanel();
 
-
         panelgia.add(textLabel4);
-
 
         JPanel jpanelbutton = new JPanel();
         textLabel4.setForeground(new Color(12, 113, 61));
@@ -689,28 +685,28 @@ int indextru=0;
                 double clickedProductPrice = gia; // Giá sản phẩm
                 String clickedProductImage = anh; // Ảnh sản phẩm
 
-                createCart(clickedProductName, clickedProductPrice, clickedProductImage,masp);
-               createHoaDon(TenSP, gia);
+                createCart(clickedProductName, clickedProductPrice, clickedProductImage, masp);
+                createHoaDon(TenSP, gia);
 
-//                  spinner.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                // Lấy giá trị mới của spinner
-//                soLanMua = (int) spinner.getValue();
-//            }
-//        });
+                // spinner.addChangeListener(new ChangeListener() {
+                // @Override
+                // public void stateChanged(ChangeEvent e) {
+                // // Lấy giá trị mới của spinner
+                // soLanMua = (int) spinner.getValue();
+                // }
+                // });
 
             }
         });
-          btnmua.addActionListener(new ActionListener() {
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                      selectedValue = (int) spinner.getValue();
-                     tongtiensp=(float) (gia*selectedValue);
-                    System.out.println("Button " + (buttonIndex + 1) + " clicked, Spinner value: " + selectedValue);
+        btnmua.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                selectedValue = (int) spinner.getValue();
+                tongtiensp = (float) (gia * selectedValue);
+                System.out.println("Button " + (buttonIndex + 1) + " clicked, Spinner value: " + selectedValue);
 
-                }
-            });
+            }
+        });
         btnmua.setSize(50, 90);
         btnmua.setBackground(new Color(12, 113, 61));
         btnmua.setForeground(Color.white);
@@ -728,9 +724,9 @@ int indextru=0;
         jPanel4.setLayout(new FlowLayout(FlowLayout.CENTER, 20, 20));
         jPanel4.add(panel);
 
-     }
+    }
 
-    void createPanels(String TenSP, double gia, String anh,String masp) {
+    void createPanels(String TenSP, double gia, String anh, String masp) {
         jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
         // Tạo JPanel
@@ -796,31 +792,31 @@ int indextru=0;
         btnmua.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-//                SanPham clickproduct = listbest.get(index);
-//                listcart.add(clickproduct);
-//
-//
-//                soLanMua = (int) spinner.getValue();
-//                System.out.println("Số lượng mua: " + soluong);
+                // SanPham clickproduct = listbest.get(index);
+                // listcart.add(clickproduct);
+                //
+                //
+                // soLanMua = (int) spinner.getValue();
+                // System.out.println("Số lượng mua: " + soluong);
 
                 // Lấy thông tin sản phẩm khi click vào nút "Mua Ngay"
                 String clickedProductName = TenSP; // Tên sản phẩm
                 double clickedProductPrice = gia; // Giá sản phẩm
                 String clickedProductImage = anh; // Ảnh sản phẩm
-index++;
-                createCart(clickedProductName, clickedProductPrice, clickedProductImage,masp);
+                index++;
+                createCart(clickedProductName, clickedProductPrice, clickedProductImage, masp);
 
-//                  spinner.addChangeListener(new ChangeListener() {
-//            @Override
-//            public void stateChanged(ChangeEvent e) {
-//                // Lấy giá trị mới của spinner
-//                soLanMua = (int) spinner.getValue();
-//            }
-//        });
+                // spinner.addChangeListener(new ChangeListener() {
+                // @Override
+                // public void stateChanged(ChangeEvent e) {
+                // // Lấy giá trị mới của spinner
+                // soLanMua = (int) spinner.getValue();
+                // }
+                // });
                 index++;
             }
         });
-         createHoaDon(TenSP, gia);
+        createHoaDon(TenSP, gia);
 
         // Sự kiện khi chuột vào nút "Mua Ngay"
         btnmua.addMouseListener(new MouseAdapter() {
@@ -868,14 +864,11 @@ index++;
         });
     }
 
+    void createCart(String tenSP, double Gia, String anh, String masp) {
 
+        JScrollPane jpcart = new JScrollPane();
 
-    void createCart(String tenSP, double Gia, String anh,String masp) {
-
-
-         JScrollPane jpcart=new JScrollPane();
-
-//         jPanel3.add(jpcart);
+        // jPanel3.add(jpcart);
         JPanel panelcart = new JPanel();
 
         panelcart.setPreferredSize(new Dimension(500, 100));
@@ -896,38 +889,35 @@ index++;
         JLabel textLabel11 = new JLabel(tenSP + "       " + giaformat + "       " + selectedValue);
 
         panelcart.add(textLabel11);
-//        //ảnh tru
-//        ImageIcon icontru = new ImageIcon("src/main/resources/images/tru.png");
-//        Image imagetru = icontru.getImage();
-//        Image newImagee = imagetru.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
-//        ImageIcon newIconn = new ImageIcon(newImagee);
-//        JLabel labeltru=new JLabel(newIconn);
-     btndelete=new JButton("Delete"+indextru++);
-//        JCheckBox cbx=new JCheckBox();
-//        panelcart.add(cbx);
-         // Add a mouse listener to the "trừ" label
-        
+        // //ảnh tru
+        // ImageIcon icontru = new ImageIcon("src/main/resources/images/tru.png");
+        // Image imagetru = icontru.getImage();
+        // Image newImagee = imagetru.getScaledInstance(50, 50, Image.SCALE_SMOOTH);
+        // ImageIcon newIconn = new ImageIcon(newImagee);
+        // JLabel labeltru=new JLabel(newIconn);
+        btndelete = new JButton("Delete" + indextru++);
+        // JCheckBox cbx=new JCheckBox();
+        // panelcart.add(cbx);
+        // Add a mouse listener to the "trừ" label
 
-    btndelete.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            // Remove the entire panelcart from the jPanel5
-            jPanel5.remove(panelcart);
-            totalall-=tongtiensp;
-                        removeProductFromBill(tenSP);
+        btndelete.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                // Remove the entire panelcart from the jPanel5
+                jPanel5.remove(panelcart);
+                totalall -= tongtiensp;
+                removeProductFromBill(tenSP);
 
-          lbltongtien.setText(String.valueOf(totalall));
+                lbltongtien.setText(String.valueOf(totalall));
 
-            // Repaint and revalidate to update the layout
-            jPanel5.repaint();
-            jPanel5.revalidate();
-        }
-    });
+                // Repaint and revalidate to update the layout
+                jPanel5.repaint();
+                jPanel5.revalidate();
+            }
+        });
 
-//                panelcart.add(labeltru);
-                panelcart.add(btndelete);
-
-
+        // panelcart.add(labeltru);
+        panelcart.add(btndelete);
 
         jPanel5.setPreferredSize(new Dimension(500, 700));
         jPanel5.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
@@ -936,9 +926,6 @@ index++;
         jPanel5.setBorder(emptyBorder1);
         jPanel5.add(panelcart);
         // jScrollPanecart.add(jPanel5);
-
-
-
 
         if (index <= 1) {
             createthanhtoan(tenSP, Gia);
@@ -1024,27 +1011,28 @@ btnthanhtoan.addActionListener(new ActionListener(){
 
     void createHoaDon(String tenSP, double gia) {
 
-
-
         // Thêm giá
         DecimalFormat decimalfom = new DecimalFormat("#,###");
         String giaformat = decimalfom.format(tongtiensp);
 
         // Thêm thông tin sản phẩm mới vào hóa đơn
         String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
-                + "                                            Số lượng: " + selectedValue + "      " + "Gia: " + gia + "      "
+                + "                                            Số lượng: " + selectedValue + "      " + "Gia: " + gia
+                + "      "
                 + "        Thành tiền: " + giaformat + "\n";
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
-        textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                +      "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
-totalall=tongtien+=tongtiensp;
-          lbltongtien.setText(String.valueOf(totalall));
+        textar.setText(
+                "                                                   Tên Công Ty: ABC Company\n\n                                   "
+                        + "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
+        totalall = tongtien += tongtiensp;
+        lbltongtien.setText(String.valueOf(totalall));
 
     }
+
 void printpdf(String textar){
    String path ="src/main/resources/pdf";
         JFileChooser j = new JFileChooser(path);
@@ -1087,13 +1075,16 @@ void printpdf(String textar){
         }
 
 }
+
     public double tinhTongTien(double gia) {
         return gia;
     }
-    void getForm(){
+
+    void getForm() {
 
     }
-    void insert(){
+
+    void insert() {
         try {
             dao.insert(new SanPham());
             this.fillSanPham();
@@ -1122,9 +1113,10 @@ void printpdf(String textar){
 
 
 
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        }catch(
+
+    Exception e){e.printStackTrace();
+    }
 
     }
 
@@ -1186,8 +1178,7 @@ void printpdf(String textar){
         return image;
     }
 
-
-       private void generateQRCodeWithAmount(double amount) {
+    private void generateQRCodeWithAmount(double amount) {
         // Tạo đối tượng chứa thông tin
         TransferInfo transferInfo = new TransferInfo("00000626945", amount);
         // Gọi phương thức với số tiền cần chuyển khoản
@@ -1212,31 +1203,29 @@ void printpdf(String textar){
             e.printStackTrace();
         }
     }
- void removeProductFromBill(String tensp) {
-     // Find the index of the product in the hoaDonBuilder
-     int index = hoaDonBuilder.indexOf("Tên đơn hàng: " + tensp);
- 
-    if (index != -1) {
-         // Find the ending index of the product information
-         int endIndex = hoaDonBuilder.indexOf("Tên đơn hàng:", index + 1);
-         if (endIndex == -1) {
-             endIndex = hoaDonBuilder.length(); // If not found, use the end of the StringBuilder
-         }
- 
-        // Remove the product information from hoaDonBuilder
-         hoaDonBuilder.delete(index, endIndex);
- 
-        // Update the textar with the modified bill
-         textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                 + "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
- 
 
-     }
- }
- 
+    void removeProductFromBill(String tensp) {
+        // Find the index of the product in the hoaDonBuilder
+        int index = hoaDonBuilder.indexOf("Tên đơn hàng: " + tensp);
 
+        if (index != -1) {
+            // Find the ending index of the product information
+            int endIndex = hoaDonBuilder.indexOf("Tên đơn hàng:", index + 1);
+            if (endIndex == -1) {
+                endIndex = hoaDonBuilder.length(); // If not found, use the end of the StringBuilder
+            }
 
+            // Remove the product information from hoaDonBuilder
+            hoaDonBuilder.delete(index, endIndex);
 
+            // Update the textar with the modified bill
+            textar.setText(
+                    "                                                   Tên Công Ty: ABC Company\n\n                                   "
+                            + "                                                   Hóa Đơn:\n"
+                            + hoaDonBuilder.toString());
+
+        }
+    }
 
     // Đối tượng chứa thông tin chuyển khoản
     class TransferInfo {
@@ -1250,17 +1239,20 @@ void printpdf(String textar){
 
         // Getter và setter (có thể tạo tự động bằng IDE)
 
-
-   }
+    }
 
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
+        // <editor-fold defaultstate="collapsed" desc=" Look and feel setting code
+        // (optional) ">
+        /*
+         * If Nimbus (introduced in Java SE 6) is not available, stay with the default
+         * look and feel.
+         * For details see
+         * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
@@ -1282,22 +1274,22 @@ void printpdf(String textar){
             java.util.logging.Logger.getLogger(SanPhamJDialog.class.getName()).log(java.util.logging.Level.SEVERE, null,
                     ex);
         }
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
-        //</editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
+        // </editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
