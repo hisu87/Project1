@@ -251,7 +251,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         lbl_title.setText("Quản Lý Nguyên Liệu");
         lbl_title.setToolTipText("Merry Christmas");
 
-        jPanel1.setBackground(new java.awt.Color(16, 59, 41));
+        jPanel1.setBackground(new java.awt.Color(30, 63, 23));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
 
         txt_search.setForeground(new java.awt.Color(235, 202, 188));
@@ -259,6 +259,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         txt_search.setToolTipText("Mã NL, Tên NL");
 
         btn_search.setBackground(new java.awt.Color(213, 233, 226));
+        btn_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-find-24.png"))); // NOI18N
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);
@@ -269,7 +270,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         jScrollPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 1, true));
 
         tbl_nguyenlieu.setAutoCreateRowSorter(true);
-        tbl_nguyenlieu.setBackground(new java.awt.Color(0, 117, 74));
+        tbl_nguyenlieu.setBackground(new java.awt.Color(41, 105, 30));
         tbl_nguyenlieu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_nguyenlieu.setForeground(new java.awt.Color(235, 202, 188));
         tbl_nguyenlieu.setModel(new javax.swing.table.DefaultTableModel(
@@ -304,8 +305,8 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 370, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(txt_search)
+                .addGap(18, 18, 18)
                 .addComponent(btn_search)
                 .addContainerGap())
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)
@@ -314,21 +315,22 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txt_search, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btn_search))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(txt_search)
+                    .addComponent(btn_search, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 485, Short.MAX_VALUE))
         );
 
-        jPanel2.setBackground(new java.awt.Color(16, 59, 41));
+        jPanel2.setBackground(new java.awt.Color(247, 214, 201));
         jPanel2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
 
         lbl_MaNL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_MaNL.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_MaNL.setForeground(new java.awt.Color(0, 0, 0));
         lbl_MaNL.setText("Mã Nguyên Liệu");
 
         txt_MaNL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_MaNL.setForeground(new java.awt.Color(0, 0, 0));
         txt_MaNL.setToolTipText("NLXX");
         txt_MaNL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -337,17 +339,19 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         });
 
         lbl_TenNL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_TenNL.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_TenNL.setForeground(new java.awt.Color(0, 0, 0));
         lbl_TenNL.setText("Tên Nguyên Liệu");
 
         txt_TenNL.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_TenNL.setForeground(new java.awt.Color(0, 0, 0));
         txt_TenNL.setToolTipText("tên nguyên liệu");
 
         lbl_SoLuong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_SoLuong.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_SoLuong.setForeground(new java.awt.Color(0, 0, 0));
         lbl_SoLuong.setText("Số Lượng");
 
         txt_SoLuong.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_SoLuong.setForeground(new java.awt.Color(0, 0, 0));
         txt_SoLuong.setToolTipText("số lượng nguyên liệu");
         txt_SoLuong.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -356,77 +360,87 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         });
 
         lbl_DonVi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_DonVi.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_DonVi.setForeground(new java.awt.Color(0, 0, 0));
         lbl_DonVi.setText("Đơn Vị");
 
         txt_DonVi.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_DonVi.setForeground(new java.awt.Color(0, 0, 0));
         txt_DonVi.setToolTipText("kg, hộp, lít, ml, .....");
 
         txt_Gia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txt_Gia.setForeground(new java.awt.Color(0, 0, 0));
         txt_Gia.setToolTipText("tổng giá nhập nguyên liệu vào");
 
         lbl_Gia.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_Gia.setForeground(new java.awt.Color(235, 202, 188));
+        lbl_Gia.setForeground(new java.awt.Color(0, 0, 0));
         lbl_Gia.setText("Giá");
 
-        btnAdd.setBackground(new java.awt.Color(213, 233, 226));
+        btnAdd.setBackground(new java.awt.Color(234, 181, 99));
         btnAdd.setForeground(new java.awt.Color(235, 202, 188));
+        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-add-20.png"))); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
             }
         });
 
-        btnFirst.setBackground(new java.awt.Color(213, 233, 226));
+        btnFirst.setBackground(new java.awt.Color(234, 181, 99));
         btnFirst.setForeground(new java.awt.Color(235, 202, 188));
+        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_double_left_20px.png"))); // NOI18N
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFirstActionPerformed(evt);
             }
         });
 
-        btnEdit.setBackground(new java.awt.Color(213, 233, 226));
+        btnEdit.setBackground(new java.awt.Color(234, 181, 99));
         btnEdit.setForeground(new java.awt.Color(235, 202, 188));
+        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-edit-20.png"))); // NOI18N
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
             }
         });
 
-        btnPrev.setBackground(new java.awt.Color(213, 233, 226));
+        btnPrev.setBackground(new java.awt.Color(234, 181, 99));
         btnPrev.setForeground(new java.awt.Color(235, 202, 188));
+        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_left_20px.png"))); // NOI18N
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrevActionPerformed(evt);
             }
         });
 
-        btnNew.setBackground(new java.awt.Color(213, 233, 226));
+        btnNew.setBackground(new java.awt.Color(234, 181, 99));
         btnNew.setForeground(new java.awt.Color(235, 202, 188));
+        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-new-20.png"))); // NOI18N
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
             }
         });
 
-        btnNext.setBackground(new java.awt.Color(213, 233, 226));
+        btnNext.setBackground(new java.awt.Color(234, 181, 99));
         btnNext.setForeground(new java.awt.Color(235, 202, 188));
+        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_right_20px.png"))); // NOI18N
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
             }
         });
 
-        btnDelete.setBackground(new java.awt.Color(213, 233, 226));
+        btnDelete.setBackground(new java.awt.Color(234, 181, 99));
         btnDelete.setForeground(new java.awt.Color(235, 202, 188));
+        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-delete-20.png"))); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
             }
         });
 
-        btnLast.setBackground(new java.awt.Color(213, 233, 226));
+        btnLast.setBackground(new java.awt.Color(234, 181, 99));
         btnLast.setForeground(new java.awt.Color(235, 202, 188));
+        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_double_right_20px.png"))); // NOI18N
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLastActionPerformed(evt);
@@ -521,10 +535,12 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         lbl_clock.setBackground(new java.awt.Color(0, 0, 0));
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_clock.setForeground(new java.awt.Color(31, 15, 17));
+        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         lbl_user.setBackground(new java.awt.Color(0, 0, 0));
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(31, 15, 17));
+        lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_username_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -539,14 +555,15 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+            .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lbl_user))
-                    .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(9, 9, 9))
+                        .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addContainerGap())
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(9, 9, 9))))
         );
 
         javax.swing.GroupLayout pnlMainPanelLayout = new javax.swing.GroupLayout(pnlMainPanel);
@@ -589,9 +606,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(pnlMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(pnlMainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
