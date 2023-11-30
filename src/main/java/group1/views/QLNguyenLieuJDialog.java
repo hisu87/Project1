@@ -259,7 +259,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         txt_search.setToolTipText("Mã NL, Tên NL");
 
         btn_search.setBackground(new java.awt.Color(213, 233, 226));
-        btn_search.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-find-24.png"))); // NOI18N
         btn_search.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_searchActionPerformed(evt);
@@ -372,7 +371,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnAdd.setBackground(new java.awt.Color(213, 233, 226));
         btnAdd.setForeground(new java.awt.Color(235, 202, 188));
-        btnAdd.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
         btnAdd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddActionPerformed(evt);
@@ -381,7 +379,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnFirst.setBackground(new java.awt.Color(213, 233, 226));
         btnFirst.setForeground(new java.awt.Color(235, 202, 188));
-        btnFirst.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_double_left_20px.png"))); // NOI18N
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnFirstActionPerformed(evt);
@@ -390,7 +387,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnEdit.setBackground(new java.awt.Color(213, 233, 226));
         btnEdit.setForeground(new java.awt.Color(235, 202, 188));
-        btnEdit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-edit-20.png"))); // NOI18N
         btnEdit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnEditActionPerformed(evt);
@@ -399,7 +395,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnPrev.setBackground(new java.awt.Color(213, 233, 226));
         btnPrev.setForeground(new java.awt.Color(235, 202, 188));
-        btnPrev.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_left_20px.png"))); // NOI18N
         btnPrev.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnPrevActionPerformed(evt);
@@ -408,7 +403,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnNew.setBackground(new java.awt.Color(213, 233, 226));
         btnNew.setForeground(new java.awt.Color(235, 202, 188));
-        btnNew.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-new-20.png"))); // NOI18N
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNewActionPerformed(evt);
@@ -417,7 +411,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnNext.setBackground(new java.awt.Color(213, 233, 226));
         btnNext.setForeground(new java.awt.Color(235, 202, 188));
-        btnNext.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_right_20px.png"))); // NOI18N
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnNextActionPerformed(evt);
@@ -426,7 +419,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnDelete.setBackground(new java.awt.Color(213, 233, 226));
         btnDelete.setForeground(new java.awt.Color(235, 202, 188));
-        btnDelete.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-delete-20.png"))); // NOI18N
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnDeleteActionPerformed(evt);
@@ -435,7 +427,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         btnLast.setBackground(new java.awt.Color(213, 233, 226));
         btnLast.setForeground(new java.awt.Color(235, 202, 188));
-        btnLast.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_double_right_20px.png"))); // NOI18N
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLastActionPerformed(evt);
@@ -530,12 +521,10 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         lbl_clock.setBackground(new java.awt.Color(0, 0, 0));
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_clock.setForeground(new java.awt.Color(31, 15, 17));
-        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         lbl_user.setBackground(new java.awt.Color(0, 0, 0));
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(31, 15, 17));
-        lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_username_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
