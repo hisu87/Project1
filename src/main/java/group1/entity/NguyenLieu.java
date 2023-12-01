@@ -11,20 +11,9 @@ package group1.entity;
 public class NguyenLieu {
     private String MaNL;
     private String TenNL;
-    private String DonViTinh;
-    private Double SoLuong;
-    private Double DonGia;
-
-    public NguyenLieu() {
-    }
-
-    public NguyenLieu(String MaNL, String TenNL, Double SoLuong, String DonViTinh, Double DonGia) {
-        this.MaNL = MaNL;
-        this.TenNL = TenNL;
-        this.SoLuong = SoLuong;
-        this.DonViTinh = DonViTinh;
-        this.DonGia = DonGia;
-    }
+    private Float SoLuongCon;
+    private Float GiaNL;
+    private String DonViDoLuong;
 
     public String getMaNL() {
         return MaNL;
@@ -42,28 +31,28 @@ public class NguyenLieu {
         this.TenNL = TenNL;
     }
 
-    public String getDonViTinh() {
-        return DonViTinh;
+    public Float getSoLuongCon() {
+        return SoLuongCon;
     }
 
-    public void setDonViTinh(String DonViTinh) {
-        this.DonViTinh = DonViTinh;
+    public void setSoLuongCon(Float SoLuongCon) {
+        this.SoLuongCon = SoLuongCon;
     }
 
-    public Double getSoLuong() {
-        return SoLuong;
+    public Float getGiaNL() {
+        return GiaNL;
     }
 
-    public void setSoLuong(Double SoLuong) {
-        this.SoLuong = SoLuong;
+    public void setGiaNL(Float GiaNL) {
+        this.GiaNL = GiaNL;
     }
 
-    public Double getDonGia() {
-        return DonGia;
+    public String getDonViDoLuong() {
+        return DonViDoLuong;
     }
 
-    public void setDonGia(Double DonGia) {
-        this.DonGia = DonGia;
+    public void setDonViDoLuong(String DonViDoLuong) {
+        this.DonViDoLuong = DonViDoLuong;
     }
 
 }

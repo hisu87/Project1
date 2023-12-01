@@ -4,6 +4,7 @@
  */
 package group1.views;
 
+import group1.utils.Auth;
 import group1.utils.xImage;
 import java.io.File;
 import java.awt.Desktop;
@@ -23,7 +24,7 @@ import javax.swing.UIManager;
  * @author nu///mpa
  */
 public class JMainFrame extends javax.swing.JFrame {
-//demo
+    // demo
     /**
      * Creates new form JMainFrame
      */
@@ -32,9 +33,67 @@ public class JMainFrame extends javax.swing.JFrame {
         setIconImage(xImage.getAppIcon());
         setTitle("Coffee Shop Management");
         setLocationRelativeTo(null);
-//        new SanPhamJDialog(this,true).setVisible(true);
-        
+        startClock();
+        displayUserInfo();
+        // new SanPhamJDialog(this,true).setVisible(true);
 
+    }
+
+    void startClock() {
+        class TimeClock extends Thread {
+
+            @Override
+            public void run() {
+                while (true) {
+                    lbl_clock.setText(new SimpleDateFormat("hh:mm:ss a").format(Calendar.getInstance().getTime()));
+                }
+            }
+        }
+        TimeClock timeClock = new TimeClock();
+        timeClock.start();
+    }
+
+    void displayUserInfo() {
+        String userID = Auth.user.getMaNV();
+        String role = Auth.user.getVaitro();
+        lbl_user.setText("UserID: " + userID + " |  Role: " + role);
+    }
+
+    void openWebsite() {
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.facebook.com/"));
+        } catch (IOException | URISyntaxException ex) {
+            Logger.getLogger(JMainFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    void openChangePass() {
+        new ChangePasswordJDialog(this, true).setVisible(true);
+    }
+
+    void openLogout() {
+        this.dispose();
+        new LoginJDialog(this, true).setVisible(true);
+    }
+
+    void openExit() {
+        System.exit(0);
+    }
+    
+    void openProducts() {
+     
+    }
+
+    void openRecipe() {
+        new CongThucNguyenLieuJDialog().setVisible(true);
+    }
+
+    void openIngridients() {
+        new QLNguyenLieuJDialog(this, true).setVisible(true);
+    }
+
+    void openInvoice() {
+        new HoaDonJDialog().setVisible(true);
     }
 
     /**
@@ -46,20 +105,28 @@ public class JMainFrame extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
         jToolBar = new javax.swing.JToolBar();
-        jToggleButton3 = new javax.swing.JToggleButton();
-        jToggleButton4 = new javax.swing.JToggleButton();
-        jToggleButton5 = new javax.swing.JToggleButton();
-        jToggleButton6 = new javax.swing.JToggleButton();
+        btn_createReceipt = new javax.swing.JToggleButton();
+        jSeparator9 = new javax.swing.JToolBar.Separator();
+        btn_importIngridients = new javax.swing.JToggleButton();
+        jSeparator8 = new javax.swing.JToolBar.Separator();
+        btn_importRecipe = new javax.swing.JToggleButton();
+        jSeparator7 = new javax.swing.JToolBar.Separator();
+        btn_importProduct = new javax.swing.JToggleButton();
         jSeparator5 = new javax.swing.JToolBar.Separator();
-        jToggleButton7 = new javax.swing.JToggleButton();
+        btn_HuongDan = new javax.swing.JToggleButton();
         jSeparator4 = new javax.swing.JToolBar.Separator();
-        jToggleButton1 = new javax.swing.JToggleButton();
-        jToggleButton2 = new javax.swing.JToggleButton();
+        btn_logout = new javax.swing.JToggleButton();
+        jSeparator6 = new javax.swing.JToolBar.Separator();
+        btn_exit = new javax.swing.JToggleButton();
         pnl_center = new javax.swing.JPanel();
         lbl_centerlogo = new javax.swing.JLabel();
         pnl_statusbar = new javax.swing.JPanel();
@@ -69,9 +136,9 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system = new javax.swing.JMenu();
         jSeparator1 = new javax.swing.JPopupMenu.Separator();
         changepass = new javax.swing.JMenuItem();
-        ressetpass = new javax.swing.JMenuItem();
         jSeparator2 = new javax.swing.JPopupMenu.Separator();
         logout = new javax.swing.JMenuItem();
+        jSeparator10 = new javax.swing.JPopupMenu.Separator();
         exit = new javax.swing.JMenuItem();
         menu_managing = new javax.swing.JMenu();
         products = new javax.swing.JMenuItem();
@@ -92,68 +159,115 @@ public class JMainFrame extends javax.swing.JFrame {
         jToolBar.setBorder(null);
         jToolBar.setRollover(true);
 
-        jToggleButton3.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton3.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton3.setText("Tạo Hóa Đơn");
-        jToggleButton3.setFocusable(false);
-        jToggleButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToggleButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jToggleButton3ActionPerformed(evt);
+        btn_createReceipt.setBackground(new java.awt.Color(0, 117, 74));
+        btn_createReceipt.setForeground(new java.awt.Color(242, 240, 235));
+        btn_createReceipt
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-invoice-20.png"))); // NOI18N
+        btn_createReceipt.setText("Hóa Đơn");
+        btn_createReceipt.setFocusable(false);
+        btn_createReceipt.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_createReceipt.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_createReceipt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btn_createReceiptMouseClicked(evt);
             }
         });
-        jToolBar.add(jToggleButton3);
 
-        jToggleButton4.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton4.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton4.setText("Nhập Nguyên Liệu");
-        jToggleButton4.setFocusable(false);
-        jToggleButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton4);
+        jToolBar.add(btn_createReceipt);
+        jToolBar.add(jSeparator9);
 
-        jToggleButton5.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton5.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton5.setText("Nhập công thức");
-        jToggleButton5.setFocusable(false);
-        jToggleButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton5);
+        btn_importIngridients.setBackground(new java.awt.Color(0, 117, 74));
+        btn_importIngridients.setForeground(new java.awt.Color(242, 240, 235));
+        btn_importIngridients
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
+        btn_importIngridients.setText("Nhập Nguyên Liệu");
+        btn_importIngridients.setFocusable(false);
+        btn_importIngridients.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_importIngridients.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_importIngridients.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_importIngridientsActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_importIngridients);
+        jToolBar.add(jSeparator8);
 
-        jToggleButton6.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton6.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton6.setText("Nhập Sản phẩm");
-        jToggleButton6.setFocusable(false);
-        jToggleButton6.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton6.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton6);
+        btn_importRecipe.setBackground(new java.awt.Color(0, 117, 74));
+        btn_importRecipe.setForeground(new java.awt.Color(242, 240, 235));
+        btn_importRecipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
+        btn_importRecipe.setText("Nhập công thức");
+        btn_importRecipe.setFocusable(false);
+        btn_importRecipe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_importRecipe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_importRecipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_importRecipeActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_importRecipe);
+        jToolBar.add(jSeparator7);
+
+        btn_importProduct.setBackground(new java.awt.Color(0, 117, 74));
+        btn_importProduct.setForeground(new java.awt.Color(242, 240, 235));
+        btn_importProduct
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
+        btn_importProduct.setText("Nhập Sản phẩm");
+        btn_importProduct.setFocusable(false);
+        btn_importProduct.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_importProduct.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_importProduct.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_importProductActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_importProduct);
         jToolBar.add(jSeparator5);
 
-        jToggleButton7.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton7.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton7.setText("Hướng dẫn");
-        jToggleButton7.setFocusable(false);
-        jToggleButton7.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton7.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton7);
+        btn_HuongDan.setBackground(new java.awt.Color(0, 117, 74));
+        btn_HuongDan.setForeground(new java.awt.Color(242, 240, 235));
+        btn_HuongDan
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_flag_2_20px.png"))); // NOI18N
+        btn_HuongDan.setText("Hướng dẫn");
+        btn_HuongDan.setFocusable(false);
+        btn_HuongDan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_HuongDan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_HuongDan.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_HuongDanActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_HuongDan);
         jToolBar.add(jSeparator4);
 
-        jToggleButton1.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton1.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton1.setText("Đăng Xuất");
-        jToggleButton1.setFocusable(false);
-        jToggleButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton1);
+        btn_logout.setBackground(new java.awt.Color(0, 117, 74));
+        btn_logout.setForeground(new java.awt.Color(242, 240, 235));
+        btn_logout.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
+        btn_logout.setText("Đăng Xuất");
+        btn_logout.setFocusable(false);
+        btn_logout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_logout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_logout.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_logoutActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_logout);
+        jToolBar.add(jSeparator6);
 
-        jToggleButton2.setBackground(new java.awt.Color(30, 30, 30));
-        jToggleButton2.setForeground(new java.awt.Color(242, 240, 235));
-        jToggleButton2.setText("Thoát");
-        jToggleButton2.setFocusable(false);
-        jToggleButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        jToggleButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        jToolBar.add(jToggleButton2);
+        btn_exit.setBackground(new java.awt.Color(0, 117, 74));
+        btn_exit.setForeground(new java.awt.Color(242, 240, 235));
+        btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_exit_20px.png"))); // NOI18N
+        btn_exit.setText("Thoát");
+        btn_exit.setFocusable(false);
+        btn_exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_exit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exitActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_exit);
 
         pnl_center.setBackground(new java.awt.Color(249, 249, 249));
 
@@ -162,19 +276,19 @@ public class JMainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout pnl_centerLayout = new javax.swing.GroupLayout(pnl_center);
         pnl_center.setLayout(pnl_centerLayout);
         pnl_centerLayout.setHorizontalGroup(
-            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158,
+                                        Short.MAX_VALUE)
+                                .addContainerGap()));
         pnl_centerLayout.setVerticalGroup(
-            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_centerLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 359, Short.MAX_VALUE)
-                .addGap(64, 64, 64))
-        );
+                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_centerLayout.createSequentialGroup()
+                                .addGap(44, 44, 44)
+                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
 
         pnl_statusbar.setBackground(new java.awt.Color(30, 57, 50));
 
@@ -184,104 +298,137 @@ public class JMainFrame extends javax.swing.JFrame {
 
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
+        lbl_clock.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_statusbarLayout = new javax.swing.GroupLayout(pnl_statusbar);
         pnl_statusbar.setLayout(pnl_statusbarLayout);
         pnl_statusbarLayout.setHorizontalGroup(
-            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_statusbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 191, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_statusbarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addContainerGap()));
         pnl_statusbarLayout.setVerticalGroup(
-            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_statusbarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap())
-        );
+                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                pnl_statusbarLayout.createSequentialGroup()
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(pnl_statusbarLayout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                        .addContainerGap()));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 25, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
 
-        jMenuBar1.setBackground(new java.awt.Color(30, 57, 50));
+        jMenuBar1.setBackground(new java.awt.Color(0, 117, 74));
 
+        menu_system.setBackground(new java.awt.Color(0, 117, 74));
         menu_system.setText("Hệ Thống");
         menu_system.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menu_system.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_system.setPreferredSize(new java.awt.Dimension(70, 22));
         menu_system.add(jSeparator1);
 
-        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P,
+                java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_20px.png"))); // NOI18N
         changepass.setText("Đổi mật khẩu");
         menu_system.add(changepass);
-
-        ressetpass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        ressetpass.setText("Đặt lại mật khẩu");
-        menu_system.add(ressetpass);
         menu_system.add(jSeparator2);
 
-        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L,
+                java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
         logout.setText("Đăng Xuất");
         menu_system.add(logout);
+        menu_system.add(jSeparator10);
 
-        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4,
+                java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_exit_20px.png"))); // NOI18N
         exit.setText("Thoát");
         menu_system.add(exit);
 
         jMenuBar1.add(menu_system);
 
+        menu_managing.setBackground(new java.awt.Color(0, 117, 74));
         menu_managing.setText("Quản Lý");
         menu_managing.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menu_managing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_managing.setPreferredSize(new java.awt.Dimension(70, 22));
 
+        products.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-poolside-bar-20.png"))); // NOI18N
         products.setText("Sản Phảm");
         menu_managing.add(products);
 
+        recipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_book_20px_1.png"))); // NOI18N
         recipe.setText("Công Thức");
         menu_managing.add(recipe);
 
+        ingridients
+                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-ingredient-24.png"))); // NOI18N
         ingridients.setText("Nguyên Liệu");
+        ingridients.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                ingridientsMouseEntered(evt);
+            }
+        });
         menu_managing.add(ingridients);
         menu_managing.add(jSeparator3);
 
+        invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-invoice-20.png"))); // NOI18N
         invoice.setText("Hóa Đơn");
         menu_managing.add(invoice);
 
+        employees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_people_20px.png"))); // NOI18N
         employees.setText("Nhân Viên");
         menu_managing.add(employees);
 
         jMenuBar1.add(menu_managing);
 
+        menu_statitics.setBackground(new java.awt.Color(0, 117, 74));
         menu_statitics.setText("Thống Kê");
         menu_statitics.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         menu_statitics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_statitics.setPreferredSize(new java.awt.Dimension(70, 22));
 
+        revenue.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_report_card_20px.png"))); // NOI18N
         revenue.setText("Doanh Thu");
         menu_statitics.add(revenue);
 
@@ -298,20 +445,59 @@ public class JMainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jToggleButton3ActionPerformed
+    private void btn_createReceiptMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_btn_createReceiptMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jToggleButton3ActionPerformed
+        openInvoice();
+    }// GEN-LAST:event_btn_createReceiptMouseClicked
+
+    private void btn_HuongDanActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_HuongDanActionPerformed
+        // TODO add your handling code here:
+        openWebsite();
+    }// GEN-LAST:event_btn_HuongDanActionPerformed
+
+    private void btn_importIngridientsActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_importIngridientsActionPerformed
+        // TODO add your handling code here:
+        openIngridients();
+    }// GEN-LAST:event_btn_importIngridientsActionPerformed
+
+    private void btn_importRecipeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_importRecipeActionPerformed
+        // TODO add your handling code here:
+        openRecipe();
+    }// GEN-LAST:event_btn_importRecipeActionPerformed
+
+    private void btn_importProductActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_importProductActionPerformed
+        // TODO add your handling code here:
+        openProducts();
+    }// GEN-LAST:event_btn_importProductActionPerformed
+
+    private void btn_logoutActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_logoutActionPerformed
+        // TODO add your handling code here:
+        openLogout();
+    }// GEN-LAST:event_btn_logoutActionPerformed
+
+    private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_exitActionPerformed
+        // TODO add your handling code here:
+        openExit();
+    }// GEN-LAST:event_btn_exitActionPerformed
+
+    private void jToggleButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton3ActionPerformed
+        // TODO add your handling code here:
+    }// GEN-LAST:event_jToggleButton3ActionPerformed
+
+    private void ingridientsMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ingridientsMouseEntered
+      ingridients.setVisible(false);
+    }//GEN-LAST:event_ingridientsMouseEntered
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -361,6 +547,13 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JToggleButton btn_HuongDan;
+    private javax.swing.JToggleButton btn_createReceipt;
+    private javax.swing.JToggleButton btn_exit;
+    private javax.swing.JToggleButton btn_importIngridients;
+    private javax.swing.JToggleButton btn_importProduct;
+    private javax.swing.JToggleButton btn_importRecipe;
+    private javax.swing.JToggleButton btn_logout;
     private javax.swing.JMenuItem changepass;
     private javax.swing.JMenuItem employees;
     private javax.swing.JMenuItem exit;
@@ -369,17 +562,15 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
+    private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
     private javax.swing.JToolBar.Separator jSeparator5;
-    private javax.swing.JToggleButton jToggleButton1;
-    private javax.swing.JToggleButton jToggleButton2;
-    private javax.swing.JToggleButton jToggleButton3;
-    private javax.swing.JToggleButton jToggleButton4;
-    private javax.swing.JToggleButton jToggleButton5;
-    private javax.swing.JToggleButton jToggleButton6;
-    private javax.swing.JToggleButton jToggleButton7;
+    private javax.swing.JToolBar.Separator jSeparator6;
+    private javax.swing.JToolBar.Separator jSeparator7;
+    private javax.swing.JToolBar.Separator jSeparator8;
+    private javax.swing.JToolBar.Separator jSeparator9;
     private javax.swing.JToolBar jToolBar;
     private javax.swing.JLabel lbl_centerlogo;
     private javax.swing.JLabel lbl_clock;
@@ -393,7 +584,6 @@ public class JMainFrame extends javax.swing.JFrame {
     private javax.swing.JPanel pnl_statusbar;
     private javax.swing.JMenuItem products;
     private javax.swing.JMenuItem recipe;
-    private javax.swing.JMenuItem ressetpass;
     private javax.swing.JMenuItem revenue;
     // End of variables declaration//GEN-END:variables
 }
