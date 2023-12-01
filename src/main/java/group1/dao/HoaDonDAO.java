@@ -88,9 +88,9 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
-
+    
     public List<Integer> selectYear() {
-        String SQL = "SELECT DISTINCT year(NgayTao) Year FROM [Hóa đơn] ORDER BY Year DESC";
+        String SQL = "SELECT DISTINCT year(NgayTao) Year FROM [Hóa Đơn] ORDER BY Year DESC";
         List<Integer> list = new ArrayList<>();
         try {
             ResultSet rs = xJDBC.executeQuery(SQL);
@@ -103,4 +103,5 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
+
 }
