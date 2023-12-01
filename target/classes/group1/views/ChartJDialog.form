@@ -123,6 +123,7 @@
                 </LineBorder>
               </Border>
             </Property>
+            <Property name="selectedIndex" type="int" value="-1"/>
           </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>

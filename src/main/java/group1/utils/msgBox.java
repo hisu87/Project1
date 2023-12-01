@@ -23,12 +23,12 @@ public class msgBox {
      */
     public static void alert(Component parent, String message) {
         JOptionPane.showMessageDialog(parent, message,
-                "Hệ thống quản lý đào tạo", JOptionPane.INFORMATION_MESSAGE);
+                "Starbucks Management", JOptionPane.INFORMATION_MESSAGE);
     }
 
     public static boolean confirm(Component parent, String message) {
         int result = JOptionPane.showConfirmDialog(parent, message,
-                "Hệ thống quản lý đào tạo",
+                "Starbucks Management",
                 JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
         return result == JOptionPane.YES_OPTION;
     }
@@ -42,6 +42,6 @@ public class msgBox {
      */
     public static String prompt(Component parent, String message) {
         return JOptionPane.showInputDialog(parent, message,
-                "Hệ thống quản lý đào tạo", JOptionPane.INFORMATION_MESSAGE);
+                "Starbucks Management", JOptionPane.INFORMATION_MESSAGE);
     }
 }
