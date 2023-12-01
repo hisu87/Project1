@@ -14,20 +14,22 @@ public class HoaDon {
     private String MaHD;
     private String MaNV;
     private String MaSP;
-    private double SoLuong;
     private Date NgayTao;
+    private double SoLuong;
     private boolean TrangThai;
-    
+    private float TongCong;
 
     public HoaDon() {
     }
 
-    public HoaDon(String MaHD, String MaNV, String MaSP, double SoLuong, Date NgayTao) {
+    public HoaDon(String MaHD, String MaNV, String MaSP, Date NgayTao, double SoLuong, boolean TrangThai, float TongCong) {
         this.MaHD = MaHD;
         this.MaNV = MaNV;
         this.MaSP = MaSP;
-        this.SoLuong = SoLuong;
         this.NgayTao = NgayTao;
+        this.SoLuong = SoLuong;
+        this.TrangThai = TrangThai;
+        this.TongCong = TongCong;
     }
 
     public String getMaHD() {
@@ -53,7 +55,7 @@ public class HoaDon {
     public void setMaSP(String MaSP) {
         this.MaSP = MaSP;
     }
-
+    
     public double getSoLuong() {
         return SoLuong;
     }
@@ -61,7 +63,7 @@ public class HoaDon {
     public void setSoLuong(double SoLuong) {
         this.SoLuong = SoLuong;
     }
-
+    
     public Date getNgayTao() {
         return NgayTao;
     }
@@ -70,14 +72,20 @@ public class HoaDon {
         this.NgayTao = NgayTao;
     }
 
-    public boolean isTrangThai() {
+    public boolean getTrangThai() {
         return TrangThai;
     }
 
     public void setTrangThai(boolean TrangThai) {
         this.TrangThai = TrangThai;
     }
-    
-    
+
+    public float getTongCong() {
+        return TongCong;
+    }
+
+    public void setTongCong(float TongCong) {
+        this.TongCong = TongCong;
+    }
 }
 

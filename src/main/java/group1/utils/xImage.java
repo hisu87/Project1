@@ -25,7 +25,7 @@ public class xImage {
      * Ảnh biểu tượng của ứng dụng, xuất hiện trên mọi cửa sổ
      */
     public static Image getAppIcon() {
-        URL url = xImage.class.getResource("/group1/images/logo.png");
+        URL url = xImage.class.getResource("/images/logo.png");
         return new ImageIcon(url).getImage();
     }
 
@@ -60,8 +60,9 @@ public class xImage {
         return new ImageIcon(
                 new ImageIcon(path.getAbsolutePath()).getImage().getScaledInstance(180, 180, Image.SCALE_DEFAULT));
     }
-    public static ImageIcon readimage(String FileName){
-      File path=new File("src/main/resources/images",FileName);
-      return new ImageIcon(path.getAbsolutePath());
-  }
+
+    public static ImageIcon readimage(String FileName) {
+        File path = new File("src/main/resources/images", FileName);
+        return new ImageIcon(path.getAbsolutePath());
+    }
 }

@@ -72,7 +72,6 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         txtGioitinh = new javax.swing.JTextField();
         txtvaitro = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
-        jLabel13 = new javax.swing.JLabel();
 
         jLabel9.setForeground(new java.awt.Color(0, 102, 0));
         jLabel9.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
@@ -105,14 +104,11 @@ public class NhanVienJDialog extends javax.swing.JDialog {
         jLabel10.setText("00:00:00 SA");
 
         jTabbedPane1.setBackground(new java.awt.Color(51, 153, 255));
-        jTabbedPane1.setForeground(new java.awt.Color(0, 0, 0));
 
         jPanel3.setBackground(new java.awt.Color(28, 97, 51));
 
         tbl_nhanvien.setAutoCreateRowSorter(true);
-        tbl_nhanvien.setBackground(new java.awt.Color(255, 255, 255));
         tbl_nhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        tbl_nhanvien.setForeground(new java.awt.Color(0, 0, 0));
         tbl_nhanvien.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"NV01", "Trần Dần", "112", "dantm@gmail.com", "Nam", "Nhân Viên", "22/1/11997"},
@@ -362,21 +358,20 @@ public class NhanVienJDialog extends javax.swing.JDialog {
 
         jTabbedPane1.addTab("Chỉnh Sửa Nhân Viên", jPanel1);
 
-        jLabel13.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/xekeo.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(81, 81, 81)
-                .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(175, 175, 175)
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(90, 90, 90))
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -384,9 +379,7 @@ public class NhanVienJDialog extends javax.swing.JDialog {
                 .addGap(18, 18, 18)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 546, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(15, 15, 15))
@@ -487,7 +480,6 @@ public class NhanVienJDialog extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
