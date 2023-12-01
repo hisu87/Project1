@@ -30,7 +30,6 @@ H:\FPTPolytechnic\Project1\src\main\java\group1\dao\NhanVienDAO.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\shadow\ShadowRenderer.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\chart\LegendItem.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\DoanhThuJDialog.java
-H:\FPTPolytechnic\Project1\src\main\java\group1\views\Chart.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\shadow\GraphicsUtilities.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\CongThucNguyenLieuJDialog.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\chart\blankchart\BlankPlotChart.java
@@ -38,8 +37,10 @@ H:\FPTPolytechnic\Project1\src\main\java\group1\views\QuanLySanPham.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\chart\ModelLegend.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\panel\PanelGradient.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\chart\blankchart\BlankPlotChatRender.java
+H:\FPTPolytechnic\Project1\src\main\java\group1\views\ChartJDialog.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\utils\xImage.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\entity\NguyenLieu.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\ChangePasswordJDialog.java
+H:\FPTPolytechnic\Project1\src\main\java\group1\views\JMainFrame.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\dao\HoaDonDAO.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\LoginJDialog.java

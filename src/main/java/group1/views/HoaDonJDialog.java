@@ -61,14 +61,14 @@ public class HoaDonJDialog extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel5.setBackground(new java.awt.Color(255, 0, 255));
+        jPanel5.setBackground(new java.awt.Color(153, 0, 0));
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
         jLabel9.setText("Quản lý hóa đơn");
 
-        jTabbedPane3.setBackground(new java.awt.Color(255, 0, 255));
+        jTabbedPane3.setBackground(new java.awt.Color(51, 153, 0));
 
-        jPanel9.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel9.setBackground(new java.awt.Color(0, 102, 51));
 
         tbl_nhanvien2.setAutoCreateRowSorter(true);
         tbl_nhanvien2.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -77,7 +77,7 @@ public class HoaDonJDialog extends javax.swing.JFrame {
                 {"HD01", "NV01", "03/11/2021"},
                 {"HD02", "NV02", "04/11/2021"},
                 {"HD03", "NV03", "05/11/2021"},
-                
+                {"", "", ""}
             },
             new String [] {
                 "Mã hóa đơn", "Mã nhân viên", "Ngày tạo"
@@ -166,7 +166,7 @@ public class HoaDonJDialog extends javax.swing.JFrame {
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel8Layout.createSequentialGroup()
                 .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 595, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -175,7 +175,7 @@ public class HoaDonJDialog extends javax.swing.JFrame {
 
         jTabbedPane3.addTab("Quản lý hóa đơn", jPanel8);
 
-        jPanel10.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel10.setBackground(new java.awt.Color(0, 102, 51));
 
         jLabel15.setForeground(new java.awt.Color(242, 240, 235));
 
@@ -324,11 +324,13 @@ public class HoaDonJDialog extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane3, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(363, 363, 363)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(jPanel5Layout.createSequentialGroup()
+                .addComponent(jTabbedPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 993, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -344,7 +346,10 @@ public class HoaDonJDialog extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, 1007, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -402,7 +407,6 @@ public class HoaDonJDialog extends javax.swing.JFrame {
     private javax.swing.JButton btn_last1;
     private javax.swing.JButton btn_next1;
     private javax.swing.JButton btn_previous1;
-    private javax.swing.JButton btn_search1;
     private javax.swing.JButton btn_search2;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -420,19 +424,13 @@ public class HoaDonJDialog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel7;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JPanel jPanel9;
-    private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTabbedPane jTabbedPane3;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable tbl_nhanvien1;
     private javax.swing.JTable tbl_nhanvien2;
-    private javax.swing.JTextField txt_search1;
     private javax.swing.JTextField txt_search2;
     private javax.swing.JTextField txt_search4;
     private javax.swing.JTextField txt_search5;

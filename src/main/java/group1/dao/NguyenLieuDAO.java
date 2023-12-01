@@ -82,4 +82,8 @@ public class NguyenLieuDAO extends CafeDAO<NguyenLieu, String> {
         }
     }
 
+    public List<NguyenLieu> selectByKeyword(String keyword, int page) {
+        String sql = "SELECT * FROM [Nguyên Liệu] WHERE TenNL LIKE ? ORDER BY MaNL OFFSET ? ROWS FETCH NEXT 10 ROWS ONLY";
+        return this.selectBySQL(sql, "%" + keyword + "%", (page - 1) * 10);
+    }
 }

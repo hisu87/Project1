@@ -31,9 +31,9 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
      * Creates new form DoanhThuJDialog
      */
     public DoanhThuJDialog(java.awt.Frame parent, boolean modal) {
-        super(parent, modal);
-
+        super(parent, modal);        
         initComponents();
+        setLocationRelativeTo(parent);
         DateString();
         fillcboYear();
         center();
@@ -167,6 +167,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -187,7 +188,6 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
         dateto = new com.toedter.calendar.JDateChooser();
         jPanel3 = new javax.swing.JPanel();
         btn_exel = new javax.swing.JToggleButton();
-        btn_chart = new javax.swing.JToggleButton();
         lbl_min = new javax.swing.JLabel();
         lbl_max = new javax.swing.JLabel();
 
@@ -372,20 +372,10 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
         jPanel3.setBackground(new java.awt.Color(0, 117, 73));
         jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
 
-        btn_exel.setBackground(new java.awt.Color(132, 35, 60));
+        btn_exel.setBackground(new java.awt.Color(28, 86, 29));
         btn_exel.setForeground(new java.awt.Color(242, 240, 235));
         btn_exel.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-excel-20.png"))); // NOI18N
         btn_exel.setText("Exel");
-
-        btn_chart.setBackground(new java.awt.Color(132, 35, 60));
-        btn_chart.setForeground(new java.awt.Color(242, 240, 235));
-        btn_chart.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-positive-dynamic-20.png"))); // NOI18N
-        btn_chart.setText("Biểu đồ");
-        btn_chart.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_chartActionPerformed(evt);
-            }
-        });
 
         lbl_min.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_min.setForeground(new java.awt.Color(242, 240, 235));
@@ -405,8 +395,6 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 .addGap(117, 117, 117)
                 .addComponent(lbl_min)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btn_chart)
-                .addGap(79, 79, 79)
                 .addComponent(btn_exel)
                 .addContainerGap())
         );
@@ -417,8 +405,7 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btn_exel)
                     .addComponent(lbl_min)
-                    .addComponent(lbl_max)
-                    .addComponent(btn_chart))
+                    .addComponent(lbl_max))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -468,9 +455,15 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jToggleButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jToggleButton2ActionPerformed
+    void openchart() {
+        ChartJDialog chart = new ChartJDialog(this, true);
+        chart.setVisible(true);
+    }
+
+    private void btn_chartActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_chartActionPerformed
         // TODO add your handling code here:
-    }// GEN-LAST:event_jToggleButton2ActionPerformed
+
+    }// GEN-LAST:event_btn_chartActionPerformed
 
     private void rdo_bymonthItemStateChanged(java.awt.event.ItemEvent evt) {// GEN-FIRST:event_rdo_bymonthItemStateChanged
         // TODO add your handling code here:
@@ -570,7 +563,6 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btn_chart;
     private javax.swing.JToggleButton btn_exel;
     private javax.swing.JComboBox<String> cbo_year;
     private com.toedter.calendar.JDateChooser date;
