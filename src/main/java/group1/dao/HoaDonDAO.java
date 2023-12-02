@@ -22,31 +22,31 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
     public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
-    
+
     @Override
-    public void insert(HoaDon entity)  {
+    public void insert(HoaDon entity) {
         xJDBC.executeUpdate(INSERT_SQL,
-                    entity.getMaHD(),
-                    entity.getMaNV(),
-                    entity.getMaSP(),
-                    entity.getNgayTao(),
-                    entity.getSoLuong(),
-                    entity.getTrangThai(),
-                    entity.getTongCong());       
+                entity.getMaHD(),
+                entity.getMaNV(),
+                entity.getMaSP(),
+                entity.getNgayTao(),
+                entity.getSoLuong(),
+                entity.getTrangThai(),
+                entity.getTongCong());
     }
-    
+
     @Override
-    public void update(HoaDon entity)  {
+    public void update(HoaDon entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
-                        entity.getMaHD(),
-                        entity.getMaNV(),
-                        entity.getMaSP(),
-                        entity.getNgayTao(),
-                        entity.getSoLuong(),
-                        entity.getTrangThai(),
-                        entity.getTongCong());
+                entity.getMaHD(),
+                entity.getMaNV(),
+                entity.getMaSP(),
+                entity.getNgayTao(),
+                entity.getSoLuong(),
+                entity.getTrangThai(),
+                entity.getTongCong());
     }
-    
+
     @Override
     public void delete(String id) {
         xJDBC.executeUpdate(DELETE_SQL, id);
@@ -79,7 +79,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.setNgayTao(rs.getDate("NgayTao"));
                 entity.setSoLuong(rs.getDouble("Soluong"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
-                entity.setTongCong(rs.getFloat("TongCong"));               
+                entity.setTongCong(rs.getFloat("TongCong"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
@@ -88,4 +88,20 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
+    
+    public List<Integer> selectYear() {
+        String SQL = "SELECT DISTINCT year(NgayTao) Year FROM [Hóa Đơn] ORDER BY Year DESC";
+        List<Integer> list = new ArrayList<>();
+        try {
+            ResultSet rs = xJDBC.executeQuery(SQL);
+            while (rs.next()) {
+                list.add(rs.getInt(1));
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

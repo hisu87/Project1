@@ -256,13 +256,13 @@ go
 
 insert into [Sản Phẩm]
 values
-  (1, N'Cà Phê Sữa', 'xxxxx', 35000, 1),
-  (2, N'Cà Phê Đen', 'xxxxx', 30000, 2),
-  (3, N'Citrus peach tea', 'xxxxx', 45000, 4),
+  (1, N'Cà Phê Sữa', 'cfsua.png', 35000, 1),
+  (2, N'Cà Phê Đen', 'phindenda.png', 30000, 2),
+  (3, N'Trà Ô Long Dừa', 'trolongdua.png', 45000, 4),
   (4, N'Bạc Xĩu', 'xxxxx', 40000, 5),
-  (5, N'Capuchino', 'xxxxx', 55000, 3),
-  (6, N'Strawberry Mojito', 'xxxxx', 55000, 1),
-  (7, N'Blueberry Mocktail', 'xxxxx', 35000, 1);
+  (5, N'Capuchino', 'oreocf.png', 55000, 3),
+  (6, N'Trà Ô Long Dâu', 'trolongdau.png', 55000, 1)
+ 
 
 go
 
