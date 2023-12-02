@@ -298,3 +298,62 @@ INSERT INTO [Nguyên Liệu]
   ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
 VALUES
   ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+
+  go
+
+Create PROCEDURE [dbo].[GetRevenueByDate]
+    @Ngay DATE
+AS
+BEGIN
+    -- Chọn tổng doanh thu từ bảng Hóa Đơn cho ngày cụ thể
+    SELECT 
+        ROW_NUMBER() OVER (ORDER BY NgayTao) AS STT,
+        CAST(NgayTao AS DATE) AS N'Thời Gian',
+        SUM(TongCong) AS 'Doanh Thu'
+    FROM 
+        [Hóa Đơn]
+    WHERE 
+        CAST(NgayTao AS DATE) = @Ngay
+    GROUP BY 
+        CAST(NgayTao AS DATE)
+END;
+
+go
+
+CREATE PROCEDURE [dbo].[GetRevenueByDateRange]
+    @StartDate DATE,
+    @EndDate DATE
+AS
+BEGIN
+    SELECT 
+        ROW_NUMBER() OVER (ORDER BY CAST(NgayTao AS DATE)) AS STT,
+        CAST(NgayTao AS DATE) AS [Thời Gian],
+        SUM(TongCong) AS 'Doanh Thu'
+    FROM 
+        [Hóa Đơn]
+    WHERE 
+        CAST(NgayTao AS DATE) BETWEEN @StartDate AND @EndDate
+    GROUP BY 
+        CAST(NgayTao AS DATE)
+END;
+
+go
+
+Create PROCEDURE [dbo].[GetRevenueByMonth]
+    @Year INT
+AS
+BEGIN
+    -- Chọn tháng, tổng doanh thu từ bảng Hóa Đơn, nhóm theo tháng
+    SELECT 
+        ROW_NUMBER() OVER (ORDER BY MONTH(NgayTao)) AS [STT], 
+        MONTH(NgayTao) AS [Tháng], 
+        SUM(TongCong) AS [Doanh Thu]
+    FROM 
+        [Hóa Đơn]
+    WHERE 
+        YEAR(NgayTao) = @Year
+    GROUP BY 
+        MONTH(NgayTao)
+END;
+
+go
