@@ -1152,12 +1152,17 @@ public class SanPhamJDialog extends javax.swing.JDialog {
     public double tinhTongTien(double gia) {
         return gia;
     }
+<<<<<<< HEAD
+
+    void insert(){
+=======
 
     void getForm() {
 
     }
 
     void insert() {
+>>>>>>> main
         try {
             dao.insert(new SanPham());
             this.fillSanPham();
