@@ -71,9 +71,9 @@ public class DoanhThuJDialog extends javax.swing.JDialog {
     void fillcboYear() {
         DefaultComboBoxModel model = (DefaultComboBoxModel) cbo_year.getModel();
         model.removeAllElements();
-        List<Integer> list = daoHD.selectYear();
+       List<Integer> list = daoHD.selectYear();      
         for (Integer year : list) {
-            model.addElement(year);
+           model.addElement(year);
         }
     }
 
