@@ -229,9 +229,6 @@
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\resources\images\icons8_alarm_clock_25px.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="00:00:00 "/>
               </Properties>
             </Component>
@@ -255,27 +252,14 @@
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel3">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\icon_snow.png"/>
-                </Property>
-              </Properties>
               <Events>
                 <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jLabel3MouseClicked"/>
               </Events>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel4">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\icon_snow.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel16">
               <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\mu.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="jLabel16"/>
               </Properties>
             </Component>
@@ -288,81 +272,28 @@
                   <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="horizontalAlignment" type="int" value="0"/>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\noel.png"/>
-                </Property>
                 <Property name="text" type="java.lang.String" value="Merry Christmas!"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel15">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\xekeo.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel17">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\xekeo.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel18">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel19">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel34">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel35">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel36">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel41">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel42">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Component class="javax.swing.JLabel" name="jLabel44">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane2">
 
@@ -520,9 +451,6 @@
                                         <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                                           <Color blue="0" green="33" red="33" type="rgb"/>
                                         </Property>
-                                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                          <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\xmag_search_find_export_locate_5984.png"/>
-                                        </Property>
                                         <Property name="text" type="java.lang.String" value="T&#xec;m Ki&#x1ebf;m"/>
                                       </Properties>
                                       <Events>
@@ -541,18 +469,8 @@
                                       </Properties>
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="jLabel43">
-                                      <Properties>
-                                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                          <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                                        </Property>
-                                      </Properties>
                                     </Component>
                                     <Component class="javax.swing.JLabel" name="jLabel33">
-                                      <Properties>
-                                        <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                                          <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\winter.png"/>
-                                        </Property>
-                                      </Properties>
                                     </Component>
                                   </SubComponents>
                                 </Container>
@@ -766,11 +684,6 @@
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel8">
-              <Properties>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\FPTPolytechnic\duan1\src\main\java\group1\images\gau.png"/>
-                </Property>
-              </Properties>
             </Component>
             <Container class="javax.swing.JScrollPane" name="jScrollPane3">
 

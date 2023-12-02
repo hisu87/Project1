@@ -30,25 +30,6 @@ public class xJDBC {
         }
     }
 
-    // public static PreparedStatement preparedStatement(String sql, Object... args)
-    // throws SQLException {
-    // try (Connection conn = DriverManager.getConnection(dburl, username,
-    // password)) {
-    // PreparedStatement pstmt = null;
-    // if (sql.trim().startsWith("{")) {
-    // pstmt = conn.prepareCall(sql); // proc
-    // } else {
-    // pstmt = conn.prepareStatement(sql); // SQL
-    // }
-    // for (int i = 0; i < args.length; i++) {
-    // pstmt.setObject(i + 1, args[i]);
-    // }
-    // return pstmt;
-    // } catch (SQLException e) {
-    // throw new RuntimeException(e);
-    // }
-    // }
-
     public static PreparedStatement preparedStatement(String sql, Object... args)
             throws SQLException {
         Connection conn = DriverManager.getConnection(dburl, username, password);
