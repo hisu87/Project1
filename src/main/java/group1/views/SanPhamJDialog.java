@@ -1070,9 +1070,7 @@ void printpdf(String textar){
     public double tinhTongTien(double gia) {
         return gia;
     }
-    void getForm(){
 
-    }
     void insert(){
         try {
             dao.insert(new SanPham());

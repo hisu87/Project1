@@ -75,12 +75,13 @@ go
 
 CREATE TABLE [Hóa Đơn]
 (
-  [MaHD] nvarchar(15) PRIMARY KEY,
+  [MaHD] INT PRIMARY KEY IDENTITY(1,1),
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
-  [TongCong] float,
+  [TongCong] float
 );
+
 
 go
 
