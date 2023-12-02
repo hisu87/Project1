@@ -20,7 +20,7 @@ public class CongThucDAO {
        String url = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
 
         String username = "sa";
-        String password = "songlong";
+        String password = "0807";
         Connection connection = null;
 
         try {

@@ -784,19 +784,19 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
     }// GEN-LAST:event_txt_SoLuongActionPerformed
 
     private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnLastActionPerformed
-        // last();
+         last();
     }// GEN-LAST:event_btnLastActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNextActionPerformed
-        // next();
+         next();
     }// GEN-LAST:event_btnNextActionPerformed
 
     private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrevActionPerformed
-        // prev();
+         prev();
     }// GEN-LAST:event_btnPrevActionPerformed
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnFirstActionPerformed
-        // first();
+         first();
     }// GEN-LAST:event_btnFirstActionPerformed
 
     /**
