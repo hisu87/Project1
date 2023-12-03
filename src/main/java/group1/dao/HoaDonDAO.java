@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
-    public String INSERT_SQL = "INSERT INTO [Hóa Đơn]( MaNV, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?)";
+    public String INSERT_SQL = "INSERT INTO [Hóa Đơn]( MaHD,MaNV, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?,?)";
     public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
     public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
@@ -26,6 +26,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
     @Override
     public void insert(HoaDon entity) {
         xJDBC.executeUpdate(INSERT_SQL,
+                entity.getMaHD(),
                 entity.getMaNV(),
             
                 entity.getNgayTao(),
