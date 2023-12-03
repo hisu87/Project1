@@ -25,7 +25,7 @@ import java.util.logging.Logger;
 
 public class ChiTietDonHangDAO extends CafeDAO<ChiTietDonHang, Integer> {
 
-    String INSERT_SQL = "INSERT INTO CHITIETDONHANG (TenSP, SoLuong, MaHD, MaSP) VALUES (?, ?, ?, ?)";    
+    String INSERT_SQL = "INSERT INTO CHITIETDONHANG (TenSP, SoLuong,MaHD, MaSP) VALUES (?,?, ?, ?)";    
     String UPDATE_SQL = "UPDATE CHITIETDONHANG SET TenSP=?, SoLuong=?, MaHD=?, MaSP=? WHERE MaChiTietDH=?";
     String DELETE_SQL = "DELETE FROM CHITIETDONHANG WHERE MaChiTietDH=?";
     String SELECT_ALL_SQL = "SELECT * FROM CHITIETDONHANG";
@@ -75,8 +75,9 @@ public class ChiTietDonHangDAO extends CafeDAO<ChiTietDonHang, Integer> {
                 entity.setMaChiTietDH(rs.getInt("MaChiTietDH"));
                 entity.setTenSP(rs.getString("TenSP"));
                 entity.setSoLuong(rs.getInt("SoLuong"));
-                entity.setMaHD(rs.getString("MaHD"));
+                
                 entity.setMaSP(rs.getString("MaSP"));
+                entity.setMaHD(rs.getString("MaHD"));
                 
                 list.add(entity);
             }

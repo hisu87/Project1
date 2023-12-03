@@ -84,7 +84,7 @@ go
 
 create TABLE [Hóa Đơn]
 (
-  [MaHD]  int IDENTITY(1,1) PRIMARY KEY ,
+  [MaHD]  nvarchar(15) PRIMARY KEY ,
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
@@ -92,20 +92,14 @@ create TABLE [Hóa Đơn]
 );
 SET IDENTITY_INSERT [Hóa Đơn] ON;
 
-
-
-
-
-
 go
-select * from [Hóa Đơn]
-drop table [Hóa Đơn]
+
 CREATE TABLE CHITIETDONHANG
 (
 	MaChiTietDH  int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
 	TenSP NVARCHAR(50) NOT NULL,
 	SoLuong INT,
-	 MaHD int FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
+	 MaHD   nvarchar(15) FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
 	MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
 );
 
@@ -265,7 +259,7 @@ values
 
 go
 select * from [Hóa Đơn]
-select * from HD_SP
+select * from [HD_SP]
 insert into [Sản Phẩm]
 values
   (1, N'Cà Phê Sữa', 'cfsua.png', 35000, 1),
@@ -368,3 +362,6 @@ BEGIN
 END;
 
 go
+select * from [Hóa Đơn]
+select * from CHITIETDONHANG
+SELECT SCOPE_IDENTITY() AS HoaDon;
