@@ -114,12 +114,14 @@ group1\views\QuanLySanPham$9.class
 group1\views\LoadingJDialog$1$1.class
 group1\views\DoanhThuJDialog$2.class
 group1\views\HoaDonJDialog$2.class
+group1\dao\ChiTietDonHangDAO.class
 group1\views\SanPhamJDialog$9.class
 group1\views\DoanhThuJDialog$1.class
 group1\views\HoaDonJDialog$4.class
 group1\views\LoginJDialog$1.class
 group1\views\LoginJDialog$8$1.class
 group1\views\HoaDonJDialog.class
+group1\entity\ChiTietDonHang.class
 group1\entity\NguyenLieu.class
 group1\views\LoginJDialog$2.class
 group1\views\NhanVienJDialog$5.class

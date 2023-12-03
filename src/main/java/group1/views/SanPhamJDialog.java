@@ -15,8 +15,10 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import group1.dao.ChiTietDonHangDAO;
 import group1.dao.HoaDonDAO;
 import group1.dao.SanPhamDao;
+import group1.entity.ChiTietDonHang;
 import group1.entity.HoaDon;
 import group1.entity.SanPham;
 import group1.utils.msgBox;
@@ -75,6 +77,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class SanPhamJDialog extends javax.swing.JDialog {
+    ChiTietDonHangDAO daoCtDh=new ChiTietDonHangDAO();
  List<SanPham> listcart=new ArrayList<>();
 SanPhamDao dao=new SanPhamDao();
     HoaDonDAO daohd=new HoaDonDAO();
@@ -173,7 +176,7 @@ int indextru=0;
 
         lblten.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblten.setForeground(new java.awt.Color(255, 255, 255));
-        lblten.setText("Quang Huy");
+        lblten.setText("HuyLight");
 
         jLabel3.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -594,6 +597,7 @@ int indextru=0;
         JSpinner spinner = new JSpinner(model);
         return spinner;
     }
+     
  void fix(String TenSP, double gia, String anh,int indexbutton,String masp){
      jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
@@ -661,6 +665,15 @@ int indextru=0;
 
                 createCart(clickedProductName, clickedProductPrice, clickedProductImage,masp);
                createHoaDon(TenSP, gia);
+               
+             if(index==1){
+                 insert();
+               String tensp;
+               
+                 for (SanPham sp : listcart) {
+                     
+                 }
+             }
 
 //                  spinner.addChangeListener(new ChangeListener() {
 //            @Override
@@ -671,7 +684,9 @@ int indextru=0;
 //        });
 
             }
+            
         });
+      
           btnmua.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
@@ -769,10 +784,11 @@ panelgia.setBackground(Color.white);
             @Override
             public void actionPerformed(ActionEvent e) {
                 SanPham clickproduct = listbest.get(index);
-                listcart.add(clickproduct);
+//                listcart.add(clickproduct);
                 System.out.println(listcart);
+//                listcart.add(new SanPham(masp,TenSP, (float) gia));
 //
-//
+//                  
 //                soLanMua = (int) spinner.getValue();
 //                System.out.println("Số lượng mua: " + soluong);
 
@@ -959,6 +975,8 @@ btnthanhtoan.addActionListener(new ActionListener(){
                 } else {
 //                    jTextArea1.setText("Failed to load QR Code.");
                 }
+              
+                System.out.println(maHD());
             } catch (IOException ex) {
                 ex.printStackTrace();
 //                jTextArea1.setText("Error loading QR Code: " + ex.getMessage());
@@ -1024,13 +1042,14 @@ btnthanhtoan.addActionListener(new ActionListener(){
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
+        listcart.add(new SanPham(tenSP,selectedValue, (float) gia));
+        System.out.println(listcart.toString());
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
         textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                +      "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
+                +      "                                                   Hóa Đơn:"+maHD()+"\n" + hoaDonBuilder.toString());
 
         
-
     }
 void printpdf(String textar){
    String path ="src/main/resources/pdf";
@@ -1079,21 +1098,23 @@ void printpdf(String textar){
         try {
             HoaDon hdon=getForm();
             daohd.insert(hdon);
+            String mahd=hdon.getMaHD();
+            System.out.println(mahd);
         
-            msgBox.alert(this, "Đã thêm nhân viên hóa đơn thành công");
+            msgBox.alert(this, "Đã thêm hóa đơn thành công");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
     HoaDon getForm(){
     HoaDon hd=new HoaDon();
-    hd.setMaHD(maHD());
     hd.setMaNV(lblten.getText());
     hd.setNgayTao(new java.util.Date(xDate.getCurrentDate()));
     hd.setTrangThai(true);
     hd.setTongCong(totalall);
     return hd;
 }
+    
     void findSanPham(){
         try {
         List<SanPham>  list = (List<SanPham>) Arrays.asList(dao.selectById(txtfind.getText()));
@@ -1217,7 +1238,7 @@ for (SanPham sp : list) {
  
         // Update the textar with the modified bill
          textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                 + "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
+                 + "                                                   Hóa Đơn:"+maHD()+"\n" + hoaDonBuilder.toString());
  
 
      }
