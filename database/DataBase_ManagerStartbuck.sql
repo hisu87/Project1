@@ -44,7 +44,7 @@ from [Công thức]
 SELECT CT_NL.MaCT, [Công thức].TenCongThuc, CT_NL.MaNL, [Nguyên Liệu].TenNL, CT_NL.SoLuong, CT_NL.DonViDoLuong
 FROM CT_NL
   JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT
-  JOIN [Nguyên Liệu] ON CT_NL.MaNL =[Nguyên Liệu].MaNL
+  JOIN [Nguyên Liệu] ON CTNL.MaNL =[Nguyên Liệu].MaNL
 where [Công thức].MaCT = 2;
 
 
@@ -75,7 +75,7 @@ go
 
 CREATE TABLE [Hóa Đơn]
 (
-  [MaHD] INT PRIMARY KEY IDENTITY(1,1),
+  [MaHD] INT PRIMARY KEY,
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
@@ -270,7 +270,7 @@ go
 insert into [Hóa Đơn]
 values
   ('HD12372', 'Hisu', '2023-11-11', 'Đã Thanh Toán', '35000')
-
+  select * from [Hóa Đơn]
 insert into HD_SP
 values
   ('HD12372', '1', 1),

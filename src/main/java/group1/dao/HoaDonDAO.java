@@ -17,7 +17,7 @@ import java.util.List;
  */
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
-    public String INSERT_SQL = "INSERT_INTO [Hóa Đơn](MaHD, MaNV, MaSP, NgayTao, SoLuong, TrangThai, TongCong) VALUES(?,?,?,?,?,?,?)";
+    public String INSERT_SQL = "INSERT_INTO [Hóa Đơn](MaHD, MaNV, MaSP, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?,?,?)";
     public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
     public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
