@@ -7,6 +7,8 @@ import group1.entity.CongThuc_NguyenLieu;
 import group1.entity.SanPham;
 import group1.utils.msgBox;
 import group1.utils.xImage;
+import io.opencensus.metrics.export.Value;
+
 import java.awt.Image;
 import java.sql.Date;
 
@@ -39,7 +41,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         for (SanPham SP : sp) {
             Object[] row = { SP.getTenSP(), SP.getMaSP(), SP.getMaCT(), SP.getGia(), SP.getAnh() };
             cbxct.setSelectedItem(0);
-//            cbxct.setSelectedItem("f");
+            // cbxct.setSelectedItem("f");
             tblmodel.addRow(row);
             tblsanPham.setModel(tblmodel);
         }
@@ -80,19 +82,76 @@ public class QuanLySanPham extends javax.swing.JDialog {
         SanPham sp = new SanPham();
         sp.setMaSP(txtmaSanPham.getText());
         sp.setTenSP(txtTenSanPham.getText());
-        sp.setMaCT((String) cbxct.getSelectedItem());
+        sp.setMaCT((Integer) cbxct.getSelectedItem());
         sp.setGia(Float.parseFloat(txtgia.getText()));
         sp.setAnh(lblanh.getText());
         return sp;
     }
 
-    void insert() {
-        try {
-            SanPham sp = getForm();
+    void updateStatus() {
+        // TODO
+        boolean edit = (this.row >= 0);
+        boolean first = (this.row == 0);
+        boolean last = (this.row == tblsanPham.getRowCount() - 1);
+        // Trạng thái form
+        txtmaSanPham.setEditable(!edit);
+        btnThem.setEnabled(!edit);
+        btnSua.setEnabled(edit);
+        btnXoa.setEnabled(edit);
+        // Trạng thái điều hướng
+        btnfirst.setEnabled(edit && !first);
+        btnPrev.setEnabled(edit && !first);
+        btnnext.setEnabled(edit && !last);
+        btnlast.setEnabled(edit && !last);
+    }
 
-            daosp.insert(sp);
-        } catch (Exception e) {
-            e.printStackTrace();
+    void clear() {
+        this.setForm(new SanPham());
+        this.row = -1;
+        this.updateStatus();
+    }
+
+    Boolean validateForm() {
+        if (txtmaSanPham.getText().length() == 0) {
+            msgBox.alert(this, "Không được để trống mã sản phẩm");
+            txtmaSanPham.requestFocus();
+            return false;
+        } else if (txtTenSanPham.getText().length() == 0) {
+            msgBox.alert(this, "Không được để trống tên sản phẩm");
+            txtTenSanPham.requestFocus();
+            return false;
+        } else if (txtgia.getText().length() == 0) {
+            msgBox.alert(this, "Không được để trống giá sản phẩm");
+            txtgia.requestFocus();
+            return false;
+        } else if (cbxct.getSelectedIndex() == 0) {
+            msgBox.alert(this, "Không được để trống mã công thức");
+            cbxct.requestFocus();
+            return false;
+        } else if (lblanh.getText().length() == 0) {
+            msgBox.alert(this, "Không được để trống ảnh");
+            lblanh.requestFocus();
+            return false;
+        } else if (Double.parseDouble(txtgia.getText()) <= 0) {
+            msgBox.alert(this, "Giá sản phẩm phải lớn hơn 0");
+            txtgia.requestFocus();
+            return false;
+        }
+        return true;
+    }
+
+    void insert() {
+        if (validateForm()) {
+            SanPham sp = getForm();
+            try {
+                daosp.insert(sp);
+                this.filltable();
+                this.clear();
+                msgBox.alert(this, "Thêm thành công");
+            } catch (Exception e) {
+                e.printStackTrace();
+                msgBox.alert(this, "Thêm thất bại");
+            }
         }
     }
 
@@ -108,6 +167,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
@@ -135,7 +195,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         btnPrev = new javax.swing.JButton();
         btnnext = new javax.swing.JButton();
         btnlast = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
+        btnThemCT = new javax.swing.JButton();
         txtTenSanPham = new javax.swing.JTextField();
         cbxct = new javax.swing.JComboBox<>();
         jLabel8 = new javax.swing.JLabel();
@@ -312,14 +372,14 @@ public class QuanLySanPham extends javax.swing.JDialog {
         panelGradient2.add(btnlast);
         btnlast.setBounds(480, 350, 76, 27);
 
-        jButton1.setText("Thêm");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnThemCT.setText("Thêm");
+        btnThemCT.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnThemCTActionPerformed(evt);
             }
         });
-        panelGradient2.add(jButton1);
-        jButton1.setBounds(330, 220, 76, 27);
+        panelGradient2.add(btnThemCT);
+        btnThemCT.setBounds(330, 220, 76, 27);
         panelGradient2.add(txtTenSanPham);
         txtTenSanPham.setBounds(240, 160, 280, 26);
 
@@ -342,7 +402,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
 
         jLabel2.setText("Giá:");
         panelGradient2.add(jLabel2);
-        jLabel2.setBounds(240, 270, 20, 16);
+        jLabel2.setBounds(240, 270, 150, 16);
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
@@ -372,6 +432,12 @@ public class QuanLySanPham extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnThemCTActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemCTActionPerformed
+        // TODO add your handling code here:
+        openRecipe();
+
+    }// GEN-LAST:event_btnThemCTActionPerformed
+
     private void tblsanPhamMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_tblsanPhamMouseClicked
         // TODO add your handling code here:
         if (evt.getClickCount() == 1) {
@@ -391,7 +457,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }// GEN-LAST:event_tblsanPhamMousePressed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
-        openRecipe();
+        insert();
     }// GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSuaActionPerformed
@@ -497,12 +563,12 @@ public class QuanLySanPham extends javax.swing.JDialog {
     private javax.swing.JButton btnPrev;
     private javax.swing.JButton btnSua;
     private javax.swing.JButton btnThem;
+    private javax.swing.JButton btnThemCT;
     private javax.swing.JButton btnXoa;
     private javax.swing.JButton btnfirst;
     private javax.swing.JButton btnlast;
     private javax.swing.JButton btnnext;
     private javax.swing.JComboBox<String> cbxct;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
