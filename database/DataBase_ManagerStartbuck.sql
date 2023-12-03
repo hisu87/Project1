@@ -3,10 +3,18 @@ go
 use QLStarbucks;
 Go
 
+--CREATE TABLE [Nguyên Liệu]
+--(
+--  [MaNL] nvarchar(15) PRIMARY KEY,
+--  [TenNL] nvarchar(50),
+--  [SoLuongCon] float,
+--  [GiaNL] float,
+--  [DonViDoLuong] nvarchar(20)
+--);
 CREATE TABLE [Nguyên Liệu]
 (
   [MaNL] nvarchar(50) PRIMARY KEY,
-  [TenNL] nvarchar(200),
+  [TenNL] nvarchar(50),
   [SoLuongCon] float,
   [GiaNL] float,
   [DonViDoLuong] nvarchar(20)
@@ -44,7 +52,7 @@ from [Công thức]
 SELECT CT_NL.MaCT, [Công thức].TenCongThuc, CT_NL.MaNL, [Nguyên Liệu].TenNL, CT_NL.SoLuong, CT_NL.DonViDoLuong
 FROM CT_NL
   JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT
-  JOIN [Nguyên Liệu] ON CT_NL.MaNL =[Nguyên Liệu].MaNL
+  JOIN [Nguyên Liệu] ON CTNL.MaNL =[Nguyên Liệu].MaNL
 where [Công thức].MaCT = 2;
 
 
@@ -58,7 +66,7 @@ CREATE TABLE [Sản Phẩm]
   [MaCT] nvarchar(50) FOREIGN KEY REFERENCES [Công thức]([MaCT])
 );
 
-CREATE TABLE [Nhân Viên]
+ create TABLE [Nhân Viên]
 (
   [MaNV] nvarchar(15) PRIMARY KEY,
   [MatKhau] nvarchar(50),
@@ -73,34 +81,37 @@ CREATE TABLE [Nhân Viên]
 
 go
 
-CREATE TABLE [Hóa Đơn]
+
+create TABLE [Hóa Đơn]
 (
-  [MaHD] nvarchar(15) PRIMARY KEY,
+  [MaHD]  int IDENTITY(1,1) PRIMARY KEY ,
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
-  [TongCong] float,
+  [TongCong] float
 );
+SET IDENTITY_INSERT [Hóa Đơn] ON;
+
+
+
+
+
 
 go
-
-CREATE TABLE HD_SP
+select * from [Hóa Đơn]
+drop table [Hóa Đơn]
+CREATE TABLE CHITIETDONHANG
 (
-  MaHD nvarchar(15) FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
-  MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
-  soluong INT,
+	MaChiTietDH  int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
+	TenSP NVARCHAR(50) NOT NULL,
+	SoLuong INT,
+	 MaHD int FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
+	MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
 );
 
 
 
-CREATE TABLE [Nguyên Liệu]
-(
-  [MaNL] nvarchar(15) PRIMARY KEY,
-  [TenNL] nvarchar(50),
-  [SoLuongCon] float,
-  [GiaNL] float,
-  [DonViDoLuong] nvarchar(20)
-);
+
 select *
 from [Sản Phẩm]
 select *
@@ -253,15 +264,15 @@ values
   ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM', 'x');
 
 go
-
+select * from [Hóa Đơn]
+select * from HD_SP
 insert into [Sản Phẩm]
 values
   (1, N'Cà Phê Sữa', 'cfsua.png', 35000, 1),
   (2, N'Cà Phê Đen', 'phindenda.png', 30000, 2),
-  (3, N'Trà Ô Long Dừa', 'trolongdua.png', 45000, 4),
-  (4, N'Bạc Xĩu', 'xxxxx', 40000, 5),
-  (5, N'Capuchino', 'oreocf.png', 55000, 3),
-  (6, N'Trà Ô Long Dâu', 'trolongdau.png', 55000, 1)
+  (3, N'Trà Ô Long Dừa', 'traolongdua.png', 45000, 4),
+  (4, N'Capuchino', 'oreocf.png', 55000, 3),
+  (5, N'Trà Ô Long Dâu', 'traolongdau.png', 55000, 1)
  
 
 go
@@ -269,7 +280,7 @@ go
 insert into [Hóa Đơn]
 values
   ('HD12372', 'Hisu', '2023-11-11', 'Đã Thanh Toán', '35000')
-
+  select * from [Hóa Đơn]
 insert into HD_SP
 values
   ('HD12372', '1', 1),

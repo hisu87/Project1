@@ -8,6 +8,7 @@ group1\views\DoanhThuJDialog$3.class
 group1\views\CongThucNguyenLieuJDialog$10.class
 group1\views\NhanVienJDialog$1.class
 group1\views\QuanLySanPham$2.class
+group1\views\HoaDonJDialog$6.class
 group1\entity\SanPham.class
 group1\views\CongThucNguyenLieuJDialog$5.class
 group1\views\DoanhThuJDialog$9.class
@@ -71,6 +72,7 @@ group1\views\QuanLySanPham$11.class
 group1\views\ChangePasswordJDialog$2.class
 group1\views\CongThucNguyenLieuJDialog$13.class
 group1\views\NhanVienJDialog$4.class
+group1\views\HoaDonJDialog$3.class
 group1\views\CongThucNguyenLieuJDialog$2.class
 group1\views\QLNguyenLieuJDialog$1TimeClock.class
 group1\dao\SanPhamDao.class
@@ -105,17 +107,21 @@ group1\views\LoginJDialog.class
 group1\entity\NhanVien.class
 group1\views\NewJDialog$1.class
 group1\utils\Auth.class
+group1\views\HoaDonJDialog$5.class
 group1\views\CongThucNguyenLieuJDialog.class
 group1\views\ChangePasswordJDialog$4.class
 group1\views\QuanLySanPham$9.class
 group1\views\LoadingJDialog$1$1.class
 group1\views\DoanhThuJDialog$2.class
 group1\views\HoaDonJDialog$2.class
+group1\dao\ChiTietDonHangDAO.class
 group1\views\SanPhamJDialog$9.class
 group1\views\DoanhThuJDialog$1.class
+group1\views\HoaDonJDialog$4.class
 group1\views\LoginJDialog$1.class
 group1\views\LoginJDialog$8$1.class
 group1\views\HoaDonJDialog.class
+group1\entity\ChiTietDonHang.class
 group1\entity\NguyenLieu.class
 group1\views\LoginJDialog$2.class
 group1\views\NhanVienJDialog$5.class
