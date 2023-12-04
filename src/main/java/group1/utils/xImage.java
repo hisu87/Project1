@@ -35,14 +35,16 @@ public class xImage {
      * @param src là đối tượng file ảnh
      */
     public static void save(File src) {
-        File dir = new File("logos", src.getName());
+        File dir = new File("drinks", src.getName());
         if (!dir.exists()) {
             dir.mkdirs();
+            System.out.println("Done");
         }
         try {
             Path source = Paths.get(src.getAbsolutePath());
             Path destination = Paths.get(dir.getAbsolutePath());
             Files.copy(source, destination, StandardCopyOption.REPLACE_EXISTING);
+            System.out.println("Done");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -56,13 +58,14 @@ public class xImage {
      * @return ảnh đọc được
      */
     public static ImageIcon read(String filename) {
-        File path = new File("logos", filename);
+        File path = new File("drinks", filename);
         return new ImageIcon(
                 new ImageIcon(path.getAbsolutePath()).getImage().getScaledInstance(180, 180, Image.SCALE_DEFAULT));
     }
 
     public static ImageIcon readimage(String FileName) {
         File path = new File("src/main/resources/images", FileName);
+        System.out.println("Done");
         return new ImageIcon(path.getAbsolutePath());
     }
 }
