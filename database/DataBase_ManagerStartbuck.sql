@@ -13,8 +13,8 @@ Go
 --);
 CREATE TABLE [Nguyên Liệu]
 (
-  [MaNL] nvarchar(50) PRIMARY KEY,
-  [TenNL] nvarchar(50),
+  [MaNL] nvarchar(500) PRIMARY KEY,
+  [TenNL] nvarchar(500),
   [SoLuongCon] float,
   [GiaNL] float,
   [DonViDoLuong] nvarchar(20)
@@ -61,12 +61,12 @@ CREATE TABLE [Sản Phẩm]
 (
   [MaSP] nvarchar(50) PRIMARY KEY,
   [TenSP] nvarchar(50),
-  [Anh] nvarchar(50),
+  [Anh] nvarchar(max),
   [Gia] float,
   [MaCT] nvarchar(50) FOREIGN KEY REFERENCES [Công thức]([MaCT])
 );
 
- create TABLE [Nhân Viên]
+create TABLE [Nhân Viên]
 (
   [MaNV] nvarchar(15) PRIMARY KEY,
   [MatKhau] nvarchar(50),
@@ -75,8 +75,7 @@ CREATE TABLE [Sản Phẩm]
   [Tuoi] int,
   [GioiTinh] varchar(15),
   [SDT] int,
-  [DiaChi] nvarchar(50),
-  [Anh] nvarchar(50)
+  [DiaChi] nvarchar(50)
 );
 
 go
@@ -84,7 +83,7 @@ go
 
 create TABLE [Hóa Đơn]
 (
-  [MaHD]  int IDENTITY(1,1) PRIMARY KEY ,
+  [MaHD] int IDENTITY(1,1) PRIMARY KEY ,
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
@@ -95,18 +94,17 @@ SET IDENTITY_INSERT [Hóa Đơn] ON;
 
 
 
-
-
 go
-select * from [Hóa Đơn]
+select *
+from [Hóa Đơn]
 drop table [Hóa Đơn]
 CREATE TABLE CHITIETDONHANG
 (
-	MaChiTietDH  int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
-	TenSP NVARCHAR(50) NOT NULL,
-	SoLuong INT,
-	 MaHD int FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
-	MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
+  MaChiTietDH int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
+  TenSP NVARCHAR(50) NOT NULL,
+  SoLuong INT,
+  MaHD int FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
+  MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
 );
 
 
@@ -116,16 +114,16 @@ select *
 from [Sản Phẩm]
 select *
 from [Công thức]
--- Thêm công thức mẫu vào bảng "Công thức"
-INSERT INTO [Công thức]
-  ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
-VALUES
-  ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
--- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
-INSERT INTO [Nguyên Liệu]
-  ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
-VALUES
-  ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+-- -- Thêm công thức mẫu vào bảng "Công thức"
+-- INSERT INTO [Công thức]
+--   ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+-- VALUES
+--   ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+-- -- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+-- INSERT INTO [Nguyên Liệu]
+--   ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+-- VALUES
+--   ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
 
 go
 
@@ -257,15 +255,17 @@ go
 
 insert into [Nhân Viên]
 values
-  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM', 'x');
+  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM');
 
 go
-select * from [Hóa Đơn]
-select * from HD_SP
+select *
+from [Hóa Đơn]
+select *
+from HD_SP
 insert into [Sản Phẩm]
 values
   (1, N'Cà Phê Sữa', 'cfsua.png', 35000, 1),
@@ -279,8 +279,20 @@ go
 
 insert into [Hóa Đơn]
 values
-  ('HD12372', 'Hisu', '2023-11-11', 'Đã Thanh Toán', '35000')
-  select * from [Hóa Đơn]
+  ('HD12372', 'Hisu', '2023-11-11', 'Đã Thanh Toán', '357380000'),
+  ('HD12373', 'Hisu', '2023-10-10', 'Đã Thanh Toán', '679000000'),
+  ('HD12370', 'Hisu', '2022-11-11', 'Đã Thanh Toán', '3834220'),
+  ('HD12334', 'Hisu', '2022-10-11', 'Đã Thanh Toán', '32810000'),
+  ('HD12332', 'Hisu', '2021-11-11', 'Đã Thanh Toán', '6812000'),
+  ('HD12322', 'Hisu', '2021-01-11', 'Đã Thanh Toán', '2719000'),
+  ('HD1221', 'Hisu', '2023-04-06', 'Đã Thanh Toán', '35000000'),
+  ('HD12523', 'Hisu', '2023-03-12', 'Đã Thanh Toán', '3500000'),
+  ('HD12123', 'Hisu', '2022-04-23', 'Đã Thanh Toán', '250000'),
+  ('HD12123', 'Hisu', '2022-08-07', 'Đã Thanh Toán', '875000'),
+  ('HD12644', 'Hisu', '2021-07-08', 'Đã Thanh Toán', '715000')
+go
+select *
+from [Hóa Đơn]
 insert into HD_SP
 values
   ('HD12372', '1', 1),
@@ -297,73 +309,73 @@ from [Hóa Đơn] hd
   join HD_SP on hd.MaHD = HD_SP.MaHD join [Sản Phẩm] sp on sp.MaSP = HD_SP.MaSP
 where hd.MaHD = 'HD12372';
 
-select *
-from [Sản Phẩm]
--- Thêm công thức mẫu vào bảng "Công thức"
-INSERT INTO [Công thức]
-  ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
-VALUES
-  ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
--- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
-INSERT INTO [Nguyên Liệu]
-  ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
-VALUES
-  ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+-- select *
+-- from [Sản Phẩm]
+-- -- Thêm công thức mẫu vào bảng "Công thức"
+-- INSERT INTO [Công thức]
+--   ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+-- VALUES
+--   ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+-- -- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+-- INSERT INTO [Nguyên Liệu]
+--   ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+-- VALUES
+--   ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
 
   go
 
 Create PROCEDURE [dbo].[GetRevenueByDate]
-    @Ngay DATE
+  @Ngay DATE
 AS
 BEGIN
-    -- Chọn tổng doanh thu từ bảng Hóa Đơn cho ngày cụ thể
-    SELECT 
-        ROW_NUMBER() OVER (ORDER BY NgayTao) AS STT,
-        CAST(NgayTao AS DATE) AS N'Thời Gian',
-        SUM(TongCong) AS 'Doanh Thu'
-    FROM 
-        [Hóa Đơn]
-    WHERE 
+  -- Chọn tổng doanh thu từ bảng Hóa Đơn cho ngày cụ thể
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY NgayTao) AS STT,
+    CAST(NgayTao AS DATE) AS N'Thời Gian',
+    SUM(TongCong) AS 'Doanh Thu'
+  FROM
+    [Hóa Đơn]
+  WHERE 
         CAST(NgayTao AS DATE) = @Ngay
-    GROUP BY 
+  GROUP BY 
         CAST(NgayTao AS DATE)
 END;
 
 go
 
 CREATE PROCEDURE [dbo].[GetRevenueByDateRange]
-    @StartDate DATE,
-    @EndDate DATE
+  @StartDate DATE,
+  @EndDate DATE
 AS
 BEGIN
-    SELECT 
-        ROW_NUMBER() OVER (ORDER BY CAST(NgayTao AS DATE)) AS STT,
-        CAST(NgayTao AS DATE) AS [Thời Gian],
-        SUM(TongCong) AS 'Doanh Thu'
-    FROM 
-        [Hóa Đơn]
-    WHERE 
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY CAST(NgayTao AS DATE)) AS STT,
+    CAST(NgayTao AS DATE) AS [Thời Gian],
+    SUM(TongCong) AS 'Doanh Thu'
+  FROM
+    [Hóa Đơn]
+  WHERE 
         CAST(NgayTao AS DATE) BETWEEN @StartDate AND @EndDate
-    GROUP BY 
+  GROUP BY 
         CAST(NgayTao AS DATE)
 END;
 
 go
 
 Create PROCEDURE [dbo].[GetRevenueByMonth]
-    @Year INT
+  @Year INT
 AS
 BEGIN
-    -- Chọn tháng, tổng doanh thu từ bảng Hóa Đơn, nhóm theo tháng
-    SELECT 
-        ROW_NUMBER() OVER (ORDER BY MONTH(NgayTao)) AS [STT], 
-        MONTH(NgayTao) AS [Tháng], 
-        SUM(TongCong) AS [Doanh Thu]
-    FROM 
-        [Hóa Đơn]
-    WHERE 
+  -- Chọn tháng, tổng doanh thu từ bảng Hóa Đơn, nhóm theo tháng
+  SELECT
+    ROW_NUMBER() OVER (ORDER BY MONTH(NgayTao)) AS [STT],
+    MONTH(NgayTao) AS [Tháng],
+    SUM(TongCong) AS [Doanh Thu]
+  FROM
+    [Hóa Đơn]
+  WHERE 
         YEAR(NgayTao) = @Year
-    GROUP BY 
+  GROUP BY 
         MONTH(NgayTao)
 END;
 

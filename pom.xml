@@ -89,8 +89,14 @@
         <dependency>
       <groupId>com.google.api-client</groupId>
       <artifactId>google-api-client</artifactId>
-      <version>1.33.0</version>
+      <version>2.2.0</version>
     </dependency>
+        <dependency>
+            <groupId>com.formdev</groupId>
+            <artifactId>flatlaf</artifactId>
+            <version>3.2.5</version>
+            <type>pom.sha512</type>
+        </dependency>
     </dependencies>
 
     <properties>

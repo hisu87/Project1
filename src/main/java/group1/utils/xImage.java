@@ -35,7 +35,7 @@ public class xImage {
      * @param src là đối tượng file ảnh
      */
     public static void save(File src) {
-        File dir = new File("logos", src.getName());
+        File dir = new File("drinks", src.getName());
         if (!dir.exists()) {
             dir.mkdirs();
         }

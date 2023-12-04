@@ -10,6 +10,7 @@ import group1.utils.xImage;
 import io.opencensus.metrics.export.Value;
 
 import java.awt.Image;
+import java.io.File;
 import java.sql.Date;
 
 import java.sql.Date;
@@ -18,13 +19,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+//import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.*;
 
 public class QuanLySanPham extends javax.swing.JDialog {
     SanPhamDao daosp = new SanPhamDao();
     CongThucDAO ctdao = new CongThucDAO();
     DefaultTableModel tblmodel = new DefaultTableModel();
     List<SanPham> list = new ArrayList<>();
+    JFileChooser filechooser = new JFileChooser();
     int row = -1;
 
     public QuanLySanPham(java.awt.Frame parent, boolean modal) {
@@ -68,24 +74,32 @@ public class QuanLySanPham extends javax.swing.JDialog {
         txtTenSanPham.setText(sp.getTenSP());
         cbxct.setSelectedItem(sp.getMaCT());
         txtgia.setText(String.valueOf(sp.getGia()));
-        int with = lblanh.getWidth();
-        int height = lblanh.getHeight();
-        String path = sp.getAnh();
-        ImageIcon image = xImage.readimage(path);
-        Image imagescal = image.getImage().getScaledInstance(with, height, Image.SCALE_SMOOTH);
-        lblanh.setIcon(new ImageIcon(imagescal));
-        lblanh.setToolTipText(String.valueOf(image));
-        System.out.println(image);
+        if (sp.getAnh() != null) {
+            lblanh.setIcon(xImage.read(sp.getAnh()));
+            lblanh.setToolTipText(sp.getAnh());
+        }
     }
 
-    public SanPham getForm() {
+    SanPham getForm() {
         SanPham sp = new SanPham();
         sp.setMaSP(txtmaSanPham.getText());
         sp.setTenSP(txtTenSanPham.getText());
-        sp.setMaCT((Integer) cbxct.getSelectedItem());
+        sp.setMaCT((String) cbxct.getSelectedItem().toString());
         sp.setGia(Float.parseFloat(txtgia.getText()));
-        sp.setAnh(lblanh.getText());
+        sp.setAnh(lblanh.getToolTipText());
         return sp;
+    }
+
+    void choosePic() {
+        if (filechooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            filechooser.setDialogTitle("Choose Image");
+            File file = filechooser.getSelectedFile();
+            xImage.save(file);
+            ImageIcon icon = xImage.read(file.getName());
+            lblanh.setIcon(icon);
+            lblanh.setToolTipText(file.getName());
+            System.out.println("Oke");
+        }
     }
 
     void updateStatus() {
@@ -167,6 +181,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
@@ -309,16 +325,17 @@ public class QuanLySanPham extends javax.swing.JDialog {
 
         lblanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/drinks/phindenda.png"))); // NOI18N
         lblanh.setText("jLabel9");
+        lblanh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblanhMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblanh, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+                        .addComponent(lblanh, javax.swing.GroupLayout.PREFERRED_SIZE, 200, Short.MAX_VALUE));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblanh, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE));
@@ -432,6 +449,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void lblanhMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_lblanhMouseClicked
+        // TODO add your handling code here:
+        choosePic();
+    }// GEN-LAST:event_lblanhMouseClicked
+
     private void btnThemCTActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemCTActionPerformed
         // TODO add your handling code here:
         openRecipe();
@@ -520,26 +542,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
          * For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
-        }
+//        try {
+//            UIManager.setLookAndFeel(new FlatLightLaf());
+//        } catch (Exception ex) {
+//            System.err.println("Failed to initialize LaF");
+//        }
         // </editor-fold>
         // </editor-fold>
 
