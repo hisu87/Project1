@@ -65,6 +65,8 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         cboMact = new javax.swing.JComboBox<>();
         cboTenct = new javax.swing.JComboBox<>();
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jTabbedPane2 = new javax.swing.JTabbedPane();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -206,6 +208,8 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
 
         cboTenct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tên công thức " }));
         jPanel1.add(cboTenct, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+        jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
+        jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -368,6 +372,8 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTabbedPane jTabbedPane2;
     private javax.swing.JTable tblCongthuc;
     private javax.swing.JTextField txtDonvido;
     private javax.swing.JTextField txtMact;
@@ -409,7 +415,6 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
             String value4 = tblCongthuc.getValueAt(selectedRow, 3).toString();// tên nguyên liệu
             String value5 = tblCongthuc.getValueAt(selectedRow, 4).toString(); // số lượng 
             String value6 = tblCongthuc.getValueAt(selectedRow, 5).toString(); // đơn vị đo 
-           
             txtMact.setText(value1);
             txtManl.setText(value3);
             txtSoluong.setText(value5);
@@ -483,7 +488,6 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     }
     
     public void loadCbo() {
-        
         List<CongThuc> list = CongThucDAO.getCongThuc();
         for (CongThuc ct: list) {
             cboMact.addItem(Integer.toString(ct.getMaCT()));
