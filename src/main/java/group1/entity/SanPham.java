@@ -16,6 +16,11 @@ public class SanPham {
         this.tenSP = tenSP;
         this.gia = gia;
     }
+     public SanPham( String tenSP,int soluong, String masp) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+    }
 
     public SanPham(String maSP, String tenSP, String anh, float gia, String maCT) {
         this.maSP = maSP;

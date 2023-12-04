@@ -78,7 +78,7 @@ import javax.swing.event.ChangeListener;
 
 public class SanPhamJDialog extends javax.swing.JDialog {
     ChiTietDonHangDAO daoCtDh=new ChiTietDonHangDAO();
- List<SanPham> listcart=new ArrayList<>();
+ List<ChiTietDonHang> listcart=new ArrayList<>();
 SanPhamDao dao=new SanPhamDao();
     HoaDonDAO daohd=new HoaDonDAO();
 JButton btndelete;
@@ -664,16 +664,13 @@ int indextru=0;
                 String clickedProductImage = anh; // Ảnh sản phẩm
 
                 createCart(clickedProductName, clickedProductPrice, clickedProductImage,masp);
-               createHoaDon(TenSP, gia);
+               createHoaDon(TenSP, gia,masp);
                
              if(index==1){
                  insert();
-               String tensp;
                
-                 for (SanPham sp : listcart) {
-                     
-                 }
              }
+             insertchitietdonhang();
 
 //                  spinner.addChangeListener(new ChangeListener() {
 //            @Override
@@ -809,7 +806,7 @@ index++;
                
             }
         });
-         createHoaDon(TenSP, gia);
+//         createHoaDon(TenSP, gia);
 
         // Sự kiện khi chuột vào nút "Mua Ngay"
         btnmua.addMouseListener(new MouseAdapter() {
@@ -976,7 +973,7 @@ btnthanhtoan.addActionListener(new ActionListener(){
 //                    jTextArea1.setText("Failed to load QR Code.");
                 }
               
-                System.out.println(maHD());
+              
             } catch (IOException ex) {
                 ex.printStackTrace();
 //                jTextArea1.setText("Error loading QR Code: " + ex.getMessage());
@@ -996,35 +993,31 @@ btnthanhtoan.addActionListener(new ActionListener(){
  jPanel10.add(pnx);
     }
 
-    // Khai báo một biến để lưu trữ thông tin sản phẩm đã mua
+ // Khai báo seed cố định
+    private static final long seed = System.currentTimeMillis();
+
     StringBuilder hoaDonBuilder = new StringBuilder();
-        public static String maHD() {
-        // Chuỗi chứa 2 ký tự "HD"
+
+    public static String maHD() {
         String prefix = "HD";
-
-        // Tạo một số ngẫu nhiên 4 chữ số
-        String randomNumbers = generateRandomNumbers(4);
-
-        // Kết hợp prefix và randomNumbers để tạo chuỗi hoàn chỉnh
+        String randomNumbers = generateRandomNumbers(4, seed);
         String randomString = prefix + randomNumbers;
-
         return randomString;
     }
 
-    public static String generateRandomNumbers(int length) {
-        // Tạo một số ngẫu nhiên có độ dài được chỉ định
-        Random random = new Random();
+    public static String generateRandomNumbers(int length, long seed) {
+        Random random = new Random(seed); // Sử dụng seed cố định
         StringBuilder hdBuild = new StringBuilder();
 
         for (int i = 0; i < length; i++) {
-            int randomNumber = random.nextInt(10); // Số từ 0 đến 9
+            int randomNumber = random.nextInt(10);
             hdBuild.append(randomNumber);
         }
 
         return hdBuild.toString();
     }
 
-    void createHoaDon(String tenSP, double gia) {
+    void createHoaDon(String tenSP, double gia,String masp) {
 
 
 
@@ -1042,14 +1035,15 @@ btnthanhtoan.addActionListener(new ActionListener(){
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
-        listcart.add(new SanPham(tenSP,selectedValue, (float) gia));
+        listcart.add(new ChiTietDonHang(masp,tenSP,selectedValue));
         System.out.println(listcart.toString());
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
         textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
                 +      "                                                   Hóa Đơn:"+maHD()+"\n" + hoaDonBuilder.toString());
 
-        
+          System.out.println(maHD());
+          
     }
 void printpdf(String textar){
    String path ="src/main/resources/pdf";
@@ -1093,21 +1087,42 @@ void printpdf(String textar){
     public double tinhTongTien(double gia) {
         return gia;
     }
-   
+
+
     void insert(){
         try {
             HoaDon hdon=getForm();
+
             daohd.insert(hdon);
             String mahd=hdon.getMaHD();
             System.out.println(mahd);
-        
+            
+
+
             msgBox.alert(this, "Đã thêm hóa đơn thành công");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+    void insertchitietdonhang(){
+        for (ChiTietDonHang ct : listcart) {
+
+            daoCtDh.insert(getformctdh(ct));
+            }
+        
+    }
+    ChiTietDonHang getformctdh(ChiTietDonHang sp) {
+        ChiTietDonHang ctdh = new ChiTietDonHang();
+        ctdh.setTenSP(sp.getTenSP());
+        ctdh.setSoLuong(sp.getSoLuong());
+        ctdh.setMaSP(sp.getMaSP());
+        ctdh.setMaHD(maHD());
+        return ctdh;
+    }
+
     HoaDon getForm(){
     HoaDon hd=new HoaDon();
+    hd.setMaHD(maHD());
     hd.setMaNV(lblten.getText());
     hd.setNgayTao(new java.util.Date(xDate.getCurrentDate()));
     hd.setTrangThai(true);
