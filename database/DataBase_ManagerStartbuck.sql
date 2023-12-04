@@ -13,8 +13,8 @@ Go
 --);
 CREATE TABLE [Nguyên Liệu]
 (
-  [MaNL] nvarchar(500) PRIMARY KEY,
-  [TenNL] nvarchar(500),
+  [MaNL] nvarchar(50) PRIMARY KEY,
+  [TenNL] nvarchar(max),
   [SoLuongCon] float,
   [GiaNL] float,
   [DonViDoLuong] nvarchar(20)
@@ -42,18 +42,18 @@ CREATE TABLE CT_NL
 
 go
 
-select *
-from CT_NL
-select *
-from [Nguyên Liệu]
-select *
-from [Công thức]
+--select *
+--from CT_NL
+--select *
+--from [Nguyên Liệu]
+--select *
+--from [Công thức]
 
-SELECT CT_NL.MaCT, [Công thức].TenCongThuc, CT_NL.MaNL, [Nguyên Liệu].TenNL, CT_NL.SoLuong, CT_NL.DonViDoLuong
-FROM CT_NL
-  JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT
-  JOIN [Nguyên Liệu] ON CTNL.MaNL =[Nguyên Liệu].MaNL
-where [Công thức].MaCT = 2;
+--SELECT CT_NL.MaCT, [Công thức].TenCongThuc, CT_NL.MaNL, [Nguyên Liệu].TenNL, CT_NL.SoLuong, CT_NL.DonViDoLuong
+--FROM CT_NL
+--  JOIN [Công thức] ON CT_NL.MaCT = [Công thức].MaCT
+--  JOIN [Nguyên Liệu] ON CTNL.MaNL =[Nguyên Liệu].MaNL
+--where [Công thức].MaCT = 2;
 
 
 
@@ -61,7 +61,7 @@ CREATE TABLE [Sản Phẩm]
 (
   [MaSP] nvarchar(50) PRIMARY KEY,
   [TenSP] nvarchar(50),
-  [Anh] nvarchar(max),
+  [Anh] nvarchar(50),
   [Gia] float,
   [MaCT] nvarchar(50) FOREIGN KEY REFERENCES [Công thức]([MaCT])
 );
@@ -75,7 +75,8 @@ create TABLE [Nhân Viên]
   [Tuoi] int,
   [GioiTinh] varchar(15),
   [SDT] int,
-  [DiaChi] nvarchar(50)
+  [DiaChi] nvarchar(50),
+  [Anh] nvarchar(50)
 );
 
 go
@@ -83,7 +84,7 @@ go
 
 create TABLE [Hóa Đơn]
 (
-  [MaHD] int IDENTITY(1,1) PRIMARY KEY ,
+  [MaHD] nvarchar(15) PRIMARY KEY ,
   [MaNV] nvarchar(15) FOREIGN KEY REFERENCES [Nhân Viên]([MaNV]),
   [NgayTao] date,
   [TrangThai] nvarchar(50),
@@ -91,19 +92,14 @@ create TABLE [Hóa Đơn]
 );
 SET IDENTITY_INSERT [Hóa Đơn] ON;
 
-
-
-
 go
-select *
-from [Hóa Đơn]
-drop table [Hóa Đơn]
+
 CREATE TABLE CHITIETDONHANG
 (
   MaChiTietDH int IDENTITY(1,1) PRIMARY KEY NOT NULL ,
   TenSP NVARCHAR(50) NOT NULL,
   SoLuong INT,
-  MaHD int FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
+  MaHD nvarchar(15) FOREIGN KEY (MaHD) REFERENCES [Hóa Đơn](MaHD),
   MaSP nvarchar(50) FOREIGN KEY (MaSP) REFERENCES [Sản Phẩm](MaSP),
 );
 
@@ -114,22 +110,22 @@ select *
 from [Sản Phẩm]
 select *
 from [Công thức]
--- -- Thêm công thức mẫu vào bảng "Công thức"
--- INSERT INTO [Công thức]
---   ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
--- VALUES
---   ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
--- -- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
--- INSERT INTO [Nguyên Liệu]
---   ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
--- VALUES
---   ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+-- Thêm công thức mẫu vào bảng "Công thức"
+--INSERT INTO [Công thức]
+--  ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+--VALUES
+--  ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+---- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+--INSERT INTO [Nguyên Liệu]
+--  ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+--VALUES
+--  ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
 
 go
 
 INSERT INTO [Nguyên Liệu]
 VALUES
-  (N'Wsugar', N'Đường Trắngb', 100, 25000, N'KG'),
+  (N'Wsugar', N'Đường Trắng', 100, 25000, N'KG'),
   (N'SiroDD', N'Siro đường đen Eurodeli can 2.5 kg', 10, 275000, N'CAN'),
   (N'RobustaMR', N'Robusta Medium Roast', 200, 85000, N'KG'),
   (N'HongTra', N'Hồng Trà Thượng Hạng', 100, 117000, N'KG'),
@@ -196,7 +192,7 @@ VALUES
 
 go
 
-insert [Công thức]
+insert into [Công thức]
 values
   (1, 'White Coffee'),
   (2, 'Black Coffe'),
@@ -207,12 +203,17 @@ values
   (7, 'Blueberry Mocktail');
 
 go
-select *
-from [Nguyên Liệu]
-where [Nguyên Liệu].MaNL = 'SyrupPMCaramel'
+--select *
+--from [Nguyên Liệu]
+--where [Nguyên Liệu].MaNL = 'SyrupPMCaramel'
 
 insert into CT_NL
 values
+(1, N'RobustaMR', 15, 'Gram'),
+(1, N'Wsugar', 10, 'Gram'),
+(1, N'STMilkLab', 20, 'Ml'),
+  (1, N'WCIsigny', 10, 'Gram'),
+  (2,N'RobustaMR',25, 'Gram'),
   (2, N'Wsugar', 10, 'Gram'),
   (3, N'Wsugar', 25, 'Gram'),
   (3, N'BlackTeaFuckLong', 5, 'Gram'),
@@ -243,29 +244,29 @@ values
   (7, N'FMLemon', 30, 'Ml'),
   (7, N'SodaScheweppers', 1, 'Lon');
 
-go
+--go
 
-/*Xem công thức có nguyên liệu nào*/
-select ct.MaCT, ct.TenCongThuc
-from [Công thức] ct
-  join CT_NL on ct.MaCT = CT_NL.MaCT join [Nguyên Liệu] nl on nl.MaNL = CT_NL.MaNL
-where ct.MaCT = 5;
+--/*Xem công thức có nguyên liệu nào*/
+--select ct.MaCT, ct.TenCongThuc
+--from [Công thức] ct
+--  join CT_NL on ct.MaCT = CT_NL.MaCT join [Nguyên Liệu] nl on nl.MaNL = CT_NL.MaNL
+--where ct.MaCT = 5;
 
 go
 
 insert into [Nhân Viên]
 values
-  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM'),
-  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM'),
-  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM'),
-  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM'),
-  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM');
+  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
+  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
+  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
+  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
+  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM', 'x');
 
 go
 select *
 from [Hóa Đơn]
-select *
-from HD_SP
+--select *
+--from [HD_SP]
 insert into [Sản Phẩm]
 values
   (1, N'Cà Phê Sữa', 'cfsua.png', 35000, 1),
@@ -279,21 +280,28 @@ go
 
 insert into [Hóa Đơn]
 values
-  ('HD12372', 'Hisu', '2023-11-11', 'Đã Thanh Toán', '357380000'),
-  ('HD12373', 'Hisu', '2023-10-10', 'Đã Thanh Toán', '679000000'),
-  ('HD12370', 'Hisu', '2022-11-11', 'Đã Thanh Toán', '3834220'),
-  ('HD12334', 'Hisu', '2022-10-11', 'Đã Thanh Toán', '32810000'),
-  ('HD12332', 'Hisu', '2021-11-11', 'Đã Thanh Toán', '6812000'),
-  ('HD12322', 'Hisu', '2021-01-11', 'Đã Thanh Toán', '2719000'),
-  ('HD1221', 'Hisu', '2023-04-06', 'Đã Thanh Toán', '35000000'),
-  ('HD12523', 'Hisu', '2023-03-12', 'Đã Thanh Toán', '3500000'),
-  ('HD12123', 'Hisu', '2022-04-23', 'Đã Thanh Toán', '250000'),
-  ('HD12123', 'Hisu', '2022-08-07', 'Đã Thanh Toán', '875000'),
-  ('HD12644', 'Hisu', '2021-07-08', 'Đã Thanh Toán', '715000')
-go
+  --('HD12372', 'Hisu', '2023-11-11', N'Đã Thanh Toán', '296280000'),
+  ('HD12373', 'Hisu', '2023-10-10', N'Đã Thanh Toán', '3454000'),
+  ('HD12374', 'Hisu', '2023-09-08', N'Đã Thanh Toán', '355000'),
+  ('HD12375', 'Hisu', '2023-08-14', N'Đã Thanh Toán', '205000'),
+  ('HD12376', 'Hisu', '2023-07-26', N'Đã Thanh Toán', '56500000'),
+  ('HD12377', 'Hisu', '2023-06-04', N'Đã Thanh Toán', '38150000'),
+  ('HD12311', 'Hisu', '2022-11-11',N'Đã Thanh Toán', '2962800'),
+  ('HD12312', 'Hisu', '2022-10-10', N'Đã Thanh Toán', '3454000'),
+  ('HD12314', 'Hisu', '2022-09-08', N'Đã Thanh Toán', '355000'),
+  ('HD12315', 'Hisu', '2022-08-14', N'Đã Thanh Toán', '205000'),
+  ('HD12316', 'Hisu', '2022-07-26', N'Đã Thanh Toán', '5650000'),
+  ('HD12317', 'Hisu', '2022-06-04', N'Đã Thanh Toán', '38150000'),
+  ('HD12322', 'Hisu', '2021-11-11', N'Đã Thanh Toán', '29628000'),
+  ('HD12323', 'Hisu', '2021-10-10', N'Đã Thanh Toán', '3454000'),
+  ('HD12324', 'Hisu', '2021-09-08', N'Đã Thanh Toán', '355000'),
+  ('HD12325', 'Hisu', '2021-08-14', N'Đã Thanh Toán', '205000'),
+  ('HD12326', 'Hisu', '2021-07-26', N'Đã Thanh Toán', '565000'),
+  ('HD12327', 'Hisu', '2021-06-04', N'Đã Thanh Toán', '380000');
+  go
 select *
 from [Hóa Đơn]
-insert into HD_SP
+insert into CHITIETDONHANG
 values
   ('HD12372', '1', 1),
   ('HD12372', '2', 3),
@@ -304,23 +312,23 @@ go
 
 --Xem hóa đơn có sản phẩm nào
 
-select HD.MaHD, sp.MaSP, sp.TenSP, sp.Gia, HD_SP.soluong
-from [Hóa Đơn] hd
-  join HD_SP on hd.MaHD = HD_SP.MaHD join [Sản Phẩm] sp on sp.MaSP = HD_SP.MaSP
-where hd.MaHD = 'HD12372';
+--select HD.MaHD, sp.MaSP, sp.TenSP, sp.Gia, HD_SP.soluong
+--from [Hóa Đơn] hd
+--  join HD_SP on hd.MaHD = HD_SP.MaHD join [Sản Phẩm] sp on sp.MaSP = HD_SP.MaSP
+--where hd.MaHD = 'HD12372';
 
--- select *
--- from [Sản Phẩm]
--- -- Thêm công thức mẫu vào bảng "Công thức"
--- INSERT INTO [Công thức]
---   ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
--- VALUES
---   ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
--- -- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
--- INSERT INTO [Nguyên Liệu]
---   ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
--- VALUES
---   ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
+--select *
+--from [Sản Phẩm]
+---- Thêm công thức mẫu vào bảng "Công thức"
+--INSERT INTO [Công thức]
+--  ([MaCT], [MaNL], [TenNL], [SoLuong], [DonViDoLuong])
+--VALUES
+--  ('CT001', 'NL001', 'Nguyên liệu mẫu', 50.0, 'gram');
+---- Thêm nguyên liệu mẫu vào bảng "Nguyên Liệu"
+--INSERT INTO [Nguyên Liệu]
+--  ([MaNL], [TenNL], [SoLuongCon], [GiaNL], [DonViDoLuong])
+--VALUES
+--  ('NL001', 'Nguyên liệu mẫu', 100.0, 10.0, 'gram');
 
   go
 
@@ -380,3 +388,8 @@ BEGIN
 END;
 
 go
+select *
+from [Hóa Đơn]
+select *
+from CHITIETDONHANG
+SELECT SCOPE_IDENTITY() AS HoaDon;

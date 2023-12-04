@@ -5,6 +5,7 @@ import group1.dao.SanPhamDao;
 import group1.entity.CongThuc;
 import group1.entity.CongThuc_NguyenLieu;
 import group1.entity.SanPham;
+import group1.utils.Auth;
 import group1.utils.msgBox;
 import group1.utils.xImage;
 import io.opencensus.metrics.export.Value;
@@ -75,8 +76,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
         cbxct.setSelectedItem(sp.getMaCT());
         txtgia.setText(String.valueOf(sp.getGia()));
         if (sp.getAnh() != null) {
-            lblanh.setIcon(xImage.read(sp.getAnh()));
             lblanh.setToolTipText(sp.getAnh());
+            lblanh.setIcon(xImage.read(sp.getAnh()));
         }
     }
 
@@ -169,15 +170,49 @@ public class QuanLySanPham extends javax.swing.JDialog {
         }
     }
 
+    void update() {
+        if (validateForm()) {
+            SanPham sp = getForm();
+            try {
+                daosp.update(sp);
+                this.filltable();
+                this.clear();
+                msgBox.alert(this, "Sửa thành công");
+            } catch (Exception e) {
+                e.printStackTrace();
+                msgBox.alert(this, "Sửa thất bại");
+            }
+        }
+    }
+
+    void delete() {
+        if (!Auth.isManager()) {
+            msgBox.alert(this, "Bạn không có quyền xóa sản phẩm");
+        } else {
+            String masp = txtmaSanPham.getText();
+            if (msgBox.confirm(this, "Bạn có muốn xóa sản phẩm này không?")) {
+                try {
+                    daosp.delete(masp);
+                    this.filltable();
+                    this.clear();
+                    msgBox.alert(this, "Xóa thành công");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    msgBox.alert(this, "Xóa thất bại");
+                }
+            }
+        }
+    }
+
     void openRecipe() {
-        CongThucNguyenLieuJDialog ct = new CongThucNguyenLieuJDialog();
-        ct.setVisible(true);
+        new CongThucNguyenLieuJDialog().setVisible(true);
     }
 
     void edit() {
         String masp = (String) tblsanPham.getValueAt(this.row, 0);
         SanPham sp = daosp.selectById(masp);
         this.setForm(sp);
+        this.updateStatus();
     }
 
     @SuppressWarnings("unchecked")
@@ -465,6 +500,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         if (evt.getClickCount() == 1) {
             this.row = tblsanPham.getSelectedRow();
             this.edit();
+            System.out.println("selected");
             tabs.setSelectedIndex(1);
             System.out.println("hola");
         }
@@ -542,11 +578,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
          * For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
-//        try {
-//            UIManager.setLookAndFeel(new FlatLightLaf());
-//        } catch (Exception ex) {
-//            System.err.println("Failed to initialize LaF");
-//        }
+        // try {
+        // UIManager.setLookAndFeel(new FlatLightLaf());
+        // } catch (Exception ex) {
+        // System.err.println("Failed to initialize LaF");
+        // }
         // </editor-fold>
         // </editor-fold>
 
