@@ -446,11 +446,11 @@
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel6">
       <Properties>
-        <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n, H&#x1ecd; t&#xea;n"/>
+        <Property name="text" type="java.lang.String" value="M&#xe3; nh&#xe2;n vi&#xea;n"/>
       </Properties>
       <Constraints>
         <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout" value="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout$AbsoluteConstraintsDescription">
-          <AbsoluteConstraints x="250" y="100" width="-1" height="-1"/>
+          <AbsoluteConstraints x="300" y="100" width="-1" height="20"/>
         </Constraint>
       </Constraints>
     </Component>

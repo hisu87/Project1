@@ -14,12 +14,13 @@ import javax.swing.table.DefaultTableModel;
 
 /**
  *
- * @author Admin
+ * @author Thoww
  */
 public class QuanLyNhanVien extends javax.swing.JDialog {
 
-    DefaultTableModel tblModel  = new DefaultTableModel();
+    DefaultTableModel tblModel = new DefaultTableModel();
     NhanVienDAO dao = new NhanVienDAO();
+
     public QuanLyNhanVien(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -260,8 +261,8 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
         getContentPane().add(btnTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, -1, -1));
         getContentPane().add(txtTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 130, -1));
 
-        jLabel6.setText("Mã nhân viên, Họ tên");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        jLabel6.setText("Mã nhân viên");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 100, -1, 20));
 
         cboVaitro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vai trò " }));
         getContentPane().add(cboVaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, -1, -1));
@@ -282,15 +283,21 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_rdoQuanlyActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        NhanVien nv = getForm();
-        dao.insert(nv);
-        initTable();
+        if (VadidateForm()) {
+            NhanVien nv = getForm();
+            dao.insert(nv);
+            initTable();
+        }
+
+
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        NhanVien nv = getForm();
-        dao.update(nv);
-        initTable();
+        if (VadidateForm()) {
+            NhanVien nv = getForm();
+            dao.update(nv);
+            initTable();
+        }
     }//GEN-LAST:event_btnSuaActionPerformed
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
@@ -303,7 +310,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_btnLastActionPerformed
 
     private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-       btnfirst();
+        btnfirst();
     }//GEN-LAST:event_btnFirstActionPerformed
 
     private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
@@ -311,45 +318,53 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_btnNextActionPerformed
 
     private void btnPeviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeviousActionPerformed
-       btnprevious();
+        btnprevious();
     }//GEN-LAST:event_btnPeviousActionPerformed
 
     private void tblNhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMouseClicked
         int selectedRow = tblNhanvien.getSelectedRow();
         filltoControl(selectedRow);
-       
+
     }//GEN-LAST:event_tblNhanvienMouseClicked
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        
+
         int selectedRow = tblNhanvien.getSelectedRow();
         String id = "";
-        if(selectedRow > 0) {
-         id = (String) tblNhanvien.getValueAt(selectedRow, 0);
+        if (selectedRow > 0) {
+            id = (String) tblNhanvien.getValueAt(selectedRow, 0);
         } else {
             id = txtManv.getText();
         }
-        
+
         if (id.equalsIgnoreCase("")) {
             JOptionPane.showMessageDialog(null, "Chưa chọn nhân viên muốn xóa");
-        }  else {
+        } else {
             dao.delete(id);
         }
-        initTable(); 
+        initTable();
     }//GEN-LAST:event_btnXoaActionPerformed
 
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
         String id = txtTimkiem.getText();
-
+        String vaitro = (String) cboVaitro.getSelectedItem();
+        System.out.println(vaitro);
         tblModel.setRowCount(0);
-
         NhanVien nv = dao.selectById(id);
 
-        tblModel.addRow(new Object[]{
-            nv.getMaNV(), nv.getMatKhau(), nv.getHoTen(), nv.getVaitro(), nv.getTuoi(), nv.getGioiTinh(), nv.getSdt(), nv.getDiaChi()
-        });
-
-       
+        if (nv == null) {
+            JOptionPane.showMessageDialog(null, "Không tìm thấy nv theo mã");
+        } else {
+            tblModel.addRow(new Object[]{
+                nv.getMaNV(), nv.getMatKhau(), nv.getHoTen(), nv.getVaitro(), nv.getTuoi(), nv.getGioiTinh(), nv.getSdt(), nv.getDiaChi()
+            });
+        }
+        List<NhanVien> listnv = dao.selectByRole(vaitro);
+        for (NhanVien nv1 : listnv) {
+            tblModel.addRow(new Object[]{
+                nv1.getMaNV(), nv1.getMatKhau(), nv1.getHoTen(), nv1.getVaitro(), nv1.getTuoi(), nv1.getGioiTinh(), nv1.getSdt(), nv1.getDiaChi()
+            });
+        }
     }//GEN-LAST:event_btnTimkiemActionPerformed
 
     /**
@@ -433,38 +448,76 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     private javax.swing.JTextField txtTimkiem;
     private javax.swing.JTextField txtTuoi;
     // End of variables declaration//GEN-END:variables
-void initTable () {
-        String []columnName = {"Mã nv","Mật khẩu","Tên nv","Vai trò","Tuổi","Giới tính","SDT","Địa chỉ"};
+void initTable() {
+        String[] columnName = {"Mã nv", "Mật khẩu", "Tên nv", "Vai trò", "Tuổi", "Giới tính", "SDT", "Địa chỉ"};
         tblModel = (DefaultTableModel) tblNhanvien.getModel();
         tblModel.setColumnIdentifiers(columnName);
-        
+
         tblModel.setRowCount(0);
-       
-       List<NhanVien> list = dao.selectAll();
-       
-       for (NhanVien nv : list) {
+
+        List<NhanVien> list = dao.selectAll();
+
+        for (NhanVien nv : list) {
             tblModel.addRow(new Object[]{
-                nv.getMaNV(),nv.getMatKhau(),nv.getHoTen(),nv.getVaitro(),nv.getTuoi(),nv.getGioiTinh(),nv.getSdt(),nv.getDiaChi()
+                nv.getMaNV(), nv.getMatKhau(), nv.getHoTen(), nv.getVaitro(), nv.getTuoi(), nv.getGioiTinh(), nv.getSdt(), nv.getDiaChi()
             });
         }
     }
 
-void Clearform() {
-    txtManv.setText("");
-    txtHoten.setText("");
-    txtMatkhau.setText("");
-    txtSdt.setText("");
-    txtTuoi.setText("");
-    txtDiachi.setText("");
-    rdoNhanvien.setSelected(true);
-    rdoNam.setSelected(true);
-}
+    void Clearform() {
+        txtManv.setText("");
+        txtHoten.setText("");
+        txtMatkhau.setText("");
+        txtSdt.setText("");
+        txtTuoi.setText("");
+        txtDiachi.setText("");
+        rdoNhanvien.setSelected(true);
+        rdoNam.setSelected(true);
+    }
 
-void VadidateForm() {
-    
-}
+    boolean VadidateForm() {
+        String manv = txtManv.getText();
+        String matkhau = txtMatkhau.getText();
+        String hoten = txtHoten.getText();
+        String diachi = txtDiachi.getText();
+        String sdt = txtSdt.getText();
+        String tuoi = txtTuoi.getText();
 
-public void filltoControl(int selectedRow) {
+        if (manv.equals("")) {
+            JOptionPane.showMessageDialog(null, "Mã nhân viên không được để trống");
+            txtManv.requestFocus();
+            return false;
+        }
+        if (matkhau.equals("")) {
+            JOptionPane.showMessageDialog(null, "Mật khẩu không được để trống");
+            txtMatkhau.requestFocus();
+            return false;
+        }
+        if (hoten.equals("")) {
+            JOptionPane.showMessageDialog(null, "Tên nhân viên không được để trống");
+            txtHoten.requestFocus();
+            return false;
+        }
+        if (sdt.equals("")) {
+            JOptionPane.showMessageDialog(null, "Số điện thoại không được để trống");
+            txtSdt.requestFocus();
+            return false;
+        }
+        if (tuoi.equals("")) {
+            JOptionPane.showMessageDialog(null, "Tuổi không được để trống");
+            txtTuoi.requestFocus();
+            return false;
+        }
+        if (diachi.equals("")) {
+            JOptionPane.showMessageDialog(null, "Địa chỉ không được để trống");
+            txtDiachi.requestFocus();
+            return false;
+        } else {
+            return true;
+        }
+    }
+
+    public void filltoControl(int selectedRow) {
         if (selectedRow >= 0) {
             String value1 = tblNhanvien.getValueAt(selectedRow, 0).toString(); // mã nhân viên 
             String value2 = tblNhanvien.getValueAt(selectedRow, 1).toString();// mật khẩu 
@@ -481,19 +534,19 @@ public void filltoControl(int selectedRow) {
             txtTuoi.setText(value5);
             txtSdt.setText(value7);
             txtDiachi.setText(value8);
-            if(value4.equalsIgnoreCase("Nhân viên")) {
+            if (value4.equalsIgnoreCase("Nhân viên")) {
                 rdoNhanvien.setSelected(true);
             } else {
                 rdoQuanly.setSelected(true);
-            } 
-            if (value6.equalsIgnoreCase("Nam")){
+            }
+            if (value6.equalsIgnoreCase("Nam")) {
                 rdoNam.setSelected(true);
             } else {
                 rdoNu.setSelected(true);
             }
         }
     }
-   
+
     public void btnnext() {
         int selectedRow = tblNhanvien.getSelectedRow();
         if (selectedRow == tblNhanvien.getRowCount() - 1) {
@@ -552,29 +605,28 @@ public void filltoControl(int selectedRow) {
         }
     }
 
-NhanVien getForm() {
-    String manv = txtManv.getText();
-    String hoten = txtHoten.getText();
-    String matkhau = txtMatkhau.getText();
-    String diachi = txtDiachi.getText();
-    int  tuoi = Integer.parseInt(txtTuoi.getText());
-    String sdt = txtSdt.getText();
-    String vaitro = "Nhân viên";
-    if(rdoNhanvien.isSelected()) {
-        vaitro = "Nhân viên";
-    } else {
-        vaitro = "Quản lý";
-    }
-    String gioitinh ="Nam";
-    if(rdoNam.isSelected()) {
-        gioitinh ="Nam";
-    } else {
-        gioitinh = "Nữ";
-    }
-    
-    NhanVien nv = new NhanVien(manv, matkhau, vaitro, hoten, tuoi,gioitinh, sdt, diachi);
-    return nv;
-}
+    NhanVien getForm() {
+        String manv = txtManv.getText();
+        String hoten = txtHoten.getText();
+        String matkhau = txtMatkhau.getText();
+        String diachi = txtDiachi.getText();
+        int tuoi = Integer.parseInt(txtTuoi.getText());
+        String sdt = txtSdt.getText();
+        String vaitro = "Nhân viên";
+        if (rdoNhanvien.isSelected()) {
+            vaitro = "Nhân viên";
+        } else {
+            vaitro = "Quản lý";
+        }
+        String gioitinh = "Nam";
+        if (rdoNam.isSelected()) {
+            gioitinh = "Nam";
+        } else {
+            gioitinh = "Nữ";
+        }
 
+        NhanVien nv = new NhanVien(manv, matkhau, vaitro, hoten, tuoi, gioitinh, sdt, diachi);
+        return nv;
+    }
 
 }

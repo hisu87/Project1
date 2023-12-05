@@ -44,10 +44,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
         try {
            DefaultComboBoxModel cbxmodel=(DefaultComboBoxModel) cbxct.getModel();
            cbxmodel.removeAllElements();
-           List<CongThuc> listct=ctdao.getCongThuc();
+           List<CongThuc> listct=ctdao.selectAll();
             for (CongThuc ct : listct) {
                 cbxmodel.addElement(ct.getMaCT());
-               
             }
            
         } catch (Exception e) {
@@ -433,8 +432,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }//GEN-LAST:event_btnlastActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-      CongThucNguyenLieuJDialog ct=new CongThucNguyenLieuJDialog();
-      ct.setVisible(true);
+//      CTNlJDialog ct=new CTNlJDialog();
+//      ct.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
