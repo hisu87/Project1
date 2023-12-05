@@ -13,24 +13,35 @@ public class NhanVien {
     private String gioiTinh;
     private String sdt;
     private String diaChi;
-  
 
-    public NhanVien() {
-    }
-
-    public NhanVien(String MaNV, String HoTen, String MatKhau, int tuoi, String gioiTinh, String sdt, String diaChi) {
+    public NhanVien(String MaNV, String MatKhau, String Vaitro, String HoTen, int tuoi, String gioiTinh, String sdt, String diaChi) {
         this.MaNV = MaNV;
-        this.HoTen = HoTen;
         this.MatKhau = MatKhau;
+        this.Vaitro = Vaitro;
+        this.HoTen = HoTen;
         this.tuoi = tuoi;
         this.gioiTinh = gioiTinh;
         this.sdt = sdt;
         this.diaChi = diaChi;
-      
+    }
+
+    public NhanVien() {
     }
 
     public String getMaNV() {
         return MaNV;
+    }
+
+    public void setMaNV(String MaNV) {
+        this.MaNV = MaNV;
+    }
+
+    public String getMatKhau() {
+        return MatKhau;
+    }
+
+    public void setMatKhau(String MatKhau) {
+        this.MatKhau = MatKhau;
     }
 
     public String getVaitro() {
@@ -41,10 +52,6 @@ public class NhanVien {
         this.Vaitro = Vaitro;
     }
 
-    public void setMaNV(String MaNV) {
-        this.MaNV = MaNV;
-    }
-
     public String getHoTen() {
         return HoTen;
     }
@@ -53,13 +60,6 @@ public class NhanVien {
         this.HoTen = HoTen;
     }
 
-    public String getMatKhau() {
-        return MatKhau;
-    }
-
-    public void setMatKhau(String MatKhau) {
-        this.MatKhau = MatKhau;
-    }
     public int getTuoi() {
         return tuoi;
     }
@@ -91,10 +91,8 @@ public class NhanVien {
     public void setDiaChi(String diaChi) {
         this.diaChi = diaChi;
     }
-   
 
-    public boolean isVaitro() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
+
+   
 
 }
