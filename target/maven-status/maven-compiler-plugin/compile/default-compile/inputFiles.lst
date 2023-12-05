@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+H:\FPTPolytechnic\Project1\src\main\java\group1\entity\NhanVien.java
+H:\FPTPolytechnic\Project1\src\main\java\group1\views\LoadingJDialog.java
+H:\FPTPolytechnic\Project1\src\main\java\raven\spline\SplinePoint.java
+>>>>>>> main
 H:\FPTPolytechnic\Project1\src\main\java\group1\entity\ChiTietDonHang.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\dao\ThongKeDAO.java
 H:\FPTPolytechnic\Project1\src\main\java\raven\chart\ModelChart.java
@@ -48,3 +55,56 @@ H:\FPTPolytechnic\Project1\src\main\java\group1\views\ChartJDialog.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\entity\NguyenLieu.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\ChangePasswordJDialog.java
 H:\FPTPolytechnic\Project1\src\main\java\group1\views\JMainFrame.java
+<<<<<<< HEAD
+=======
+H:\FPTPolytechnic\Project1\src\main\java\group1\dao\HoaDonDAO.java
+H:\FPTPolytechnic\Project1\src\main\java\group1\views\LoginJDialog.java
+=======
+D:\GithubNew\Project1\src\main\java\raven\shadow\GraphicsUtilities.java
+D:\GithubNew\Project1\src\main\java\group1\views\QuanLySanPham.java
+D:\GithubNew\Project1\src\main\java\group1\dao\HoaDonDAO.java
+D:\GithubNew\Project1\src\main\java\group1\dao\SanPhamDao.java
+D:\GithubNew\Project1\src\main\java\group1\dao\NhanVienDAO.java
+D:\GithubNew\Project1\src\main\java\group1\entity\SanPham.java
+D:\GithubNew\Project1\src\main\java\group1\views\ChartJDialog.java
+D:\GithubNew\Project1\src\main\java\raven\chart\blankchart\NiceScale.java
+D:\GithubNew\Project1\src\main\java\raven\chart\LegendItem.java
+D:\GithubNew\Project1\src\main\java\group1\views\LoginJDialog.java
+D:\GithubNew\Project1\src\main\java\raven\shadow\ShadowRenderer.java
+D:\GithubNew\Project1\src\main\java\group1\utils\xDate.java
+D:\GithubNew\Project1\src\main\java\group1\views\SanPhamJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\entity\CongThuc.java
+D:\GithubNew\Project1\src\main\java\raven\panel\PanelShadow.java
+D:\GithubNew\Project1\src\main\java\group1\views\DoanhThuJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\utils\xImage.java
+D:\GithubNew\Project1\src\main\java\group1\views\NewJDialog.java
+D:\GithubNew\Project1\src\main\java\raven\chart\CurveLineChart.java
+D:\GithubNew\Project1\src\main\java\raven\chart\blankchart\BlankPlotChart.java
+D:\GithubNew\Project1\src\main\java\raven\chart\blankchart\SeriesSize.java
+D:\GithubNew\Project1\src\main\java\group1\dao\ThongKeDAO.java
+D:\GithubNew\Project1\src\main\java\group1\utils\msgBox.java
+D:\GithubNew\Project1\src\main\java\group1\views\NhanVienJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\views\LoadingJDialog.java
+D:\GithubNew\Project1\src\main\java\raven\panel\PanelGradient.java
+D:\GithubNew\Project1\src\main\java\group1\dao\CongThucDAO.java
+D:\GithubNew\Project1\src\main\java\raven\chart\ModelChart.java
+D:\GithubNew\Project1\src\main\java\group1\utils\xJDBC.java
+D:\GithubNew\Project1\src\main\java\group1\entity\NhanVien.java
+D:\GithubNew\Project1\src\main\java\group1\views\JMainFrame.java
+D:\GithubNew\Project1\src\main\java\group1\entity\CongThuc_NguyenLieu.java
+D:\GithubNew\Project1\src\main\java\group1\utils\Auth.java
+D:\GithubNew\Project1\src\main\java\group1\views\HoaDonJDialog.java
+D:\GithubNew\Project1\src\main\java\raven\chart\ModelLegend.java
+D:\GithubNew\Project1\src\main\java\raven\spline\SplinePoint.java
+D:\GithubNew\Project1\src\main\java\group1\views\CongThucNguyenLieuJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\entity\HoaDon.java
+D:\GithubNew\Project1\src\main\java\group1\dao\NguyenLieuDAO.java
+D:\GithubNew\Project1\src\main\java\group1\entity\Model.java
+D:\GithubNew\Project1\src\main\java\raven\chart\blankchart\BlankPlotChatRender.java
+D:\GithubNew\Project1\src\main\java\group1\views\QLNguyenLieuJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\entity\NguyenLieu.java
+D:\GithubNew\Project1\src\main\java\group1\views\ChangePasswordJDialog.java
+D:\GithubNew\Project1\src\main\java\group1\dao\CafeDAO.java
+D:\GithubNew\Project1\src\main\java\raven\spline\Spline.java
+>>>>>>> thoww
+>>>>>>> main
