@@ -415,4 +415,4 @@ BEGIN
 END;
 
 go
-exec GetChiTietDonHang @MaHD = 'HD8163'
+exec GetChiTietDonHang @MaHD = 'HD12372'
