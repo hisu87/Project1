@@ -65,12 +65,16 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         btnReset = new javax.swing.JButton();
         cboMact = new javax.swing.JComboBox<>();
         cboTenct = new javax.swing.JComboBox<>();
+        btn_cut = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel1.setBackground(new java.awt.Color(0, 98, 65));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        jScrollPane1.setForeground(new java.awt.Color(242, 240, 235));
+
+        tblCongthuc.setForeground(new java.awt.Color(0, 0, 0));
         tblCongthuc.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -91,6 +95,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
 
         jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 150, 1000, 370));
 
+        btnSearch.setForeground(new java.awt.Color(0, 0, 0));
         btnSearch.setText("Tìm kiếm ");
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -99,6 +104,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 110, -1, -1));
 
+        btnPrint.setForeground(new java.awt.Color(0, 0, 0));
         btnPrint.setText("Print");
         btnPrint.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +113,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnPrint, new org.netbeans.lib.awtextra.AbsoluteConstraints(950, 550, -1, -1));
 
+        btnFirst.setForeground(new java.awt.Color(0, 0, 0));
         btnFirst.setText("First");
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,6 +122,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 550, -1, -1));
 
+        btnNext.setForeground(new java.awt.Color(0, 0, 0));
         btnNext.setText("Next");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -123,6 +131,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 550, -1, -1));
 
+        btnPrevious.setForeground(new java.awt.Color(0, 0, 0));
         btnPrevious.setText("Previous");
         btnPrevious.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -131,6 +140,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnPrevious, new org.netbeans.lib.awtextra.AbsoluteConstraints(200, 550, -1, -1));
 
+        btnUpdate.setForeground(new java.awt.Color(0, 0, 0));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -139,6 +149,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnUpdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(650, 550, -1, -1));
 
+        btnLast.setForeground(new java.awt.Color(0, 0, 0));
         btnLast.setText("Last");
         btnLast.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -147,6 +158,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnLast, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 550, -1, -1));
 
+        btnDelete.setForeground(new java.awt.Color(0, 0, 0));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -155,6 +167,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnDelete, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 550, -1, -1));
 
+        btnInsert.setForeground(new java.awt.Color(0, 0, 0));
         btnInsert.setText("Insert");
         btnInsert.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -163,6 +176,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnInsert, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 550, -1, -1));
 
+        btnNew.setForeground(new java.awt.Color(0, 0, 0));
         btnNew.setText("New");
         btnNew.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -172,27 +186,42 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         jPanel1.add(btnNew, new org.netbeans.lib.awtextra.AbsoluteConstraints(750, 550, -1, -1));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 22)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 51, 102));
+        jLabel1.setForeground(new java.awt.Color(242, 240, 235));
         jLabel1.setText("THÔNG TIN CÔNG THỨC");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 10, -1, 40));
+
+        jLabel2.setForeground(new java.awt.Color(242, 240, 235));
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 100, -1, -1));
 
+        jLabel3.setForeground(new java.awt.Color(242, 240, 235));
         jLabel3.setText("Mã công thức: ");
         jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 60, -1, -1));
 
+        jLabel4.setForeground(new java.awt.Color(242, 240, 235));
         jLabel4.setText("Mã nguyên liệu: ");
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 60, -1, -1));
 
+        jLabel5.setForeground(new java.awt.Color(242, 240, 235));
         jLabel5.setText("Số lượng:");
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 60, -1, -1));
 
+        jLabel6.setForeground(new java.awt.Color(242, 240, 235));
         jLabel6.setText("Đơn vị đo: ");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 60, -1, 20));
+
+        txtDonvido.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtDonvido, new org.netbeans.lib.awtextra.AbsoluteConstraints(920, 60, 60, -1));
+
+        txtMact.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtMact, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 120, -1));
+
+        txtManl.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtManl, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 60, 120, -1));
+
+        txtSoluong.setForeground(new java.awt.Color(0, 0, 0));
         jPanel1.add(txtSoluong, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 60, 60, -1));
 
+        btnReset.setForeground(new java.awt.Color(0, 0, 0));
         btnReset.setText("Reset");
         btnReset.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -201,11 +230,21 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         });
         jPanel1.add(btnReset, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 550, -1, -1));
 
+        cboMact.setForeground(new java.awt.Color(242, 240, 235));
         cboMact.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mã công thức" }));
         jPanel1.add(cboMact, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
+        cboTenct.setForeground(new java.awt.Color(242, 240, 235));
         cboTenct.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tên công thức " }));
         jPanel1.add(cboTenct, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
+
+        btn_cut.setText("exit");
+        btn_cut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cutActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_cut, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 110, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -310,6 +349,11 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         exportToPdf(tblModel);
     }//GEN-LAST:event_btnPrintActionPerformed
 
+    private void btn_cutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cutActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btn_cutActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -358,6 +402,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btn_cut;
     private javax.swing.JComboBox<String> cboMact;
     private javax.swing.JComboBox<String> cboTenct;
     private javax.swing.JLabel jLabel1;

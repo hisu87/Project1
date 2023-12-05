@@ -11,6 +11,17 @@ public class SanPham {
     public SanPham() {
     }//////
 
+    public SanPham(String tenSP, int soluong, float gia) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+    }
+     public SanPham( String tenSP,int soluong, String masp) {
+        this.maSP = maSP;
+        this.tenSP = tenSP;
+        this.gia = gia;
+    }
+
     public SanPham(String maSP, String tenSP, String anh, float gia, String maCT) {
         this.maSP = maSP;
         this.tenSP = tenSP;
@@ -45,7 +56,7 @@ public class SanPham {
         this.anh = anh;
     }
 
-    public double getGia() {
+    public float getGia() {
         return gia;
     }
 
@@ -63,8 +74,7 @@ public class SanPham {
 
     @Override
     public String toString() {
-        return super.toString(); 
+        return super.toString();
     }
 
- 
 }

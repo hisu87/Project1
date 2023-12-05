@@ -8,11 +8,11 @@ import java.util.List;
 
 public class SanPhamDao extends CafeDAO<SanPham, String> {
 
-    public String INSERT_SQL = "INSERT INTO (MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE SanPham SET TenSP=?, Anh=?, Gia=?, MaCT=? WHERE MaSP=?";
-    public String DELETE_SQL = "DELETE FROM SanPham WHERE MaSP=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM [Sản Phẩm]";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM [Sản Phẩm] WHERE [MaSP]=?";
+    private static final String INSERT_SQL = "INSERT INTO [Sản Phẩm] (MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
+    private static final String UPDATE_SQL = "UPDATE [Sản Phẩm] SET TenSP=?, Anh=?, Gia=?, MaCT=? WHERE MaSP=?";
+    private static final String DELETE_SQL = "DELETE FROM [Sản Phẩm] WHERE MaSP=?";
+    private static final String SELECT_ALL_SQL = "SELECT * FROM [Sản Phẩm]";
+    private static final String SELECT_BY_ID_SQL = "SELECT * FROM [Sản Phẩm] WHERE [MaSP]=?";
 
     @Override
     public void insert(SanPham entity) {
@@ -36,13 +36,13 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
 
     @Override
     public void delete(String id) {
-           xJDBC.executeUpdate(DELETE_SQL,id);
+        xJDBC.executeUpdate(DELETE_SQL, id);
     }
 
     @Override
     public SanPham selectById(String id) {
-        List<SanPham> list=selectBySQL(SELECT_BY_ID_SQL, id);
-        if(list.isEmpty()){
+        List<SanPham> list = selectBySQL(SELECT_BY_ID_SQL, id);
+        if (list.isEmpty()) {
             return null;
         }
         return list.get(0);
@@ -50,16 +50,16 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
 
     @Override
     public List<SanPham> selectAll() {
-       return this.selectBySQL(SELECT_ALL_SQL);
+        return this.selectBySQL(SELECT_ALL_SQL);
     }
 
     @Override
     protected List<SanPham> selectBySQL(String sql, Object... args) {
-        List<SanPham> list=new ArrayList<>();
+        List<SanPham> list = new ArrayList<>();
         try {
-            ResultSet rs=xJDBC.executeQuery(sql, args);
-            while(rs.next()){
-                SanPham sp=new SanPham();
+            ResultSet rs = xJDBC.executeQuery(sql, args);
+            while (rs.next()) {
+                SanPham sp = new SanPham();
                 sp.setMaSP(rs.getString("MaSP"));
                 sp.setTenSP(rs.getString("TenSP"));
                 sp.setAnh(rs.getString("Anh"));
@@ -71,7 +71,6 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
             return list;
         } catch (Exception e) {
             throw new RuntimeException(e);
-            
         }
     }
 

@@ -134,6 +134,8 @@
                                       <Component id="txt_search2" min="-2" pref="370" max="-2" attributes="0"/>
                                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                                       <Component id="btn_search2" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btn_cut" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
@@ -163,9 +165,10 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="btn_search2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
                                   <Component id="txt_search2" alignment="0" min="-2" pref="35" max="-2" attributes="0"/>
+                                  <Component id="btn_cut" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane3" pref="526" max="32767" attributes="0"/>
+                              <Component id="jScrollPane3" pref="521" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="btn_next1" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -295,6 +298,14 @@
                         </Property>
                         <Property name="text" type="java.lang.String" value="Delete"/>
                       </Properties>
+                    </Component>
+                    <Component class="javax.swing.JButton" name="btn_cut">
+                      <Properties>
+                        <Property name="text" type="java.lang.String" value="exit"/>
+                      </Properties>
+                      <Events>
+                        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_cutActionPerformed"/>
+                      </Events>
                     </Component>
                   </SubComponents>
                 </Container>

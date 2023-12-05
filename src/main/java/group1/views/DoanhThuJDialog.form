@@ -29,10 +29,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="0" pref="6" max="32767" attributes="0"/>
-          </Group>
+          <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
@@ -59,19 +56,19 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace min="-2" pref="6" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jScrollPane1" alignment="1" max="32767" attributes="0"/>
                       <Component id="jPanel4" max="32767" attributes="0"/>
-                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="329" max="-2" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="422" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -79,7 +76,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabel1" min="-2" pref="36" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -136,7 +133,7 @@
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="100" minWidth="-1" prefWidth="50" resizable="true">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -184,68 +181,67 @@
             <DimensionLayout dim="0">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              <Component id="dateto" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
-                              <Component id="rdo_byyear" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="112" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Component id="cbo_year" min="-2" pref="161" max="-2" attributes="0"/>
-                                  <Component id="rdo_bymonth" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace min="-2" pref="89" max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="rdo_day" min="-2" pref="176" max="-2" attributes="0"/>
-                                      <EmptySpace pref="89" max="32767" attributes="0"/>
-                                      <Component id="rdo_daytoday" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
-                                      <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="date" min="-2" max="-2" attributes="0"/>
-                                      <EmptySpace max="32767" attributes="0"/>
-                                      <Component id="datefrom" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="btn_byyear" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="74" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="cbo_year" alignment="0" min="-2" pref="161" max="-2" attributes="0"/>
+                          <Component id="btn_bymonth" alignment="0" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="120" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="btn_day" alignment="0" min="-2" pref="144" max="-2" attributes="0"/>
+                          <Component id="date" min="-2" pref="144" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="37" max="-2" attributes="0"/>
+                      <Component id="btn_daytoday" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabel8" alignment="1" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
+                              <Component id="dateto" alignment="0" min="-2" pref="140" max="-2" attributes="0"/>
+                              <Component id="datefrom" alignment="1" min="-2" pref="140" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="jLabel7" alignment="1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+                      <Component id="btn_daytoday" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="datefrom" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="cbo_year" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Group type="103" groupAlignment="3" attributes="0">
+                                          <Component id="btn_bymonth" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="btn_byyear" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
+                                  <Group type="102" alignment="0" attributes="0">
+                                      <Component id="date" min="-2" max="-2" attributes="0"/>
+                                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                      <Component id="btn_day" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
                           </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="cbo_year" min="-2" max="-2" attributes="0"/>
-                                  <Component id="date" min="-2" max="-2" attributes="0"/>
-                              </Group>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="rdo_day" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rdo_bymonth" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rdo_byyear" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="rdo_daytoday" alignment="3" min="-2" max="-2" attributes="0"/>
-                              </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="21" max="32767" attributes="0"/>
+                              <Component id="datefrom" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="17" max="-2" attributes="0"/>
+                              <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                       <EmptySpace min="-2" pref="4" max="-2" attributes="0"/>
@@ -255,54 +251,6 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JRadioButton" name="rdo_byyear">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Theo N&#x103;m"/>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdo_byyearItemStateChanged"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdo_bymonth">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Theo Th&#xe1;ng trong n&#x103;m"/>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdo_bymonthItemStateChanged"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rdo_bymonthMouseClicked"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdo_bymonthActionPerformed"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdo_day">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Theo Ng&#xe0;y"/>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdo_dayItemStateChanged"/>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="rdo_dayMouseClicked"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JRadioButton" name="rdo_daytoday">
-              <Properties>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Theo kho&#x1ea3;ng ng&#xe0;y"/>
-              </Properties>
-              <Events>
-                <EventHandler event="itemStateChanged" listener="java.awt.event.ItemListener" parameters="java.awt.event.ItemEvent" handler="rdo_daytodayItemStateChanged"/>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="rdo_daytodayActionPerformed"/>
-              </Events>
-            </Component>
             <Component class="javax.swing.JLabel" name="jLabel7">
               <Properties>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -345,6 +293,38 @@
             </Component>
             <Component class="com.toedter.calendar.JDateChooser" name="dateto">
             </Component>
+            <Component class="javax.swing.JButton" name="btn_byyear">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Theo N&#x103;m"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_byyearActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_bymonth">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Theo Th&#xe1;ng Trong n&#x103;m"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_bymonthActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_day">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Theo Ng&#xe0;y"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_dayActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_daytoday">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Theo kho&#x1ea3;ng ng&#xe0;y"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_daytodayActionPerformed"/>
+              </Events>
+            </Component>
           </SubComponents>
         </Container>
         <Container class="javax.swing.JPanel" name="jPanel3">
@@ -370,8 +350,6 @@
                       <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
                       <Component id="lbl_min" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
-                      <Component id="btn_exel" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -380,30 +358,15 @@
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="btn_exel" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_min" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="lbl_max" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace pref="13" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JToggleButton" name="btn_exel">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="1d" green="56" red="1c" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icons8-excel-20.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="Exel"/>
-              </Properties>
-            </Component>
             <Component class="javax.swing.JLabel" name="lbl_min">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">

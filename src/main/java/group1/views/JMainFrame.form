@@ -2,6 +2,14 @@
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
   <NonVisualComponents>
+    <Component class="javax.swing.JSeparator" name="jSeparator5">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator7">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator9">
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator17">
+    </Component>
     <Menu class="javax.swing.JMenuBar" name="jMenuBar1">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
@@ -69,6 +77,8 @@
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="exitActionPerformed"/>
               </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JPopupMenu$Separator" name="jSeparator8">
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -243,10 +253,10 @@
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <Component id="jToolBar" min="-2" pref="63" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <Component id="jToolBar" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                   <Component id="pnl_center" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="pnl_statusbar" min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
@@ -256,48 +266,20 @@
         <Container class="javax.swing.JToolBar" name="jToolBar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="1e" green="69" red="29" type="rgb"/>
-            </Property>
-            <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
-              <Border info="null"/>
+              <Color blue="19" green="e" red="37" type="rgb"/>
             </Property>
             <Property name="rollover" type="boolean" value="true"/>
           </Properties>
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.DesignBoxLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JToggleButton" name="btn_createReceipt">
+            <Component class="javax.swing.JButton" name="btn_TinhTien">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-invoice-20.png"/>
-                </Property>
-                <Property name="text" type="java.lang.String" value="H&#xf3;a &#x110;&#x1a1;n"/>
-                <Property name="focusable" type="boolean" value="false"/>
-                <Property name="horizontalTextPosition" type="int" value="0"/>
-                <Property name="verticalTextPosition" type="int" value="3"/>
-              </Properties>
-              <Events>
-                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="btn_createReceiptMouseClicked"/>
-              </Events>
-            </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator9">
-            </Component>
-            <Component class="javax.swing.JButton" name="btn_tinhtien">
-              <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
-                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                </Property>
-                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/images/icons8-poolside-bar-20.png"/>
+                  <Image iconType="3" name="/images/icons8-invoice-20.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="T&#xed;nh Ti&#x1ec1;n"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -305,21 +287,34 @@
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_tinhtienActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_TinhTienActionPerformed"/>
               </Events>
+            </Component>
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator6">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton2">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/icons8-invoice-20 (1).png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Tra c&#x1ee9;u h&#xf3;a &#x111;&#x1a1;n"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="verticalTextPosition" type="int" value="3"/>
+              </Properties>
             </Component>
             <Component class="javax.swing.JToolBar$Separator" name="jSeparator11">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_importIngridients">
+            <Component class="javax.swing.JButton" name="btn_NguyenLieu">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="3" name="/images/icons8-ingredient-24.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="Nh&#x1ead;p Nguy&#xea;n Li&#x1ec7;u"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -327,87 +322,113 @@
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_importIngridientsActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_NguyenLieuActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator8">
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator12">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_importRecipe">
+            <Component class="javax.swing.JButton" name="btn_Recipe">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="3" name="/images/icons8_book_20px_1.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p c&#xf4;ng th&#x1ee9;c"/>
+                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p C&#xf4;ng Th&#x1ee9;c"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_importRecipeActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_RecipeActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator7">
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator13">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_importProduct">
+            <Component class="javax.swing.JButton" name="btn_Product">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8-add-20.png"/>
+                  <Image iconType="3" name="/images/icons8-poolside-bar-20.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p S&#x1ea3;n ph&#x1ea9;m"/>
+                <Property name="text" type="java.lang.String" value="Nh&#x1ead;p S&#x1ea3;n Ph&#x1ea9;m"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_importProductActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_ProductActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator5">
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator14">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_HuongDan">
+            <Component class="javax.swing.JButton" name="btn_Revenue">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_flag_2_20px.png"/>
+                  <Image iconType="3" name="/images/icons8_report_card_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng d&#x1eab;n"/>
+                <Property name="text" type="java.lang.String" value="Doanh Thu"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_HuongDanActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_RevenueActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator4">
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator15">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_logout">
+            <Component class="javax.swing.JButton" name="jButton1">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_logout_rounded_up_20px.png"/>
+                  <Image iconType="3" name="/images/icons8-positive-dynamic-20.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Bi&#x1ec3;u &#x110;&#x1ed3;"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="verticalTextPosition" type="int" value="3"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator16">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton3">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/icons8_help_20px.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="H&#x1b0;&#x1edb;ng D&#x1eab;n"/>
+                <Property name="focusable" type="boolean" value="false"/>
+                <Property name="horizontalTextPosition" type="int" value="0"/>
+                <Property name="verticalTextPosition" type="int" value="3"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton3ActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator18">
+            </Component>
+            <Component class="javax.swing.JButton" name="jButton4">
+              <Properties>
+                <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/icons8_logout_rounded_up_20px.png"/>
                 </Property>
                 <Property name="text" type="java.lang.String" value="&#x110;&#x103;ng Xu&#x1ea5;t"/>
                 <Property name="focusable" type="boolean" value="false"/>
@@ -415,29 +436,26 @@
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_logoutActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton4ActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JToolBar$Separator" name="jSeparator6">
+            <Component class="javax.swing.JToolBar$Separator" name="jSeparator4">
             </Component>
-            <Component class="javax.swing.JToggleButton" name="btn_exit">
+            <Component class="javax.swing.JButton" name="jButton5">
               <Properties>
-                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="4a" green="75" red="0" type="rgb"/>
-                </Property>
                 <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                  <Color blue="eb" green="f0" red="f2" type="rgb"/>
+                  <Color blue="ff" green="ff" red="ff" type="rgb"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="3" name="/group1/images/icons8_exit_20px.png"/>
+                  <Image iconType="3" name="/images/icons8_exit_20px.png"/>
                 </Property>
-                <Property name="text" type="java.lang.String" value="Tho&#xe1;t"/>
+                <Property name="text" type="java.lang.String" value="Exit"/>
                 <Property name="focusable" type="boolean" value="false"/>
                 <Property name="horizontalTextPosition" type="int" value="0"/>
                 <Property name="verticalTextPosition" type="int" value="3"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_exitActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>
@@ -462,9 +480,9 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="-2" attributes="0"/>
                       <Component id="lbl_centerlogo" min="-2" pref="595" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -482,7 +500,7 @@
         <Container class="javax.swing.JPanel" name="pnl_statusbar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="21" green="7f" red="2d" type="rgb"/>
+              <Color blue="32" green="39" red="1e" type="rgb"/>
             </Property>
           </Properties>
 
@@ -501,7 +519,7 @@
             <DimensionLayout dim="1">
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace max="32767" attributes="0"/>
+                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="1" max="-2" attributes="0">
                           <Component id="lbl_clock" max="32767" attributes="0"/>
                           <Component id="lbl_user" max="32767" attributes="0"/>

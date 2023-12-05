@@ -15,9 +15,15 @@ import com.itextpdf.text.Document;
 import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
+import group1.dao.ChiTietDonHangDAO;
+import group1.dao.HoaDonDAO;
 import group1.dao.SanPhamDao;
+import group1.entity.ChiTietDonHang;
+import group1.entity.HoaDon;
 import group1.entity.SanPham;
+import group1.utils.Auth;
 import group1.utils.msgBox;
+import group1.utils.xDate;
 import group1.utils.xImage;
 import group1.utils.xJDBC;
 import java.awt.BorderLayout;
@@ -49,6 +55,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
@@ -71,9 +78,12 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 
 public class SanPhamJDialog extends javax.swing.JDialog {
- List<SanPham> listcart=new ArrayList<>();
+    ChiTietDonHangDAO daoCtDh=new ChiTietDonHangDAO();
+ List<ChiTietDonHang> listcart=new ArrayList<>();
 SanPhamDao dao=new SanPhamDao();
+    HoaDonDAO daohd=new HoaDonDAO();
 JButton btndelete;
+    JLabel lblqr;
 int indextru=0;
     JPanel pn;
     JPanel pnx;
@@ -98,6 +108,7 @@ int indextru=0;
         super(parent, modal);
         initComponents();
    settime();
+   displayUserInfo();
 
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
@@ -117,7 +128,6 @@ int indextru=0;
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         lbloclock = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         lblten = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -143,13 +153,11 @@ int indextru=0;
         txtfind = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        btn_cut = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
-        jPanel8 = new javax.swing.JPanel();
-        jPanel9 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
 
@@ -162,26 +170,18 @@ int indextru=0;
         jLabel7.setText("Quản Lý Sản Phẩm");
 
         lbloclock.setForeground(new java.awt.Color(255, 255, 255));
-        lbloclock.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\icons8_alarm_clock_25px.png")); // NOI18N
         lbloclock.setText("00:00:00 ");
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Nhân Viên:");
 
         lblten.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblten.setForeground(new java.awt.Color(255, 255, 255));
-        lblten.setText("Quang Huy");
+        lblten.setText("HuyLight");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
-
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\mu.png")); // NOI18N
         jLabel16.setText("jLabel16");
 
         jLabel13.setFont(new java.awt.Font("VNI-Bazooka", 1, 36)); // NOI18N
@@ -217,9 +217,12 @@ int indextru=0;
         txtfind.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtfind.setText("Search");
 
-        jLabel43.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel33.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
+        btn_cut.setText("exit");
+        btn_cut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -230,11 +233,13 @@ int indextru=0;
                 .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(jButton1)
-                .addGap(134, 134, 134)
+                .addGap(18, 18, 18)
+                .addComponent(btn_cut)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel43)
                 .addGap(183, 183, 183)
                 .addComponent(jLabel33)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -244,7 +249,8 @@ int indextru=0;
                     .addComponent(jLabel33)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                        .addComponent(jButton1)
+                        .addComponent(btn_cut))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel43))))
@@ -275,14 +281,14 @@ int indextru=0;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 1114, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(277, Short.MAX_VALUE))
+                .addContainerGap(14, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1413, Short.MAX_VALUE))
+                .addContainerGap(1421, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sản Phẩm", jPanel2);
@@ -291,7 +297,7 @@ int indextru=0;
         jPanel3.setMaximumSize(new java.awt.Dimension(500, 32767));
         jPanel3.setPreferredSize(new java.awt.Dimension(400, 400));
 
-        jPanel10.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel10.setBackground(new java.awt.Color(0, 153, 153));
 
         jPanel5.setBackground(new java.awt.Color(204, 204, 204));
         jPanel5.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
@@ -359,7 +365,7 @@ int indextru=0;
             .addGroup(jPanel3Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(39, Short.MAX_VALUE))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -370,42 +376,6 @@ int indextru=0;
         );
 
         jTabbedPane1.addTab("Thanh toán", jPanel3);
-
-        jLabel1.setText("jLabel1");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 256, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
-        jPanel8.setLayout(jPanel8Layout);
-        jPanel8Layout.setHorizontalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(628, 628, 628)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(511, Short.MAX_VALUE))
-        );
-        jPanel8Layout.setVerticalGroup(
-            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel8Layout.createSequentialGroup()
-                .addGap(104, 104, 104)
-                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1712, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("tab3", jPanel8);
 
         jScrollPane2.setViewportView(jTabbedPane1);
 
@@ -450,14 +420,10 @@ int indextru=0;
                                 .addComponent(jLabel18))
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(330, 330, 330)
-                                .addComponent(jLabel9)
-                                .addGap(13, 13, 13)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblten, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(100, 100, 100)
-                                        .addComponent(lbloclock)))))
+                                .addGap(284, 284, 284)
+                                .addComponent(lblten, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbloclock)))
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -517,10 +483,9 @@ int indextru=0;
                                     .addGap(20, 20, 20)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(8, 8, 8)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9)
-                                .addComponent(lblten)
-                                .addComponent(lbloclock)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbloclock)
+                                .addComponent(lblten)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(40, 40, 40)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -542,7 +507,7 @@ int indextru=0;
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1239, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1200, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -559,6 +524,11 @@ int indextru=0;
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         findSanPham();
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_cutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cutActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btn_cutActionPerformed
 
     void settime(){
         //     this.setIconImage(XImage.GetAppIcon());
@@ -598,11 +568,19 @@ int indextru=0;
 
 
     }
+    
+    void displayUserInfo() {
+        String userID = Auth.user.getMaNV();
+        String role = Auth.user.getVaitro();
+        lblten.setText("UserID: " + userID + " |  Role: " + role);
+    }
+    
      private static JSpinner createSpinner() {
         SpinnerModel model = new SpinnerNumberModel(0, 0, 100, 1); // Default value, min value, max value, step
         JSpinner spinner = new JSpinner(model);
         return spinner;
     }
+     
  void fix(String TenSP, double gia, String anh,int indexbutton,String masp){
      jPanel10.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 20));
 
@@ -654,10 +632,10 @@ int indextru=0;
         btnmua.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                  index++;
-                SanPham clickproduct = listbest.get(index);
-                listcart.add(clickproduct);
-                System.out.println(listcart.toString());
+                 index++;
+//                SanPham clickproduct = listbest.get(index);
+//                listcart.add(clickproduct);
+//                System.out.println(listcart.toString());
 //
 //
 //                soLanMua = (int) spinner.getValue();
@@ -669,7 +647,13 @@ int indextru=0;
                 String clickedProductImage = anh; // Ảnh sản phẩm
 
                 createCart(clickedProductName, clickedProductPrice, clickedProductImage,masp);
-               createHoaDon(TenSP, gia);
+               createHoaDon(TenSP, gia,masp);
+               
+             if(index==1){
+                 insert();
+               
+             }
+             insertchitietdonhang();
 
 //                  spinner.addChangeListener(new ChangeListener() {
 //            @Override
@@ -680,12 +664,15 @@ int indextru=0;
 //        });
 
             }
+            
         });
+      
           btnmua.addActionListener(new ActionListener() {
                 @Override
                 public void actionPerformed(ActionEvent e) {
                       selectedValue = (int) spinner.getValue();
                      tongtiensp=(float) (gia*selectedValue);
+                     totalall=tongtiensp+=tongtiensp;
                     System.out.println("Button " + (buttonIndex + 1) + " clicked, Spinner value: " + selectedValue);
 
                 }
@@ -777,10 +764,11 @@ panelgia.setBackground(Color.white);
             @Override
             public void actionPerformed(ActionEvent e) {
                 SanPham clickproduct = listbest.get(index);
-                listcart.add(clickproduct);
+//                listcart.add(clickproduct);
                 System.out.println(listcart);
+//                listcart.add(new SanPham(masp,TenSP, (float) gia));
 //
-//
+//                  
 //                soLanMua = (int) spinner.getValue();
 //                System.out.println("Số lượng mua: " + soluong);
 
@@ -801,7 +789,7 @@ index++;
                
             }
         });
-         createHoaDon(TenSP, gia);
+//         createHoaDon(TenSP, gia);
 
         // Sự kiện khi chuột vào nút "Mua Ngay"
         btnmua.addMouseListener(new MouseAdapter() {
@@ -828,6 +816,7 @@ index++;
 
 //         jPanel3.add(jpcart);
         JPanel panelcart = new JPanel();
+        panelcart.setBackground(new Color(0,153,153));
 
         panelcart.setPreferredSize(new Dimension(500, 100));
         panelcart.setLayout(new FlowLayout(FlowLayout.CENTER, 0, 0));
@@ -880,7 +869,7 @@ index++;
                 panelcart.add(btndelete);
 
 
-
+jPanel5.setBackground(new Color(0,153,153));
         jPanel5.setPreferredSize(new Dimension(500, 700));
         jPanel5.setLayout(new FlowLayout(FlowLayout.CENTER, 10, 10));
 
@@ -900,19 +889,20 @@ index++;
 
     void createthanhtoan(String Tensp, double Gia) {
         JPanel panelqr=new JPanel();
-        jLabel1.setSize(300,300);
-        panelqr.add(jLabel1);
+     
         panelqr.setSize(300, 300);
         JPanel pnx = new JPanel();
         pnx.setBackground(new Color(204,204,204));
         textar = new TextArea();
         textar.setSize(100, 200);
       pnx.setSize(500, 534);
+      pnx.setBackground(new Color(0,153,153));
         jPanel7.setLayout(new GridLayout(2, 1));
         Border emptyBorder1 = BorderFactory.createEmptyBorder(10, 10, 300, 10);
         jPanel7.setBorder(emptyBorder1);
        
         jPanel7.add(textar);
+        jPanel7.setBackground(new Color(0,153,153));
 
 
         JPanel panelthanhtoan = new JPanel();
@@ -923,12 +913,13 @@ index++;
         JButton btnthanhtoan = new JButton("Thanh toán");
         JPanel pnthanhtoan = new JPanel();
         pnthanhtoan.setLayout(new GridLayout(1, 2));
-        pnthanhtoan.add( lbltongtien=new JLabel("Tổng Tiền: "+tongtien));
+       
 
-
+panelthanhtoan.setBackground(new Color(0,153,153));
         panelthanhtoan.add(btnthanhtoan);
 //        panelthanhtoan.add(btndelete);
         panelthanhtoan.add(btnprint);
+        
 
         jPanel7.add(panelthanhtoan);
        
@@ -943,34 +934,41 @@ btnprint.addActionListener(new ActionListener(){
 btnthanhtoan.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(ActionEvent e) {
-                  jTabbedPane1.setSelectedIndex(2);
-        String imageUrl ="https://api.vietqr.io/image/970423-00000626945-P2H9rvV.jpg?accountName=NGUYEN%20QUANG%20HUY&amount="+tongtien;
+                  
+        String imageUrl ="https://api.vietqr.io/image/970423-00000626945-P2H9rvV.jpg?accountName=NGUYEN%20QUANG%20HUY&amount="+totalall;
 
             try {
                 // Đọc hình ảnh từ URL
                 BufferedImage image = ImageIO.read(new URL(imageUrl));
 
                 if (image != null) {
+                     pnthanhtoan.add( lbltongtien=new JLabel("Tổng Tiền: "+totalall));
                     // Hiển thị hình ảnh và lưu hình ảnh vào tệp
                     ImageIcon icon = new ImageIcon(image);
-                    int w= 300;
-                    int h=300;
+                    int w= 200;
+                    int h=200;
                     Image img=image.getScaledInstance(w, h,image.SCALE_SMOOTH);
-                    jLabel1.setIcon(new ImageIcon(img));
+                    lblqr.setIcon(new ImageIcon(img));
 
 //                    JOptionPane.showMessageDialog(this, icon);
 //                    jTextArea1.setText("QR Code loaded and displayed.");
                 } else {
 //                    jTextArea1.setText("Failed to load QR Code.");
                 }
+              
+              
             } catch (IOException ex) {
                 ex.printStackTrace();
 //                jTextArea1.setText("Error loading QR Code: " + ex.getMessage());
             }
+            
             }
 
 });
         panelthanhtoan.add(pnthanhtoan);
+         lblqr=new JLabel();
+         lblqr.setSize(200,200);
+        panelthanhtoan.add(lblqr);
         panelthanhtoan.setBackground(new Color(204,204,204));
         ;
 
@@ -978,10 +976,31 @@ btnthanhtoan.addActionListener(new ActionListener(){
  jPanel10.add(pnx);
     }
 
-    // Khai báo một biến để lưu trữ thông tin sản phẩm đã mua
+ // Khai báo seed cố định
+    private static final long seed = System.currentTimeMillis();
+
     StringBuilder hoaDonBuilder = new StringBuilder();
 
-    void createHoaDon(String tenSP, double gia) {
+    public static String maHD() {
+        String prefix = "HD";
+        String randomNumbers = generateRandomNumbers(4, seed);
+        String randomString = prefix + randomNumbers;
+        return randomString;
+    }
+
+    public static String generateRandomNumbers(int length, long seed) {
+        Random random = new Random(seed); // Sử dụng seed cố định
+        StringBuilder hdBuild = new StringBuilder();
+
+        for (int i = 0; i < length; i++) {
+            int randomNumber = random.nextInt(10);
+            hdBuild.append(randomNumber);
+        }
+
+        return hdBuild.toString();
+    }
+
+    void createHoaDon(String tenSP, double gia,String masp) {
 
 
 
@@ -989,6 +1008,9 @@ btnthanhtoan.addActionListener(new ActionListener(){
         DecimalFormat decimalfom = new DecimalFormat("#,###");
         String giaformat = decimalfom.format(tongtiensp);
 
+        
+        
+        
         // Thêm thông tin sản phẩm mới vào hóa đơn
         String newProductInfo = "Tên đơn hàng: " + tenSP + "\n"
                 + "                                            Số lượng: " + selectedValue + "      " + "Gia: " + gia + "      "
@@ -996,13 +1018,15 @@ btnthanhtoan.addActionListener(new ActionListener(){
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
+        listcart.add(new ChiTietDonHang(masp,tenSP,selectedValue));
+        System.out.println(listcart.toString());
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
         textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                +      "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
-totalall=tongtiensp+=tongtiensp;
-        
+                +      "                                                   Hóa Đơn:"+maHD()+"\n" + hoaDonBuilder.toString());
 
+          System.out.println(maHD());
+          
     }
 void printpdf(String textar){
    String path ="src/main/resources/pdf";
@@ -1046,17 +1070,49 @@ void printpdf(String textar){
     public double tinhTongTien(double gia) {
         return gia;
     }
-    void getForm(){
 
-    }
+
     void insert(){
         try {
-            dao.insert(new SanPham());
-            this.fillSanPham();
-            msgBox.alert(this, "Đã thêm nhân viên thành công");
+            HoaDon hdon=getForm();
+
+            daohd.insert(hdon);
+            String mahd=hdon.getMaHD();
+            System.out.println(mahd);
+            
+
+
+            msgBox.alert(this, "Đã thêm hóa đơn thành công");
         } catch (Exception e) {
+            e.printStackTrace();
         }
     }
+    void insertchitietdonhang(){
+        for (ChiTietDonHang ct : listcart) {
+
+            daoCtDh.insert(getformctdh(ct));
+            }
+        
+    }
+    ChiTietDonHang getformctdh(ChiTietDonHang sp) {
+        ChiTietDonHang ctdh = new ChiTietDonHang();
+        ctdh.setTenSP(sp.getTenSP());
+        ctdh.setSoLuong(sp.getSoLuong());
+        ctdh.setMaSP(sp.getMaSP());
+        ctdh.setMaHD(maHD());
+        return ctdh;
+    }
+
+    HoaDon getForm(){
+    HoaDon hd=new HoaDon();
+    hd.setMaHD(maHD());
+    hd.setMaNV(lblten.getText());
+    hd.setNgayTao(new java.util.Date(xDate.getCurrentDate()));
+    hd.setTrangThai(true);
+    hd.setTongCong(totalall);
+    return hd;
+}
+    
     void findSanPham(){
         try {
         List<SanPham>  list = (List<SanPham>) Arrays.asList(dao.selectById(txtfind.getText()));
@@ -1180,7 +1236,7 @@ for (SanPham sp : list) {
  
         // Update the textar with the modified bill
          textar.setText("                                                   Tên Công Ty: ABC Company\n\n                                   "
-                 + "                                                   Hóa Đơn:\n" + hoaDonBuilder.toString());
+                 + "                                                   Hóa Đơn:"+maHD()+"\n" + hoaDonBuilder.toString());
  
 
      }
@@ -1262,6 +1318,102 @@ for (SanPham sp : list) {
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -1279,8 +1431,8 @@ for (SanPham sp : list) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cut;
     private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
@@ -1299,7 +1451,6 @@ for (SanPham sp : list) {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
@@ -1308,8 +1459,6 @@ for (SanPham sp : list) {
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel7;
-    private javax.swing.JPanel jPanel8;
-    private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JScrollPane jScrollPane3;
