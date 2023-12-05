@@ -92,7 +92,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         jPanel2.setBackground(new java.awt.Color(204, 255, 102));
 
         jLabel2.setBackground(new java.awt.Color(255, 153, 153));
-        jLabel2.setIcon(new javax.swing.ImageIcon("H:\\FPTPolytechnic\\Project1\\src\\main\\resources\\images\\logo1.png")); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo1.png"))); // NOI18N
         jLabel2.setToolTipText("Merry Christmas");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -118,7 +118,6 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icons/icons8_change_20px.png"))); // NOI18N
         jButton1.setText("Change Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -129,7 +128,6 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icons/icons8_cancel_20px.png"))); // NOI18N
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

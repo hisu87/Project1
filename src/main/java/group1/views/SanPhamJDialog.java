@@ -21,6 +21,7 @@ import group1.dao.SanPhamDao;
 import group1.entity.ChiTietDonHang;
 import group1.entity.HoaDon;
 import group1.entity.SanPham;
+import group1.utils.Auth;
 import group1.utils.msgBox;
 import group1.utils.xDate;
 import group1.utils.xImage;
@@ -107,6 +108,7 @@ int indextru=0;
         super(parent, modal);
         initComponents();
    settime();
+   displayUserInfo();
 
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
@@ -126,7 +128,6 @@ int indextru=0;
         jPanel1 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         lbloclock = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
         lblten = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -152,6 +153,7 @@ int indextru=0;
         txtfind = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        btn_cut = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -168,53 +170,24 @@ int indextru=0;
         jLabel7.setText("Quản Lý Sản Phẩm");
 
         lbloclock.setForeground(new java.awt.Color(255, 255, 255));
-        lbloclock.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\icons8_alarm_clock_25px.png")); // NOI18N
         lbloclock.setText("00:00:00 ");
-
-        jLabel9.setBackground(new java.awt.Color(0, 0, 0));
-        jLabel9.setText("Nhân Viên:");
 
         lblten.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         lblten.setForeground(new java.awt.Color(255, 255, 255));
         lblten.setText("HuyLight");
 
-        jLabel3.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
         jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel3MouseClicked(evt);
             }
         });
 
-        jLabel4.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\icon_snow.png")); // NOI18N
-
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\mu.png")); // NOI18N
         jLabel16.setText("jLabel16");
 
         jLabel13.setFont(new java.awt.Font("VNI-Bazooka", 1, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\noel.png")); // NOI18N
         jLabel13.setText("Merry Christmas!");
-
-        jLabel15.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xekeo.png")); // NOI18N
-
-        jLabel17.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xekeo.png")); // NOI18N
-
-        jLabel18.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel19.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel34.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel35.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel36.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel41.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel42.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel44.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 102, 0));
         jTabbedPane1.setForeground(new java.awt.Color(0, 102, 102));
@@ -233,7 +206,6 @@ int indextru=0;
         jButton1.setBackground(new java.awt.Color(24, 122, 74));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jButton1.setForeground(new java.awt.Color(51, 51, 0));
-        jButton1.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\xmag_search_find_export_locate_5984.png")); // NOI18N
         jButton1.setText("Tìm Kiếm");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -245,9 +217,12 @@ int indextru=0;
         txtfind.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
         txtfind.setText("Search");
 
-        jLabel43.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
-
-        jLabel33.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\winter.png")); // NOI18N
+        btn_cut.setText("exit");
+        btn_cut.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cutActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
@@ -258,11 +233,13 @@ int indextru=0;
                 .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(jButton1)
-                .addGap(134, 134, 134)
+                .addGap(18, 18, 18)
+                .addComponent(btn_cut)
+                .addGap(37, 37, 37)
                 .addComponent(jLabel43)
                 .addGap(183, 183, 183)
                 .addComponent(jLabel33)
-                .addContainerGap(195, Short.MAX_VALUE))
+                .addContainerGap(289, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -272,7 +249,8 @@ int indextru=0;
                     .addComponent(jLabel33)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                        .addComponent(jButton1)
+                        .addComponent(btn_cut))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel43))))
@@ -310,7 +288,7 @@ int indextru=0;
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 604, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(1413, Short.MAX_VALUE))
+                .addContainerGap(1421, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Sản Phẩm", jPanel2);
@@ -401,8 +379,6 @@ int indextru=0;
 
         jScrollPane2.setViewportView(jTabbedPane1);
 
-        jLabel8.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\java\\group1\\images\\gau.png")); // NOI18N
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -444,14 +420,10 @@ int indextru=0;
                                 .addComponent(jLabel18))
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 451, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(330, 330, 330)
-                                .addComponent(jLabel9)
-                                .addGap(13, 13, 13)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(lblten, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGap(100, 100, 100)
-                                        .addComponent(lbloclock)))))
+                                .addGap(284, 284, 284)
+                                .addComponent(lblten, javax.swing.GroupLayout.PREFERRED_SIZE, 199, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(lbloclock)))
                         .addGap(20, 20, 20)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -511,10 +483,9 @@ int indextru=0;
                                     .addGap(20, 20, 20)
                                     .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGap(8, 8, 8)
-                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jLabel9)
-                                .addComponent(lblten)
-                                .addComponent(lbloclock)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(lbloclock)
+                                .addComponent(lblten)))
                         .addGroup(jPanel1Layout.createSequentialGroup()
                             .addGap(40, 40, 40)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -554,6 +525,11 @@ int indextru=0;
         findSanPham();
     }//GEN-LAST:event_jButton1ActionPerformed
 
+    private void btn_cutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cutActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_btn_cutActionPerformed
+
     void settime(){
         //     this.setIconImage(XImage.GetAppIcon());
         Timer timer = new Timer(1000, new ActionListener() {
@@ -592,6 +568,13 @@ int indextru=0;
 
 
     }
+    
+    void displayUserInfo() {
+        String userID = Auth.user.getMaNV();
+        String role = Auth.user.getVaitro();
+        lblten.setText("UserID: " + userID + " |  Role: " + role);
+    }
+    
      private static JSpinner createSpinner() {
         SpinnerModel model = new SpinnerNumberModel(0, 0, 100, 1); // Default value, min value, max value, step
         JSpinner spinner = new JSpinner(model);
@@ -1448,6 +1431,7 @@ for (SanPham sp : list) {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cut;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;
@@ -1467,7 +1451,6 @@ for (SanPham sp : list) {
     private javax.swing.JLabel jLabel44;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel2;
