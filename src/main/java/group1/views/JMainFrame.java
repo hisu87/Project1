@@ -663,7 +663,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openEmployees() {
-        new NhanVienJDialog(this, true).setVisible(true);
+        new QuanLyNhanVien(this, true).setVisible(true);
     }
 
     void openRevenue() {

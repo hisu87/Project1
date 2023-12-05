@@ -13,10 +13,10 @@ import java.sql.SQLException;
 public class xJDBC {
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
-    public static String dburl = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLCF;";
+    public static String dburl = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
 
     public static String username = "sa";
-    public static String password = "123";
+    public static String password = "0807";
     // public static String dburl =
     // "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
     //
