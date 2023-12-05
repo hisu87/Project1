@@ -14,19 +14,27 @@ public class HoaDonChiTiet {
     String MaSP;
     int SoLuong;
     String TenSP;
+    Double TongTien;
 
     public HoaDonChiTiet() {
     }
 
-    public HoaDonChiTiet(String MaHDCT, String MaHD, String MaSP, int SoLuong, String TenSP) {
+
+    public Double getTongTien() {
+        return TongTien;
+    }
+
+    public void setTongTien(Double TongTien) {
+        this.TongTien = TongTien;
+    }
+
+    public HoaDonChiTiet(String MaHDCT, String MaHD, String MaSP, int SoLuong, String TenSP, Double TongTien) {
         this.MaHDCT = MaHDCT;
         this.MaHD = MaHD;
-        // this.MaNV = MaNV;
         this.MaSP = MaSP;
         this.SoLuong = SoLuong;
         this.TenSP = TenSP;
-        // this.GiaBan = GiaBan;
-        // this.ThanhTien = ThanhTien;
+        this.TongTien = TongTien;
     }
 
     public String getMaHDCT() {

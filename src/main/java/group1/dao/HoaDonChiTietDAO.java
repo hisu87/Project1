@@ -10,6 +10,7 @@ import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -24,6 +25,22 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
 
+     private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
+        try (ResultSet rs = xJDBC.executeQuery(sql, args)) {
+            List<Object[]> list = new ArrayList<>();
+            while (rs.next()) {
+                Object[] vals = new Object[cols.length];
+                for (int i = 0; i < cols.length; i++) {
+                    vals[i] = rs.getObject(cols[i]);
+                }
+                list.add(vals);
+            }
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+     
     @Override
     public void insert(HoaDonChiTiet entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
@@ -68,6 +85,7 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
                 entity.setTenSP(rs.getString("TenSP"));
                 // entity.setGiaBan(rs.getInt("GiaBan"));
                 // entity.setThanhTien(rs.getInt("ThanhTien"));
+//                entity.setTongTien(rs.getString("TongTien"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
@@ -75,29 +93,35 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+    
+     public List<Object[]> getHoaDonmb(String MaHD) {
+        String sql = "{CALL dbo.GetChiTietDonHang(?)}";
+        String[] cols = { "MaHD", "MaChiTietHD", "TenSP","MaSp","SoLuong","Gia","TongTien" };
+        return this.getListOfArray(sql, cols, MaHD);
     }
 
-    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
-        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
-        List<HoaDonChiTiet> list = new ArrayList<>();
-        try {
-            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
-            while (rs.next()) {
-                HoaDonChiTiet entity = new HoaDonChiTiet();
-                entity.setMaHDCT(rs.getString("MaHDCT"));
-                entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getInt("SoLuong"));
-                entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
-                list.add(entity);
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
+//    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
+//        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
+//        List<HoaDonChiTiet> list = new ArrayList<>();
+//        try {
+//            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
+//            while (rs.next()) {
+//                HoaDonChiTiet entity = new HoaDonChiTiet();
+//                entity.setMaHDCT(rs.getString("MaHDCT"));
+//                entity.setMaHD(rs.getString("MaHD"));
+//                // entity.setMaNV(rs.getString("MaNV"));
+//                entity.setMaSP(rs.getString("MaSP"));
+//                entity.setSoLuong(rs.getInt("SoLuong"));
+//                entity.setTenSP(rs.getString("TenSP"));
+//                // entity.setGiaBan(rs.getInt("GiaBan"));
+//                // entity.setThanhTien(rs.getInt("ThanhTien"));
+//                list.add(entity);
+//            }
+//            rs.getStatement().getConnection().close();
+//            return list;
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }
