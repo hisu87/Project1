@@ -62,12 +62,13 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
                 HoaDonChiTiet entity = new HoaDonChiTiet();
                 entity.setMaHDCT(rs.getString("MaHDCT"));
                 entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
+                entity.setMaNV(rs.getString("MaNV"));
+                entity.setNgayTao(rs.getDate("NgayTao"));
                 entity.setMaSP(rs.getString("MaSP"));
                 entity.setSoLuong(rs.getInt("SoLuong"));
                 entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
+                entity.setGiaBan(rs.getDouble("GiaBan"));
+                entity.setThanhTien(rs.getDouble("ThanhTien"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
@@ -78,20 +79,21 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
     }
 
     public List<HoaDonChiTiet> selectByMaHD(String maHD) {
-        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
+        String sql = "SELECT ctdh.MaHD, hd.MaNV, hd.NgayTao, ctdh.MaChiTietDH, ctdh.TenSP, ctdh.MaSP, ctdh.SoLuong, SP.Gia, ctdh.SoLuong * SP.Gia as TongTien FROM [CHITIETDONHANG] ctdh JOIN [Sản Phẩm] SP ON ctdh.MaSP = SP.MaSP JOIN [Hóa Đơn] hd ON ctdh.MaHD = hd.MaHD WHERE ctdh.MaHD = ?";
         List<HoaDonChiTiet> list = new ArrayList<>();
         try {
-            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
+            ResultSet rs = xJDBC.executeQuery(sql, maHD);
             while (rs.next()) {
                 HoaDonChiTiet entity = new HoaDonChiTiet();
-                entity.setMaHDCT(rs.getString("MaHDCT"));
                 entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getInt("SoLuong"));
+                entity.setMaNV(rs.getString("MaNV"));
+                entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setMaHDCT(rs.getString("MaChiTietDH"));
                 entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
+                entity.setMaSP(rs.getString("MaSP"));
+                entity.setGiaBan(rs.getDouble("Gia"));
+                entity.setSoLuong(rs.getInt("SoLuong"));
+                entity.setThanhTien(rs.getDouble("TongTien"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();

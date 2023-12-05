@@ -5,7 +5,6 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
-import group1.entity.HoaDonChiTiet;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -98,29 +97,4 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
-
-    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
-        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
-        List<HoaDonChiTiet> list = new ArrayList<>();
-        try {
-            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
-            while (rs.next()) {
-                HoaDonChiTiet entity = new HoaDonChiTiet();
-                entity.setMaHDCT(rs.getString("MaHDCT"));
-                entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getInt("SoLuong"));
-                entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
-                list.add(entity);
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
 }
