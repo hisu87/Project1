@@ -28,9 +28,9 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(INSERT_SQL,
                 entity.getMaHD(),
                 entity.getMaNV(),
-            
+                entity.getMaSP(),
                 entity.getNgayTao(),
-                
+                entity.getSoLuong(),
                 entity.getTrangThai(),
                 entity.getTongCong());
     }
@@ -75,7 +75,9 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 HoaDon entity = new HoaDon();
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
+                entity.setMaSP(rs.getString("MaSP"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setSoLuong(rs.getDouble("Soluong"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
                 entity.setTongCong(rs.getFloat("TongCong"));
                 list.add(entity);
