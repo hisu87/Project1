@@ -13,10 +13,10 @@ import java.sql.SQLException;
 public class xJDBC {
     public static String driver = "com.microsoft.sqlserver.jdbc.SQLServerDriver";
 
-    public static String dburl = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
+    public static String dburl = "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLCF;";
 
     public static String username = "sa";
-    public static String password = "0807";
+    public static String password = "123";
     // public static String dburl =
     // "jdbc:sqlserver://localhost:1433;trustServerCertificate=true;databaseName=QLStarbucks;";
     //
@@ -59,7 +59,20 @@ public class xJDBC {
         }
     }
 
-    public static void executeUpdate(String sql, Object... args) {
+//    public static void executeUpdate(String sql, Object... args) {
+//        try {
+//            PreparedStatement pstmt = preparedStatement(sql, args);
+//            try {
+//                pstmt.executeUpdate();
+//            } finally {
+//                pstmt.getConnection().close();
+//            }
+//        } catch (SQLException e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
+    
+     public static void executeUpdate(String sql, Object... args) {
         try {
             PreparedStatement pstmt = preparedStatement(sql, args);
             try {
@@ -68,7 +81,15 @@ public class xJDBC {
                 pstmt.getConnection().close();
             }
         } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+             if (e.getMessage().contains("Violation of PRIMARY KEY constraint")) {
+                // Lỗi: Giá trị trùng khóa chính
+                System.out.println("Mã nhân viên đã tồn tại");
+                
+            } else {
+                // Xử lý các lỗi khác
+                e.printStackTrace();
+            }
     }
+        
+     }
 }
