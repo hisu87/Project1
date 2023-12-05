@@ -1,5 +1,6 @@
 package group1.dao;
 
+import group1.entity.NguyenLieu;
 import group1.entity.NhanVien;
 import group1.utils.xJDBC;
 
@@ -10,12 +11,19 @@ import java.util.List;
 
 public class NhanVienDAO extends CafeDAO<NhanVien, String> {
 
-    public String INSERT_SQL = "INSERT INTO [Nhân Viên](MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi, Anh) VALUES(?,?,?,?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE [Nhân Viên] SET HoTen=?, MatKhau=?, Vaitro=?, Tuoi=?, GioiTinh=?, Sdt=?, DiaChi=?, Anh=? WHERE MaNV=?";
+    public String INSERT_SQL = "INSERT INTO [Nhân Viên](MaNV, HoTen, MatKhau, Vaitro, Tuoi, GioiTinh, Sdt, DiaChi) VALUES(?,?,?,?,?,?,?)";
+    public String UPDATE_SQL = "UPDATE [Nhân Viên] SET HoTen=?, MatKhau=?, Vaitro=?, Tuoi=?, GioiTinh=?, Sdt=?, DiaChi=? WHERE MaNV=?";
     public String DELETE_SQL = "DELETE FROM [Nhân Viên] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Nhân Viên]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Nhân Viên] WHERE MaNV=?";
 
+    
+    public List<NhanVien> selectByKeyword(String keyword) {
+        String sql = "SELECT * FROM [Nhân Viên] WHERE TenNV LIKE ?";
+        return this.selectBySQL(sql, "%" + keyword + "%");
+    }
+    
+    
     @Override
     public void insert(NhanVien entity) {
         xJDBC.executeUpdate(INSERT_SQL,
@@ -26,8 +34,8 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
-                entity.getDiaChi(),
-                entity.getAnh());
+                entity.getDiaChi());
+                
     }
 
     @Override
@@ -40,8 +48,8 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.getGioiTinh(),
                 entity.getSdt(),
                 entity.getDiaChi(),
-                entity.getMaNV(),
-                entity.getAnh());
+                entity.getMaNV());
+                
     }
 
     @Override
@@ -78,7 +86,6 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
                 entity.setGioiTinh(rs.getString("GioiTinh"));
                 entity.setSdt(rs.getString("SDT"));
                 entity.setDiaChi(rs.getString("DiaChi"));
-                entity.setAnh(rs.getString("Anh"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();

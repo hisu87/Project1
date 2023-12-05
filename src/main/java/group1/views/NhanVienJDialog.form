@@ -171,12 +171,20 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel3" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanel3" alignment="1" max="32767" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jPanel3" max="32767" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                      </Group>
                   </Group>
                 </DimensionLayout>
               </Layout>
@@ -223,7 +231,7 @@
                                   <Component id="txt_search" min="-2" pref="35" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="jScrollPane1" pref="364" max="32767" attributes="0"/>
+                              <Component id="jScrollPane1" pref="352" max="32767" attributes="0"/>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="btn_next" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -273,12 +281,6 @@
                                   <Data value="112"/>
                                   <Data value="112"/>
                                 </Column>
-                                <Column editable="true" title="Email" type="java.lang.Object">
-                                  <Data value="dantm@gmail.com"/>
-                                  <Data value="dantm@gmail.com"/>
-                                  <Data value="dantm@gmail.com"/>
-                                  <Data value="dantm@gmail.com"/>
-                                </Column>
                                 <Column editable="true" title="Gi&#x1edb;i T&#xed;nh" type="java.lang.Object">
                                   <Data value="Nam"/>
                                   <Data value="Nam"/>
@@ -291,7 +293,8 @@
                                   <Data value="Nh&#xe2;n Vi&#xea;n"/>
                                   <Data value="Nh&#xe2;n Vi&#xea;n"/>
                                 </Column>
-                                <Column editable="true" title="Ng&#xe0;y Sinh" type="java.lang.Object">
+                                <Column editable="true" title="SDT" type="java.lang.Object"/>
+                                <Column editable="true" title="Tu&#x1ed5;i" type="java.lang.Object">
                                   <Data value="22/1/11997"/>
                                   <Data value="22/1/11997"/>
                                   <Data value="22/1/11997"/>
@@ -357,6 +360,9 @@
                         <Property name="text" type="java.lang.String" value="Search"/>
                         <Property name="toolTipText" type="java.lang.String" value="M&#xe3; NL, T&#xea;n NL"/>
                       </Properties>
+                      <Events>
+                        <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="txt_searchKeyReleased"/>
+                      </Events>
                     </Component>
                     <Component class="javax.swing.JButton" name="btn_search">
                       <Properties>
@@ -453,21 +459,21 @@
                                           <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
                                           <Component id="jLabel12" min="-2" pref="71" max="-2" attributes="0"/>
                                       </Group>
+                                      <Component id="jLabel1" alignment="0" min="-2" pref="57" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                                              <Component id="txt_Diachi" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jLabel4" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jLabel6" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
                                               <Component id="jLabel3" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtMaNV" pref="217" max="32767" attributes="0"/>
+                                              <Component id="txtMaNV" alignment="0" pref="217" max="32767" attributes="0"/>
                                               <Component id="txtHoten" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtpass" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtpassword" alignment="0" max="32767" attributes="0"/>
-                                              <Component id="txtEmail" alignment="0" max="32767" attributes="0"/>
                                           </Group>
                                           <EmptySpace min="84" pref="84" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="txtNgaysinh" pref="97" max="32767" attributes="0"/>
+                                              <Component id="txtTuoi" pref="97" max="32767" attributes="0"/>
                                               <Component id="jLabel8" min="-2" pref="69" max="-2" attributes="0"/>
                                               <Component id="jLabel11" alignment="0" max="32767" attributes="0"/>
                                               <Component id="txtvaitro" alignment="0" max="32767" attributes="0"/>
@@ -489,7 +495,7 @@
                                   <Component id="btnMoi" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace pref="303" max="32767" attributes="0"/>
+                          <EmptySpace pref="315" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -506,7 +512,7 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="txtMaNV" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="txtNgaysinh" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="txtTuoi" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
@@ -530,12 +536,12 @@
                                   </Group>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                                   <Component id="txtpassword" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
+                                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                  <Component id="txtEmail" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txt_Diachi" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
@@ -595,25 +601,15 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="txtpassword">
                 </Component>
-                <Component class="javax.swing.JLabel" name="jLabel7">
-                  <Properties>
-                    <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="eb" green="f0" red="f2" type="rgb"/>
-                    </Property>
-                    <Property name="text" type="java.lang.String" value="Email"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="txtEmail">
-                </Component>
                 <Component class="javax.swing.JLabel" name="jLabel8">
                   <Properties>
                     <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                       <Color blue="eb" green="f0" red="f2" type="rgb"/>
                     </Property>
-                    <Property name="text" type="java.lang.String" value="Ng&#xe0;y Sinh"/>
+                    <Property name="text" type="java.lang.String" value="Tu&#x1ed5;i"/>
                   </Properties>
                 </Component>
-                <Component class="javax.swing.JTextField" name="txtNgaysinh">
+                <Component class="javax.swing.JTextField" name="txtTuoi">
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel11">
                   <Properties>
@@ -680,6 +676,13 @@
                   <Events>
                     <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton1ActionPerformed"/>
                   </Events>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="&#x110;&#x1ecb;a Ch&#x1ec9;"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="txt_Diachi">
                 </Component>
               </SubComponents>
             </Container>
