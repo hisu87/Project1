@@ -75,8 +75,7 @@ create TABLE [Nhân Viên]
   [Tuoi] int,
   [GioiTinh] varchar(15),
   [SDT] int,
-  [DiaChi] nvarchar(50),
-  [Anh] nvarchar(50)
+  [DiaChi] nvarchar(50)
 );
 
 go
@@ -209,11 +208,11 @@ go
 
 insert into CT_NL
 values
-(1, N'RobustaMR', 15, 'Gram'),
-(1, N'Wsugar', 10, 'Gram'),
-(1, N'STMilkLab', 20, 'Ml'),
+  (1, N'RobustaMR', 15, 'Gram'),
+  (1, N'Wsugar', 10, 'Gram'),
+  (1, N'STMilkLab', 20, 'Ml'),
   (1, N'WCIsigny', 10, 'Gram'),
-  (2,N'RobustaMR',25, 'Gram'),
+  (2, N'RobustaMR', 25, 'Gram'),
   (2, N'Wsugar', 10, 'Gram'),
   (3, N'Wsugar', 25, 'Gram'),
   (3, N'BlackTeaFuckLong', 5, 'Gram'),
@@ -256,11 +255,11 @@ go
 
 insert into [Nhân Viên]
 values
-  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM', 'x'),
-  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM', 'x');
+  ('Hisu', '0807', N'Quản Lý', N'Phạm Văn Hiếu', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('SonSoi', '0807', N'Quản Lý', N'Ngô Vũ Sơn', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('HuyLight', '0807', N'Nhân Viên', N'Quang Huy', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('Poem', '0807', N'Nhân Viên', N'Minh Thơ', '19', 'Nam', '0999999999', 'TPHCM'),
+  ('Hung', '0807', N'Nhân Viên', N'Sĩ Hùng', '19', 'Nam', '0999999999', 'TPHCM');
 
 go
 select *
@@ -286,7 +285,7 @@ values
   ('HD12375', 'Hisu', '2023-08-14', N'Đã Thanh Toán', '205000'),
   ('HD12376', 'Hisu', '2023-07-26', N'Đã Thanh Toán', '56500000'),
   ('HD12377', 'Hisu', '2023-06-04', N'Đã Thanh Toán', '38150000'),
-  ('HD12311', 'Hisu', '2022-11-11',N'Đã Thanh Toán', '2962800'),
+  ('HD12311', 'Hisu', '2022-11-11', N'Đã Thanh Toán', '2962800'),
   ('HD12312', 'Hisu', '2022-10-10', N'Đã Thanh Toán', '3454000'),
   ('HD12314', 'Hisu', '2022-09-08', N'Đã Thanh Toán', '355000'),
   ('HD12315', 'Hisu', '2022-08-14', N'Đã Thanh Toán', '205000'),

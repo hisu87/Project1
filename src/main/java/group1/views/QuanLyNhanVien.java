@@ -77,6 +77,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
         cboVaitro = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setBackground(new java.awt.Color(0, 102, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel3.setForeground(new java.awt.Color(51, 51, 51));
@@ -153,7 +154,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnThemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 520, -1, 33));
+        getContentPane().add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, 33));
 
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_update_user_20px.png"))); // NOI18N
         btnSua.setText("Sửa");
@@ -162,7 +163,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnSuaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 520, -1, 33));
+        getContentPane().add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, 33));
 
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_delete_20px.png"))); // NOI18N
         btnXoa.setText("Xóa");
@@ -171,7 +172,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnXoaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 520, -1, 33));
+        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, -1, 33));
 
         btnMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_change_20px.png"))); // NOI18N
         btnMoi.setText("Mới");
@@ -180,7 +181,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnMoiActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 520, -1, 33));
+        getContentPane().add(btnMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, -1, 33));
 
         tblNhanvien.setAutoCreateRowSorter(true);
         tblNhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -257,14 +258,15 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnTimkiemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 100, -1, -1));
-        getContentPane().add(txtTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 100, 130, -1));
+        getContentPane().add(btnTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, -1, -1));
+        getContentPane().add(txtTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 130, -1));
 
+        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         jLabel6.setText("Mã nhân viên, Họ tên");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 100, -1, -1));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
         cboVaitro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vai trò " }));
-        getContentPane().add(cboVaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 100, -1, -1));
+        getContentPane().add(cboVaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

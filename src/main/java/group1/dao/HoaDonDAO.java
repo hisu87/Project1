@@ -5,6 +5,7 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
+import group1.entity.HoaDonChiTiet;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +19,7 @@ import java.util.List;
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
     public String INSERT_SQL = "INSERT INTO [Hóa Đơn]( MaHD,MaNV, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
+    public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, NgayTao=?, TrangThai=?, TongCong=? WHERE MaHD=?";
     public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
@@ -28,9 +29,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(INSERT_SQL,
                 entity.getMaHD(),
                 entity.getMaNV(),
-                entity.getMaSP(),
                 entity.getNgayTao(),
-                entity.getSoLuong(),
                 entity.getTrangThai(),
                 entity.getTongCong());
     }
@@ -40,9 +39,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(UPDATE_SQL,
                 entity.getMaHD(),
                 entity.getMaNV(),
-                entity.getMaSP(),
                 entity.getNgayTao(),
-                entity.getSoLuong(),
                 entity.getTrangThai(),
                 entity.getTongCong());
     }
@@ -75,9 +72,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 HoaDon entity = new HoaDon();
                 entity.setMaHD(rs.getString("MaHD"));
                 entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
                 entity.setNgayTao(rs.getDate("NgayTao"));
-                entity.setSoLuong(rs.getDouble("Soluong"));
                 entity.setTrangThai(rs.getBoolean("TrangThai"));
                 entity.setTongCong(rs.getFloat("TongCong"));
                 list.add(entity);
@@ -88,7 +83,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
-    
+
     public List<Integer> selectYear() {
         String SQL = "SELECT DISTINCT year(NgayTao) Year FROM [Hóa Đơn] ORDER BY Year DESC";
         List<Integer> list = new ArrayList<>();
@@ -96,6 +91,30 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             ResultSet rs = xJDBC.executeQuery(SQL);
             while (rs.next()) {
                 list.add(rs.getInt(1));
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
+        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
+        List<HoaDonChiTiet> list = new ArrayList<>();
+        try {
+            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
+            while (rs.next()) {
+                HoaDonChiTiet entity = new HoaDonChiTiet();
+                entity.setMaHDCT(rs.getString("MaHDCT"));
+                entity.setMaHD(rs.getString("MaHD"));
+                // entity.setMaNV(rs.getString("MaNV"));
+                entity.setMaSP(rs.getString("MaSP"));
+                entity.setSoLuong(rs.getInt("SoLuong"));
+                entity.setTenSP(rs.getString("TenSP"));
+                // entity.setGiaBan(rs.getInt("GiaBan"));
+                // entity.setThanhTien(rs.getInt("ThanhTien"));
+                list.add(entity);
             }
             rs.getStatement().getConnection().close();
             return list;
