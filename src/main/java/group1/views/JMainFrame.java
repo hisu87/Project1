@@ -170,17 +170,24 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(45, 127, 33));
 
-        jToolBar.setBackground(new java.awt.Color(41, 105, 30));
+        jToolBar.setBackground(new java.awt.Color(55, 14, 25));
         jToolBar.setRollover(true);
 
+        btn_TinhTien.setForeground(new java.awt.Color(255, 255, 255));
         btn_TinhTien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-invoice-20.png"))); // NOI18N
         btn_TinhTien.setText("Tính Tiền");
         btn_TinhTien.setFocusable(false);
         btn_TinhTien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_TinhTien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_TinhTien.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_TinhTienActionPerformed(evt);
+            }
+        });
         jToolBar.add(btn_TinhTien);
         jToolBar.add(jSeparator6);
 
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-invoice-20 (1).png"))); // NOI18N
         jButton2.setText("Tra cứu hóa đơn");
         jButton2.setFocusable(false);
@@ -189,6 +196,7 @@ public class JMainFrame extends javax.swing.JFrame {
         jToolBar.add(jButton2);
         jToolBar.add(jSeparator11);
 
+        btn_NguyenLieu.setForeground(new java.awt.Color(255, 255, 255));
         btn_NguyenLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ingredient-24.png"))); // NOI18N
         btn_NguyenLieu.setText("Nhập Nguyên Liệu");
         btn_NguyenLieu.setFocusable(false);
@@ -202,22 +210,35 @@ public class JMainFrame extends javax.swing.JFrame {
         jToolBar.add(btn_NguyenLieu);
         jToolBar.add(jSeparator12);
 
+        btn_Recipe.setForeground(new java.awt.Color(255, 255, 255));
         btn_Recipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_book_20px_1.png"))); // NOI18N
         btn_Recipe.setText("Nhập Công Thức");
         btn_Recipe.setFocusable(false);
         btn_Recipe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_Recipe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Recipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RecipeActionPerformed(evt);
+            }
+        });
         jToolBar.add(btn_Recipe);
         jToolBar.add(jSeparator13);
 
+        btn_Product.setForeground(new java.awt.Color(255, 255, 255));
         btn_Product.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-poolside-bar-20.png"))); // NOI18N
         btn_Product.setText("Nhập Sản Phẩm");
         btn_Product.setFocusable(false);
         btn_Product.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         btn_Product.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Product.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProductActionPerformed(evt);
+            }
+        });
         jToolBar.add(btn_Product);
         jToolBar.add(jSeparator14);
 
+        btn_Revenue.setForeground(new java.awt.Color(255, 255, 255));
         btn_Revenue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_report_card_20px.png"))); // NOI18N
         btn_Revenue.setText("Doanh Thu");
         btn_Revenue.setFocusable(false);
@@ -231,35 +252,59 @@ public class JMainFrame extends javax.swing.JFrame {
         jToolBar.add(btn_Revenue);
         jToolBar.add(jSeparator15);
 
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-positive-dynamic-20.png"))); // NOI18N
         jButton1.setText("Biểu Đồ");
         jButton1.setFocusable(false);
         jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jButton1);
         jToolBar.add(jSeparator16);
 
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
         jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_help_20px.png"))); // NOI18N
         jButton3.setText("Hướng Dẫn");
         jButton3.setFocusable(false);
         jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jButton3);
         jToolBar.add(jSeparator18);
 
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
         jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
         jButton4.setText("Đăng Xuất");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jButton4);
         jToolBar.add(jSeparator4);
 
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
         jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_exit_20px.png"))); // NOI18N
         jButton5.setText("Exit");
         jButton5.setFocusable(false);
         jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jButton5);
 
         pnl_center.setBackground(new java.awt.Color(249, 249, 249));
@@ -280,10 +325,10 @@ public class JMainFrame extends javax.swing.JFrame {
             .addGroup(pnl_centerLayout.createSequentialGroup()
                 .addGap(0, 0, 0)
                 .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnl_statusbar.setBackground(new java.awt.Color(45, 127, 33));
+        pnl_statusbar.setBackground(new java.awt.Color(30, 57, 50));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(242, 240, 235));
@@ -307,7 +352,7 @@ public class JMainFrame extends javax.swing.JFrame {
         pnl_statusbarLayout.setVerticalGroup(
             pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_statusbarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -326,9 +371,9 @@ public class JMainFrame extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(0, 0, 0)
                 .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -480,11 +525,48 @@ public class JMainFrame extends javax.swing.JFrame {
 
     private void btn_NguyenLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NguyenLieuActionPerformed
         // TODO add your handling code here:
+        openIngridients();
     }//GEN-LAST:event_btn_NguyenLieuActionPerformed
 
     private void btn_RevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RevenueActionPerformed
         // TODO add your handling code here:
+        openRevenue();
     }//GEN-LAST:event_btn_RevenueActionPerformed
+
+    private void btn_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TinhTienActionPerformed
+        // TODO add your handling code here:
+        openSanPham();
+    }//GEN-LAST:event_btn_TinhTienActionPerformed
+
+    private void btn_RecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RecipeActionPerformed
+        // TODO add your handling code here:
+        openRecipe();
+    }//GEN-LAST:event_btn_RecipeActionPerformed
+
+    private void btn_ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProductActionPerformed
+        // TODO add your handling code here:
+        openProducts();
+    }//GEN-LAST:event_btn_ProductActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        openChart();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        openWebsite();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        openLogout();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        openExit();
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     private void btn_tinhtienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_tinhtienActionPerformed
         // TODO add your handling code here:

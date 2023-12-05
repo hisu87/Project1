@@ -9,13 +9,11 @@ group1\views\LoadingJDialog$1Loading.class
 group1\views\CongThucNguyenLieuJDialog$10.class
 group1\views\NhanVienJDialog$1.class
 group1\views\QuanLySanPham$2.class
-group1\views\HoaDonJDialog$6.class
 group1\views\JMainFrame$16.class
 group1\entity\SanPham.class
 group1\views\JMainFrame$2.class
 raven\panel\PanelShadow.class
 group1\views\CongThucNguyenLieuJDialog$5.class
-group1\views\DoanhThuJDialog$9.class
 group1\views\DoanhThuJDialog.class
 group1\views\LoginJDialog$7.class
 group1\views\QuanLySanPham$13$1.class
@@ -25,6 +23,7 @@ raven\chart\ModelLegend.class
 group1\views\ChartJDialog$2$1.class
 raven\chart\blankchart\BlankPlotChatRender.class
 group1\views\QLNguyenLieuJDialog$7.class
+group1\views\SanPhamJDialog$12$1.class
 group1\views\NewJDialog$2.class
 group1\views\JMainFrame$17.class
 group1\views\QuanLySanPham$7.class
@@ -47,7 +46,6 @@ group1\views\NhanVienJDialog$2.class
 group1\views\DoanhThuJDialog$4.class
 group1\views\QLNguyenLieuJDialog$8.class
 group1\views\CongThucNguyenLieuJDialog$11.class
-group1\views\SanPhamJDialog$11$1.class
 group1\views\JMainFrame$15.class
 group1\utils\xImage.class
 group1\views\CongThucNguyenLieuJDialog$3.class
@@ -71,7 +69,6 @@ group1\views\NhanVienJDialog.class
 group1\views\QLNguyenLieuJDialog$6.class
 group1\views\ChangePasswordJDialog$1.class
 group1\views\QLNguyenLieuJDialog$3.class
-group1\views\DoanhThuJDialog$10$1.class
 group1\entity\CongThuc_NguyenLieu.class
 group1\views\QuanLySanPham$6.class
 group1\dao\NhanVienDAO.class
@@ -82,19 +79,18 @@ group1\views\JMainFrame$13.class
 group1\views\QLNguyenLieuJDialog$12.class
 group1\views\LoginJDialog$8.class
 raven\panel\PanelShadow$ShadowType.class
-group1\views\DoanhThuJDialog$8.class
 group1\views\QuanLySanPham$13.class
+group1\views\JMainFrame$20.class
 group1\dao\ThongKeDAO.class
 group1\views\CongThucNguyenLieuJDialog$4.class
 group1\views\QLNguyenLieuJDialog$4.class
 group1\views\JMainFrame$14.class
 group1\views\QLNguyenLieuJDialog$11.class
-group1\views\DoanhThuJDialog$7.class
 group1\views\QuanLySanPham$4.class
 group1\views\QuanLySanPham$12.class
-group1\views\DoanhThuJDialog$10.class
 raven\chart\blankchart\SeriesSize.class
 group1\views\SanPhamJDialog.class
+group1\views\CongThucNguyenLieuJDialog$14.class
 group1\views\DoanhThuJDialog$6.class
 raven\chart\CurveLineChart.class
 group1\views\QuanLySanPham$5.class
@@ -106,6 +102,7 @@ group1\views\CongThucNguyenLieuJDialog$13.class
 group1\views\NhanVienJDialog$4.class
 group1\views\HoaDonJDialog$3.class
 group1\views\CongThucNguyenLieuJDialog$2.class
+group1\views\SanPhamJDialog$12.class
 group1\views\QLNguyenLieuJDialog$1TimeClock.class
 group1\entity\Model.class
 group1\dao\SanPhamDao.class
@@ -154,7 +151,6 @@ group1\views\LoginJDialog.class
 group1\entity\NhanVien.class
 group1\views\NewJDialog$1.class
 group1\utils\Auth.class
-group1\views\HoaDonJDialog$5.class
 group1\views\CongThucNguyenLieuJDialog.class
 group1\views\ChangePasswordJDialog$4.class
 group1\views\QuanLySanPham$9.class
@@ -166,7 +162,6 @@ group1\views\SanPhamJDialog$9.class
 group1\views\DoanhThuJDialog$1.class
 raven\chart\blankchart\BlankPlotChart$1.class
 raven\chart\CurveLineChart$1.class
-group1\views\HoaDonJDialog$4.class
 raven\chart\blankchart\NiceScale.class
 group1\views\LoginJDialog$1.class
 group1\views\LoginJDialog$8$1.class
