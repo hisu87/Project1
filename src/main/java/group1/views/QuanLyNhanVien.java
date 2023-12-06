@@ -40,32 +40,33 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
         buttonGroup2 = new javax.swing.ButtonGroup();
-        jLabel3 = new javax.swing.JLabel();
+        jPanel1 = new javax.swing.JPanel();
+        jLabel9 = new javax.swing.JLabel();
         txtManv = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         txtHoten = new javax.swing.JTextField();
-        jLabel5 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
         txtMatkhau = new javax.swing.JTextField();
-        jLabel7 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
         txtSdt = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
         txtTuoi = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
         rdoNhanvien = new javax.swing.JCheckBox();
         rdoQuanly = new javax.swing.JCheckBox();
-        jLabel12 = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
         rdoNam = new javax.swing.JCheckBox();
         rdoNu = new javax.swing.JCheckBox();
         btnThem = new javax.swing.JButton();
         btnSua = new javax.swing.JButton();
         btnXoa = new javax.swing.JButton();
         btnMoi = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
+        jScrollPane3 = new javax.swing.JScrollPane();
         tblNhanvien = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
+        jButton = new javax.swing.JButton();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
+        jScrollPane4 = new javax.swing.JScrollPane();
         txtDiachi = new javax.swing.JTextArea();
         btnLast = new javax.swing.JButton();
         btnPevious = new javax.swing.JButton();
@@ -73,47 +74,51 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
         btnFirst = new javax.swing.JButton();
         btnTimkiem = new javax.swing.JButton();
         txtTimkiem = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel20 = new javax.swing.JLabel();
         cboVaitro = new javax.swing.JComboBox<>();
+        btn_exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setBackground(new java.awt.Color(0, 102, 0));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel3.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel3.setText("Mã Nhân Viên");
-        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 217, -1));
-        getContentPane().add(txtManv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 217, -1));
+        jPanel1.setBackground(new java.awt.Color(255, 220, 204));
+        jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel4.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel4.setText("Họ Và Tên");
-        getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 217, -1));
-        getContentPane().add(txtHoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 217, -1));
+        jLabel9.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel9.setText("Mã Nhân Viên");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, 217, -1));
+        jPanel1.add(txtManv, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 217, -1));
 
-        jLabel5.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel5.setText("Mật Khẩu");
-        getContentPane().add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 217, -1));
-        getContentPane().add(txtMatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 217, -1));
+        jLabel10.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel10.setText("Họ Và Tên");
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 217, -1));
+        jPanel1.add(txtHoten, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 217, -1));
 
-        jLabel7.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel7.setText("Số điện thoại");
-        getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 217, -1));
-        getContentPane().add(txtSdt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 217, -1));
+        jLabel13.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel13.setText("Mật Khẩu");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 217, -1));
+        jPanel1.add(txtMatkhau, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 217, -1));
 
-        jLabel8.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel8.setText("Tuổi");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 69, -1));
+        jLabel14.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel14.setText("Số điện thoại");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 210, 217, -1));
+        jPanel1.add(txtSdt, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 240, 217, -1));
+
+        jLabel15.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel15.setText("Tuổi");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 270, 69, -1));
 
         txtTuoi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtTuoiActionPerformed(evt);
             }
         });
-        getContentPane().add(txtTuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 97, -1));
+        jPanel1.add(txtTuoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 300, 97, -1));
 
-        jLabel11.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel11.setText("Vai Trò");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 97, -1));
+        jLabel16.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel16.setText("Vai Trò");
+        jPanel1.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 460, 97, -1));
 
         buttonGroup1.add(rdoNhanvien);
         rdoNhanvien.setSelected(true);
@@ -123,7 +128,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 rdoNhanvienActionPerformed(evt);
             }
         });
-        getContentPane().add(rdoNhanvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
+        jPanel1.add(rdoNhanvien, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 490, -1, -1));
 
         buttonGroup1.add(rdoQuanly);
         rdoQuanly.setText("Quản lý");
@@ -132,20 +137,20 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 rdoQuanlyActionPerformed(evt);
             }
         });
-        getContentPane().add(rdoQuanly, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
+        jPanel1.add(rdoQuanly, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 490, -1, -1));
 
-        jLabel12.setForeground(new java.awt.Color(51, 51, 51));
-        jLabel12.setText("Giới Tính ");
-        getContentPane().add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 71, -1));
+        jLabel17.setForeground(new java.awt.Color(51, 51, 51));
+        jLabel17.setText("Giới Tính ");
+        jPanel1.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 530, 71, -1));
 
         buttonGroup2.add(rdoNam);
         rdoNam.setSelected(true);
         rdoNam.setText("Nam");
-        getContentPane().add(rdoNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
+        jPanel1.add(rdoNam, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 560, -1, -1));
 
         buttonGroup2.add(rdoNu);
         rdoNu.setText("Nữ");
-        getContentPane().add(rdoNu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
+        jPanel1.add(rdoNu, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 560, -1, -1));
 
         btnThem.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_book_20px.png"))); // NOI18N
         btnThem.setText("Thêm ");
@@ -154,7 +159,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnThemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, 33));
+        jPanel1.add(btnThem, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 530, -1, 33));
 
         btnSua.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_update_user_20px.png"))); // NOI18N
         btnSua.setText("Sửa");
@@ -163,7 +168,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnSuaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, 33));
+        jPanel1.add(btnSua, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 530, -1, 33));
 
         btnXoa.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_delete_20px.png"))); // NOI18N
         btnXoa.setText("Xóa");
@@ -172,7 +177,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnXoaActionPerformed(evt);
             }
         });
-        getContentPane().add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, -1, 33));
+        jPanel1.add(btnXoa, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 530, -1, 33));
 
         btnMoi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_change_20px.png"))); // NOI18N
         btnMoi.setText("Mới");
@@ -181,7 +186,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnMoiActionPerformed(evt);
             }
         });
-        getContentPane().add(btnMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, -1, 33));
+        jPanel1.add(btnMoi, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 530, -1, 33));
 
         tblNhanvien.setAutoCreateRowSorter(true);
         tblNhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
@@ -199,26 +204,26 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 tblNhanvienMouseClicked(evt);
             }
         });
-        jScrollPane2.setViewportView(tblNhanvien);
+        jScrollPane3.setViewportView(tblNhanvien);
 
-        getContentPane().add(jScrollPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 940, 364));
+        jPanel1.add(jScrollPane3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 140, 940, 364));
 
-        jButton1.setText("Print");
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 530, -1, -1));
+        jButton.setText("Print");
+        jPanel1.add(jButton, new org.netbeans.lib.awtextra.AbsoluteConstraints(1110, 530, -1, -1));
 
-        jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
-        jLabel1.setForeground(new java.awt.Color(255, 102, 102));
-        jLabel1.setText("Quản lý nhân viên");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
+        jLabel18.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel18.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel18.setText("Quản lý nhân viên");
+        jPanel1.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, -1));
 
-        jLabel2.setText("Địa chỉ");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
+        jLabel19.setText("Địa chỉ");
+        jPanel1.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, -1, -1));
 
         txtDiachi.setColumns(20);
         txtDiachi.setRows(5);
-        jScrollPane1.setViewportView(txtDiachi);
+        jScrollPane4.setViewportView(txtDiachi);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 210, 90));
+        jPanel1.add(jScrollPane4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 210, 90));
 
         btnLast.setText("Last");
         btnLast.addActionListener(new java.awt.event.ActionListener() {
@@ -226,7 +231,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnLastActionPerformed(evt);
             }
         });
-        getContentPane().add(btnLast, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 530, -1, -1));
+        jPanel1.add(btnLast, new org.netbeans.lib.awtextra.AbsoluteConstraints(1000, 530, -1, -1));
 
         btnPevious.setText("Previous");
         btnPevious.addActionListener(new java.awt.event.ActionListener() {
@@ -234,7 +239,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnPeviousActionPerformed(evt);
             }
         });
-        getContentPane().add(btnPevious, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 530, -1, -1));
+        jPanel1.add(btnPevious, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 530, -1, -1));
 
         btnNext.setText("Next");
         btnNext.addActionListener(new java.awt.event.ActionListener() {
@@ -242,7 +247,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnNextActionPerformed(evt);
             }
         });
-        getContentPane().add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, -1, -1));
+        jPanel1.add(btnNext, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 530, -1, -1));
 
         btnFirst.setText("First");
         btnFirst.addActionListener(new java.awt.event.ActionListener() {
@@ -250,7 +255,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnFirstActionPerformed(evt);
             }
         });
-        getContentPane().add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, -1, -1));
+        jPanel1.add(btnFirst, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 530, -1, -1));
 
         btnTimkiem.setText("Tìm kiếm ");
         btnTimkiem.addActionListener(new java.awt.event.ActionListener() {
@@ -258,15 +263,25 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                 btnTimkiemActionPerformed(evt);
             }
         });
-        getContentPane().add(btnTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 100, -1, -1));
-        getContentPane().add(txtTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 130, -1));
+        jPanel1.add(btnTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 100, -1, -1));
+        jPanel1.add(txtTimkiem, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 100, 130, -1));
 
-        jLabel6.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jLabel6.setText("Mã nhân viên, Họ tên");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
+        jLabel20.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        jLabel20.setText("Mã nhân viên, Họ tên");
+        jPanel1.add(jLabel20, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 100, -1, -1));
 
         cboVaitro.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Vai trò " }));
-        getContentPane().add(cboVaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, -1, -1));
+        jPanel1.add(cboVaitro, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 100, -1, -1));
+
+        btn_exit.setText("Exit");
+        btn_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exitActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_exit, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 100, -1, -1));
+
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1200, 620));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -284,75 +299,48 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }//GEN-LAST:event_rdoQuanlyActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnThemActionPerformed
-        NhanVien nv = getForm();
-        dao.insert(nv);
-        initTable();
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSuaActionPerformed
-        NhanVien nv = getForm();
-        dao.update(nv);
-        initTable();
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnSuaActionPerformed
 
-    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
-        Clearform();
-        txtManv.setEditable(true);
-    }//GEN-LAST:event_btnMoiActionPerformed
-
-    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
-        btnlast();
-    }//GEN-LAST:event_btnLastActionPerformed
-
-    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
-       btnfirst();
-    }//GEN-LAST:event_btnFirstActionPerformed
-
-    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
-        btnnext();
-    }//GEN-LAST:event_btnNextActionPerformed
-
-    private void btnPeviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeviousActionPerformed
-       btnprevious();
-    }//GEN-LAST:event_btnPeviousActionPerformed
-
-    private void tblNhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMouseClicked
-        int selectedRow = tblNhanvien.getSelectedRow();
-        filltoControl(selectedRow);
-       
-    }//GEN-LAST:event_tblNhanvienMouseClicked
-
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnXoaActionPerformed
-        
-        int selectedRow = tblNhanvien.getSelectedRow();
-        String id = "";
-        if(selectedRow > 0) {
-         id = (String) tblNhanvien.getValueAt(selectedRow, 0);
-        } else {
-            id = txtManv.getText();
-        }
-        
-        if (id.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(null, "Chưa chọn nhân viên muốn xóa");
-        }  else {
-            dao.delete(id);
-        }
-        initTable(); 
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnXoaActionPerformed
 
+    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMoiActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnMoiActionPerformed
+
+    private void tblNhanvienMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tblNhanvienMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_tblNhanvienMouseClicked
+
+    private void btnLastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLastActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnLastActionPerformed
+
+    private void btnPeviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPeviousActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnPeviousActionPerformed
+
+    private void btnNextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNextActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnNextActionPerformed
+
+    private void btnFirstActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFirstActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnFirstActionPerformed
+
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnTimkiemActionPerformed
-        String id = txtTimkiem.getText();
-
-        tblModel.setRowCount(0);
-
-        NhanVien nv = dao.selectById(id);
-
-        tblModel.addRow(new Object[]{
-            nv.getMaNV(), nv.getMatKhau(), nv.getHoTen(), nv.getVaitro(), nv.getTuoi(), nv.getGioiTinh(), nv.getSdt(), nv.getDiaChi()
-        });
-
-       
+        // TODO add your handling code here:
     }//GEN-LAST:event_btnTimkiemActionPerformed
+
+    private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btn_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -406,22 +394,24 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     private javax.swing.JButton btnThem;
     private javax.swing.JButton btnTimkiem;
     private javax.swing.JButton btnXoa;
+    private javax.swing.JButton btn_exit;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> cboVaitro;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JButton jButton;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JCheckBox rdoNam;
     private javax.swing.JCheckBox rdoNhanvien;
     private javax.swing.JCheckBox rdoNu;

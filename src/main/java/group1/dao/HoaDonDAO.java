@@ -5,6 +5,7 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
+import group1.entity.NguyenLieu;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -55,6 +56,11 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             return null;
         }
         return list.get(0);
+    }
+
+    public List<HoaDon> selectByKeyword(String keyword) {
+        String sql = "SELECT * FROM [Hóa Đơn] WHERE MaHD LIKE ?";
+        return this.selectBySQL(sql, "%" + keyword + "%");
     }
 
     @Override
