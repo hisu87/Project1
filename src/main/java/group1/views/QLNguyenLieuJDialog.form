@@ -62,13 +62,13 @@
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          <Component id="lbl_title" min="-2" pref="297" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="331" max="-2" attributes="0"/>
-                      </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
+              </Group>
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace min="-2" pref="324" max="-2" attributes="0"/>
+                  <Component id="lbl_title" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -93,7 +93,7 @@
         <Component class="javax.swing.JLabel" name="lbl_title">
           <Properties>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
-              <Font name="Serif" size="24" style="1"/>
+              <Font name="Serif" size="36" style="1"/>
             </Property>
             <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="d1" green="e8" red="ff" type="rgb"/>
@@ -105,7 +105,7 @@
         <Container class="javax.swing.JPanel" name="jPanel1">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="17" green="3f" red="1e" type="rgb"/>
+              <Color blue="63" green="b5" red="ea" type="rgb"/>
             </Property>
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="org.netbeans.modules.form.compat2.border.LineBorderInfo">
@@ -192,7 +192,7 @@
                   <Properties>
                     <Property name="autoCreateRowSorter" type="boolean" value="true"/>
                     <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                      <Color blue="1e" green="69" red="29" type="rgb"/>
+                      <Color blue="74" green="b1" red="8b" type="rgb"/>
                     </Property>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Segoe UI" size="14" style="0"/>
@@ -339,6 +339,7 @@
                                   <Component id="lbl_Gia" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="lbl_TenNL" alignment="0" min="-2" max="-2" attributes="0"/>
                                   <Component id="txt_DonVi" alignment="0" min="-2" pref="180" max="-2" attributes="0"/>
+                                  <Component id="btn_export" alignment="0" min="-2" pref="149" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
@@ -371,6 +372,8 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="txt_Gia" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Component id="btn_export" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="btnDelete" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
                           <Component id="btnAdd" alignment="0" min="-2" pref="22" max="-2" attributes="0"/>
@@ -636,6 +639,20 @@
               </Properties>
               <Events>
                 <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnLastActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JButton" name="btn_export">
+              <Properties>
+                <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                  <Color blue="63" green="b5" red="ea" type="rgb"/>
+                </Property>
+                <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+                  <Image iconType="3" name="/images/icons8-excel-20.png"/>
+                </Property>
+                <Property name="text" type="java.lang.String" value="Export To Exel"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btn_exportActionPerformed"/>
               </Events>
             </Component>
           </SubComponents>

@@ -74,4 +74,18 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
         }
     }
 
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<SanPham> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+
+
+ 
+
 }

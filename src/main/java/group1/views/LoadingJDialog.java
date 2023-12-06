@@ -81,6 +81,7 @@ public class LoadingJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        lbl_clock = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         progressBar = new javax.swing.JProgressBar();
         lblLoadingValue = new javax.swing.JLabel();
@@ -88,7 +89,10 @@ public class LoadingJDialog extends javax.swing.JDialog {
         lblGreeting = new javax.swing.JLabel();
         lblLoading = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
-        lbl_clock = new javax.swing.JLabel();
+
+        lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
+        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -115,10 +119,6 @@ public class LoadingJDialog extends javax.swing.JDialog {
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loading.gif"))); // NOI18N
 
-        lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
-
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -129,9 +129,7 @@ public class LoadingJDialog extends javax.swing.JDialog {
                         .addGap(1247, 1247, 1247)
                         .addComponent(lblLogo))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(160, 160, 160)
+                        .addGap(329, 329, 329)
                         .addComponent(lblGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(94, 94, 94)
@@ -150,22 +148,15 @@ public class LoadingJDialog extends javax.swing.JDialog {
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblLogo)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addGap(606, 606, 606)
-                        .addComponent(lblLogo))
-                    .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 600, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(lblGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_clock)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))))
+                        .addGap(18, 18, 18)
+                        .addComponent(lblGreeting, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(lblLoading)
                     .addComponent(lblLoadingValue))

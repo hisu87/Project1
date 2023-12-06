@@ -266,7 +266,7 @@
         <Container class="javax.swing.JToolBar" name="jToolBar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="5c" green="6d" red="e2" type="rgb"/>
+              <Color blue="4a" green="8b" red="61" type="rgb"/>
             </Property>
             <Property name="rollover" type="boolean" value="true"/>
           </Properties>
@@ -503,7 +503,7 @@
         <Container class="javax.swing.JPanel" name="pnl_statusbar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-              <Color blue="54" green="af" red="0" type="rgb"/>
+              <Color blue="4a" green="8b" red="61" type="rgb"/>
             </Property>
           </Properties>
 

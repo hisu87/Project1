@@ -39,6 +39,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         initComponents();
         filltable();
         loadcbx();
+        setLocationRelativeTo(null);
     }
 
     void filltable() {
@@ -58,10 +59,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
         try {
             DefaultComboBoxModel cbxmodel = (DefaultComboBoxModel) cbxct.getModel();
             cbxmodel.removeAllElements();
-            List<CongThuc> listct = ctdao.getCongThuc();
+            List<CongThuc> listct = ctdao.selectAll();
             for (CongThuc ct : listct) {
                 cbxmodel.addElement(ct.getMaCT());
-
             }
 
         } catch (Exception e) {
@@ -205,7 +205,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }
 
     void openRecipe() {
-        new CongThucNguyenLieuJDialog().setVisible(true);
+        new CongThucNguyenLieuJDialog(null, true).setVisible(true);
     }
 
     void edit() {
@@ -222,9 +222,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
         tabs = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         panelGradient1 = new raven.panel.PanelGradient();
@@ -252,6 +254,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         txtgia = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        panelGradient3 = new raven.panel.PanelGradient();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -291,7 +295,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE)
+            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
         );
 
         tabs.addTab("DANH SÁCH", jPanel2);
@@ -469,22 +473,43 @@ public class QuanLySanPham extends javax.swing.JDialog {
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE)
+            .addComponent(panelGradient2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE)
         );
 
         tabs.addTab("CẬP NHẬT", jPanel3);
+
+        panelGradient3.setBackground(new java.awt.Color(213, 150, 97));
+        panelGradient3.setColorGradient(new java.awt.Color(171, 120, 24));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 48)); // NOI18N
+        jLabel4.setText("Quản Lý Sản Phẩm");
+        panelGradient3.add(jLabel4);
+        jLabel4.setBounds(170, 20, 430, 60);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(tabs)
+            .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+        jPanel5Layout.setVerticalGroup(
+            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                .addComponent(panelGradient3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 450, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabs)
+            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 495, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -567,8 +592,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }// GEN-LAST:event_btnlastActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        CongThucNguyenLieuJDialog ct = new CongThucNguyenLieuJDialog();
-        ct.setVisible(true);
+        // CTNlJDialog ct = new CTNlJDialog();
+        // ct.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -642,15 +667,18 @@ public class QuanLySanPham extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblanh;
     private raven.panel.PanelGradient panelGradient1;
     private raven.panel.PanelGradient panelGradient2;
+    private raven.panel.PanelGradient panelGradient3;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblsanPham;
     private javax.swing.JTextField txtTenSanPham;

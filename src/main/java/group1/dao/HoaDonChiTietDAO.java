@@ -102,4 +102,14 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<HoaDonChiTiet> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

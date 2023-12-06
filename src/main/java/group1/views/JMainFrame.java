@@ -90,7 +90,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openRecipe() {
-        new CongThucNguyenLieuJDialog().setVisible(true);
+        new CongThucNguyenLieuJDialog(this, true).setVisible(true);
     }
 
     void openIngridients() {
@@ -170,7 +170,7 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(45, 127, 33));
 
-        jToolBar.setBackground(new java.awt.Color(226, 109, 92));
+        jToolBar.setBackground(new java.awt.Color(97, 139, 74));
         jToolBar.setRollover(true);
 
         btn_TinhTien.setForeground(new java.awt.Color(255, 255, 255));
@@ -333,7 +333,7 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnl_statusbar.setBackground(new java.awt.Color(0, 175, 84));
+        pnl_statusbar.setBackground(new java.awt.Color(97, 139, 74));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(242, 240, 235));

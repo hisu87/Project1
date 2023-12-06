@@ -11,12 +11,25 @@ import group1.entity.NguyenLieu;
 import group1.utils.Auth;
 import group1.utils.msgBox;
 import group1.utils.xImage;
+import java.awt.Desktop;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Set;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+import javax.swing.JTable;
+import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.swing.table.TableModel;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 /**
  *
@@ -248,6 +261,39 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
             // TODO: Add your code here
         }
     }
+    
+    void exportExcel(JTable table, File file) {
+        Workbook workbook = new XSSFWorkbook();
+        Sheet sheet = workbook.createSheet("Sheet1");
+        TableModel model = table.getModel();
+
+        // Create header row
+        Row headerRow = sheet.createRow(0);
+        for (int i = 0; i < model.getColumnCount(); i++) {
+            Cell cell = headerRow.createCell(i);
+            cell.setCellValue(model.getColumnName(i));
+        }
+
+        // Create data rows
+        for (int i = 0; i < model.getRowCount(); i++) {
+            Row row = sheet.createRow(i + 1);
+            for (int j = 0; j < model.getColumnCount(); j++) {
+                Cell cell = row.createCell(j);
+                Object value = model.getValueAt(i, j);
+                if (value instanceof Number) {
+                    cell.setCellValue(((Number) value).doubleValue());
+                } else {
+                    cell.setCellValue(String.valueOf(value));
+                }
+            }
+        }
+
+        try (FileOutputStream out = new FileOutputStream(file)) {
+            workbook.write(out);
+        } catch (IOException e) {
+            throw new RuntimeException("Error writing to file", e);
+        }
+    }
 
     // Feteares
     /**
@@ -295,6 +341,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         btnNext = new javax.swing.JButton();
         btnDelete = new javax.swing.JButton();
         btnLast = new javax.swing.JButton();
+        btn_export = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         lbl_clock = new javax.swing.JLabel();
         lbl_user = new javax.swing.JLabel();
@@ -305,12 +352,12 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         pnlMainPanel.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
         pnlMainPanel.setForeground(new java.awt.Color(242, 240, 235));
 
-        lbl_title.setFont(new java.awt.Font("Serif", 1, 24)); // NOI18N
+        lbl_title.setFont(new java.awt.Font("Serif", 1, 36)); // NOI18N
         lbl_title.setForeground(new java.awt.Color(255, 232, 209));
         lbl_title.setText("Quản Lý Nguyên Liệu");
         lbl_title.setToolTipText("Merry Christmas");
 
-        jPanel1.setBackground(new java.awt.Color(30, 63, 23));
+        jPanel1.setBackground(new java.awt.Color(234, 181, 99));
         jPanel1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true));
 
         txt_search.setForeground(new java.awt.Color(235, 202, 188));
@@ -334,7 +381,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         jScrollPane1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 1, true));
 
         tbl_nguyenlieu.setAutoCreateRowSorter(true);
-        tbl_nguyenlieu.setBackground(new java.awt.Color(41, 105, 30));
+        tbl_nguyenlieu.setBackground(new java.awt.Color(139, 177, 116));
         tbl_nguyenlieu.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tbl_nguyenlieu.setForeground(new java.awt.Color(235, 202, 188));
         tbl_nguyenlieu.setModel(new javax.swing.table.DefaultTableModel(
@@ -513,6 +560,15 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
             }
         });
 
+        btn_export.setBackground(new java.awt.Color(234, 181, 99));
+        btn_export.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-excel-20.png"))); // NOI18N
+        btn_export.setText("Export To Exel");
+        btn_export.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exportActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -551,7 +607,8 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                             .addComponent(txt_SoLuong, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(lbl_Gia)
                             .addComponent(lbl_TenNL)
-                            .addComponent(txt_DonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txt_DonVi, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btn_export, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -579,6 +636,8 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(txt_Gia, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(btn_export)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnAdd, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -640,12 +699,12 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                     .addGroup(pnlMainPanelLayout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(pnlMainPanelLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(lbl_title, javax.swing.GroupLayout.PREFERRED_SIZE, 297, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(331, 331, 331)))
+                        .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
+            .addGroup(pnlMainPanelLayout.createSequentialGroup()
+                .addGap(324, 324, 324)
+                .addComponent(lbl_title)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         pnlMainPanelLayout.setVerticalGroup(
             pnlMainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -674,6 +733,27 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_exportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exportActionPerformed
+        // TODO add your handling code here:
+        JFileChooser chooser = new JFileChooser();
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Excel files", "xlsx");
+        chooser.setFileFilter(filter);
+        chooser.setDialogTitle("Save file");
+        int select = chooser.showSaveDialog(this);
+        if (select == JFileChooser.APPROVE_OPTION) {
+            File f = chooser.getSelectedFile();
+            if (!f.getName().endsWith(".xlsx")) {
+                f = new File(f.getAbsolutePath() + ".xlsx");
+            }
+            exportExcel(tbl_nguyenlieu, f);
+            msgBox.alert(this, "Xuất file thành công");
+            try {
+                Desktop.getDesktop().open(f);
+            } catch (IOException e) {
+                e.printStackTrace();
+            }}
+    }//GEN-LAST:event_btn_exportActionPerformed
 
     private void txt_searchKeyReleased(java.awt.event.KeyEvent evt) {// GEN-FIRST:event_txt_searchKeyReleased
         // TODO add your handling code here:
@@ -797,6 +877,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
     private javax.swing.JButton btnNew;
     private javax.swing.JButton btnNext;
     private javax.swing.JButton btnPrev;
+    private javax.swing.JButton btn_export;
     private javax.swing.JButton btn_search;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
