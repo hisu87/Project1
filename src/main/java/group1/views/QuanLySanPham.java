@@ -39,6 +39,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         initComponents();
         filltable();
         loadcbx();
+        setLocationRelativeTo(null);
     }
 
     void filltable() {

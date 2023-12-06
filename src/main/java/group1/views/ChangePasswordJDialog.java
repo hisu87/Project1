@@ -144,7 +144,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         lblConfirmPass.setText("Confirm Password");
 
         txtConfirmPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtConfirmPass.setForeground(new java.awt.Color(242, 240, 235));
+        txtConfirmPass.setForeground(new java.awt.Color(0, 0, 0));
         txtConfirmPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtConfirmPassActionPerformed(evt);
@@ -156,14 +156,14 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         lblNewPass.setText("New Password");
 
         txtNewPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtNewPass.setForeground(new java.awt.Color(242, 240, 235));
+        txtNewPass.setForeground(new java.awt.Color(0, 0, 0));
 
         lblCurrentPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblCurrentPass.setForeground(new java.awt.Color(242, 240, 235));
         lblCurrentPass.setText("Current Password");
 
         txtCurrentPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtCurrentPass.setForeground(new java.awt.Color(242, 240, 235));
+        txtCurrentPass.setForeground(new java.awt.Color(0, 0, 0));
 
         lblUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblUsername.setForeground(new java.awt.Color(242, 240, 235));
@@ -171,7 +171,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
 
         txtUsername.setEditable(false);
         txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        txtUsername.setForeground(new java.awt.Color(242, 240, 235));
+        txtUsername.setForeground(new java.awt.Color(0, 0, 0));
 
         lblTitle.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
         lblTitle.setForeground(new java.awt.Color(242, 240, 235));

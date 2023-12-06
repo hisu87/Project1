@@ -67,6 +67,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         cboTenct = new javax.swing.JComboBox<>();
         jTabbedPane1 = new javax.swing.JTabbedPane();
         jTabbedPane2 = new javax.swing.JTabbedPane();
+        btn_cut2 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -211,6 +212,16 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         jPanel1.add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, -1, -1));
         jPanel1.add(jTabbedPane2, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 240, -1, -1));
 
+        btn_cut2.setForeground(new java.awt.Color(0, 0, 0));
+        btn_cut2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_exit_20px.png"))); // NOI18N
+        btn_cut2.setText("exit");
+        btn_cut2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cut2ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(btn_cut2, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 110, -1, -1));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -314,6 +325,11 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
         exportToPdf(tblModel);
     }//GEN-LAST:event_btnPrintActionPerformed
 
+    private void btn_cut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cut2ActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_cut2ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -362,6 +378,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JFrame {
     private javax.swing.JButton btnReset;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnUpdate;
+    private javax.swing.JButton btn_cut2;
     private javax.swing.JComboBox<String> cboMact;
     private javax.swing.JComboBox<String> cboTenct;
     private javax.swing.JLabel jLabel1;
