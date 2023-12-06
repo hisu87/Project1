@@ -90,7 +90,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openRecipe() {
-        new CongThucNguyenLieuJDialog().setVisible(true);
+        new CongThucNguyenLieuJDialog(this, true).setVisible(true);
     }
 
     void openIngridients() {
