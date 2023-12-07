@@ -1,3 +1,4 @@
+group1\views\ChangePasswordJDialog$5.class
 group1\views\DoanhThuJDialog$3.class
 group1\views\DoanhThuJDialog.class
 group1\dao\CafeDAO.class
@@ -9,4 +10,5 @@ group1\utils\xDate.class
 group1\entity\NhanVien.class
 group1\views\DoanhThuJDialog$2.class
 group1\views\DoanhThuJDialog$1.class
+group1\views\ChangePasswordJDialog$5$1.class
 group1\entity\NguyenLieu.class
