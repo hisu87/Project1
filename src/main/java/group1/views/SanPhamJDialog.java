@@ -100,7 +100,7 @@ int indextru=0;
      float tongtiensp;
      int indexbutton=0;
      float tongtien=0;
-     float totalall;
+     float totalall=(float) 0.0;
 
  private long currentmilis;
     public SanPhamJDialog(java.awt.Frame parent, boolean modal) {
@@ -689,7 +689,7 @@ int indextru=0;
                 public void actionPerformed(ActionEvent e) {
                       selectedValue = (int) spinner.getValue();
                      tongtiensp=(float) (gia*selectedValue);
-                     totalall=tongtiensp+=tongtiensp;
+                    totalall+=tongtiensp;
                     System.out.println("Button " + (buttonIndex + 1) + " clicked, Spinner value: " + selectedValue);
 
                 }
@@ -871,10 +871,16 @@ index++;
         public void mouseClicked(MouseEvent e) {
             // Remove the entire panelcart from the jPanel5
             jPanel5.remove(panelcart);
-            totalall-=tongtiensp;
+            for (ChiTietDonHang ct : listcart) {
+                if(ct.getTenSP().equals(tenSP)){
+                     totalall-=ct.getSoLuong()*ct.getTongtien();
                         removeProductFromBill(tenSP);
+                        
+                }
+            }
+           
 
-          lbltongtien.setText(String.valueOf(totalall));
+     
 
             // Repaint and revalidate to update the layout
             jPanel5.repaint();
@@ -953,6 +959,7 @@ btnthanhtoan.addActionListener(new ActionListener(){
             public void actionPerformed(ActionEvent e) {
                   
         String imageUrl ="https://api.vietqr.io/image/970423-00000626945-P2H9rvV.jpg?accountName=NGUYEN%20QUANG%20HUY&amount="+totalall;
+        
 
             try {
                 // Đọc hình ảnh từ URL
@@ -1035,7 +1042,7 @@ btnthanhtoan.addActionListener(new ActionListener(){
 
         // Thêm thông tin mới vào StringBuilder
         hoaDonBuilder.append(newProductInfo);
-        listcart.add(new ChiTietDonHang(masp,tenSP,selectedValue));
+        listcart.add(new ChiTietDonHang(masp,tenSP,selectedValue,gia));
         System.out.println(listcart.toString());
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
@@ -1098,8 +1105,8 @@ void printpdf(String textar){
             System.out.println(mahd);
             
 
-
-            msgBox.alert(this, "Đã thêm hóa đơn thành công");
+//
+//            msgBox.alert(this, "Đã thêm hóa đơn thành công");
         } catch (Exception e) {
             e.printStackTrace();
         }
