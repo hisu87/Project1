@@ -231,7 +231,7 @@ public class HoaDonJDialog extends javax.swing.JFrame {
         txt_search2.setToolTipText("Mã NL, Tên NL");
 
         btn_search2.setBackground(new java.awt.Color(234, 181, 99));
-        btn_search2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/xmag_search_find_export_locate_5984.png"))); // NOI18N
+        btn_search2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/xmag_search_find_export_locate_5984.png"))); // NOI18N
         btn_search2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_search2ActionPerformed(evt);
@@ -364,7 +364,7 @@ public class HoaDonJDialog extends javax.swing.JFrame {
         jPanel5.setLayout(jPanel5Layout);
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(tabs, javax.swing.GroupLayout.DEFAULT_SIZE, 1000, Short.MAX_VALUE)
+            .addComponent(tabs)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addGap(379, 379, 379)
                 .addComponent(jLabel9)
