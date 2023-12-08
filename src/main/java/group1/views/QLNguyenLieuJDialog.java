@@ -40,6 +40,8 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
     NguyenLieuDAO dao = new NguyenLieuDAO();
     int row = -1;
+    String maNV = Auth.user.getMaNV();
+    String role = Auth.user.getVaitro();
 
     /**
      * Creates new form QLNhanVienJDialog
@@ -59,6 +61,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
         fillTable();
         txt_search.setText("");
         search();
+
     }
 
     void startClock() {
@@ -103,8 +106,6 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                     dao.insert(nl);
                     this.fillTable();
                     this.clearForm();
-                    String maNV = Auth.user.getMaNV();
-                    String role = Auth.user.getVaitro();
                     String mes = "Nguyên liệu: " + nl.getMaNL() + " | " + nl.getTenNL() + " | "
                             + "Đã được thêm mới bởi nhân viên: " + maNV + " | " + role;
                     MailService.sendMail("Nguyên liệu đã được thêm mới", mes);
@@ -118,14 +119,20 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
 
     void update() {
         //
-        if (validateForm()) {
-            NguyenLieu nl = getForm();
-            try {
-                dao.update(nl);
-                this.fillTable();
-                msgBox.alert(this, "Cập nhật thành công!");
-            } catch (Exception e) {
-                msgBox.alert(this, "Cập nhật thất bại!");
+        if (Auth.isManager()) {
+            if (validateForm()) {
+                NguyenLieu nl = getForm();
+                try {
+                    String mes = "Nguyên liệu: " + nl.getMaNL() + " | " + nl.getTenNL() + " | "
+                            + "<br> Đã được chỉnh sửa bởi nhân viên: " + maNV + " | " + role;
+                    MailService.sendMail("Nguyên liệu đã được chỉnh sửa", mes);
+                    dao.update(nl);
+                    this.fillTable();
+                    msgBox.alert(this, "Cập nhật thành công!");
+
+                } catch (Exception e) {
+                    msgBox.alert(this, "Cập nhật thất bại!");
+                }
             }
         }
     }
@@ -142,6 +149,7 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
                     this.fillTable();
                     this.clearForm();
                     msgBox.alert(this, "Xóa thành công!");
+
                 } catch (Exception e) {
                     msgBox.alert(this, "Xóa thất bại!");
                 }
@@ -186,21 +194,11 @@ public class QLNguyenLieuJDialog extends javax.swing.JDialog {
     }
 
     void edit() {
-        if (validateForm()) {
-            if (Auth.isManager()) {
-                String manl = (String) tbl_nguyenlieu.getValueAt(this.row, 0);
-                NguyenLieu nl = dao.selectById(manl);
-                this.setForm(nl);
-                this.updateStatus();
-                String maNV = Auth.user.getMaNV();
-                String role = Auth.user.getVaitro();
-                String mes = "Nguyên liệu: " + nl.getMaNL() + " | " + nl.getTenNL() + " | "
-                        + "Đã được chỉnh sửa bởi nhân viên: " + maNV + " | " + role;
-                MailService.sendMail("Nguyên liệu đã được chỉnh sửa", mes);
-            } else {
-                msgBox.alert(this, "Bạn không có quyền chỉnh sửa nguyên liệu!");
-            }
-        }
+
+        String manl = (String) tbl_nguyenlieu.getValueAt(this.row, 0);
+        NguyenLieu nl = dao.selectById(manl);
+        this.setForm(nl);
+        this.updateStatus();
     }
 
     void updateStatus() {
