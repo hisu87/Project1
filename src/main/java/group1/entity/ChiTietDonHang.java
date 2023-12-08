@@ -15,12 +15,21 @@ public class ChiTietDonHang {
     private String MaSP;
     private String TenSP;
     private int SoLuong;
+    private double gia;
 
     public ChiTietDonHang() {
     }
 
+    public double getTongtien() {
+        return gia;
+    }
+
+    public void setTongtien(double gia) {
+        this.gia = gia;
+    }
+
     
-    public ChiTietDonHang( String MaSP, String TenSP, int SoLuong) {
+    public ChiTietDonHang( String MaSP, String TenSP, int SoLuong,double gia) {
       
         this.MaSP = MaSP;
         this.TenSP = TenSP;

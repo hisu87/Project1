@@ -75,7 +75,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jCheckBox1 = new javax.swing.JCheckBox();
+        ckc_show = new javax.swing.JCheckBox();
         lblConfirmPass = new javax.swing.JLabel();
         txtConfirmPass = new javax.swing.JPasswordField();
         lblNewPass = new javax.swing.JLabel();
@@ -135,9 +135,14 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
             }
         });
 
-        jCheckBox1.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
-        jCheckBox1.setForeground(new java.awt.Color(242, 240, 235));
-        jCheckBox1.setText("Hide password");
+        ckc_show.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ckc_show.setForeground(new java.awt.Color(242, 240, 235));
+        ckc_show.setText("Show password");
+        ckc_show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckc_showActionPerformed(evt);
+            }
+        });
 
         lblConfirmPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lblConfirmPass.setForeground(new java.awt.Color(242, 240, 235));
@@ -200,7 +205,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
                                     .addComponent(lblConfirmPass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jCheckBox1)
+                                    .addComponent(ckc_show)
                                     .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                         .addComponent(txtNewPass, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
                                         .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -233,7 +238,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
                     .addComponent(txtConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblConfirmPass))
                 .addGap(18, 18, 18)
-                .addComponent(jCheckBox1)
+                .addComponent(ckc_show)
                 .addGap(41, 41, 41)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -249,6 +254,19 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
     private void txtConfirmPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfirmPassActionPerformed
+
+    private void ckc_showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckc_showActionPerformed
+        // TODO add your handling code here:
+        if(ckc_show.isSelected()){
+            txtCurrentPass.setEchoChar((char) 0);
+            txtNewPass.setEchoChar((char) 0);
+            txtConfirmPass.setEchoChar((char) 0);
+        }else{
+            txtCurrentPass.setEchoChar('?');
+            txtNewPass.setEchoChar('?');
+            txtConfirmPass.setEchoChar('?');
+        }
+    }//GEN-LAST:event_ckc_showActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         cancel();
@@ -310,9 +328,9 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox ckc_show;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
