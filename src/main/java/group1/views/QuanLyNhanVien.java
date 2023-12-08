@@ -23,6 +23,8 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
 
     DefaultTableModel tblModel = new DefaultTableModel();
     NhanVienDAO dao = new NhanVienDAO();
+    String maNV = Auth.user.getMaNV();
+    String role = Auth.user.getVaitro();
 
     public QuanLyNhanVien(java.awt.Frame parent, boolean modal) {
         super(parent, modal);

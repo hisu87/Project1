@@ -1,4 +1,4 @@
-/*
+    /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JDialog.java to edit this template
  */
@@ -153,6 +153,7 @@ int currentmang;
         txtfind = new javax.swing.JTextField();
         jLabel43 = new javax.swing.JLabel();
         jLabel33 = new javax.swing.JLabel();
+        btn_exit = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
         jPanel10 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
@@ -192,12 +193,9 @@ int currentmang;
             }
         });
 
-        jLabel16.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
         jLabel13.setFont(new java.awt.Font("VNI-Bazooka", 1, 36)); // NOI18N
         jLabel13.setForeground(new java.awt.Color(255, 255, 255));
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel13.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\noel.png")); // NOI18N
         jLabel13.setText("Merry Christmas!");
 
         jTabbedPane1.setBackground(new java.awt.Color(204, 102, 0));
@@ -233,6 +231,16 @@ int currentmang;
             }
         });
 
+        btn_exit.setBackground(new java.awt.Color(24, 122, 74));
+        btn_exit.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btn_exit.setForeground(new java.awt.Color(51, 51, 0));
+        btn_exit.setText("Exit");
+        btn_exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_exitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
@@ -242,21 +250,24 @@ int currentmang;
                 .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 299, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(60, 60, 60)
                 .addComponent(jButton1)
-                .addGap(127, 127, 127)
+                .addGap(18, 18, 18)
+                .addComponent(btn_exit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel43)
                 .addGap(183, 183, 183)
                 .addComponent(jLabel33)
-                .addContainerGap(302, Short.MAX_VALUE))
+                .addContainerGap(314, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addContainerGap(15, Short.MAX_VALUE)
+                .addContainerGap(30, Short.MAX_VALUE)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel33)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(txtfind, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton1))
+                        .addComponent(jButton1)
+                        .addComponent(btn_exit))
                     .addGroup(jPanel6Layout.createSequentialGroup()
                         .addGap(14, 14, 14)
                         .addComponent(jLabel43))))
@@ -275,7 +286,7 @@ int currentmang;
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 2530, Short.MAX_VALUE))
+                .addGap(0, 2526, Short.MAX_VALUE))
         );
 
         jScrollPane4.setViewportView(jPanel4);
@@ -385,25 +396,6 @@ int currentmang;
 
         jScrollPane2.setViewportView(jTabbedPane1);
 
-        jLabel20.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
-        jLabel21.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
-        jLabel22.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
-        jLabel23.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
-        jLabel24.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\winter.png")); // NOI18N
-
-        jLabel25.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\xekeo.png")); // NOI18N
-
-        jLabel26.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\xekeo.png")); // NOI18N
-
-        jLabel27.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\mu.png")); // NOI18N
-
-        jLabel28.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\gau.png")); // NOI18N
-
-        jLabel29.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\Action-cancel-icon.png")); // NOI18N
         jLabel29.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel29MouseClicked(evt);
@@ -635,6 +627,11 @@ int currentmang;
             txtfind.setText("");
         }
     }//GEN-LAST:event_txtfindMousePressed
+
+    private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_exitActionPerformed
+        // TODO add your handling code here:
+        this.setVisible(false);
+    }//GEN-LAST:event_btn_exitActionPerformed
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_jLabel3MouseClicked
 
@@ -1131,7 +1128,7 @@ int currentmang;
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
         textar.setText(
-                "                                                   Tên Công Ty: ABC Company\n\n                                   "
+                "                                                   Tên Công Ty: Starbucks Coffee maHD\n\n                                   "
                         + "                                                   Hóa Đơn:" + maHD() + "\n"
                         + hoaDonBuilder.toString());
 
@@ -1353,7 +1350,7 @@ int currentmang;
 
             // Update the textar with the modified bill
             textar.setText(
-                    "                                                   Tên Công Ty: ABC Company\n\n                                   "
+                    "                                                   Tên Công Ty: Starbucks Coffee Company\n\n                                   "
                             + "                                                   Hóa Đơn:" + maHD() + "\n"
                             + hoaDonBuilder.toString());
 
@@ -1552,6 +1549,7 @@ int currentmang;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_exit;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel15;

@@ -392,3 +392,27 @@ from [Hóa Đơn]
 select *
 from CHITIETDONHANG
 SELECT SCOPE_IDENTITY() AS HoaDon;
+
+ go
+ CREATE PROCEDURE GetChiTietDonHang
+    @MaHD NVARCHAR(255)
+AS
+BEGIN
+    SELECT 
+        ctdh.MaHD,
+        ctdh.MaChiTietDH,
+        ctdh.TenSP,
+        ctdh.MaSP,
+        ctdh.SoLuong,   
+        SP.Gia,
+        ctdh.SoLuong * SP.Gia AS 'TongTien'
+    FROM 
+        [CHITIETDONHANG] ctdh
+    JOIN 
+        [Sản Phẩm] SP ON ctdh.MaSP = SP.MaSP
+    WHERE
+        ctdh.MaHD = @MaHD;
+END;
+
+go
+exec GetChiTietDonHang @MaHD = 'HD12372'

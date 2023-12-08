@@ -47,23 +47,30 @@ public class MailService {
             String from = accountName;
             String to = "hisu3309@gmail.com";
             String cc = "sonv19996@gmail.com";
+            String cc1 = "nhokhuyak001@gmail.com";
+            String cc2 = "minhtho.002022@gmail.com";
 
             MimeMessage message = new MimeMessage(session);
             message.setFrom(new InternetAddress(from));
             message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(to));
-            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(cc));
-
-            MimeBodyPart contentPart = new MimeBodyPart();
-            contentPart.setContent(body, "text/html; charset=utf-8");
-            message.setSubject(subject);
-            message.setText(body);
+            message.setRecipients(Message.RecipientType.CC, InternetAddress.parse(cc + "," + cc1 + "," + cc2));
 
             MimeMultipart multipart = new MimeMultipart();
+            MimeBodyPart contentPart = new MimeBodyPart();
+            contentPart.setContent(body, "text/html; charset=utf-8");
             multipart.addBodyPart(contentPart);
             message.setContent(multipart);
-            Transport.send(message);
+            message.setSubject(subject);
+
+            // Send email asynchronously
+            new Thread(() -> {
+                try {
+                    Transport.send(message);
+                } catch (Exception e) {
+                    System.out.println(e);
+                }
+            }).start();
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println(e);
         }
     }
