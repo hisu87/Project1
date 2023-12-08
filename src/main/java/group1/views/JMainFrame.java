@@ -90,7 +90,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openRecipe() {
-        new CongThucNguyenLieuJDialog().setVisible(true);
+        new CongThucNguyenLieuJDialog(this, true).setVisible(true);
     }
 
     void openIngridients() {
@@ -170,7 +170,7 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(45, 127, 33));
 
-        jToolBar.setBackground(new java.awt.Color(55, 14, 25));
+        jToolBar.setBackground(new java.awt.Color(53, 88, 52));
         jToolBar.setRollover(true);
 
         btn_TinhTien.setForeground(new java.awt.Color(255, 255, 255));
@@ -193,6 +193,11 @@ public class JMainFrame extends javax.swing.JFrame {
         jButton2.setFocusable(false);
         jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
         jToolBar.add(jButton2);
         jToolBar.add(jSeparator11);
 
@@ -328,7 +333,7 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        pnl_statusbar.setBackground(new java.awt.Color(30, 57, 50));
+        pnl_statusbar.setBackground(new java.awt.Color(53, 88, 52));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(242, 240, 235));
@@ -346,16 +351,15 @@ public class JMainFrame extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         pnl_statusbarLayout.setVerticalGroup(
             pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_statusbarLayout.createSequentialGroup()
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_clock)
+                    .addComponent(lbl_user))
                 .addContainerGap())
         );
 
@@ -567,6 +571,11 @@ public class JMainFrame extends javax.swing.JFrame {
         // TODO add your handling code here:
         openExit();
     }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        openInvoice();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn_tinhtienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_tinhtienActionPerformed
         // TODO add your handling code here:

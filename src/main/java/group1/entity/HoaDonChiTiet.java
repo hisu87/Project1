@@ -4,37 +4,55 @@
  */
 package group1.entity;
 
+import java.util.Date;
+
 /**
  *
  * @author numpa
  */
 public class HoaDonChiTiet {
-    String MaHDCT;
     String MaHD;
+    String MaNV;
+    Date NgayTao;
+    String MaHDCT;
     String MaSP;
     int SoLuong;
     String TenSP;
-    Double TongTien;
+    Double GiaBan;
+    Double ThanhTien;
 
     public HoaDonChiTiet() {
     }
 
-
-    public Double getTongTien() {
-        return TongTien;
-    }
-
-    public void setTongTien(Double TongTien) {
-        this.TongTien = TongTien;
-    }
-
-    public HoaDonChiTiet(String MaHDCT, String MaHD, String MaSP, int SoLuong, String TenSP, Double TongTien) {
-        this.MaHDCT = MaHDCT;
+    public HoaDonChiTiet(String MaHD, String MaNV, Date NgayTao, String MaHDCT, String MaSP, int SoLuong, String TenSP,
+            Double GiaBan,
+            Double ThanhTien) {
         this.MaHD = MaHD;
+        this.MaNV = MaNV;
+        this.NgayTao = NgayTao;
+        this.MaHDCT = MaHDCT;
         this.MaSP = MaSP;
         this.SoLuong = SoLuong;
         this.TenSP = TenSP;
-        this.TongTien = TongTien;
+        this.GiaBan = GiaBan;
+        this.ThanhTien = ThanhTien;
+
+    }
+
+    public Double getGiaBan() {
+        return GiaBan;
+    }
+
+    public void setGiaBan(Double GiaBan) {
+        this.GiaBan = GiaBan;
+    }
+
+    public Double getThanhTien() {
+        return ThanhTien;
+    }
+
+    public void setThanhTien(Double ThanhTien) {
+        this.ThanhTien = ThanhTien;
     }
 
     public String getMaHDCT() {
@@ -45,21 +63,21 @@ public class HoaDonChiTiet {
         this.MaHDCT = MaHDCT;
     }
 
+    public String setMaHD(String MaHD) {
+        return this.MaHD = MaHD;
+    }
+
     public String getMaHD() {
         return MaHD;
     }
 
-    public void setMaHD(String MaHD) {
-        this.MaHD = MaHD;
+    public void setMaNV(String MaNV) {
+        this.MaNV = MaNV;
     }
 
-    // public String getMaNV() {
-    // return MaNV;
-    // }
-
-    // public void setMaNV(String MaNV) {
-    // this.MaNV = MaNV;
-    // }
+    public String getMaNV() {
+        return MaNV;
+    }
 
     public String getMaSP() {
         return MaSP;
@@ -77,28 +95,20 @@ public class HoaDonChiTiet {
         this.SoLuong = SoLuong;
     }
 
+    public String setTenSP(String TenSP) {
+        return this.TenSP = TenSP;
+    }
+
     public String getTenSP() {
         return TenSP;
     }
 
-    public void setTenSP(String TenSP) {
-        this.TenSP = TenSP;
+    public Date getNgayTao() {
+        return NgayTao;
     }
 
-    // public int getGiaBan() {
-    // return GiaBan;
-    // }
-
-    // public void setGiaBan(int GiaBan) {
-    // this.GiaBan = GiaBan;
-    // }
-
-    // public int getThanhTien() {
-    // return ThanhTien;
-    // }
-
-    // public void setThanhTien(int ThanhTien) {
-    // this.ThanhTien = ThanhTien;
-    // }
+    public void setNgayTao(Date ngayTao) {
+        NgayTao = ngayTao;
+    }
 
 }

@@ -10,7 +10,6 @@ import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -25,22 +24,6 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
 
-     private List<Object[]> getListOfArray(String sql, String[] cols, Object... args) {
-        try (ResultSet rs = xJDBC.executeQuery(sql, args)) {
-            List<Object[]> list = new ArrayList<>();
-            while (rs.next()) {
-                Object[] vals = new Object[cols.length];
-                for (int i = 0; i < cols.length; i++) {
-                    vals[i] = rs.getObject(cols[i]);
-                }
-                list.add(vals);
-            }
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-    }
-     
     @Override
     public void insert(HoaDonChiTiet entity) {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from
@@ -79,13 +62,13 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
                 HoaDonChiTiet entity = new HoaDonChiTiet();
                 entity.setMaHDCT(rs.getString("MaHDCT"));
                 entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
+                entity.setMaNV(rs.getString("MaNV"));
+                entity.setNgayTao(rs.getDate("NgayTao"));
                 entity.setMaSP(rs.getString("MaSP"));
                 entity.setSoLuong(rs.getInt("SoLuong"));
                 entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
-//                entity.setTongTien(rs.getString("TongTien"));
+                entity.setGiaBan(rs.getDouble("GiaBan"));
+                entity.setThanhTien(rs.getDouble("ThanhTien"));
                 list.add(entity);
             }
             rs.getStatement().getConnection().close();
@@ -94,34 +77,39 @@ public class HoaDonChiTietDAO extends CafeDAO<HoaDonChiTiet, String> {
             throw new RuntimeException(e);
         }
     }
-    
-     public List<Object[]> getHoaDonmb(String MaHD) {
-        String sql = "{CALL dbo.GetChiTietDonHang(?)}";
-        String[] cols = { "MaHD", "MaChiTietHD", "TenSP","MaSp","SoLuong","Gia","TongTien" };
-        return this.getListOfArray(sql, cols, MaHD);
+
+    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
+        String sql = "SELECT ctdh.MaHD, hd.MaNV, hd.NgayTao, ctdh.MaChiTietDH, ctdh.TenSP, ctdh.MaSP, ctdh.SoLuong, SP.Gia, ctdh.SoLuong * SP.Gia as TongTien FROM [CHITIETDONHANG] ctdh JOIN [Sản Phẩm] SP ON ctdh.MaSP = SP.MaSP JOIN [Hóa Đơn] hd ON ctdh.MaHD = hd.MaHD WHERE ctdh.MaHD = ?";
+        List<HoaDonChiTiet> list = new ArrayList<>();
+        try {
+            ResultSet rs = xJDBC.executeQuery(sql, maHD);
+            while (rs.next()) {
+                HoaDonChiTiet entity = new HoaDonChiTiet();
+                entity.setMaHD(rs.getString("MaHD"));
+                entity.setMaNV(rs.getString("MaNV"));
+                entity.setNgayTao(rs.getDate("NgayTao"));
+                entity.setMaHDCT(rs.getString("MaChiTietDH"));
+                entity.setTenSP(rs.getString("TenSP"));
+                entity.setMaSP(rs.getString("MaSP"));
+                entity.setGiaBan(rs.getDouble("Gia"));
+                entity.setSoLuong(rs.getInt("SoLuong"));
+                entity.setThanhTien(rs.getDouble("TongTien"));
+                list.add(entity);
+            }
+            rs.getStatement().getConnection().close();
+            return list;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-//    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
-//        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
-//        List<HoaDonChiTiet> list = new ArrayList<>();
-//        try {
-//            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
-//            while (rs.next()) {
-//                HoaDonChiTiet entity = new HoaDonChiTiet();
-//                entity.setMaHDCT(rs.getString("MaHDCT"));
-//                entity.setMaHD(rs.getString("MaHD"));
-//                // entity.setMaNV(rs.getString("MaNV"));
-//                entity.setMaSP(rs.getString("MaSP"));
-//                entity.setSoLuong(rs.getInt("SoLuong"));
-//                entity.setTenSP(rs.getString("TenSP"));
-//                // entity.setGiaBan(rs.getInt("GiaBan"));
-//                // entity.setThanhTien(rs.getInt("ThanhTien"));
-//                list.add(entity);
-//            }
-//            rs.getStatement().getConnection().close();
-//            return list;
-//        } catch (SQLException e) {
-//            throw new RuntimeException(e);
-//        }
-//    }
+    @Override
+    public List<HoaDonChiTiet> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 }

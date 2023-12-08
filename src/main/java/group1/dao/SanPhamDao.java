@@ -27,11 +27,11 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
     @Override
     public void update(SanPham entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
-                entity.getMaSP(),
                 entity.getTenSP(),
                 entity.getAnh(),
                 entity.getGia(),
-                entity.getMaCT());
+                entity.getMaCT(),
+                entity.getMaSP());
     }
 
     @Override
@@ -72,6 +72,18 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<SanPham> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

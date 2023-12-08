@@ -16,7 +16,7 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
     public String DELETE_SQL = "DELETE FROM [Nhân Viên] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Nhân Viên]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Nhân Viên] WHERE MaNV=?";
-     public  String SELECT_BY_chucvu_SQL = "SELECT * FROM [Nhân Viên] WHERE chucvu=?";
+     public  String SELECT_BY_chucvu_SQL = "SELECT * FROM [Nhân Viên] WHERE vaitro=?";
 
     @Override
     public void insert(NhanVien entity) {
@@ -35,9 +35,9 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
     @Override
     public void update(NhanVien entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
+                 entity.getHoTen(),
                 entity.getMatKhau(),
                 entity.getVaitro(),
-                entity.getHoTen(),
                 entity.getTuoi(),
                 entity.getGioiTinh(),
                 entity.getSdt(),
@@ -58,6 +58,16 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
         }
         return list.get(0);
     }
+    
+
+    public List<NhanVien> selectByRole(String vaitro) {
+        List<NhanVien> list = selectBySQL(SELECT_BY_chucvu_SQL, vaitro);
+        if (list.isEmpty()) {
+            return null;
+        }
+        return list;
+    }
+    
     
     
    
@@ -90,4 +100,18 @@ public class NhanVienDAO extends CafeDAO<NhanVien, String> {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<NhanVien> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+ 
+
+
 }

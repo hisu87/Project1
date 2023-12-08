@@ -5,7 +5,7 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
-import group1.entity.HoaDonChiTiet;
+import group1.entity.NguyenLieu;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -30,7 +30,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.getMaHD(),
                 entity.getMaNV(),
                 entity.getNgayTao(),
-                entity.getTrangThai(),
+                entity.isTrangThai(),
                 entity.getTongCong());
     }
 
@@ -40,7 +40,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
                 entity.getMaHD(),
                 entity.getMaNV(),
                 entity.getNgayTao(),
-                entity.getTrangThai(),
+                entity.isTrangThai(),
                 entity.getTongCong());
     }
 
@@ -56,6 +56,11 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             return null;
         }
         return list.get(0);
+    }
+
+    public List<HoaDon> selectByKeyword(String keyword) {
+        String sql = "SELECT * FROM [Hóa Đơn] WHERE MaHD LIKE ?";
+        return this.selectBySQL(sql, "%" + keyword + "%");
     }
 
     @Override
@@ -99,28 +104,16 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         }
     }
 
-    public List<HoaDonChiTiet> selectByMaHD(String maHD) {
-        String SQL = "SELECT * FROM [Hóa Đơn Chi Tiết] WHERE MaHD=?";
-        List<HoaDonChiTiet> list = new ArrayList<>();
-        try {
-            ResultSet rs = xJDBC.executeQuery(SQL, maHD);
-            while (rs.next()) {
-                HoaDonChiTiet entity = new HoaDonChiTiet();
-                entity.setMaHDCT(rs.getString("MaHDCT"));
-                entity.setMaHD(rs.getString("MaHD"));
-                // entity.setMaNV(rs.getString("MaNV"));
-                entity.setMaSP(rs.getString("MaSP"));
-                entity.setSoLuong(rs.getInt("SoLuong"));
-                entity.setTenSP(rs.getString("TenSP"));
-                // entity.setGiaBan(rs.getInt("GiaBan"));
-                // entity.setThanhTien(rs.getInt("ThanhTien"));
-                list.add(entity);
-            }
-            rs.getStatement().getConnection().close();
-            return list;
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<HoaDon> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

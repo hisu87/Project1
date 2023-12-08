@@ -24,6 +24,7 @@ public class Auth {
     }
 
     public static boolean isManager() {
-        return Auth.isLogin() && Auth.user.getVaitro().equals("Quản Lý");
+        System.out.println(Auth.user.getVaitro().toUpperCase());
+        return Auth.isLogin() && Auth.user.getVaitro().toUpperCase().equals("QUẢN LÝ");
     }
 }

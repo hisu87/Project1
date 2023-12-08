@@ -16,10 +16,14 @@ abstract public class CafeDAO<EntityType, KeyType> {
     abstract public void update(EntityType entity);
 
     abstract public void delete(KeyType id);
+    
 
     abstract public EntityType selectById(KeyType id);
+    abstract public List<EntityType> FindById(KeyType id);
 
     abstract public List<EntityType> selectAll();
 
     abstract protected List<EntityType> selectBySQL(String sql, Object... args);
+    
+    abstract public void Xoa(int mact, KeyType manl);
 }
