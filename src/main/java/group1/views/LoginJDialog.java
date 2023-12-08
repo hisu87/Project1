@@ -6,6 +6,9 @@ package group1.views;
 
 import java.awt.Image;
 import java.awt.Toolkit;
+import java.net.*;
+import java.io.*;
+import java.util.*;
 
 import group1.entity.NhanVien;
 import group1.dao.NhanVienDAO;
@@ -16,6 +19,7 @@ import group1.utils.xImage;
 import javax.swing.ImageIcon;
 
 import org.checkerframework.checker.units.qual.A;
+import java.time.LocalDateTime;
 
 /**
  *
@@ -24,6 +28,7 @@ import org.checkerframework.checker.units.qual.A;
 public class LoginJDialog extends javax.swing.JDialog {
 
     NhanVienDAO dao = new NhanVienDAO();
+    String IP = "";
 
     /**
      * Creates new form LoginJDialog
@@ -36,17 +41,33 @@ public class LoginJDialog extends javax.swing.JDialog {
         setLocationRelativeTo(parent);
     }
 
+    void getIpAddress() throws IOException {
+        URL myIP = new URL("http://checkip.amazonaws.com");
+        BufferedReader in = new BufferedReader(new InputStreamReader(myIP.openStream()));
+        String ip = in.readLine();
+        IP = ip;
+        System.out.println(ip);
+    }
+
     void Login() {
+        try {
+            getIpAddress();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         String MaNV = txtUser.getText();
         String pwd = new String(txtPassword.getPassword());
         NhanVien nhanVien = dao.selectById(MaNV);
-        String time = java.time.LocalDateTime.now().toString();
+        String time = LocalDateTime.now().toString();
+
         if (nhanVien == null) {
             msgBox.alert(this, "Sai tên đăng nhập!");
         } else if (!pwd.equals(nhanVien.getMatKhau())) {
             msgBox.alert(this, "Sai mật khẩu!");
         } else {
-            MailService.sendMail("Phát hiện đăng nhập", "Nhận thấy lần đăng nhập từ: " + MaNV+ " Vào lúc: " + time);
+            MailService.sendMail("Phát hiện đăng nhập", "Nhận thấy lần đăng nhập từ: " + MaNV +
+                    " <br> Vào lúc: " + time
+                    + " <br>  Tại IP: " + IP + "<br> Vui lòng kiểm tra lại!");
             Auth.user = nhanVien;
             this.dispose();
             new LoadingJDialog(null, rootPaneCheckingEnabled).setVisible(true);
