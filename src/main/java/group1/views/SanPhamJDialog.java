@@ -1130,10 +1130,17 @@ int currentmang;
         System.out.println(listcart.toString());
 
         // Cập nhật nội dung của TextArea với toàn bộ thông tin đã mua
-        textar.setText(
-                "                                                   Tên Công Ty: ABC Company\n\n                                   "
-                        + "                                                   Hóa Đơn:" + maHD() + "\n"
-                        + hoaDonBuilder.toString());
+         textar.setText(
+                    "                                                   MANAGER STARBUCK\n\n                                   "
+                            + "                                                  Mã Hóa Đơn:" + maHD() + "\n"
+                          
+                            + hoaDonBuilder.toString()
+                            +"\n"
+                             +"Tổng tiền hàng: "+totalall
+                            +"\nKhách hàng có phản hồi về thái độ,dịch vụ xin vui lòng liên hệ sđt :\n"
+                            +"037.565.3015"
+);
+        
 
         System.out.println(maHD());
 
@@ -1353,8 +1360,11 @@ int currentmang;
 
             // Update the textar with the modified bill
             textar.setText(
-                    "                                                   Tên Công Ty: ABC Company\n\n                                   "
-                            + "                                                   Hóa Đơn:" + maHD() + "\n"
+                    "                                                   MANAGER STARBUCK\n\n                                   "
+                            + "                                                  Mã Hóa Đơn:" + maHD() + "\n"
+                            +"Tổng tiền hàng: "+totalall
+                            +"Khách hàng có phản hồi về thái độ,dịch vụ xin vui lòng liên hệ sđt :"
+                            +"037.565.3015"
                             + hoaDonBuilder.toString());
 
         }

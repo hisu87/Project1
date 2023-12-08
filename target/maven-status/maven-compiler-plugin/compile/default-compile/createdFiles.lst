@@ -65,6 +65,7 @@ group1\views\JMainFrame.class
 group1\views\ChartJDialog$2.class
 group1\views\JMainFrame$12.class
 group1\views\LoadingJDialog.class
+group1\utils\MailService.class
 group1\views\QuanLyNhanVien$3.class
 group1\views\QuanLySanPham$10.class
 group1\views\SanPhamJDialog$10.class
@@ -95,6 +96,7 @@ raven\panel\PanelShadow$ShadowType.class
 group1\views\QuanLySanPham$13.class
 group1\views\JMainFrame$20.class
 group1\dao\ThongKeDAO.class
+group1\utils\MailService$1.class
 group1\views\CongThucNguyenLieuJDialog$4.class
 group1\views\QLNguyenLieuJDialog$4.class
 group1\views\QuanLyNhanVien$4.class
