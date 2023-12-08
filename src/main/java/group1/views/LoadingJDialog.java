@@ -117,7 +117,7 @@ public class LoadingJDialog extends javax.swing.JDialog {
         lblLoading.setForeground(new java.awt.Color(0, 112, 74));
         lblLoading.setText("Loading...");
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loading.gif"))); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon("D:\\FPTPolytechnic\\duan1\\src\\main\\resources\\images\\loading.gif")); // NOI18N
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
