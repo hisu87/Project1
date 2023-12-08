@@ -90,7 +90,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openRecipe() {
-        new CongThucNguyenLieuJDialog().setVisible(true);
+        new CongThucNguyenLieuJDialog(this, true).setVisible(true);
     }
 
     void openIngridients() {
@@ -112,26 +112,34 @@ public class JMainFrame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jSeparator5 = new javax.swing.JSeparator();
+        jSeparator7 = new javax.swing.JSeparator();
+        jSeparator9 = new javax.swing.JSeparator();
+        jSeparator17 = new javax.swing.JSeparator();
         jPanel1 = new javax.swing.JPanel();
         jToolBar = new javax.swing.JToolBar();
-        btn_createReceipt = new javax.swing.JToggleButton();
-        jSeparator9 = new javax.swing.JToolBar.Separator();
-        btn_tinhtien = new javax.swing.JButton();
-        jSeparator11 = new javax.swing.JToolBar.Separator();
-        btn_importIngridients = new javax.swing.JToggleButton();
-        jSeparator8 = new javax.swing.JToolBar.Separator();
-        btn_importRecipe = new javax.swing.JToggleButton();
-        jSeparator7 = new javax.swing.JToolBar.Separator();
-        btn_importProduct = new javax.swing.JToggleButton();
-        jSeparator5 = new javax.swing.JToolBar.Separator();
-        btn_HuongDan = new javax.swing.JToggleButton();
-        jSeparator4 = new javax.swing.JToolBar.Separator();
-        btn_logout = new javax.swing.JToggleButton();
+        btn_TinhTien = new javax.swing.JButton();
         jSeparator6 = new javax.swing.JToolBar.Separator();
-        btn_exit = new javax.swing.JToggleButton();
+        jButton2 = new javax.swing.JButton();
+        jSeparator11 = new javax.swing.JToolBar.Separator();
+        btn_NguyenLieu = new javax.swing.JButton();
+        jSeparator12 = new javax.swing.JToolBar.Separator();
+        btn_Recipe = new javax.swing.JButton();
+        jSeparator13 = new javax.swing.JToolBar.Separator();
+        btn_Product = new javax.swing.JButton();
+        jSeparator14 = new javax.swing.JToolBar.Separator();
+        btn_Revenue = new javax.swing.JButton();
+        jSeparator15 = new javax.swing.JToolBar.Separator();
+        jButton1 = new javax.swing.JButton();
+        jSeparator16 = new javax.swing.JToolBar.Separator();
+        jButton3 = new javax.swing.JButton();
+        jSeparator18 = new javax.swing.JToolBar.Separator();
+        jButton4 = new javax.swing.JButton();
+        jSeparator4 = new javax.swing.JToolBar.Separator();
+        jButton5 = new javax.swing.JButton();
         pnl_center = new javax.swing.JPanel();
         lbl_centerlogo = new javax.swing.JLabel();
         pnl_statusbar = new javax.swing.JPanel();
@@ -145,6 +153,7 @@ public class JMainFrame extends javax.swing.JFrame {
         logout = new javax.swing.JMenuItem();
         jSeparator10 = new javax.swing.JPopupMenu.Separator();
         exit = new javax.swing.JMenuItem();
+        jSeparator8 = new javax.swing.JPopupMenu.Separator();
         menu_managing = new javax.swing.JMenu();
         products = new javax.swing.JMenuItem();
         recipe = new javax.swing.JMenuItem();
@@ -161,133 +170,147 @@ public class JMainFrame extends javax.swing.JFrame {
 
         jPanel1.setBackground(new java.awt.Color(45, 127, 33));
 
-        jToolBar.setBackground(new java.awt.Color(41, 105, 30));
-        jToolBar.setBorder(null);
+        jToolBar.setBackground(new java.awt.Color(53, 88, 52));
         jToolBar.setRollover(true);
 
-        btn_createReceipt.setBackground(new java.awt.Color(0, 117, 74));
-        btn_createReceipt.setForeground(new java.awt.Color(242, 240, 235));
-        btn_createReceipt
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-invoice-20.png"))); // NOI18N
-        btn_createReceipt.setText("Hóa Đơn");
-        btn_createReceipt.setFocusable(false);
-        btn_createReceipt.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_createReceipt.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_createReceipt.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                btn_createReceiptMouseClicked(evt);
-            }
-        });
-        jToolBar.add(btn_createReceipt);
-        jToolBar.add(jSeparator9);
-
-        btn_tinhtien.setBackground(new java.awt.Color(0, 117, 74));
-        btn_tinhtien.setForeground(new java.awt.Color(242, 240, 235));
-        btn_tinhtien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-poolside-bar-20.png"))); // NOI18N
-        btn_tinhtien.setText("Tính Tiền");
-        btn_tinhtien.setFocusable(false);
-        btn_tinhtien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_tinhtien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_tinhtien.addActionListener(new java.awt.event.ActionListener() {
+        btn_TinhTien.setForeground(new java.awt.Color(255, 255, 255));
+        btn_TinhTien.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-invoice-20.png"))); // NOI18N
+        btn_TinhTien.setText("Tính Tiền");
+        btn_TinhTien.setFocusable(false);
+        btn_TinhTien.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_TinhTien.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_TinhTien.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_tinhtienActionPerformed(evt);
+                btn_TinhTienActionPerformed(evt);
             }
         });
-        jToolBar.add(btn_tinhtien);
-        jToolBar.add(jSeparator11);
-
-        btn_importIngridients.setBackground(new java.awt.Color(0, 117, 74));
-        btn_importIngridients.setForeground(new java.awt.Color(242, 240, 235));
-        btn_importIngridients
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
-        btn_importIngridients.setText("Nhập Nguyên Liệu");
-        btn_importIngridients.setFocusable(false);
-        btn_importIngridients.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_importIngridients.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_importIngridients.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_importIngridientsActionPerformed(evt);
-            }
-        });
-        jToolBar.add(btn_importIngridients);
-        jToolBar.add(jSeparator8);
-
-        btn_importRecipe.setBackground(new java.awt.Color(0, 117, 74));
-        btn_importRecipe.setForeground(new java.awt.Color(242, 240, 235));
-        btn_importRecipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
-        btn_importRecipe.setText("Nhập công thức");
-        btn_importRecipe.setFocusable(false);
-        btn_importRecipe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_importRecipe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_importRecipe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_importRecipeActionPerformed(evt);
-            }
-        });
-        jToolBar.add(btn_importRecipe);
-        jToolBar.add(jSeparator7);
-
-        btn_importProduct.setBackground(new java.awt.Color(0, 117, 74));
-        btn_importProduct.setForeground(new java.awt.Color(242, 240, 235));
-        btn_importProduct
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-add-20.png"))); // NOI18N
-        btn_importProduct.setText("Nhập Sản phẩm");
-        btn_importProduct.setFocusable(false);
-        btn_importProduct.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_importProduct.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_importProduct.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_importProductActionPerformed(evt);
-            }
-        });
-        jToolBar.add(btn_importProduct);
-        jToolBar.add(jSeparator5);
-
-        btn_HuongDan.setBackground(new java.awt.Color(0, 117, 74));
-        btn_HuongDan.setForeground(new java.awt.Color(242, 240, 235));
-        btn_HuongDan
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_flag_2_20px.png"))); // NOI18N
-        btn_HuongDan.setText("Hướng dẫn");
-        btn_HuongDan.setFocusable(false);
-        btn_HuongDan.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_HuongDan.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_HuongDan.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_HuongDanActionPerformed(evt);
-            }
-        });
-        jToolBar.add(btn_HuongDan);
-        jToolBar.add(jSeparator4);
-
-        btn_logout.setBackground(new java.awt.Color(0, 117, 74));
-        btn_logout.setForeground(new java.awt.Color(242, 240, 235));
-        btn_logout.setIcon(
-                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
-        btn_logout.setText("Đăng Xuất");
-        btn_logout.setFocusable(false);
-        btn_logout.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_logout.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_logout.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_logoutActionPerformed(evt);
-            }
-        });
-        jToolBar.add(btn_logout);
+        jToolBar.add(btn_TinhTien);
         jToolBar.add(jSeparator6);
 
-        btn_exit.setBackground(new java.awt.Color(0, 117, 74));
-        btn_exit.setForeground(new java.awt.Color(242, 240, 235));
-        btn_exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_exit_20px.png"))); // NOI18N
-        btn_exit.setText("Thoát");
-        btn_exit.setFocusable(false);
-        btn_exit.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
-        btn_exit.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
-        btn_exit.addActionListener(new java.awt.event.ActionListener() {
+        jButton2.setForeground(new java.awt.Color(255, 255, 255));
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-invoice-20 (1).png"))); // NOI18N
+        jButton2.setText("Tra cứu hóa đơn");
+        jButton2.setFocusable(false);
+        jButton2.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton2.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btn_exitActionPerformed(evt);
+                jButton2ActionPerformed(evt);
             }
         });
-        jToolBar.add(btn_exit);
+        jToolBar.add(jButton2);
+        jToolBar.add(jSeparator11);
+
+        btn_NguyenLieu.setForeground(new java.awt.Color(255, 255, 255));
+        btn_NguyenLieu.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ingredient-24.png"))); // NOI18N
+        btn_NguyenLieu.setText("Nhập Nguyên Liệu");
+        btn_NguyenLieu.setFocusable(false);
+        btn_NguyenLieu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_NguyenLieu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_NguyenLieu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_NguyenLieuActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_NguyenLieu);
+        jToolBar.add(jSeparator12);
+
+        btn_Recipe.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Recipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_book_20px_1.png"))); // NOI18N
+        btn_Recipe.setText("Nhập Công Thức");
+        btn_Recipe.setFocusable(false);
+        btn_Recipe.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Recipe.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Recipe.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RecipeActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_Recipe);
+        jToolBar.add(jSeparator13);
+
+        btn_Product.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Product.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-poolside-bar-20.png"))); // NOI18N
+        btn_Product.setText("Nhập Sản Phẩm");
+        btn_Product.setFocusable(false);
+        btn_Product.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Product.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Product.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_ProductActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_Product);
+        jToolBar.add(jSeparator14);
+
+        btn_Revenue.setForeground(new java.awt.Color(255, 255, 255));
+        btn_Revenue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_report_card_20px.png"))); // NOI18N
+        btn_Revenue.setText("Doanh Thu");
+        btn_Revenue.setFocusable(false);
+        btn_Revenue.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        btn_Revenue.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        btn_Revenue.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_RevenueActionPerformed(evt);
+            }
+        });
+        jToolBar.add(btn_Revenue);
+        jToolBar.add(jSeparator15);
+
+        jButton1.setForeground(new java.awt.Color(255, 255, 255));
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-positive-dynamic-20.png"))); // NOI18N
+        jButton1.setText("Biểu Đồ");
+        jButton1.setFocusable(false);
+        jButton1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton1.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jToolBar.add(jButton1);
+        jToolBar.add(jSeparator16);
+
+        jButton3.setForeground(new java.awt.Color(255, 255, 255));
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_help_20px.png"))); // NOI18N
+        jButton3.setText("Hướng Dẫn");
+        jButton3.setFocusable(false);
+        jButton3.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton3.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+        jToolBar.add(jButton3);
+        jToolBar.add(jSeparator18);
+
+        jButton4.setForeground(new java.awt.Color(255, 255, 255));
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
+        jButton4.setText("Đăng Xuất");
+        jButton4.setFocusable(false);
+        jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton4.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+        jToolBar.add(jButton4);
+        jToolBar.add(jSeparator4);
+
+        jButton5.setForeground(new java.awt.Color(255, 255, 255));
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_exit_20px.png"))); // NOI18N
+        jButton5.setText("Exit");
+        jButton5.setFocusable(false);
+        jButton5.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jButton5.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+        jToolBar.add(jButton5);
 
         pnl_center.setBackground(new java.awt.Color(249, 249, 249));
 
@@ -296,21 +319,21 @@ public class JMainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout pnl_centerLayout = new javax.swing.GroupLayout(pnl_center);
         pnl_center.setLayout(pnl_centerLayout);
         pnl_centerLayout.setHorizontalGroup(
-                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158,
-                                        Short.MAX_VALUE)
-                                .addContainerGap()));
+            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
+                .addContainerGap())
+        );
         pnl_centerLayout.setVerticalGroup(
-                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnl_centerLayout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)));
+            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_centerLayout.createSequentialGroup()
+                .addGap(0, 0, 0)
+                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
 
-        pnl_statusbar.setBackground(new java.awt.Color(45, 127, 33));
+        pnl_statusbar.setBackground(new java.awt.Color(53, 88, 52));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(242, 240, 235));
@@ -318,57 +341,45 @@ public class JMainFrame extends javax.swing.JFrame {
 
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_clock.setIcon(
-                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
+        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_statusbarLayout = new javax.swing.GroupLayout(pnl_statusbar);
         pnl_statusbar.setLayout(pnl_statusbarLayout);
         pnl_statusbarLayout.setHorizontalGroup(
-                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(pnl_statusbarLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap()));
+            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(pnl_statusbarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
         pnl_statusbarLayout.setVerticalGroup(
-                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
-                                pnl_statusbarLayout.createSequentialGroup()
-                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(pnl_statusbarLayout
-                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addComponent(lbl_clock, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addComponent(lbl_user, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addContainerGap()));
+            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_statusbarLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lbl_clock)
+                    .addComponent(lbl_user))
+                .addContainerGap())
+        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         jPanel1Layout.setVerticalGroup(
-                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, 63,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0)
+                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
 
         jMenuBar1.setBackground(new java.awt.Color(0, 117, 74));
 
@@ -379,10 +390,8 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.setPreferredSize(new java.awt.Dimension(70, 22));
         menu_system.add(jSeparator1);
 
-        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P,
-                java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        changepass
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_20px.png"))); // NOI18N
+        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_20px.png"))); // NOI18N
         changepass.setText("Đổi mật khẩu");
         changepass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -392,10 +401,8 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.add(changepass);
         menu_system.add(jSeparator2);
 
-        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L,
-                java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        logout.setIcon(
-                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
+        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
         logout.setText("Đăng Xuất");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -405,8 +412,7 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.add(logout);
         menu_system.add(jSeparator10);
 
-        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4,
-                java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
         exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_exit_20px.png"))); // NOI18N
         exit.setText("Thoát");
         exit.addActionListener(new java.awt.event.ActionListener() {
@@ -415,6 +421,7 @@ public class JMainFrame extends javax.swing.JFrame {
             }
         });
         menu_system.add(exit);
+        menu_system.add(jSeparator8);
 
         jMenuBar1.add(menu_system);
 
@@ -424,8 +431,7 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_managing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_managing.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        products.setIcon(
-                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-poolside-bar-20.png"))); // NOI18N
+        products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-poolside-bar-20.png"))); // NOI18N
         products.setText("Sản Phảm");
         products.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -443,8 +449,7 @@ public class JMainFrame extends javax.swing.JFrame {
         });
         menu_managing.add(recipe);
 
-        ingridients
-                .setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-ingredient-24.png"))); // NOI18N
+        ingridients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-ingredient-24.png"))); // NOI18N
         ingridients.setText("Nguyên Liệu");
         ingridients.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -480,8 +485,7 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_statitics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_statitics.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        revenue.setIcon(
-                new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_report_card_20px.png"))); // NOI18N
+        revenue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_report_card_20px.png"))); // NOI18N
         revenue.setText("Doanh Thu");
         revenue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -512,16 +516,66 @@ public class JMainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
         layout.setVerticalGroup(
-                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void btn_NguyenLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NguyenLieuActionPerformed
+        // TODO add your handling code here:
+        openIngridients();
+    }//GEN-LAST:event_btn_NguyenLieuActionPerformed
+
+    private void btn_RevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RevenueActionPerformed
+        // TODO add your handling code here:
+        openRevenue();
+    }//GEN-LAST:event_btn_RevenueActionPerformed
+
+    private void btn_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TinhTienActionPerformed
+        // TODO add your handling code here:
+        openSanPham();
+    }//GEN-LAST:event_btn_TinhTienActionPerformed
+
+    private void btn_RecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RecipeActionPerformed
+        // TODO add your handling code here:
+        openRecipe();
+    }//GEN-LAST:event_btn_RecipeActionPerformed
+
+    private void btn_ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProductActionPerformed
+        // TODO add your handling code here:
+        openProducts();
+    }//GEN-LAST:event_btn_ProductActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        openChart();
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        openWebsite();
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        openLogout();
+    }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        openExit();
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        openInvoice();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     private void btn_tinhtienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_tinhtienActionPerformed
         // TODO add your handling code here:
@@ -618,7 +672,7 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     void openEmployees() {
-        new NhanVienJDialog(this, true).setVisible(true);
+        new QuanLyNhanVien(this, true).setVisible(true);
     }
 
     void openRevenue() {
@@ -669,33 +723,42 @@ public class JMainFrame extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JToggleButton btn_HuongDan;
-    private javax.swing.JToggleButton btn_createReceipt;
-    private javax.swing.JToggleButton btn_exit;
-    private javax.swing.JToggleButton btn_importIngridients;
-    private javax.swing.JToggleButton btn_importProduct;
-    private javax.swing.JToggleButton btn_importRecipe;
-    private javax.swing.JToggleButton btn_logout;
-    private javax.swing.JButton btn_tinhtien;
+    private javax.swing.JButton btn_NguyenLieu;
+    private javax.swing.JButton btn_Product;
+    private javax.swing.JButton btn_Recipe;
+    private javax.swing.JButton btn_Revenue;
+    private javax.swing.JButton btn_TinhTien;
     private javax.swing.JMenuItem changepass;
     private javax.swing.JMenuItem chart;
     private javax.swing.JMenuItem employees;
     private javax.swing.JMenuItem exit;
     private javax.swing.JMenuItem ingridients;
     private javax.swing.JMenuItem invoice;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton5;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator10;
     private javax.swing.JToolBar.Separator jSeparator11;
+    private javax.swing.JToolBar.Separator jSeparator12;
+    private javax.swing.JToolBar.Separator jSeparator13;
+    private javax.swing.JToolBar.Separator jSeparator14;
+    private javax.swing.JToolBar.Separator jSeparator15;
+    private javax.swing.JToolBar.Separator jSeparator16;
+    private javax.swing.JSeparator jSeparator17;
+    private javax.swing.JToolBar.Separator jSeparator18;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JPopupMenu.Separator jSeparator3;
     private javax.swing.JToolBar.Separator jSeparator4;
-    private javax.swing.JToolBar.Separator jSeparator5;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JToolBar.Separator jSeparator6;
-    private javax.swing.JToolBar.Separator jSeparator7;
-    private javax.swing.JToolBar.Separator jSeparator8;
-    private javax.swing.JToolBar.Separator jSeparator9;
+    private javax.swing.JSeparator jSeparator7;
+    private javax.swing.JPopupMenu.Separator jSeparator8;
+    private javax.swing.JSeparator jSeparator9;
     private javax.swing.JToolBar jToolBar;
     private javax.swing.JLabel lbl_centerlogo;
     private javax.swing.JLabel lbl_clock;

@@ -8,11 +8,11 @@ import java.util.List;
 
 public class SanPhamDao extends CafeDAO<SanPham, String> {
 
-    public String INSERT_SQL = "INSERT INTO (MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE SanPham SET TenSP=?, Anh=?, Gia=?, MaCT=? WHERE MaSP=?";
-    public String DELETE_SQL = "DELETE FROM SanPham WHERE MaSP=?";
-    public String SELECT_ALL_SQL = "SELECT * FROM [Sản Phẩm]";
-    public String SELECT_BY_ID_SQL = "SELECT * FROM [Sản Phẩm] WHERE [MaSP]=?";
+    private static final String INSERT_SQL = "INSERT INTO [Sản Phẩm] (MaSP, TenSP, Anh, Gia, MaCT) VALUES(?,?,?,?,?)";
+    private static final String UPDATE_SQL = "UPDATE [Sản Phẩm] SET TenSP=?, Anh=?, Gia=?, MaCT=? WHERE MaSP=?";
+    private static final String DELETE_SQL = "DELETE FROM [Sản Phẩm] WHERE MaSP=?";
+    private static final String SELECT_ALL_SQL = "SELECT * FROM [Sản Phẩm]";
+    private static final String SELECT_BY_ID_SQL = "SELECT * FROM [Sản Phẩm] WHERE [MaSP]=?";
 
     @Override
     public void insert(SanPham entity) {
@@ -27,11 +27,11 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
     @Override
     public void update(SanPham entity) {
         xJDBC.executeUpdate(UPDATE_SQL,
-                entity.getMaSP(),
                 entity.getTenSP(),
                 entity.getAnh(),
                 entity.getGia(),
-                entity.getMaCT());
+                entity.getMaCT(),
+                entity.getMaSP());
     }
 
     @Override
@@ -71,8 +71,19 @@ public class SanPhamDao extends CafeDAO<SanPham, String> {
             return list;
         } catch (Exception e) {
             throw new RuntimeException(e);
-
         }
+    }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<SanPham> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }

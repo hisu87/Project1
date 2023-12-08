@@ -5,11 +5,13 @@ import group1.dao.SanPhamDao;
 import group1.entity.CongThuc;
 import group1.entity.CongThuc_NguyenLieu;
 import group1.entity.SanPham;
+import group1.utils.Auth;
 import group1.utils.msgBox;
 import group1.utils.xImage;
 import io.opencensus.metrics.export.Value;
 
 import java.awt.Image;
+import java.io.File;
 import java.sql.Date;
 
 import java.sql.Date;
@@ -18,13 +20,18 @@ import java.util.ArrayList;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.ImageIcon;
+import javax.swing.JFileChooser;
+import javax.swing.UIManager;
 import javax.swing.table.DefaultTableModel;
+//import com.formdev.flatlaf.FlatLightLaf;
+import javax.swing.*;
 
 public class QuanLySanPham extends javax.swing.JDialog {
     SanPhamDao daosp = new SanPhamDao();
     CongThucDAO ctdao = new CongThucDAO();
     DefaultTableModel tblmodel = new DefaultTableModel();
     List<SanPham> list = new ArrayList<>();
+    JFileChooser filechooser = new JFileChooser();
     int row = -1;
 
     public QuanLySanPham(java.awt.Frame parent, boolean modal) {
@@ -32,6 +39,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         initComponents();
         filltable();
         loadcbx();
+        setLocationRelativeTo(null);
     }
 
     void filltable() {
@@ -51,10 +59,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
         try {
             DefaultComboBoxModel cbxmodel = (DefaultComboBoxModel) cbxct.getModel();
             cbxmodel.removeAllElements();
-            List<CongThuc> listct = ctdao.getCongThuc();
+            List<CongThuc> listct = ctdao.selectAll();
             for (CongThuc ct : listct) {
                 cbxmodel.addElement(ct.getMaCT());
-
             }
 
         } catch (Exception e) {
@@ -66,26 +73,38 @@ public class QuanLySanPham extends javax.swing.JDialog {
     void setForm(SanPham sp) {
         txtmaSanPham.setText(sp.getMaSP());
         txtTenSanPham.setText(sp.getTenSP());
-        cbxct.setSelectedItem(sp.getMaCT());
+        cbxct.setSelectedItem(Integer.parseInt(sp.getMaCT()));
         txtgia.setText(String.valueOf(sp.getGia()));
-        int with = lblanh.getWidth();
-        int height = lblanh.getHeight();
-        String path = sp.getAnh();
-        ImageIcon image = xImage.readimage(path);
-        Image imagescal = image.getImage().getScaledInstance(with, height, Image.SCALE_SMOOTH);
-        lblanh.setIcon(new ImageIcon(imagescal));
-        lblanh.setToolTipText(String.valueOf(image));
-        System.out.println(image);
+        if (sp.getAnh() != null) {
+            lblanh.setToolTipText(sp.getAnh());
+            lblanh.setIcon(xImage.read(sp.getAnh()));
+        }
     }
 
-    public SanPham getForm() {
+    SanPham getForm() {
         SanPham sp = new SanPham();
         sp.setMaSP(txtmaSanPham.getText());
         sp.setTenSP(txtTenSanPham.getText());
+<<<<<<< HEAD
         sp.setMaCT(String.valueOf( cbxct.getSelectedItem()));
+=======
+        sp.setMaCT(cbxct.getSelectedItem().toString());
+>>>>>>> main
         sp.setGia(Float.parseFloat(txtgia.getText()));
-        sp.setAnh(lblanh.getText());
+        sp.setAnh(lblanh.getToolTipText());
         return sp;
+    }
+
+    void choosePic() {
+        if (filechooser.showOpenDialog(this) == JFileChooser.APPROVE_OPTION) {
+            filechooser.setDialogTitle("Choose Image");
+            File file = filechooser.getSelectedFile();
+            xImage.save(file);
+            ImageIcon icon = xImage.read(file.getName());
+            lblanh.setIcon(icon);
+            lblanh.setToolTipText(file.getName());
+            System.out.println("Oke");
+        }
     }
 
     void updateStatus() {
@@ -128,7 +147,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
             msgBox.alert(this, "Không được để trống mã công thức");
             cbxct.requestFocus();
             return false;
-        } else if (lblanh.getText().length() == 0) {
+        } else if (lblanh.getToolTipText().length() == 0) {
             msgBox.alert(this, "Không được để trống ảnh");
             lblanh.requestFocus();
             return false;
@@ -155,15 +174,65 @@ public class QuanLySanPham extends javax.swing.JDialog {
         }
     }
 
+    void delete() {
+        if (!Auth.isManager()) {
+            msgBox.alert(this, "Bạn không có quyền xóa sản phẩm");
+        } else {
+            String masp = txtmaSanPham.getText();
+            if (msgBox.confirm(this, "Bạn có muốn xóa sản phẩm này không?")) {
+                try {
+                    daosp.delete(masp);
+                    this.filltable();
+                    newSP();
+                    msgBox.alert(this, "Xóa thành công");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    msgBox.alert(this, "Xóa thất bại");
+                }
+            }
+        }
+    }
+
     void openRecipe() {
-        CongThucNguyenLieuJDialog ct = new CongThucNguyenLieuJDialog();
-        ct.setVisible(true);
+        new CongThucNguyenLieuJDialog(null, true).setVisible(true);
     }
 
     void edit() {
-        String masp = (String) tblsanPham.getValueAt(this.row, 0);
+        String masp = (String) tblsanPham.getValueAt(this.row, 1);
         SanPham sp = daosp.selectById(masp);
         this.setForm(sp);
+        this.updateStatus();
+    }
+
+    void newSP() {
+        SanPham sp = new SanPham();
+        this.updateStatus();
+        cbxct.setSelectedIndex(-1);
+        lblanh.setIcon(null);
+    }
+
+    void first() {
+        this.row = 0;
+        this.edit();
+    }
+
+    void prev() {
+        if (this.row > 0) {
+            this.row--;
+            this.edit();
+        }
+    }
+
+    void next() {
+        if (this.row < tblsanPham.getRowCount() - 1) {
+            this.row++;
+            this.edit();
+        }
+    }
+
+    void last() {
+        this.row = tblsanPham.getRowCount() - 1;
+        this.edit();
     }
 
     @SuppressWarnings("unchecked")
@@ -171,9 +240,16 @@ public class QuanLySanPham extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel5 = new javax.swing.JPanel();
         tabs = new javax.swing.JTabbedPane();
         jPanel2 = new javax.swing.JPanel();
         panelGradient1 = new raven.panel.PanelGradient();
@@ -201,6 +277,8 @@ public class QuanLySanPham extends javax.swing.JDialog {
         jLabel8 = new javax.swing.JLabel();
         txtgia = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
+        panelGradient3 = new raven.panel.PanelGradient();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -216,7 +294,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
                         { null, null, null, null, null }
                 },
                 new String[] {
-                        "MÃ SP", "TÊN SP", "MÃ CT", "GIÁ", "ẢNH"
+                        "Tên Sản Phẩm", "Mã Sản Phẩm", "Mã Công Thức", "Giá", "Ảnh"
                 }));
         tblsanPham.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -230,7 +308,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         jScrollPane2.setViewportView(tblsanPham);
 
         panelGradient1.add(jScrollPane2);
-        jScrollPane2.setBounds(10, 10, 770, 440);
+        jScrollPane2.setBounds(10, 10, 770, 400);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -240,7 +318,10 @@ public class QuanLySanPham extends javax.swing.JDialog {
                                 javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         jPanel2Layout.setVerticalGroup(
                 jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 464, Short.MAX_VALUE));
+                        .addGroup(jPanel2Layout.createSequentialGroup()
+                                .addComponent(panelGradient1, javax.swing.GroupLayout.PREFERRED_SIZE, 463,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)));
 
         tabs.addTab("DANH SÁCH", jPanel2);
 
@@ -249,6 +330,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         panelGradient2.setBackground(new java.awt.Color(171, 120, 78));
         panelGradient2.setColorGradient(new java.awt.Color(153, 101, 58));
 
+        jPanel4.setBackground(new java.awt.Color(171, 113, 49));
         jPanel4.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         btnThem.setText("Thêm");
@@ -294,31 +376,33 @@ public class QuanLySanPham extends javax.swing.JDialog {
         jPanel4Layout.setVerticalGroup(
                 jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel4Layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
+                                .addContainerGap()
                                 .addComponent(btnThem)
-                                .addGap(39, 39, 39)
+                                .addGap(38, 38, 38)
                                 .addComponent(btnSua)
-                                .addGap(42, 42, 42)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39,
+                                        Short.MAX_VALUE)
                                 .addComponent(btnXoa)
-                                .addGap(43, 43, 43)
+                                .addGap(39, 39, 39)
                                 .addComponent(btnMoi)
-                                .addContainerGap(97, Short.MAX_VALUE)));
+                                .addContainerGap()));
 
         panelGradient2.add(jPanel4);
-        jPanel4.setBounds(650, 40, 108, 351);
+        jPanel4.setBounds(660, 70, 108, 240);
 
         lblanh.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/drinks/phindenda.png"))); // NOI18N
-        lblanh.setText("jLabel9");
+        lblanh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                lblanhMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(lblanh, javax.swing.GroupLayout.DEFAULT_SIZE,
-                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addContainerGap()));
+                        .addComponent(lblanh, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         jPanel1Layout.setVerticalGroup(
                 jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(lblanh, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE));
@@ -413,24 +497,56 @@ public class QuanLySanPham extends javax.swing.JDialog {
         jPanel3Layout.setVerticalGroup(
                 jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(panelGradient2, javax.swing.GroupLayout.Alignment.TRAILING,
-                                javax.swing.GroupLayout.DEFAULT_SIZE, 415, Short.MAX_VALUE));
+                                javax.swing.GroupLayout.DEFAULT_SIZE, 419, Short.MAX_VALUE));
 
         tabs.addTab("CẬP NHẬT", jPanel3);
+
+        panelGradient3.setBackground(new java.awt.Color(213, 150, 97));
+        panelGradient3.setColorGradient(new java.awt.Color(171, 120, 24));
+
+        jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 24)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel4.setText("Quản Lý Sản Phẩm");
+        panelGradient3.add(jLabel4);
+        jLabel4.setBounds(280, 10, 220, 60);
+
+        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
+        jPanel5.setLayout(jPanel5Layout);
+        jPanel5Layout.setHorizontalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(tabs)
+                        .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
+        jPanel5Layout.setVerticalGroup(
+                jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
+                                .addComponent(panelGradient3, javax.swing.GroupLayout.PREFERRED_SIZE, 100,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 450,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(tabs));
+                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
                 layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(layout.createSequentialGroup()
-                                .addComponent(tabs, javax.swing.GroupLayout.PREFERRED_SIZE, 495,
-                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(0, 0, Short.MAX_VALUE)));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void lblanhMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_lblanhMouseClicked
+        // TODO add your handling code here:
+        choosePic();
+    }// GEN-LAST:event_lblanhMouseClicked
 
     private void btnThemCTActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemCTActionPerformed
         // TODO add your handling code here:
@@ -443,6 +559,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
         if (evt.getClickCount() == 1) {
             this.row = tblsanPham.getSelectedRow();
             this.edit();
+            System.out.println("selected");
             tabs.setSelectedIndex(1);
             System.out.println("hola");
         }
@@ -461,50 +578,43 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }// GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSuaActionPerformed
-        // try {
-        // int selectbyif=(int) tblkhoahoc.getValueAt(this.tblkhoahoc.getSelectedRow(),
-        // 0);
-        // KhoaHoc kh=daokhoahoc.selected_by_id(selectbyif);
-        // kh.setTenKhoaHoc((txtChuyenDE.getText()));
-        // kh.setHocPhi(Double.parseDouble(txtHocPhi.getText()));
-        // kh.setNgayKhaiGiang((Date) XDate.toDate(txtKhaiGiang.getText(), "dd/MM/yy"));
-        // kh.setGhiChu(txtGhiChu.getText());
-        // kh.setNgayTao((Date) XDate.toDate(txtNgayTao.getText(), "dd/MM/yy"));
-        // fillTable();
-        // msg_box.alert(this, "Update thành công");
-        // } catch (Exception e) {
-        // e.printStackTrace();
-        // }
+        if (validateForm()) {
+            SanPham sp = getForm();
+            daosp.update(sp);
+            this.filltable();
+            loadcbx();
+            updateStatus();
+        }
 
     }// GEN-LAST:event_btnSuaActionPerformed
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
-
+        delete();
     }// GEN-LAST:event_btnXoaActionPerformed
 
     private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnMoiActionPerformed
-
+        newSP();
     }// GEN-LAST:event_btnMoiActionPerformed
 
     private void btnfirstActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnfirstActionPerformed
-
+        first();
     }// GEN-LAST:event_btnfirstActionPerformed
 
     private void btnPrevActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrevActionPerformed
-
+        prev();
     }// GEN-LAST:event_btnPrevActionPerformed
 
     private void btnnextActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnnextActionPerformed
-
+        next();
     }// GEN-LAST:event_btnnextActionPerformed
 
     private void btnlastActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnlastActionPerformed
-
+        last();
     }// GEN-LAST:event_btnlastActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
-        CongThucNguyenLieuJDialog ct = new CongThucNguyenLieuJDialog();
-        ct.setVisible(true);
+        // CTNlJDialog ct = new CTNlJDialog();
+        // ct.setVisible(true);
     }// GEN-LAST:event_jButton1ActionPerformed
 
     /**
@@ -520,6 +630,14 @@ public class QuanLySanPham extends javax.swing.JDialog {
          * For details see
          * http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html
          */
+        // try {
+        // UIManager.setLookAndFeel(new FlatLightLaf());
+        // } catch (Exception ex) {
+        // System.err.println("Failed to initialize LaF");
+        // }
+        // </editor-fold>
+        // </editor-fold>
+
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
@@ -528,20 +646,18 @@ public class QuanLySanPham extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(QuanLySanPham.class.getName()).log(java.util.logging.Level.SEVERE, null,
-                    ex);
+            java.util.logging.Logger.getLogger(QLNguyenLieuJDialog.class.getName()).log(java.util.logging.Level.SEVERE,
+                    null, ex);
         }
-        // </editor-fold>
-        // </editor-fold>
 
         /* Create and display the dialog */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -572,15 +688,18 @@ public class QuanLySanPham extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
+    private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JLabel lblanh;
     private raven.panel.PanelGradient panelGradient1;
     private raven.panel.PanelGradient panelGradient2;
+    private raven.panel.PanelGradient panelGradient3;
     private javax.swing.JTabbedPane tabs;
     private javax.swing.JTable tblsanPham;
     private javax.swing.JTextField txtTenSanPham;

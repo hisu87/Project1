@@ -70,77 +70,54 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        lblTitle = new javax.swing.JLabel();
-        txtCurrentPass = new javax.swing.JPasswordField();
-        lblCurrentPass = new javax.swing.JLabel();
-        lblUsername = new javax.swing.JLabel();
-        lblNewPass = new javax.swing.JLabel();
-        lblConfirmPass = new javax.swing.JLabel();
-        txtUsername = new javax.swing.JTextField();
-        txtConfirmPass = new javax.swing.JPasswordField();
-        txtNewPass = new javax.swing.JPasswordField();
-        jCheckBox1 = new javax.swing.JCheckBox();
         jPanel2 = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        ckc_show = new javax.swing.JCheckBox();
+        lblConfirmPass = new javax.swing.JLabel();
+        txtConfirmPass = new javax.swing.JPasswordField();
+        lblNewPass = new javax.swing.JLabel();
+        txtNewPass = new javax.swing.JPasswordField();
+        lblCurrentPass = new javax.swing.JLabel();
+        txtCurrentPass = new javax.swing.JPasswordField();
+        lblUsername = new javax.swing.JLabel();
+        txtUsername = new javax.swing.JTextField();
+        lblTitle = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblTitle.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        lblTitle.setText("CHANGE PASSWORD");
-        getContentPane().add(lblTitle, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 20, 275, -1));
-        getContentPane().add(txtCurrentPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 140, 230, -1));
-
-        lblCurrentPass.setText("Current Password");
-        getContentPane().add(lblCurrentPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 140, 111, -1));
-
-        lblUsername.setText("Username");
-        getContentPane().add(lblUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 80, 111, -1));
-
-        lblNewPass.setText("New Password");
-        getContentPane().add(lblNewPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 200, 111, -1));
-
-        lblConfirmPass.setText("Confirm Password");
-        getContentPane().add(lblConfirmPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(680, 250, 111, -1));
-
-        txtUsername.setEditable(false);
-        getContentPane().add(txtUsername, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 80, 228, 20));
-
-        txtConfirmPass.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtConfirmPassActionPerformed(evt);
-            }
-        });
-        getContentPane().add(txtConfirmPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 240, 230, -1));
-        getContentPane().add(txtNewPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 190, 230, -1));
-
-        jCheckBox1.setText("Hide password");
-        getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 290, -1, -1));
-
         jPanel2.setBackground(new java.awt.Color(204, 255, 102));
+
+        jLabel2.setBackground(new java.awt.Color(255, 153, 153));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo1.png"))); // NOI18N
+        jLabel2.setToolTipText("Merry Christmas");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 620, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 650, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 410, Short.MAX_VALUE)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addComponent(jLabel2)
+                .addGap(0, 10, Short.MAX_VALUE))
         );
 
-        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 410));
+        getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 620, 510));
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
+        jPanel3.setBackground(new java.awt.Color(0, 135, 62));
+        jPanel3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
         jButton1.setBackground(new java.awt.Color(0, 153, 153));
         jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(255, 255, 255));
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icons/icons8_change_20px.png"))); // NOI18N
+        jButton1.setForeground(new java.awt.Color(242, 240, 235));
         jButton1.setText("Change Password");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -150,8 +127,7 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
 
         jButton2.setBackground(new java.awt.Color(0, 153, 153));
         jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/com/edusys/icons/icons8_cancel_20px.png"))); // NOI18N
+        jButton2.setForeground(new java.awt.Color(242, 240, 235));
         jButton2.setText("Cancel");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -159,28 +135,118 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
             }
         });
 
+        ckc_show.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        ckc_show.setForeground(new java.awt.Color(242, 240, 235));
+        ckc_show.setText("Show password");
+        ckc_show.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ckc_showActionPerformed(evt);
+            }
+        });
+
+        lblConfirmPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblConfirmPass.setForeground(new java.awt.Color(242, 240, 235));
+        lblConfirmPass.setText("Confirm Password");
+
+        txtConfirmPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtConfirmPass.setForeground(new java.awt.Color(0, 0, 0));
+        txtConfirmPass.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtConfirmPassActionPerformed(evt);
+            }
+        });
+
+        lblNewPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblNewPass.setForeground(new java.awt.Color(242, 240, 235));
+        lblNewPass.setText("New Password");
+
+        txtNewPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtNewPass.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblCurrentPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblCurrentPass.setForeground(new java.awt.Color(242, 240, 235));
+        lblCurrentPass.setText("Current Password");
+
+        txtCurrentPass.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtCurrentPass.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        lblUsername.setForeground(new java.awt.Color(242, 240, 235));
+        lblUsername.setText("Username");
+
+        txtUsername.setEditable(false);
+        txtUsername.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        txtUsername.setForeground(new java.awt.Color(0, 0, 0));
+
+        lblTitle.setFont(new java.awt.Font("Baskerville Old Face", 1, 36)); // NOI18N
+        lblTitle.setForeground(new java.awt.Color(242, 240, 235));
+        lblTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        lblTitle.setText("CHANGE PASSWORD");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(174, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(40, 40, 40)
-                .addComponent(jButton2)
-                .addGap(46, 46, 46))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(lblCurrentPass, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(lblNewPass))
+                                    .addComponent(lblConfirmPass, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(ckc_show)
+                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(txtNewPass, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)
+                                        .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, 228, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(txtCurrentPass)
+                                        .addComponent(txtConfirmPass)))))
+                        .addGap(46, 46, 46))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(lblTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(25, 25, 25))))
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addContainerGap(344, Short.MAX_VALUE)
+                .addGap(51, 51, 51)
+                .addComponent(lblTitle)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblUsername)
+                    .addComponent(txtUsername, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(33, 33, 33)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtCurrentPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblCurrentPass))
+                .addGap(36, 36, 36)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtNewPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblNewPass))
+                .addGap(43, 43, 43)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtConfirmPass, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblConfirmPass))
+                .addGap(18, 18, 18)
+                .addComponent(ckc_show)
+                .addGap(41, 41, 41)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))
                 .addGap(43, 43, 43))
         );
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 460, 410));
+        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 0, 460, 510));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -188,6 +254,19 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
     private void txtConfirmPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtConfirmPassActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtConfirmPassActionPerformed
+
+    private void ckc_showActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ckc_showActionPerformed
+        // TODO add your handling code here:
+        if(ckc_show.isSelected()){
+            txtCurrentPass.setEchoChar((char) 0);
+            txtNewPass.setEchoChar((char) 0);
+            txtConfirmPass.setEchoChar((char) 0);
+        }else{
+            txtCurrentPass.setEchoChar('?');
+            txtNewPass.setEchoChar('?');
+            txtConfirmPass.setEchoChar('?');
+        }
+    }//GEN-LAST:event_ckc_showActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
         cancel();
@@ -249,9 +328,10 @@ public class ChangePasswordJDialog extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JCheckBox ckc_show;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JCheckBox jCheckBox1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JLabel lblConfirmPass;

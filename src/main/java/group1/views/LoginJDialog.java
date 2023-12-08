@@ -91,7 +91,7 @@ public class LoginJDialog extends javax.swing.JDialog {
         jLabel2.setIcon(new javax.swing.ImageIcon("H:\\FPTPolytechnic\\Project1\\src\\main\\resources\\images\\logo1.png")); // NOI18N
         jLabel2.setToolTipText("Merry Christmas");
 
-        jPanel3.setBackground(new java.awt.Color(0, 117, 73));
+        jPanel3.setBackground(new java.awt.Color(0, 135, 62));
 
         lblUserIcon.setBackground(new java.awt.Color(0, 0, 0));
         lblUserIcon.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N

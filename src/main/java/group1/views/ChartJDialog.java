@@ -235,7 +235,7 @@ public class ChartJDialog extends javax.swing.JDialog {
 
         jPanel1.setForeground(new java.awt.Color(255, 153, 153));
 
-        panelGradient2.setBackground(new java.awt.Color(139, 58, 62));
+        panelGradient2.setBackground(new java.awt.Color(255, 58, 74));
         panelGradient2.setBorder(javax.swing.BorderFactory.createCompoundBorder(new javax.swing.border.LineBorder(new java.awt.Color(242, 240, 235), 2, true), javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1)));
         panelGradient2.setColorGradient(new java.awt.Color(240, 171, 137));
         panelGradient2.setGradientType(raven.panel.PanelGradient.GradientType.DIAGONAL_2);
@@ -246,7 +246,7 @@ public class ChartJDialog extends javax.swing.JDialog {
         panelGradient2.add(jLabel1);
         jLabel1.setBounds(530, 40, 240, 30);
 
-        tab.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 2, true));
+        tab.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         pnl1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
 
@@ -263,11 +263,11 @@ public class ChartJDialog extends javax.swing.JDialog {
         pnl1.setLayout(pnl1Layout);
         pnl1Layout.setHorizontalGroup(
             pnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 1294, Short.MAX_VALUE)
+            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
         );
         pnl1Layout.setVerticalGroup(
             pnl1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+            .addComponent(panelGradient1, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
 
         tab.addTab("Years", pnl1);
@@ -277,7 +277,7 @@ public class ChartJDialog extends javax.swing.JDialog {
         panelGradient3.setBackground(new java.awt.Color(128, 128, 128));
         panelGradient3.setColorGradient(new java.awt.Color(99, 97, 97));
 
-        chart2021.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true));
+        chart2021.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true), "2021", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Segoe UI", 0, 12), new java.awt.Color(255, 255, 255))); // NOI18N
         chart2021.setForeground(new java.awt.Color(0, 0, 0));
         panelGradient3.add(chart2021);
         chart2021.setBounds(20, 20, 1250, 520);
@@ -286,11 +286,11 @@ public class ChartJDialog extends javax.swing.JDialog {
         pnl2.setLayout(pnl2Layout);
         pnl2Layout.setHorizontalGroup(
             pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE, 1294, Short.MAX_VALUE)
+            .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
         );
         pnl2Layout.setVerticalGroup(
             pnl2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+            .addComponent(panelGradient3, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
 
         tab.addTab("2021", pnl2);
@@ -301,7 +301,7 @@ public class ChartJDialog extends javax.swing.JDialog {
         panelGradient4.setColorGradient(new java.awt.Color(190, 187, 219));
         panelGradient4.setGradientType(raven.panel.PanelGradient.GradientType.DIAGONAL_2);
 
-        chart2022.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        chart2022.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true), "2022"));
         chart2022.setForeground(new java.awt.Color(0, 0, 0));
         panelGradient4.add(chart2022);
         chart2022.setBounds(20, 20, 1250, 520);
@@ -310,11 +310,11 @@ public class ChartJDialog extends javax.swing.JDialog {
         pnl3.setLayout(pnl3Layout);
         pnl3Layout.setHorizontalGroup(
             pnl3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient4, javax.swing.GroupLayout.DEFAULT_SIZE, 1294, Short.MAX_VALUE)
+            .addComponent(panelGradient4, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
         );
         pnl3Layout.setVerticalGroup(
             pnl3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient4, javax.swing.GroupLayout.DEFAULT_SIZE, 563, Short.MAX_VALUE)
+            .addComponent(panelGradient4, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
         );
 
         tab.addTab("2022", pnl3);
@@ -330,7 +330,7 @@ public class ChartJDialog extends javax.swing.JDialog {
         panelGradient5.setColorGradient(new java.awt.Color(243, 197, 207));
         panelGradient5.setGradientType(raven.panel.PanelGradient.GradientType.DIAGONAL_1);
 
-        chart2023.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        chart2023.setBorder(javax.swing.BorderFactory.createTitledBorder(new javax.swing.border.LineBorder(new java.awt.Color(255, 255, 255), 1, true), "2023"));
         chart2023.setForeground(new java.awt.Color(0, 0, 0));
         panelGradient5.add(chart2023);
         chart2023.setBounds(20, 20, 1250, 520);
@@ -339,11 +339,11 @@ public class ChartJDialog extends javax.swing.JDialog {
         pnl4.setLayout(pnl4Layout);
         pnl4Layout.setHorizontalGroup(
             pnl4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient5, javax.swing.GroupLayout.DEFAULT_SIZE, 1296, Short.MAX_VALUE)
+            .addComponent(panelGradient5, javax.swing.GroupLayout.DEFAULT_SIZE, 1298, Short.MAX_VALUE)
         );
         pnl4Layout.setVerticalGroup(
             pnl4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panelGradient5, javax.swing.GroupLayout.DEFAULT_SIZE, 565, Short.MAX_VALUE)
+            .addComponent(panelGradient5, javax.swing.GroupLayout.DEFAULT_SIZE, 567, Short.MAX_VALUE)
         );
 
         tab.addTab("2023", pnl4);

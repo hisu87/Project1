@@ -13,7 +13,7 @@ import java.util.Date;
 public class HoaDon {
     private String MaHD;
     private String MaNV;
-    private String MaSP;
+    // private String MaSP;
     private Date NgayTao;
     private double SoLuong;
     private boolean TrangThai;
@@ -22,10 +22,9 @@ public class HoaDon {
     public HoaDon() {
     }
 
-    public HoaDon(String MaHD, String MaNV, String MaSP, Date NgayTao, double SoLuong, boolean TrangThai, float TongCong) {
+    public HoaDon(String MaHD, String MaNV, Date NgayTao, double SoLuong, boolean TrangThai, float TongCong) {
         this.MaHD = MaHD;
         this.MaNV = MaNV;
-        this.MaSP = MaSP;
         this.NgayTao = NgayTao;
         this.SoLuong = SoLuong;
         this.TrangThai = TrangThai;
@@ -48,22 +47,6 @@ public class HoaDon {
         this.MaNV = MaNV;
     }
 
-    public String getMaSP() {
-        return MaSP;
-    }
-
-    public void setMaSP(String MaSP) {
-        this.MaSP = MaSP;
-    }
-    
-    public double getSoLuong() {
-        return SoLuong;
-    }
-
-    public void setSoLuong(double SoLuong) {
-        this.SoLuong = SoLuong;
-    }
-    
     public Date getNgayTao() {
         return NgayTao;
     }
@@ -72,7 +55,15 @@ public class HoaDon {
         this.NgayTao = NgayTao;
     }
 
-    public boolean getTrangThai() {
+    public double getSoLuong() {
+        return SoLuong;
+    }
+
+    public void setSoLuong(double SoLuong) {
+        this.SoLuong = SoLuong;
+    }
+
+    public boolean isTrangThai() {
         return TrangThai;
     }
 
@@ -87,5 +78,7 @@ public class HoaDon {
     public void setTongCong(float TongCong) {
         this.TongCong = TongCong;
     }
-}
+    
+    
 
+}

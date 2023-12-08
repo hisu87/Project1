@@ -5,6 +5,7 @@
 package group1.dao;
 
 import group1.entity.HoaDon;
+import group1.entity.NguyenLieu;
 import group1.utils.xJDBC;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -18,7 +19,7 @@ import java.util.List;
 public class HoaDonDAO extends CafeDAO<HoaDon, String> {
 
     public String INSERT_SQL = "INSERT INTO [Hóa Đơn]( MaHD,MaNV, NgayTao, TrangThai, TongCong) VALUES(?,?,?,?,?)";
-    public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, MaSP=?, NgayTao=?, SoLuong=?, TrangThai=?, TongCong=? WHERE MaHD=?";
+    public String UPDATE_SQL = "UPDATE [Hóa Đơn] SET MaNV=?, NgayTao=?, TrangThai=?, TongCong=? WHERE MaHD=?";
     public String DELETE_SQL = "DELETE FROM [Hóa Đơn] WHERE MaNV=?";
     public String SELECT_ALL_SQL = "SELECT * FROM [Hóa Đơn]";
     public String SELECT_BY_ID_SQL = "SELECT * FROM [Hóa Đơn] WHERE MaNV=?";
@@ -28,10 +29,8 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(INSERT_SQL,
                 entity.getMaHD(),
                 entity.getMaNV(),
-            
                 entity.getNgayTao(),
-                
-                entity.getTrangThai(),
+                entity.isTrangThai(),
                 entity.getTongCong());
     }
 
@@ -40,10 +39,8 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         xJDBC.executeUpdate(UPDATE_SQL,
                 entity.getMaHD(),
                 entity.getMaNV(),
-                entity.getMaSP(),
                 entity.getNgayTao(),
-                entity.getSoLuong(),
-                entity.getTrangThai(),
+                entity.isTrangThai(),
                 entity.getTongCong());
     }
 
@@ -59,6 +56,11 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             return null;
         }
         return list.get(0);
+    }
+
+    public List<HoaDon> selectByKeyword(String keyword) {
+        String sql = "SELECT * FROM [Hóa Đơn] WHERE MaHD LIKE ?";
+        return this.selectBySQL(sql, "%" + keyword + "%");
     }
 
     @Override
@@ -86,7 +88,7 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
             throw new RuntimeException(e);
         }
     }
-    
+
     public List<Integer> selectYear() {
         String SQL = "SELECT DISTINCT year(NgayTao) Year FROM [Hóa Đơn] ORDER BY Year DESC";
         List<Integer> list = new ArrayList<>();
@@ -100,6 +102,18 @@ public class HoaDonDAO extends CafeDAO<HoaDon, String> {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    @Override
+    public void Xoa(int mact, String manl) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    @Override
+    public List<HoaDon> FindById(String id) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from
+                                                                       // nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
 }
