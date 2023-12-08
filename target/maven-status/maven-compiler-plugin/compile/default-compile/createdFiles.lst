@@ -65,6 +65,7 @@ group1\views\JMainFrame.class
 group1\views\ChartJDialog$2.class
 group1\views\JMainFrame$12.class
 group1\views\LoadingJDialog.class
+group1\utils\MailService.class
 group1\views\QuanLyNhanVien$3.class
 group1\views\QuanLySanPham$10.class
 group1\views\SanPhamJDialog$10.class
@@ -95,6 +96,7 @@ raven\panel\PanelShadow$ShadowType.class
 group1\views\QuanLySanPham$13.class
 group1\views\JMainFrame$20.class
 group1\dao\ThongKeDAO.class
+group1\utils\MailService$1.class
 group1\views\CongThucNguyenLieuJDialog$4.class
 group1\views\QLNguyenLieuJDialog$4.class
 group1\views\QuanLyNhanVien$4.class
@@ -192,7 +194,6 @@ group1\views\QuanLyNhanVien$15.class
 group1\views\DoanhThuJDialog$1.class
 raven\chart\blankchart\BlankPlotChart$1.class
 raven\chart\CurveLineChart$1.class
-group1\views\LoadingJDialog$1TimeClock.class
 group1\views\HoaDonJDialog$4.class
 raven\chart\blankchart\NiceScale.class
 group1\views\ChangePasswordJDialog$5$1.class

@@ -112,7 +112,9 @@ public class JMainFrame extends javax.swing.JFrame {
      */
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jSeparator5 = new javax.swing.JSeparator();
@@ -286,7 +288,8 @@ public class JMainFrame extends javax.swing.JFrame {
         jToolBar.add(jSeparator18);
 
         jButton4.setForeground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
+        jButton4.setIcon(
+                new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
         jButton4.setText("Đăng Xuất");
         jButton4.setFocusable(false);
         jButton4.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
@@ -314,72 +317,79 @@ public class JMainFrame extends javax.swing.JFrame {
 
         pnl_center.setBackground(new java.awt.Color(249, 249, 249));
 
-        lbl_centerlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/longlogo.png"))); // NOI18N
+        lbl_centerlogo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/longlogo.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_centerLayout = new javax.swing.GroupLayout(pnl_center);
         pnl_center.setLayout(pnl_centerLayout);
         pnl_centerLayout.setHorizontalGroup(
-            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158, Short.MAX_VALUE)
-                .addContainerGap())
-        );
+                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_centerLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.DEFAULT_SIZE, 1158,
+                                        Short.MAX_VALUE)
+                                .addContainerGap()));
         pnl_centerLayout.setVerticalGroup(
-            pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_centerLayout.createSequentialGroup()
-                .addGap(0, 0, 0)
-                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
+                pnl_centerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_centerLayout.createSequentialGroup()
+                                .addGap(0, 0, 0)
+                                .addComponent(lbl_centerlogo, javax.swing.GroupLayout.PREFERRED_SIZE, 595,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)));
 
         pnl_statusbar.setBackground(new java.awt.Color(53, 88, 52));
 
         lbl_user.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_user.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_username_25px.png"))); // NOI18N
+        lbl_user.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_username_25px.png"))); // NOI18N
 
         lbl_clock.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         lbl_clock.setForeground(new java.awt.Color(242, 240, 235));
-        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_alarm_clock_25px.png"))); // NOI18N
+        lbl_clock.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_alarm_clock_25px.png"))); // NOI18N
 
         javax.swing.GroupLayout pnl_statusbarLayout = new javax.swing.GroupLayout(pnl_statusbar);
         pnl_statusbar.setLayout(pnl_statusbarLayout);
         pnl_statusbarLayout.setHorizontalGroup(
-            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(pnl_statusbarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(pnl_statusbarLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(lbl_user, javax.swing.GroupLayout.PREFERRED_SIZE, 233,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(lbl_clock, javax.swing.GroupLayout.PREFERRED_SIZE, 163,
+                                        javax.swing.GroupLayout.PREFERRED_SIZE)));
         pnl_statusbarLayout.setVerticalGroup(
-            pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, pnl_statusbarLayout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbl_clock)
-                    .addComponent(lbl_user))
-                .addContainerGap())
-        );
+                pnl_statusbarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING,
+                                pnl_statusbarLayout.createSequentialGroup()
+                                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addGroup(pnl_statusbarLayout
+                                                .createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(lbl_clock)
+                                                .addComponent(lbl_user))
+                                        .addContainerGap()));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(pnl_center, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(pnl_statusbar, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jToolBar, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+                jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jToolBar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, 0)
+                                .addComponent(pnl_center, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(pnl_statusbar, javax.swing.GroupLayout.PREFERRED_SIZE,
+                                        javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)));
 
         jMenuBar1.setBackground(new java.awt.Color(0, 117, 74));
 
@@ -390,8 +400,9 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.setPreferredSize(new java.awt.Dimension(70, 22));
         menu_system.add(jSeparator1);
 
-        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P, java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        changepass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_password_20px.png"))); // NOI18N
+        changepass.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_P,
+                java.awt.event.InputEvent.ALT_DOWN_MASK | java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        changepass.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_password_20px.png"))); // NOI18N
         changepass.setText("Đổi mật khẩu");
         changepass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -401,8 +412,9 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.add(changepass);
         menu_system.add(jSeparator2);
 
-        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L, java.awt.event.InputEvent.CTRL_DOWN_MASK));
-        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
+        logout.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_L,
+                java.awt.event.InputEvent.CTRL_DOWN_MASK));
+        logout.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_logout_rounded_up_20px.png"))); // NOI18N
         logout.setText("Đăng Xuất");
         logout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -412,8 +424,9 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_system.add(logout);
         menu_system.add(jSeparator10);
 
-        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4, java.awt.event.InputEvent.ALT_DOWN_MASK));
-        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_exit_20px.png"))); // NOI18N
+        exit.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F4,
+                java.awt.event.InputEvent.ALT_DOWN_MASK));
+        exit.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_exit_20px.png"))); // NOI18N
         exit.setText("Thoát");
         exit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -431,7 +444,7 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_managing.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_managing.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-poolside-bar-20.png"))); // NOI18N
+        products.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-poolside-bar-20.png"))); // NOI18N
         products.setText("Sản Phảm");
         products.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -440,7 +453,7 @@ public class JMainFrame extends javax.swing.JFrame {
         });
         menu_managing.add(products);
 
-        recipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_book_20px_1.png"))); // NOI18N
+        recipe.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_book_20px_1.png"))); // NOI18N
         recipe.setText("Công Thức");
         recipe.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -449,7 +462,7 @@ public class JMainFrame extends javax.swing.JFrame {
         });
         menu_managing.add(recipe);
 
-        ingridients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-ingredient-24.png"))); // NOI18N
+        ingridients.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-ingredient-24.png"))); // NOI18N
         ingridients.setText("Nguyên Liệu");
         ingridients.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseEntered(java.awt.event.MouseEvent evt) {
@@ -464,11 +477,16 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_managing.add(ingridients);
         menu_managing.add(jSeparator3);
 
-        invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8-invoice-20.png"))); // NOI18N
+        invoice.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8-invoice-20.png"))); // NOI18N
         invoice.setText("Hóa Đơn");
+        invoice.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                invoiceActionPerformed(evt);
+            }
+        });
         menu_managing.add(invoice);
 
-        employees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_people_20px.png"))); // NOI18N
+        employees.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_people_20px.png"))); // NOI18N
         employees.setText("Nhân Viên");
         employees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -485,7 +503,7 @@ public class JMainFrame extends javax.swing.JFrame {
         menu_statitics.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         menu_statitics.setPreferredSize(new java.awt.Dimension(70, 22));
 
-        revenue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/group1/images/icons8_report_card_20px.png"))); // NOI18N
+        revenue.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/icons8_report_card_20px.png"))); // NOI18N
         revenue.setText("Doanh Thu");
         revenue.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,66 +534,71 @@ public class JMainFrame extends javax.swing.JFrame {
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-        );
+                layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE,
+                                javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btn_NguyenLieuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_NguyenLieuActionPerformed
-        // TODO add your handling code here:
-        openIngridients();
-    }//GEN-LAST:event_btn_NguyenLieuActionPerformed
-
-    private void btn_RevenueActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RevenueActionPerformed
-        // TODO add your handling code here:
-        openRevenue();
-    }//GEN-LAST:event_btn_RevenueActionPerformed
-
-    private void btn_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_TinhTienActionPerformed
-        // TODO add your handling code here:
-        openSanPham();
-    }//GEN-LAST:event_btn_TinhTienActionPerformed
-
-    private void btn_RecipeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_RecipeActionPerformed
-        // TODO add your handling code here:
-        openRecipe();
-    }//GEN-LAST:event_btn_RecipeActionPerformed
-
-    private void btn_ProductActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_ProductActionPerformed
-        // TODO add your handling code here:
-        openProducts();
-    }//GEN-LAST:event_btn_ProductActionPerformed
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        openChart();
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-        openWebsite();
-    }//GEN-LAST:event_jButton3ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        // TODO add your handling code here:
-        openLogout();
-    }//GEN-LAST:event_jButton4ActionPerformed
-
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-        // TODO add your handling code here:
-        openExit();
-    }//GEN-LAST:event_jButton5ActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void invoiceActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_invoiceActionPerformed
         // TODO add your handling code here:
         openInvoice();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }// GEN-LAST:event_invoiceActionPerformed
+
+    private void btn_NguyenLieuActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_NguyenLieuActionPerformed
+        // TODO add your handling code here:
+        openIngridients();
+    }// GEN-LAST:event_btn_NguyenLieuActionPerformed
+
+    private void btn_RevenueActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_RevenueActionPerformed
+        // TODO add your handling code here:
+        openRevenue();
+    }// GEN-LAST:event_btn_RevenueActionPerformed
+
+    private void btn_TinhTienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_TinhTienActionPerformed
+        // TODO add your handling code here:
+        openSanPham();
+    }// GEN-LAST:event_btn_TinhTienActionPerformed
+
+    private void btn_RecipeActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_RecipeActionPerformed
+        // TODO add your handling code here:
+        openRecipe();
+    }// GEN-LAST:event_btn_RecipeActionPerformed
+
+    private void btn_ProductActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_ProductActionPerformed
+        // TODO add your handling code here:
+        openProducts();
+    }// GEN-LAST:event_btn_ProductActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        openChart();
+    }// GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        openWebsite();
+    }// GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        openLogout();
+    }// GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+        openExit();
+    }// GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        openInvoice();
+    }// GEN-LAST:event_jButton2ActionPerformed
 
     private void btn_tinhtienActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_tinhtienActionPerformed
         // TODO add your handling code here:

@@ -43,7 +43,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Component id="tabs" pref="1000" max="32767" attributes="0"/>
+              <Component id="tabs" max="32767" attributes="0"/>
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace min="-2" pref="379" max="-2" attributes="0"/>
                   <Component id="jLabel9" min="-2" max="-2" attributes="0"/>
@@ -239,7 +239,7 @@
                           <Color blue="63" green="b5" red="ea" type="rgb"/>
                         </Property>
                         <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                          <Image iconType="3" name="/group1/images/xmag_search_find_export_locate_5984.png"/>
+                          <Image iconType="3" name="/images/xmag_search_find_export_locate_5984.png"/>
                         </Property>
                       </Properties>
                       <Events>
