@@ -136,6 +136,55 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JDialog {
         }
     }
 
+    void delete() {
+        if (vadidateForm()) {
+            if (Auth.isManager()) {
+                String id = "Mã công thức";
+                int mact = 0;
+                int selectedRow = tblCongthuc.getSelectedRow();
+                System.out.println(selectedRow);
+                if (selectedRow >= 0) {
+                    id = (String) tblCongthuc.getValueAt(selectedRow, 2);
+                    mact = (int) tblCongthuc.getValueAt(selectedRow, 0);
+                    dao.Xoa(mact, id);
+                    String maVN = Auth.user.getMaNV();
+                    String title = "Xóa công thức";
+                    String content = "Nhân viên " + maVN + " đã xóa công thức " + mact;
+                    MailService.sendMail(title, content);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Chưa chọn nguyên liệu muốn xóa");
+                    JOptionPane.showMessageDialog(null, "Chưa chọn mã công thức ");
+                }
+                initTable();
+
+            }
+        }
+    }
+
+    void delete1() {
+        if (vadidateForm1()) {
+            if (Auth.isManager()) {
+                String id = "Mã nguyên liệu";
+                int mact = 0;
+                int selectedRow = tblCongthuc.getSelectedRow();
+                System.out.println(selectedRow);
+                if (selectedRow >= 0) {
+                    id = (String) tblCongthuc.getValueAt(selectedRow, 2);
+                    mact = (int) tblCongthuc.getValueAt(selectedRow, 0);
+                    dao.Xoa(mact, id);
+                    String maVN = Auth.user.getMaNV();
+                    String title = "Xóa công thức";
+                    String content = "Nhân viên " + maVN + " đã xóa công thức " + mact;
+                    MailService.sendMail(title, content);
+                } else {
+                    JOptionPane.showMessageDialog(null, "Chưa chọn nguyên liệu muốn xóa");
+                    JOptionPane.showMessageDialog(null, "Chưa chọn mã công thức ");
+                }
+                initTable();
+            }
+        }
+    }
+
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
@@ -641,25 +690,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JDialog {
     }// GEN-LAST:event_btnNewActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDeleteActionPerformed
-        if (Auth.isManager()) {
-            String id = "Mã nguyên liệu";
-            int mact = 0;
-            int selectedRow = tblCongthuc.getSelectedRow();
-            System.out.println(selectedRow);
-            if (selectedRow >= 0) {
-                id = (String) tblCongthuc.getValueAt(selectedRow, 2);
-                mact = (int) tblCongthuc.getValueAt(selectedRow, 0);
-                dao.Xoa(mact, id);
-                String maVN = Auth.user.getMaNV();
-                String title = "Xóa công thức";
-                String content = "Nhân viên " + maVN + " đã xóa công thức " + mact;
-                MailService.sendMail(title, content);
-            } else {
-                JOptionPane.showMessageDialog(null, "Chưa chọn nguyên liệu muốn xóa");
-                JOptionPane.showMessageDialog(null, "Chưa chọn mã công thức ");
-            }
-            initTable();
-        }
+        delete();
     }// GEN-LAST:event_btnDeleteActionPerformed
 
     private void btnPrintActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnPrintActionPerformed
@@ -731,20 +762,7 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JDialog {
 
     private void btnDelete1ActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnDelete1ActionPerformed
 
-        if (Auth.isManager()) {
-            int selectedRow = tblcongthuc.getSelectedRow();
-            if (selectedRow >= 0) {
-                String id = (String) tblcongthuc.getValueAt(selectedRow, 0);
-                ctdao.delete(id);
-                String maVN = Auth.user.getMaNV();
-                String title = "Xóa công thức";
-                String content = "Nhân viên " + maVN + " đã xóa công thức " + id;
-                MailService.sendMail(title, content);
-            } else {
-                JOptionPane.showMessageDialog(null, "Chưa chọn mã công thức muốn xóa");
-            }
-            loadTable();
-        }
+        delete1();
     }// GEN-LAST:event_btnDelete1ActionPerformed
 
     private void btnTimActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTimActionPerformed
