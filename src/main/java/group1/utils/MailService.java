@@ -61,10 +61,7 @@ public class MailService {
             MimeMultipart multipart = new MimeMultipart();
             multipart.addBodyPart(contentPart);
             message.setContent(multipart);
-
             Transport.send(message);
-            JOptionPane.showMessageDialog(null, "Reset Success");
-
         } catch (Exception e) {
             // TODO: handle exception
             System.out.println(e);
