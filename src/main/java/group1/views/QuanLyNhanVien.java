@@ -6,6 +6,9 @@ package group1.views;
 
 import group1.dao.NhanVienDAO;
 import group1.entity.NhanVien;
+import group1.utils.Auth;
+import group1.utils.MailService;
+
 import java.sql.SQLException;
 import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.List;
@@ -38,7 +41,8 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
-    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    // <editor-fold defaultstate="collapsed" desc="Generated
+    // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         buttonGroup1 = new javax.swing.ButtonGroup();
@@ -194,13 +198,12 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
         tblNhanvien.setAutoCreateRowSorter(true);
         tblNhanvien.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblNhanvien.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
+                new Object[][] {
 
-            },
-            new String [] {
-                "Mã Nhân Viên", "Tên Nhân Viên", "", "Title 4", "Title 5"
-            }
-        ));
+                },
+                new String[] {
+                        "Mã Nhân Viên", "Tên Nhân Viên", "", "Title 4", "Title 5"
+                }));
         tblNhanvien.setToolTipText("Merry Christmas");
         tblNhanvien.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -302,20 +305,11 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }// GEN-LAST:event_rdoQuanlyActionPerformed
 
     private void btnThemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnThemActionPerformed
-        if (VadidateForm()) {
-            NhanVien nv = getForm();
-            dao.insert(nv);
-            initTable();
-        }
-
+        insertSP();
     }// GEN-LAST:event_btnThemActionPerformed
 
     private void btnSuaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnSuaActionPerformed
-        if (VadidateForm()) {
-            NhanVien nv = getForm();
-            dao.update(nv);
-            initTable();
-        }
+        updateSP();
     }// GEN-LAST:event_btnSuaActionPerformed
 
     // private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {//
@@ -355,21 +349,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     }// GEN-LAST:event_tblNhanvienMouseClicked
 
     private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
-
-        int selectedRow = tblNhanvien.getSelectedRow();
-        String id = "";
-        if (selectedRow > 0) {
-            id = (String) tblNhanvien.getValueAt(selectedRow, 0);
-        } else {
-            id = txtManv.getText();
-        }
-
-        if (id.equalsIgnoreCase("")) {
-            JOptionPane.showMessageDialog(null, "Chưa chọn nhân viên muốn xóa");
-        } else {
-            dao.delete(id);
-        }
-        initTable();
+        deleteSP();
     }// GEN-LAST:event_btnXoaActionPerformed
 
     private void btnTimkiemActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnTimkiemActionPerformed
@@ -398,6 +378,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
 
     private void btn_exitActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btn_exitActionPerformed
         // TODO add your handling code here:
+        this.setVisible(false);
     }// GEN-LAST:event_btn_exitActionPerformed
 
     /**
@@ -490,6 +471,7 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
     private javax.swing.JTextField txtSdt;
     private javax.swing.JTextField txtTimkiem;
     private javax.swing.JTextField txtTuoi;
+
     // End of variables declaration//GEN-END:variables
     void initTable() {
         String[] columnName = { "Mã nv", "Mật khẩu", "Tên nv", "Vai trò", "Tuổi", "Giới tính", "SDT", "Địa chỉ" };
@@ -506,6 +488,68 @@ public class QuanLyNhanVien extends javax.swing.JDialog {
                     nv.getSdt(), nv.getDiaChi()
             });
         }
+    }
+
+    void updateSP() {
+        if (VadidateForm()) {
+            if (Auth.isManager()) {
+                NhanVien nv = getForm();
+                dao.update(nv);
+                String maVN = txtManv.getText();
+                String matKhau = txtMatkhau.getText();
+                String tenNV = txtHoten.getText();
+                String nguoithem = Auth.user.getMaNV();
+                MailService.sendMail("Update Employee", "Mã nhân viên: " + maVN + "\n" + "Mật khẩu: " + matKhau + "\n"
+                        + "Họ tên: " + tenNV + "\n" + "Người thêm: " + nguoithem);
+                initTable();
+            }
+
+        }
+
+    }
+
+    void insertSP() {
+        if (VadidateForm()) {
+            if (Auth.isManager()) {
+                NhanVien nv = getForm();
+                dao.insert(nv);
+                String maVN = txtManv.getText();
+                String matKhau = txtMatkhau.getText();
+                String tenNV = txtHoten.getText();
+                String nguoithem = Auth.user.getMaNV();
+                MailService.sendMail("Add New Employee", "Mã nhân viên: " + maVN + "\n" + "Mật khẩu: " + matKhau + "\n"
+                        + "Họ tên: " + tenNV + "\n" + "Người thêm: " + nguoithem);
+                initTable();
+            }
+        }
+    }
+
+    void deleteSP() {
+        if (VadidateForm()) {
+            if (Auth.isManager()) {
+                int selectedRow = tblNhanvien.getSelectedRow();
+                String id = "";
+                if (selectedRow > 0) {
+                    id = (String) tblNhanvien.getValueAt(selectedRow, 0);
+                } else {
+                    id = txtManv.getText();
+                }
+
+                if (id.equalsIgnoreCase("")) {
+                    JOptionPane.showMessageDialog(null, "Chưa chọn nhân viên muốn xóa");
+                } else {
+                    dao.delete(id);
+                    String maVN = txtManv.getText();
+                    String matKhau = txtMatkhau.getText();
+                    String tenNV = txtHoten.getText();
+                    String nguoithem = Auth.user.getMaNV();
+                    MailService.sendMail("Delete Employee", "Mã nhân viên: " + maVN + "\n" + "Mật khẩu: " + matKhau
+                            + "\n" + "Họ tên: " + tenNV + "\n" + "Người xóa: " + nguoithem);
+                }
+                initTable();
+            }
+        }
+
     }
 
     void Clearform() {

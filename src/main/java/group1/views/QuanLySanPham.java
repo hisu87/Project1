@@ -6,6 +6,7 @@ import group1.entity.CongThuc;
 import group1.entity.CongThuc_NguyenLieu;
 import group1.entity.SanPham;
 import group1.utils.Auth;
+import group1.utils.MailService;
 import group1.utils.msgBox;
 import group1.utils.xImage;
 import io.opencensus.metrics.export.Value;
@@ -165,6 +166,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
                 this.filltable();
                 this.clear();
                 msgBox.alert(this, "Thêm thành công");
+                String maSP = txtmaSanPham.getText();
+                String tenSP = txtTenSanPham.getText();
+                String maVN = Auth.user.getMaNV();
+                MailService.sendMail("Thêm sản phẩm",
+                        "Sản phẩm " + tenSP + " có mã " + maSP + " đã được thêm bởi" + maVN);
             } catch (Exception e) {
                 e.printStackTrace();
                 msgBox.alert(this, "Thêm thất bại");
@@ -183,6 +189,11 @@ public class QuanLySanPham extends javax.swing.JDialog {
                     this.filltable();
                     newSP();
                     msgBox.alert(this, "Xóa thành công");
+                    String maSP = txtmaSanPham.getText();
+                    String tenSP = txtTenSanPham.getText();
+                    String maVN = Auth.user.getMaNV();
+                    MailService.sendMail("Xóa sản phẩm",
+                            "Sản phẩm " + tenSP + " có mã " + maSP + " đã được xóa bởi" + maVN);
                 } catch (Exception e) {
                     e.printStackTrace();
                     msgBox.alert(this, "Xóa thất bại");
@@ -234,6 +245,7 @@ public class QuanLySanPham extends javax.swing.JDialog {
     }
 
     @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
@@ -541,6 +553,17 @@ public class QuanLySanPham extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
+        // TODO add your handling code here:
+        delete();
+
+    }// GEN-LAST:event_btnXoaActionPerformed
+
+    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnMoiActionPerformed
+        // TODO add your handling code here:
+        newSP();
+    }// GEN-LAST:event_btnMoiActionPerformed
+
     private void lblanhMouseClicked(java.awt.event.MouseEvent evt) {// GEN-FIRST:event_lblanhMouseClicked
         // TODO add your handling code here:
         choosePic();
@@ -582,17 +605,14 @@ public class QuanLySanPham extends javax.swing.JDialog {
             this.filltable();
             loadcbx();
             updateStatus();
+            msgBox.alert(this, "Cập nhật thành công");
+            String maSP = txtmaSanPham.getText();
+            String tenSP = txtTenSanPham.getText();
+            String maVN = Auth.user.getMaNV();
+            MailService.sendMail("Cập nhật sản phẩm",
+                    "Sản phẩm " + tenSP + " có mã " + maSP + " đã được cập nhật bởi" + maVN);
         }
-
-    }// GEN-LAST:event_btnSuaActionPerformed
-
-    private void btnXoaActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnXoaActionPerformed
-        delete();
-    }// GEN-LAST:event_btnXoaActionPerformed
-
-    private void btnMoiActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnMoiActionPerformed
-        newSP();
-    }// GEN-LAST:event_btnMoiActionPerformed
+    }
 
     private void btnfirstActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnfirstActionPerformed
         first();

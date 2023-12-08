@@ -109,7 +109,7 @@ int currentmang;
         super(parent, modal);
         initComponents();
         settime();
-//        displayUserInfo();
+        displayUserInfo();
 
         setLayout(new BorderLayout());
         setLocationRelativeTo(null);
