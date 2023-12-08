@@ -85,7 +85,9 @@ public class QuanLySanPham extends javax.swing.JDialog {
         SanPham sp = new SanPham();
         sp.setMaSP(txtmaSanPham.getText());
         sp.setTenSP(txtTenSanPham.getText());
-        sp.setMaCT(cbxct.getSelectedItem().toString());
+
+        sp.setMaCT(String.valueOf( cbxct.getSelectedItem()));
+
         sp.setGia(Float.parseFloat(txtgia.getText()));
         sp.setAnh(lblanh.getToolTipText());
         return sp;
