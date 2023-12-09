@@ -680,9 +680,13 @@ public class CongThucNguyenLieuJDialog extends javax.swing.JDialog {
     }// GEN-LAST:event_btnInsertActionPerformed
 
     private void btnUpdateActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnUpdateActionPerformed
-        CongThuc_NguyenLieu ct = getForm();
-        dao.update(ct);
-        initTable();
+        if (Auth.isManager()) {
+            if (vadidateForm1()) {
+                CongThuc_NguyenLieu ct = getForm();
+                dao.update(ct);
+                initTable();
+            }
+        }
     }// GEN-LAST:event_btnUpdateActionPerformed
 
     private void btnNewActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_btnNewActionPerformed

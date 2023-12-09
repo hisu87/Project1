@@ -29,6 +29,8 @@ public class LoginJDialog extends javax.swing.JDialog {
 
     NhanVienDAO dao = new NhanVienDAO();
     String IP = "";
+    
+    
 
     /**
      * Creates new form LoginJDialog
@@ -55,8 +57,11 @@ public class LoginJDialog extends javax.swing.JDialog {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String MaNV = txtUser.getText();
+
         String pwd = new String(txtPassword.getPassword());
+        
+        String MaNV = txtUser.getText();
+        txtUser.setText("Hisu");
         NhanVien nhanVien = dao.selectById(MaNV);
         String time = LocalDateTime.now().toString();
 
